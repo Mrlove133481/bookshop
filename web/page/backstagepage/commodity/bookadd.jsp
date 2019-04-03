@@ -353,6 +353,7 @@
                 success: function (msg) {
                     if (msg == "1") {
                         alert("保存成功");
+                        window.location.reload();
                     } else {
                         alert("保存失败");
                     }
