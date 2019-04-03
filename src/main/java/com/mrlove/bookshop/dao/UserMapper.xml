@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mrlove.bookshop.dao.UserMapper">
+  <resultMap id="BaseResultMap" type="com.mrlove.bookshop.common.domain.User">
+    <result column="user_id" jdbcType="VARCHAR" property="userId" />
+    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="user_pwd" jdbcType="VARCHAR" property="userPwd" />
+    <result column="user_nick_name" jdbcType="VARCHAR" property="userNickName" />
+    <result column="user_image" jdbcType="VARCHAR" property="userImage" />
+    <result column="user_sex" jdbcType="INTEGER" property="userSex" />
+    <result column="user_birthday" jdbcType="VARCHAR" property="userBirthday" />
+    <result column="user_telnum" jdbcType="VARCHAR" property="userTelnum" />
+    <result column="user_email" jdbcType="VARCHAR" property="userEmail" />
+    <result column="user_order" jdbcType="VARCHAR" property="userOrder" />
+    <result column="user_address" jdbcType="VARCHAR" property="userAddress" />
+    <result column="user_collect" jdbcType="VARCHAR" property="userCollect" />
+    <result column="user_shop_cart" jdbcType="VARCHAR" property="userShopCart" />
+    <result column="user_creation_time" jdbcType="VARCHAR" property="userCreationTime" />
+    <result column="user_status" jdbcType="INTEGER" property="userStatus" />
+    <result column="user_remark1" jdbcType="VARCHAR" property="userRemark1" />
+    <result column="user_remark2" jdbcType="VARCHAR" property="userRemark2" />
+    <result column="user_remark3" jdbcType="VARCHAR" property="userRemark3" />
+    <result column="user_remark4" jdbcType="VARCHAR" property="userRemark4" />
+  </resultMap>
+  <insert id="insert" parameterType="com.mrlove.bookshop.common.domain.User">
+    insert into user (user_id, user_name, user_pwd, 
+      user_nick_name, user_image, user_sex, 
+      user_birthday, user_telnum, user_email, 
+      user_order, user_address, user_collect, 
+      user_shop_cart, user_creation_time, user_status, 
+      user_remark1, user_remark2, user_remark3, 
+      user_remark4)
+    values (#{userId,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR}, #{userPwd,jdbcType=VARCHAR}, 
+      #{userNickName,jdbcType=VARCHAR}, #{userImage,jdbcType=VARCHAR}, #{userSex,jdbcType=INTEGER}, 
+      #{userBirthday,jdbcType=VARCHAR}, #{userTelnum,jdbcType=VARCHAR}, #{userEmail,jdbcType=VARCHAR}, 
+      #{userOrder,jdbcType=VARCHAR}, #{userAddress,jdbcType=VARCHAR}, #{userCollect,jdbcType=VARCHAR}, 
+      #{userShopCart,jdbcType=VARCHAR}, #{userCreationTime,jdbcType=VARCHAR}, #{userStatus,jdbcType=INTEGER}, 
+      #{userRemark1,jdbcType=VARCHAR}, #{userRemark2,jdbcType=VARCHAR}, #{userRemark3,jdbcType=VARCHAR}, 
+      #{userRemark4,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.mrlove.bookshop.common.domain.User">
+    insert into user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="userName != null">
+        user_name,
+      </if>
+      <if test="userPwd != null">
+        user_pwd,
+      </if>
+      <if test="userNickName != null">
+        user_nick_name,
+      </if>
+      <if test="userImage != null">
+        user_image,
+      </if>
+      <if test="userSex != null">
+        user_sex,
+      </if>
+      <if test="userBirthday != null">
+        user_birthday,
+      </if>
+      <if test="userTelnum != null">
+        user_telnum,
+      </if>
+      <if test="userEmail != null">
+        user_email,
+      </if>
+      <if test="userOrder != null">
+        user_order,
+      </if>
+      <if test="userAddress != null">
+        user_address,
+      </if>
+      <if test="userCollect != null">
+        user_collect,
+      </if>
+      <if test="userShopCart != null">
+        user_shop_cart,
+      </if>
+      <if test="userCreationTime != null">
+        user_creation_time,
+      </if>
+      <if test="userStatus != null">
+        user_status,
+      </if>
+      <if test="userRemark1 != null">
+        user_remark1,
+      </if>
+      <if test="userRemark2 != null">
+        user_remark2,
+      </if>
+      <if test="userRemark3 != null">
+        user_remark3,
+      </if>
+      <if test="userRemark4 != null">
+        user_remark4,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null">
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userPwd != null">
+        #{userPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="userNickName != null">
+        #{userNickName,jdbcType=VARCHAR},
+      </if>
+      <if test="userImage != null">
+        #{userImage,jdbcType=VARCHAR},
+      </if>
+      <if test="userSex != null">
+        #{userSex,jdbcType=INTEGER},
+      </if>
+      <if test="userBirthday != null">
+        #{userBirthday,jdbcType=VARCHAR},
+      </if>
+      <if test="userTelnum != null">
+        #{userTelnum,jdbcType=VARCHAR},
+      </if>
+      <if test="userEmail != null">
+        #{userEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="userOrder != null">
+        #{userOrder,jdbcType=VARCHAR},
+      </if>
+      <if test="userAddress != null">
+        #{userAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="userCollect != null">
+        #{userCollect,jdbcType=VARCHAR},
+      </if>
+      <if test="userShopCart != null">
+        #{userShopCart,jdbcType=VARCHAR},
+      </if>
+      <if test="userCreationTime != null">
+        #{userCreationTime,jdbcType=VARCHAR},
+      </if>
+      <if test="userStatus != null">
+        #{userStatus,jdbcType=INTEGER},
+      </if>
+      <if test="userRemark1 != null">
+        #{userRemark1,jdbcType=VARCHAR},
+      </if>
+      <if test="userRemark2 != null">
+        #{userRemark2,jdbcType=VARCHAR},
+      </if>
+      <if test="userRemark3 != null">
+        #{userRemark3,jdbcType=VARCHAR},
+      </if>
+      <if test="userRemark4 != null">
+        #{userRemark4,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

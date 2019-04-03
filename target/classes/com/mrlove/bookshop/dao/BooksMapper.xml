@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mrlove.bookshop.dao.BooksMapper">
+    <resultMap id="BaseResultMap" type="com.mrlove.bookshop.common.domain.Books">
+        <result column="book_id" jdbcType="VARCHAR" property="bookId"/>
+        <result column="book_number" jdbcType="VARCHAR" property="bookNumber"/>
+        <result column="book_name" jdbcType="VARCHAR" property="bookName"/>
+        <result column="book_image1" jdbcType="VARCHAR" property="bookImage1"/>
+        <result column="book_image2" jdbcType="VARCHAR" property="bookImage2"/>
+        <result column="book_image3" jdbcType="VARCHAR" property="bookImage3"/>
+        <result column="book_original_price" jdbcType="VARCHAR" property="bookOriginalPrice"/>
+        <result column="book_promotion_price" jdbcType="VARCHAR" property="bookPromotionPrice"/>
+        <result column="book_cost" jdbcType="VARCHAR" property="bookCost"/>
+        <result column="book_clazz" jdbcType="VARCHAR" property="bookClazz"/>
+        <result column="book_subclazz" jdbcType="VARCHAR" property="bookSubclazz"/>
+        <result column="book_monthly_sales" jdbcType="VARCHAR" property="bookMonthlySales"/>
+        <result column="book_total_sales" jdbcType="VARCHAR" property="bookTotalSales"/>
+        <result column="book_author" jdbcType="VARCHAR" property="bookAuthor"/>
+        <result column="book_press" jdbcType="VARCHAR" property="bookPress"/>
+        <result column="book_publication_year" jdbcType="VARCHAR" property="bookPublicationYear"/>
+        <result column="book_plot_summary" jdbcType="VARCHAR" property="bookPlotSummary"/>
+        <result column="book_biography" jdbcType="VARCHAR" property="bookBiography"/>
+        <result column="book_catalog" jdbcType="VARCHAR" property="bookCatalog"/>
+        <result column="book_media_comments" jdbcType="VARCHAR" property="bookMediaComments"/>
+        <result column="book_user_comments" jdbcType="VARCHAR" property="bookUserComments"/>
+        <result column="book_inventory" jdbcType="VARCHAR" property="bookInventory"/>
+        <result column="book_status" jdbcType="VARCHAR" property="bookStatus"/>
+        <result column="book_creation_time" jdbcType="VARCHAR" property="bookCreationTime"/>
+        <result column="book_remark1" jdbcType="VARCHAR" property="bookRemark1"/>
+        <result column="book_remark2" jdbcType="VARCHAR" property="bookRemark2"/>
+    </resultMap>
+    <insert id="insert" parameterType="com.mrlove.bookshop.common.domain.Books">
+    insert into books (book_id, book_number, book_name, 
+      book_image1, book_image2, book_image3, 
+      book_original_price, book_promotion_price, 
+      book_cost, book_clazz, book_subclazz, 
+      book_monthly_sales, book_total_sales, book_author, 
+      book_press, book_publication_year, book_plot_summary, 
+      book_biography, book_catalog, book_media_comments, 
+      book_user_comments, book_inventory, book_status, 
+      book_creation_time, book_remark1, book_remark2
+      )
+    values (#{bookId,jdbcType=VARCHAR}, #{bookNumber,jdbcType=VARCHAR}, #{bookName,jdbcType=VARCHAR}, 
+      #{bookImage1,jdbcType=VARCHAR}, #{bookImage2,jdbcType=VARCHAR}, #{bookImage3,jdbcType=VARCHAR}, 
+      #{bookOriginalPrice,jdbcType=VARCHAR}, #{bookPromotionPrice,jdbcType=VARCHAR}, 
+      #{bookCost,jdbcType=VARCHAR}, #{bookClazz,jdbcType=VARCHAR}, #{bookSubclazz,jdbcType=VARCHAR}, 
+      #{bookMonthlySales,jdbcType=VARCHAR}, #{bookTotalSales,jdbcType=VARCHAR}, #{bookAuthor,jdbcType=VARCHAR}, 
+      #{bookPress,jdbcType=VARCHAR}, #{bookPublicationYear,jdbcType=VARCHAR}, #{bookPlotSummary,jdbcType=VARCHAR}, 
+      #{bookBiography,jdbcType=VARCHAR}, #{bookCatalog,jdbcType=VARCHAR}, #{bookMediaComments,jdbcType=VARCHAR}, 
+      #{bookUserComments,jdbcType=VARCHAR}, #{bookInventory,jdbcType=VARCHAR}, #{bookStatus,jdbcType=VARCHAR}, 
+      #{bookCreationTime,jdbcType=VARCHAR}, #{bookRemark1,jdbcType=VARCHAR}, #{bookRemark2,jdbcType=VARCHAR}
+      )
+  </insert>
+    <insert id="insertSelective" parameterType="com.mrlove.bookshop.common.domain.Books">
+        insert into books
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="bookId != null">
+                book_id,
+            </if>
+            <if test="bookNumber != null">
+                book_number,
+            </if>
+            <if test="bookName != null">
+                book_name,
+            </if>
+            <if test="bookImage1 != null">
+                book_image1,
+            </if>
+            <if test="bookImage2 != null">
+                book_image2,
+            </if>
+            <if test="bookImage3 != null">
+                book_image3,
+            </if>
+            <if test="bookOriginalPrice != null">
+                book_original_price,
+            </if>
+            <if test="bookPromotionPrice != null">
+                book_promotion_price,
+            </if>
+            <if test="bookCost != null">
+                book_cost,
+            </if>
+            <if test="bookClazz != null">
+                book_clazz,
+            </if>
+            <if test="bookSubclazz != null">
+                book_subclazz,
+            </if>
+            <if test="bookMonthlySales != null">
+                book_monthly_sales,
+            </if>
+            <if test="bookTotalSales != null">
+                book_total_sales,
+            </if>
+            <if test="bookAuthor != null">
+                book_author,
+            </if>
+            <if test="bookPress != null">
+                book_press,
+            </if>
+            <if test="bookPublicationYear != null">
+                book_publication_year,
+            </if>
+            <if test="bookPlotSummary != null">
+                book_plot_summary,
+            </if>
+            <if test="bookBiography != null">
+                book_biography,
+            </if>
+            <if test="bookCatalog != null">
+                book_catalog,
+            </if>
+            <if test="bookMediaComments != null">
+                book_media_comments,
+            </if>
+            <if test="bookUserComments != null">
+                book_user_comments,
+            </if>
+            <if test="bookInventory != null">
+                book_inventory,
+            </if>
+            <if test="bookStatus != null">
+                book_status,
+            </if>
+            <if test="bookCreationTime != null">
+                book_creation_time,
+            </if>
+            <if test="bookRemark1 != null">
+                book_remark1,
+            </if>
+            <if test="bookRemark2 != null">
+                book_remark2,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="bookId != null">
+                #{bookId,jdbcType=VARCHAR},
+            </if>
+            <if test="bookNumber != null">
+                #{bookNumber,jdbcType=VARCHAR},
+            </if>
+            <if test="bookName != null">
+                #{bookName,jdbcType=VARCHAR},
+            </if>
+            <if test="bookImage1 != null">
+                #{bookImage1,jdbcType=VARCHAR},
+            </if>
+            <if test="bookImage2 != null">
+                #{bookImage2,jdbcType=VARCHAR},
+            </if>
+            <if test="bookImage3 != null">
+                #{bookImage3,jdbcType=VARCHAR},
+            </if>
+            <if test="bookOriginalPrice != null">
+                #{bookOriginalPrice,jdbcType=VARCHAR},
+            </if>
+            <if test="bookPromotionPrice != null">
+                #{bookPromotionPrice,jdbcType=VARCHAR},
+            </if>
+            <if test="bookCost != null">
+                #{bookCost,jdbcType=VARCHAR},
+            </if>
+            <if test="bookClazz != null">
+                #{bookClazz,jdbcType=VARCHAR},
+            </if>
+            <if test="bookSubclazz != null">
+                #{bookSubclazz,jdbcType=VARCHAR},
+            </if>
+            <if test="bookMonthlySales != null">
+                #{bookMonthlySales,jdbcType=VARCHAR},
+            </if>
+            <if test="bookTotalSales != null">
+                #{bookTotalSales,jdbcType=VARCHAR},
+            </if>
+            <if test="bookAuthor != null">
+                #{bookAuthor,jdbcType=VARCHAR},
+            </if>
+            <if test="bookPress != null">
+                #{bookPress,jdbcType=VARCHAR},
+            </if>
+            <if test="bookPublicationYear != null">
+                #{bookPublicationYear,jdbcType=VARCHAR},
+            </if>
+            <if test="bookPlotSummary != null">
+                #{bookPlotSummary,jdbcType=VARCHAR},
+            </if>
+            <if test="bookBiography != null">
+                #{bookBiography,jdbcType=VARCHAR},
+            </if>
+            <if test="bookCatalog != null">
+                #{bookCatalog,jdbcType=VARCHAR},
+            </if>
+            <if test="bookMediaComments != null">
+                #{bookMediaComments,jdbcType=VARCHAR},
+            </if>
+            <if test="bookUserComments != null">
+                #{bookUserComments,jdbcType=VARCHAR},
+            </if>
+            <if test="bookInventory != null">
+                #{bookInventory,jdbcType=VARCHAR},
+            </if>
+            <if test="bookStatus != null">
+                #{bookStatus,jdbcType=VARCHAR},
+            </if>
+            <if test="bookCreationTime != null">
+                #{bookCreationTime,jdbcType=VARCHAR},
+            </if>
+            <if test="bookRemark1 != null">
+                #{bookRemark1,jdbcType=VARCHAR},
+            </if>
+            <if test="bookRemark2 != null">
+                #{bookRemark2,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <!--查询图书-->
+    <select id="selectbooks" resultMap="BaseResultMap">
+        select
+        book_id
+        ,book_number
+        ,book_name
+        ,book_clazz
+        ,book_subclazz
+        ,book_user_comments
+        ,book_promotion_price
+        ,book_cost
+        ,book_total_sales
+        ,book_inventory
+        ,book_status
+        from books where book_status !=0
+    </select>
+    <!--删除图书-->
+    <update id="deleteBookById" parameterType="com.mrlove.bookshop.common.domain.Books">
+        update books
+        set book_status = '0'
+        where book_id = #{bookId}
+    </update>
+    <!--上架图书-->
+    <update id="onBookById" parameterType="com.mrlove.bookshop.common.domain.Books">
+        update books
+        set book_status = '1'
+        where book_id = #{bookId}
+    </update>
+    <!--下架图书-->
+    <update id="offBookById" parameterType="com.mrlove.bookshop.common.domain.Books">
+        update books
+        set book_status = '2'
+        where book_id = #{bookId}
+    </update>
+    <!--通过id查询图书-->
+    <select id="getBookById" resultMap="BaseResultMap">
+        select
+        book_name
+        ,book_original_price
+        ,book_promotion_price
+        ,book_cost
+        ,book_clazz
+        ,book_subclazz
+        ,book_author
+        ,book_press
+        ,book_publication_year
+        ,book_plot_summary
+        ,book_biography
+        ,book_catalog
+        ,book_media_comments
+        ,book_inventory
+        ,book_image1
+        ,book_image2
+        ,book_image3
+        from books
+        where book_id = #{bookId,jdbcType=VARCHAR}
+    </select>
+    <update id="updateBookById" parameterType="com.mrlove.bookshop.common.domain.Books">
+update books
+set
+book_name = #{bookName}
+,book_original_price = #{bookOriginalPrice}
+,book_promotion_price = #{bookPromotionPrice}
+,book_cost = #{bookCost}
+,book_clazz = #{bookClazz}
+,book_subclazz = #{bookSubclazz}
+,book_author = #{bookAuthor}
+,book_press = #{bookPress}
+,book_publication_year = #{bookPublicationYear}
+,book_plot_summary = #{bookPlotSummary}
+,book_biography = #{bookBiography}
+,book_catalog = #{bookCatalog}
+,book_media_comments = #{bookMediaComments}
+,book_inventory = #{bookInventory}
+,book_image1 = #{bookImage1}
+,book_image2 = #{bookImage2}
+,book_image3 = #{bookImage3}
+where book_id = #{bookId}
+    </update>
+
+</mapper>

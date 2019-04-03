@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mrlove.bookshop.dao.CollectMapper">
+  <resultMap id="BaseResultMap" type="com.mrlove.bookshop.common.domain.Collect">
+    <result column="collect_id" jdbcType="VARCHAR" property="collectId" />
+    <result column="collect_user" jdbcType="VARCHAR" property="collectUser" />
+    <result column="collect_book_number" jdbcType="VARCHAR" property="collectBookNumber" />
+    <result column="collect_status" jdbcType="VARCHAR" property="collectStatus" />
+    <result column="collect_creation_time" jdbcType="VARCHAR" property="collectCreationTime" />
+    <result column="collect_remark1" jdbcType="VARCHAR" property="collectRemark1" />
+    <result column="collect_remark2" jdbcType="VARCHAR" property="collectRemark2" />
+  </resultMap>
+  <insert id="insert" parameterType="com.mrlove.bookshop.common.domain.Collect">
+    insert into collect (collect_id, collect_user, collect_book_number, 
+      collect_status, collect_creation_time, collect_remark1, 
+      collect_remark2)
+    values (#{collectId,jdbcType=VARCHAR}, #{collectUser,jdbcType=VARCHAR}, #{collectBookNumber,jdbcType=VARCHAR}, 
+      #{collectStatus,jdbcType=VARCHAR}, #{collectCreationTime,jdbcType=VARCHAR}, #{collectRemark1,jdbcType=VARCHAR}, 
+      #{collectRemark2,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.mrlove.bookshop.common.domain.Collect">
+    insert into collect
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="collectId != null">
+        collect_id,
+      </if>
+      <if test="collectUser != null">
+        collect_user,
+      </if>
+      <if test="collectBookNumber != null">
+        collect_book_number,
+      </if>
+      <if test="collectStatus != null">
+        collect_status,
+      </if>
+      <if test="collectCreationTime != null">
+        collect_creation_time,
+      </if>
+      <if test="collectRemark1 != null">
+        collect_remark1,
+      </if>
+      <if test="collectRemark2 != null">
+        collect_remark2,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="collectId != null">
+        #{collectId,jdbcType=VARCHAR},
+      </if>
+      <if test="collectUser != null">
+        #{collectUser,jdbcType=VARCHAR},
+      </if>
+      <if test="collectBookNumber != null">
+        #{collectBookNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="collectStatus != null">
+        #{collectStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="collectCreationTime != null">
+        #{collectCreationTime,jdbcType=VARCHAR},
+      </if>
+      <if test="collectRemark1 != null">
+        #{collectRemark1,jdbcType=VARCHAR},
+      </if>
+      <if test="collectRemark2 != null">
+        #{collectRemark2,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mrlove.bookshop.dao.AddressMapper">
+  <resultMap id="BaseResultMap" type="com.mrlove.bookshop.common.domain.Address">
+    <result column="address_id" jdbcType="VARCHAR" property="addressId" />
+    <result column="address_user" jdbcType="VARCHAR" property="addressUser" />
+    <result column="address_receiver" jdbcType="VARCHAR" property="addressReceiver" />
+    <result column="address_telnum" jdbcType="VARCHAR" property="addressTelnum" />
+    <result column="address_location" jdbcType="VARCHAR" property="addressLocation" />
+    <result column="address_default" jdbcType="VARCHAR" property="addressDefault" />
+    <result column="address_status" jdbcType="VARCHAR" property="addressStatus" />
+    <result column="address_creation_time" jdbcType="VARCHAR" property="addressCreationTime" />
+    <result column="address_remark1" jdbcType="VARCHAR" property="addressRemark1" />
+    <result column="address_remark2" jdbcType="VARCHAR" property="addressRemark2" />
+  </resultMap>
+  <insert id="insert" parameterType="com.mrlove.bookshop.common.domain.Address">
+    insert into address (address_id, address_user, address_receiver, 
+      address_telnum, address_location, address_default, 
+      address_status, address_creation_time, address_remark1, 
+      address_remark2)
+    values (#{addressId,jdbcType=VARCHAR}, #{addressUser,jdbcType=VARCHAR}, #{addressReceiver,jdbcType=VARCHAR}, 
+      #{addressTelnum,jdbcType=VARCHAR}, #{addressLocation,jdbcType=VARCHAR}, #{addressDefault,jdbcType=VARCHAR}, 
+      #{addressStatus,jdbcType=VARCHAR}, #{addressCreationTime,jdbcType=VARCHAR}, #{addressRemark1,jdbcType=VARCHAR}, 
+      #{addressRemark2,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.mrlove.bookshop.common.domain.Address">
+    insert into address
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="addressId != null">
+        address_id,
+      </if>
+      <if test="addressUser != null">
+        address_user,
+      </if>
+      <if test="addressReceiver != null">
+        address_receiver,
+      </if>
+      <if test="addressTelnum != null">
+        address_telnum,
+      </if>
+      <if test="addressLocation != null">
+        address_location,
+      </if>
+      <if test="addressDefault != null">
+        address_default,
+      </if>
+      <if test="addressStatus != null">
+        address_status,
+      </if>
+      <if test="addressCreationTime != null">
+        address_creation_time,
+      </if>
+      <if test="addressRemark1 != null">
+        address_remark1,
+      </if>
+      <if test="addressRemark2 != null">
+        address_remark2,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="addressId != null">
+        #{addressId,jdbcType=VARCHAR},
+      </if>
+      <if test="addressUser != null">
+        #{addressUser,jdbcType=VARCHAR},
+      </if>
+      <if test="addressReceiver != null">
+        #{addressReceiver,jdbcType=VARCHAR},
+      </if>
+      <if test="addressTelnum != null">
+        #{addressTelnum,jdbcType=VARCHAR},
+      </if>
+      <if test="addressLocation != null">
+        #{addressLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="addressDefault != null">
+        #{addressDefault,jdbcType=VARCHAR},
+      </if>
+      <if test="addressStatus != null">
+        #{addressStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="addressCreationTime != null">
+        #{addressCreationTime,jdbcType=VARCHAR},
+      </if>
+      <if test="addressRemark1 != null">
+        #{addressRemark1,jdbcType=VARCHAR},
+      </if>
+      <if test="addressRemark2 != null">
+        #{addressRemark2,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

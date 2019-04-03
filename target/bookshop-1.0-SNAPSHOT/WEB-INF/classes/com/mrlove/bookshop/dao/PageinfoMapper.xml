@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mrlove.bookshop.dao.PageinfoMapper">
+  <resultMap id="BaseResultMap" type="com.mrlove.bookshop.common.domain.Pageinfo">
+    <result column="pageinfo_id" jdbcType="VARCHAR" property="pageinfoId" />
+    <result column="pageinfo_name" jdbcType="VARCHAR" property="pageinfoName" />
+    <result column="pageinfo_location" jdbcType="VARCHAR" property="pageinfoLocation" />
+    <result column="pageinfo_count" jdbcType="VARCHAR" property="pageinfoCount" />
+    <result column="pageinfo_img" jdbcType="VARCHAR" property="pageinfoImg" />
+    <result column="pageinfo_info" jdbcType="VARCHAR" property="pageinfoInfo" />
+    <result column="pageinfo_status" jdbcType="VARCHAR" property="pageinfoStatus" />
+    <result column="pageinfo_creation_time" jdbcType="VARCHAR" property="pageinfoCreationTime" />
+    <result column="pageinfo_remark1" jdbcType="VARCHAR" property="pageinfoRemark1" />
+    <result column="pageinfo_remark2" jdbcType="VARCHAR" property="pageinfoRemark2" />
+  </resultMap>
+  <insert id="insert" parameterType="com.mrlove.bookshop.common.domain.Pageinfo">
+    insert into pageinfo (pageinfo_id, pageinfo_name, pageinfo_location, 
+      pageinfo_count, pageinfo_img, pageinfo_info, 
+      pageinfo_status, pageinfo_creation_time, pageinfo_remark1, 
+      pageinfo_remark2)
+    values (#{pageinfoId,jdbcType=VARCHAR}, #{pageinfoName,jdbcType=VARCHAR}, #{pageinfoLocation,jdbcType=VARCHAR}, 
+      #{pageinfoCount,jdbcType=VARCHAR}, #{pageinfoImg,jdbcType=VARCHAR}, #{pageinfoInfo,jdbcType=VARCHAR}, 
+      #{pageinfoStatus,jdbcType=VARCHAR}, #{pageinfoCreationTime,jdbcType=VARCHAR}, #{pageinfoRemark1,jdbcType=VARCHAR}, 
+      #{pageinfoRemark2,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.mrlove.bookshop.common.domain.Pageinfo">
+    insert into pageinfo
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="pageinfoId != null">
+        pageinfo_id,
+      </if>
+      <if test="pageinfoName != null">
+        pageinfo_name,
+      </if>
+      <if test="pageinfoLocation != null">
+        pageinfo_location,
+      </if>
+      <if test="pageinfoCount != null">
+        pageinfo_count,
+      </if>
+      <if test="pageinfoImg != null">
+        pageinfo_img,
+      </if>
+      <if test="pageinfoInfo != null">
+        pageinfo_info,
+      </if>
+      <if test="pageinfoStatus != null">
+        pageinfo_status,
+      </if>
+      <if test="pageinfoCreationTime != null">
+        pageinfo_creation_time,
+      </if>
+      <if test="pageinfoRemark1 != null">
+        pageinfo_remark1,
+      </if>
+      <if test="pageinfoRemark2 != null">
+        pageinfo_remark2,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="pageinfoId != null">
+        #{pageinfoId,jdbcType=VARCHAR},
+      </if>
+      <if test="pageinfoName != null">
+        #{pageinfoName,jdbcType=VARCHAR},
+      </if>
+      <if test="pageinfoLocation != null">
+        #{pageinfoLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="pageinfoCount != null">
+        #{pageinfoCount,jdbcType=VARCHAR},
+      </if>
+      <if test="pageinfoImg != null">
+        #{pageinfoImg,jdbcType=VARCHAR},
+      </if>
+      <if test="pageinfoInfo != null">
+        #{pageinfoInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="pageinfoStatus != null">
+        #{pageinfoStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="pageinfoCreationTime != null">
+        #{pageinfoCreationTime,jdbcType=VARCHAR},
+      </if>
+      <if test="pageinfoRemark1 != null">
+        #{pageinfoRemark1,jdbcType=VARCHAR},
+      </if>
+      <if test="pageinfoRemark2 != null">
+        #{pageinfoRemark2,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

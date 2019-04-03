@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mrlove.bookshop.dao.ShopcartMapper">
+  <resultMap id="BaseResultMap" type="com.mrlove.bookshop.common.domain.Shopcart">
+    <result column="shopcart_id" jdbcType="VARCHAR" property="shopcartId" />
+    <result column="shopcart_user" jdbcType="VARCHAR" property="shopcartUser" />
+    <result column="shopcart_book_number" jdbcType="VARCHAR" property="shopcartBookNumber" />
+    <result column="shopcart_status" jdbcType="VARCHAR" property="shopcartStatus" />
+    <result column="shopcart_creation_time" jdbcType="VARCHAR" property="shopcartCreationTime" />
+    <result column="shopcart_remark1" jdbcType="VARCHAR" property="shopcartRemark1" />
+    <result column="shopcart_remark2" jdbcType="VARCHAR" property="shopcartRemark2" />
+  </resultMap>
+  <insert id="insert" parameterType="com.mrlove.bookshop.common.domain.Shopcart">
+    insert into shopcart (shopcart_id, shopcart_user, shopcart_book_number, 
+      shopcart_status, shopcart_creation_time, shopcart_remark1, 
+      shopcart_remark2)
+    values (#{shopcartId,jdbcType=VARCHAR}, #{shopcartUser,jdbcType=VARCHAR}, #{shopcartBookNumber,jdbcType=VARCHAR}, 
+      #{shopcartStatus,jdbcType=VARCHAR}, #{shopcartCreationTime,jdbcType=VARCHAR}, #{shopcartRemark1,jdbcType=VARCHAR}, 
+      #{shopcartRemark2,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.mrlove.bookshop.common.domain.Shopcart">
+    insert into shopcart
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="shopcartId != null">
+        shopcart_id,
+      </if>
+      <if test="shopcartUser != null">
+        shopcart_user,
+      </if>
+      <if test="shopcartBookNumber != null">
+        shopcart_book_number,
+      </if>
+      <if test="shopcartStatus != null">
+        shopcart_status,
+      </if>
+      <if test="shopcartCreationTime != null">
+        shopcart_creation_time,
+      </if>
+      <if test="shopcartRemark1 != null">
+        shopcart_remark1,
+      </if>
+      <if test="shopcartRemark2 != null">
+        shopcart_remark2,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="shopcartId != null">
+        #{shopcartId,jdbcType=VARCHAR},
+      </if>
+      <if test="shopcartUser != null">
+        #{shopcartUser,jdbcType=VARCHAR},
+      </if>
+      <if test="shopcartBookNumber != null">
+        #{shopcartBookNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="shopcartStatus != null">
+        #{shopcartStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="shopcartCreationTime != null">
+        #{shopcartCreationTime,jdbcType=VARCHAR},
+      </if>
+      <if test="shopcartRemark1 != null">
+        #{shopcartRemark1,jdbcType=VARCHAR},
+      </if>
+      <if test="shopcartRemark2 != null">
+        #{shopcartRemark2,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

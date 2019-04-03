@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mrlove.bookshop.dao.OrderMapper">
+  <resultMap id="BaseResultMap" type="com.mrlove.bookshop.common.domain.Order">
+    <result column="order_id" jdbcType="VARCHAR" property="orderId" />
+    <result column="order_user" jdbcType="VARCHAR" property="orderUser" />
+    <result column="order_number" jdbcType="VARCHAR" property="orderNumber" />
+    <result column="order_price" jdbcType="VARCHAR" property="orderPrice" />
+    <result column="order_amount" jdbcType="VARCHAR" property="orderAmount" />
+    <result column="order_refund" jdbcType="VARCHAR" property="orderRefund" />
+    <result column="order_refund_status" jdbcType="VARCHAR" property="orderRefundStatus" />
+    <result column="order_refund_start_time" jdbcType="VARCHAR" property="orderRefundStartTime" />
+    <result column="order_refund_dispose_time" jdbcType="VARCHAR" property="orderRefundDisposeTime" />
+    <result column="order_refund_end_time" jdbcType="VARCHAR" property="orderRefundEndTime" />
+    <result column="order_sales_return" jdbcType="VARCHAR" property="orderSalesReturn" />
+    <result column="order_sales_return_status" jdbcType="VARCHAR" property="orderSalesReturnStatus" />
+    <result column="order_sales_return_start_time" jdbcType="VARCHAR" property="orderSalesReturnStartTime" />
+    <result column="order_sales_return_end_time" jdbcType="VARCHAR" property="orderSalesReturnEndTime" />
+    <result column="order_payment_status" jdbcType="VARCHAR" property="orderPaymentStatus" />
+    <result column="order_receive_status" jdbcType="VARCHAR" property="orderReceiveStatus" />
+    <result column="order_evaluation_level" jdbcType="VARCHAR" property="orderEvaluationLevel" />
+    <result column="order_evalution_description" jdbcType="VARCHAR" property="orderEvalutionDescription" />
+    <result column="order_evaluation_image" jdbcType="VARCHAR" property="orderEvaluationImage" />
+    <result column="order_creation_time" jdbcType="VARCHAR" property="orderCreationTime" />
+    <result column="order_creation_batch" jdbcType="VARCHAR" property="orderCreationBatch" />
+    <result column="order_status" jdbcType="VARCHAR" property="orderStatus" />
+    <result column="order_remark1" jdbcType="VARCHAR" property="orderRemark1" />
+    <result column="order_remark2" jdbcType="VARCHAR" property="orderRemark2" />
+  </resultMap>
+  <insert id="insert" parameterType="com.mrlove.bookshop.common.domain.Order">
+    insert into order (order_id, order_user, order_number, 
+      order_price, order_amount, order_refund, 
+      order_refund_status, order_refund_start_time, 
+      order_refund_dispose_time, order_refund_end_time, 
+      order_sales_return, order_sales_return_status, 
+      order_sales_return_start_time, order_sales_return_end_time, 
+      order_payment_status, order_receive_status, 
+      order_evaluation_level, order_evalution_description, 
+      order_evaluation_image, order_creation_time, 
+      order_creation_batch, order_status, order_remark1, 
+      order_remark2)
+    values (#{orderId,jdbcType=VARCHAR}, #{orderUser,jdbcType=VARCHAR}, #{orderNumber,jdbcType=VARCHAR}, 
+      #{orderPrice,jdbcType=VARCHAR}, #{orderAmount,jdbcType=VARCHAR}, #{orderRefund,jdbcType=VARCHAR}, 
+      #{orderRefundStatus,jdbcType=VARCHAR}, #{orderRefundStartTime,jdbcType=VARCHAR}, 
+      #{orderRefundDisposeTime,jdbcType=VARCHAR}, #{orderRefundEndTime,jdbcType=VARCHAR}, 
+      #{orderSalesReturn,jdbcType=VARCHAR}, #{orderSalesReturnStatus,jdbcType=VARCHAR}, 
+      #{orderSalesReturnStartTime,jdbcType=VARCHAR}, #{orderSalesReturnEndTime,jdbcType=VARCHAR}, 
+      #{orderPaymentStatus,jdbcType=VARCHAR}, #{orderReceiveStatus,jdbcType=VARCHAR}, 
+      #{orderEvaluationLevel,jdbcType=VARCHAR}, #{orderEvalutionDescription,jdbcType=VARCHAR}, 
+      #{orderEvaluationImage,jdbcType=VARCHAR}, #{orderCreationTime,jdbcType=VARCHAR}, 
+      #{orderCreationBatch,jdbcType=VARCHAR}, #{orderStatus,jdbcType=VARCHAR}, #{orderRemark1,jdbcType=VARCHAR}, 
+      #{orderRemark2,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.mrlove.bookshop.common.domain.Order">
+    insert into order
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="orderId != null">
+        order_id,
+      </if>
+      <if test="orderUser != null">
+        order_user,
+      </if>
+      <if test="orderNumber != null">
+        order_number,
+      </if>
+      <if test="orderPrice != null">
+        order_price,
+      </if>
+      <if test="orderAmount != null">
+        order_amount,
+      </if>
+      <if test="orderRefund != null">
+        order_refund,
+      </if>
+      <if test="orderRefundStatus != null">
+        order_refund_status,
+      </if>
+      <if test="orderRefundStartTime != null">
+        order_refund_start_time,
+      </if>
+      <if test="orderRefundDisposeTime != null">
+        order_refund_dispose_time,
+      </if>
+      <if test="orderRefundEndTime != null">
+        order_refund_end_time,
+      </if>
+      <if test="orderSalesReturn != null">
+        order_sales_return,
+      </if>
+      <if test="orderSalesReturnStatus != null">
+        order_sales_return_status,
+      </if>
+      <if test="orderSalesReturnStartTime != null">
+        order_sales_return_start_time,
+      </if>
+      <if test="orderSalesReturnEndTime != null">
+        order_sales_return_end_time,
+      </if>
+      <if test="orderPaymentStatus != null">
+        order_payment_status,
+      </if>
+      <if test="orderReceiveStatus != null">
+        order_receive_status,
+      </if>
+      <if test="orderEvaluationLevel != null">
+        order_evaluation_level,
+      </if>
+      <if test="orderEvalutionDescription != null">
+        order_evalution_description,
+      </if>
+      <if test="orderEvaluationImage != null">
+        order_evaluation_image,
+      </if>
+      <if test="orderCreationTime != null">
+        order_creation_time,
+      </if>
+      <if test="orderCreationBatch != null">
+        order_creation_batch,
+      </if>
+      <if test="orderStatus != null">
+        order_status,
+      </if>
+      <if test="orderRemark1 != null">
+        order_remark1,
+      </if>
+      <if test="orderRemark2 != null">
+        order_remark2,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="orderId != null">
+        #{orderId,jdbcType=VARCHAR},
+      </if>
+      <if test="orderUser != null">
+        #{orderUser,jdbcType=VARCHAR},
+      </if>
+      <if test="orderNumber != null">
+        #{orderNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="orderPrice != null">
+        #{orderPrice,jdbcType=VARCHAR},
+      </if>
+      <if test="orderAmount != null">
+        #{orderAmount,jdbcType=VARCHAR},
+      </if>
+      <if test="orderRefund != null">
+        #{orderRefund,jdbcType=VARCHAR},
+      </if>
+      <if test="orderRefundStatus != null">
+        #{orderRefundStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="orderRefundStartTime != null">
+        #{orderRefundStartTime,jdbcType=VARCHAR},
+      </if>
+      <if test="orderRefundDisposeTime != null">
+        #{orderRefundDisposeTime,jdbcType=VARCHAR},
+      </if>
+      <if test="orderRefundEndTime != null">
+        #{orderRefundEndTime,jdbcType=VARCHAR},
+      </if>
+      <if test="orderSalesReturn != null">
+        #{orderSalesReturn,jdbcType=VARCHAR},
+      </if>
+      <if test="orderSalesReturnStatus != null">
+        #{orderSalesReturnStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="orderSalesReturnStartTime != null">
+        #{orderSalesReturnStartTime,jdbcType=VARCHAR},
+      </if>
+      <if test="orderSalesReturnEndTime != null">
+        #{orderSalesReturnEndTime,jdbcType=VARCHAR},
+      </if>
+      <if test="orderPaymentStatus != null">
+        #{orderPaymentStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="orderReceiveStatus != null">
+        #{orderReceiveStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="orderEvaluationLevel != null">
+        #{orderEvaluationLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="orderEvalutionDescription != null">
+        #{orderEvalutionDescription,jdbcType=VARCHAR},
+      </if>
+      <if test="orderEvaluationImage != null">
+        #{orderEvaluationImage,jdbcType=VARCHAR},
+      </if>
+      <if test="orderCreationTime != null">
+        #{orderCreationTime,jdbcType=VARCHAR},
+      </if>
+      <if test="orderCreationBatch != null">
+        #{orderCreationBatch,jdbcType=VARCHAR},
+      </if>
+      <if test="orderStatus != null">
+        #{orderStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="orderRemark1 != null">
+        #{orderRemark1,jdbcType=VARCHAR},
+      </if>
+      <if test="orderRemark2 != null">
+        #{orderRemark2,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>
