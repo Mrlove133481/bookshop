@@ -29,21 +29,21 @@
         </ol>
         <!--在这里添加你的内容-->
         <div class="tpl-portlet-components">
-              <div class="portlet-title">
-                    <div class="caption font-green bold">
-                        <span class="am-icon-book">图书列表</span>
-                    </div>
-                  <%--搜索--%>
-                    <%--<div class="tpl-portlet-input tpl-fz-ml">
-                        <div class="portlet-input input-small input-inline">
-                            <div class="input-icon right" id="bookTable_filter">
-                                <i class="am-icon-search"></i>
-                                <input type="search" class="form-control form-control-solid" placeholder="搜索..." id="search" aria-controls="bookTable"></div>
-                        </div>
-                    </div>--%>
+            <div class="portlet-title">
+                <div class="caption font-green bold">
+                    <span class="am-icon-book">图书列表</span>
                 </div>
+                <%--搜索--%>
+                <%--<div class="tpl-portlet-input tpl-fz-ml">
+                    <div class="portlet-input input-small input-inline">
+                        <div class="input-icon right" id="bookTable_filter">
+                            <i class="am-icon-search"></i>
+                            <input type="search" class="form-control form-control-solid" placeholder="搜索..." id="search" aria-controls="bookTable"></div>
+                    </div>
+                </div>--%>
+            </div>
             <div class="tpl-block">
-            <div class="am-g">
+                <div class="am-g">
                     <div class="am-u-sm-12 am-u-md-6">
                         <div class="am-btn-toolbar">
                             <div class="am-btn-group am-btn-group-xs">
@@ -82,7 +82,11 @@
                                 <tbody>
                                 <c:forEach items="${allBooks}" var="allBooks">
                                     <tr id="${allBooks.bookId}">
-                                        <td title="点击查看详情">${allBooks.bookNumber}</td>
+                                        <td title="点击查看详情">
+                                            <a class="btn btn-link btn-bookparticulars" href="/book/beforebookparticulars?bookId=${allBooks.bookId}" ><span
+                                                    class="am-icon-pencil-square-o"></span> ${allBooks.bookNumber}
+                                            </a>
+                                        </td>
                                         <td>${allBooks.bookName}</td>
                                         <td>${allBooks.bookClazz}</td>
                                         <td>${allBooks.bookSubclazz}</td>
@@ -130,10 +134,6 @@
 </div>
 
 <jsp:include page="${pageContext.request.contextPath}/page/backstagecommon/js_1.jsp"/>
-<script type="text/javascript" src="${pageContext.request.contextPath}/jquery-easyui-1.7.0/jquery.min.js"></script>
-<script type="text/javascript"
-        src="${pageContext.request.contextPath}/jquery-easyui-1.7.0/jquery.easyui.min.js"></script>
-
 <%--<script>
     $("#btn_addDocument").click(function () {
         layer.open({
@@ -192,26 +192,27 @@
 </script>--%>
 
 <script>
-
-    var table =  $('#bookTable').DataTable({
-            'paging': true,
-            'lengthChange':false,
-            'searching': true,
-            'ordering': true,
-            'info': true,
-            'autoWidth': false,
-            'language': {
-                "paginate": {
-                    "next": "下一页",
-                    "previous": "上一页"
-                },
-                "sZeroRecords": "没有找到",
-                "search": '搜索:',
-                "emptyTable": "无可用数据",
-                "lengthMenu": "_MENU_项/页",
-                "info": "显示第 _START_ 至 _END_ 项结果，共 _TOTAL_ 项"
-            }
-        });
+    //分页
+    $('#bookTable').DataTable({
+        'paging': true,
+        'lengthChange': false,
+        'searching': true,
+        'ordering': true,
+        'info': true,
+        'autoWidth': false,
+        'language': {
+            "paginate": {
+                "next": "下一页",
+                "previous": "上一页"
+            },
+            "sZeroRecords": "没有找到",
+            "search": '搜索:',
+            "emptyTable": "无可用数据",
+            "lengthMenu": "_MENU_项/页",
+            "info": "显示第 _START_ 至 _END_ 项结果，共 _TOTAL_ 项"
+        }
+    });
+    //上架按钮点击事件
     $(".am-g").delegate(".btn-onbooks", "click", function () {
         var $tr = $(this).parents("tr");
         var idValue = $tr.attr("id");
@@ -285,13 +286,32 @@
             });
         });
     });
+   /* //图书详情
+    $(".am-g").delegate(".btn-particulars", "click", function () {
+        var $tr = $(this).parents("tr");
+        var idValue = $tr.attr("id");
+        $.ajax({
+            type: "POST",
+            url: "/book/particulars",
+            data: {bookId: idValue},
+           /!* success: function (data) {
+                if (data["success"]) {
+                    layer.msg("操作成功！", {time: 700}, function () {
+                        //parent.window.location.reload();
+                        window.location.reload();
+                    });
+                }
+                else {
+                    layer.msg("操作失败！", {time: 700}, function () {
+                        //parent.window.location.reload();
+                        window.location.reload();
+                    });
+                }
+            }*!/
+        });
+    });*/
 
-    //格式化单元格提示信息
-    function formatCellTooltip(value){
-        return "<span title='" + value + "'>" + value + "</span>";
-    }
 </script>
-
 </body>
 </html>
 </html>

@@ -79,6 +79,17 @@ public class BookControl {
         return map;
     }
 
+
+    //图书详情
+    @RequestMapping("beforebookparticulars")
+    public Object bookParticulars(String bookId, Model model) {
+        Books book = bookService.getBookById(bookId);
+        book.setBookId(bookId);
+        model.addAttribute("book", book);
+        return "/backstagepage/commodity/bookparticulars";
+    }
+
+
     //编辑图书事件
     @RequestMapping("beforeUpdatebook")
     public Object updateBook(String bookId, Model model) {

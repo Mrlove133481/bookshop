@@ -251,7 +251,8 @@
     <!--通过id查询图书-->
     <select id="getBookById" resultMap="BaseResultMap">
         select
-        book_name
+        book_number
+        ,book_name
         ,book_original_price
         ,book_promotion_price
         ,book_cost
