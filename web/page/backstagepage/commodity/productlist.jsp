@@ -66,7 +66,7 @@
                                 <thead>
                                 <tr>
                                     <input type="text" style="display:none">
-                                    <th>图书编号</th>
+                                    <th data-options="formatter:formatCellTooltip">图书编号</th>
                                     <th>书名</th>
                                     <th>类别</th>
                                     <th>子类别</th>
@@ -82,7 +82,7 @@
                                 <tbody>
                                 <c:forEach items="${allBooks}" var="allBooks">
                                     <tr id="${allBooks.bookId}">
-                                        <td>${allBooks.bookNumber}</td>
+                                        <td title="点击查看详情">${allBooks.bookNumber}</td>
                                         <td>${allBooks.bookName}</td>
                                         <td>${allBooks.bookClazz}</td>
                                         <td>${allBooks.bookSubclazz}</td>
@@ -130,7 +130,10 @@
 </div>
 
 <jsp:include page="${pageContext.request.contextPath}/page/backstagecommon/js_1.jsp"/>
-<script src="${pageContext.request.contextPath}/webuploader-0.1.5/webuploader.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/jquery-easyui-1.7.0/jquery.min.js"></script>
+<script type="text/javascript"
+        src="${pageContext.request.contextPath}/jquery-easyui-1.7.0/jquery.easyui.min.js"></script>
+
 <%--<script>
     $("#btn_addDocument").click(function () {
         layer.open({
@@ -282,6 +285,11 @@
             });
         });
     });
+
+    //格式化单元格提示信息
+    function formatCellTooltip(value){
+        return "<span title='" + value + "'>" + value + "</span>";
+    }
 </script>
 
 </body>

@@ -11,9 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b21ba883-95a2-4ac3-b481-3e50fcefb2ea" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT/page/backstagepage/commodity/productlist.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT/page/backstagepage/commodity/productlist.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT/page/backstagepage/commodity/test.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT/page/backstagepage/commodity/test.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT.war" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/web/page/backstagepage/commodity/productlist.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/page/backstagepage/commodity/productlist.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/page/backstagepage/commodity/test.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/page/backstagepage/commodity/test.jsp" afterDir="false" />
     </list>
@@ -83,13 +81,13 @@
           <entry key="class" value="21" />
           <entry key="classpath" value="1" />
           <entry key="css" value="22" />
-          <entry key="html" value="54" />
+          <entry key="html" value="55" />
           <entry key="iml" value="5" />
           <entry key="java" value="226" />
           <entry key="jpg" value="12" />
           <entry key="js" value="43" />
           <entry key="json" value="6" />
-          <entry key="jsp" value="190" />
+          <entry key="jsp" value="193" />
           <entry key="less" value="3" />
           <entry key="md" value="4" />
           <entry key="png" value="9" />
@@ -103,12 +101,12 @@
           <entry key="CLASS" value="21" />
           <entry key="CSS" value="22" />
           <entry key="Eclipse" value="2" />
-          <entry key="HTML" value="54" />
+          <entry key="HTML" value="55" />
           <entry key="IDEA_MODULE" value="5" />
           <entry key="Image" value="21" />
           <entry key="JAVA" value="226" />
           <entry key="JSON" value="6" />
-          <entry key="JSP" value="190" />
+          <entry key="JSP" value="193" />
           <entry key="JavaScript" value="43" />
           <entry key="Less" value="3" />
           <entry key="Markdown" value="4" />
@@ -122,9 +120,9 @@
           <entry key="html" value="287" />
           <entry key="iml" value="8" />
           <entry key="java" value="3043" />
-          <entry key="jsp" value="5762" />
+          <entry key="jsp" value="5788" />
           <entry key="properties" value="14" />
-          <entry key="txt" value="65" />
+          <entry key="txt" value="81" />
           <entry key="xml" value="636" />
         </counts>
       </usages-collector>
@@ -134,8 +132,8 @@
           <entry key="HTML" value="285" />
           <entry key="IDEA_MODULE" value="8" />
           <entry key="JAVA" value="3043" />
-          <entry key="JSP" value="5762" />
-          <entry key="PLAIN_TEXT" value="65" />
+          <entry key="JSP" value="5788" />
+          <entry key="PLAIN_TEXT" value="81" />
           <entry key="Properties" value="14" />
           <entry key="SQL" value="4" />
           <entry key="XML" value="632" />
@@ -160,8 +158,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/page/backstagepage/commodity/productlist.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1003">
-              <caret line="71" column="48" lean-forward="true" selection-start-line="71" selection-start-column="48" selection-end-line="71" selection-end-column="48" />
+            <state relative-caret-position="151">
+              <caret line="84" column="57" selection-start-line="84" selection-start-column="57" selection-end-line="84" selection-end-column="57" />
               <folding>
                 <element signature="n#ol#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="e#1452#1938#0#JSP" />
@@ -172,6 +170,19 @@
                 <element signature="e#10117#10819#0#HTML" />
                 <element signature="e#10899#11659#0#HTML" />
                 <element signature="e#11737#12746#0#HTML" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/page/backstagepage/commodity/test.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="884">
+              <caret line="804" column="81" lean-forward="true" selection-start-line="804" selection-start-column="81" selection-end-line="804" selection-end-column="81" />
+              <folding>
+                <element signature="e#216#47820#0#JSP" />
+                <element signature="e#47823#49454#0#JSP" />
               </folding>
             </state>
           </provider>
@@ -205,6 +216,20 @@
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/page/backstagecommon/css_1.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="101" selection-start-line="14" selection-start-column="101" selection-end-line="14" selection-end-column="101" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/page/backstagecommon/css_2.jsp">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -445,7 +470,35 @@
               <item name="bookshop" type="b2602c69:ProjectViewProjectNode" />
               <item name="bookshop" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="jquery-easyui-1.7.0" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bookshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bookshop" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="jquery-easyui-1.7.0" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bookshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bookshop" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="jquery-easyui-1.7.0" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="datagrid" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bookshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bookshop" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="page" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bookshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bookshop" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+              <item name="backstagecommon" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="bookshop" type="b2602c69:ProjectViewProjectNode" />
@@ -496,7 +549,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554372287454" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554375649054" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../layui-springmvc-imgupload/pom.xml" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -732,7 +785,7 @@
       <workItem from="1554254852218" duration="237000" />
       <workItem from="1554255301007" duration="3158000" />
       <workItem from="1554271757258" duration="2651000" />
-      <workItem from="1554338952987" duration="22036000" />
+      <workItem from="1554338952987" duration="24502000" />
     </task>
     <task id="LOCAL-00001" summary="第三次提交">
       <created>1554270081082</created>
@@ -797,11 +850,18 @@
       <option name="project" value="LOCAL" />
       <updated>1554370219201</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="修复分页，上版本不显示">
+      <created>1554372416776</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1554372416777</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="299157000" />
+    <option name="totallyTimeSpent" value="301623000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -816,7 +876,7 @@
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49577466" visible="true" weight="0.24432677" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49577466" visible="true" weight="0.24432677" />
       <window_info id="Structure" order="1" sideWeight="0.5042254" side_tool="true" weight="0.25718608" />
       <window_info id="Web" order="2" sideWeight="0.5042254" side_tool="true" weight="0.25718608" />
       <window_info id="Image Layers" order="3" />
@@ -826,13 +886,13 @@
       <window_info id="Favorites" order="7" sideWeight="0.5042254" side_tool="true" weight="0.25718608" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3290735" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.0" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.256" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3881789" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3290735" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.344" />
-      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.344" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49924356" weight="0.328" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50075644" side_tool="true" weight="0.328" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.328" />
@@ -939,7 +999,8 @@
     <MESSAGE value="你好你好你好" />
     <MESSAGE value=".idea的xml" />
     <MESSAGE value="加入分页" />
-    <option name="LAST_COMMIT_MESSAGE" value="加入分页" />
+    <MESSAGE value="修复分页，上版本不显示" />
+    <option name="LAST_COMMIT_MESSAGE" value="修复分页，上版本不显示" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1007,20 +1068,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/GeneratorSqlmap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../second/src/main/java/com/tosit/second/controller/ProjectControl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="60" column="53" selection-start-line="60" selection-start-column="53" selection-end-line="60" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../second/src/main/java/com/tosit/second/dao/ProjectMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -1117,13 +1164,6 @@
             <element signature="e#4841#5435#0#HTML" />
             <element signature="e#5521#5850#0#HTML" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/page/backstagecommon/css_1.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="101" selection-start-line="14" selection-start-column="101" selection-end-line="14" selection-end-column="101" />
         </state>
       </provider>
     </entry>
@@ -1336,6 +1376,11 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/page/backstagepage/commodity/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-417" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/page/backstagepage/commodity/bookadd.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
@@ -1347,10 +1392,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/page/backstagecommon/css_1.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="101" selection-start-line="14" selection-start-column="101" selection-end-line="14" selection-end-column="101" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/page/backstagecommon/css_2.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/jquery-easyui-1.7.0/demo/datagrid/formatcolumns.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-102">
+          <folding>
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/page/backstagepage/commodity/test.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="781" lean-forward="true" selection-start-line="781" selection-end-line="781" />
+        <state relative-caret-position="884">
+          <caret line="804" column="81" lean-forward="true" selection-start-line="804" selection-start-column="81" selection-end-line="804" selection-end-column="81" />
           <folding>
             <element signature="e#216#47820#0#JSP" />
             <element signature="e#47823#49454#0#JSP" />
@@ -1358,15 +1422,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/page/backstagepage/commodity/test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-417" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/page/backstagepage/commodity/productlist.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1003">
-          <caret line="71" column="48" lean-forward="true" selection-start-line="71" selection-start-column="48" selection-end-line="71" selection-end-column="48" />
+        <state relative-caret-position="151">
+          <caret line="84" column="57" selection-start-line="84" selection-start-column="57" selection-end-line="84" selection-end-column="57" />
           <folding>
             <element signature="n#ol#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="e#1452#1938#0#JSP" />

@@ -802,7 +802,7 @@
     </thead>
     <thead>
     <tr>
-        <th data-options="field:'productid',width:120">Product</th>
+        <th data-options="field:'productid',width:120,formatter:formatCellTooltip">Product</th>
         <th data-options="field:'listprice',width:90,align:'right'">List Price</th>
         <th data-options="field:'unitcost',width:90,align:'right'">Unit Cost</th>
         <th data-options="field:'attr1',width:250">Attribute</th>
@@ -935,6 +935,12 @@
     $(function () {
         $('#dg').datagrid({data: getData()}).datagrid('clientPaging');
     });
+
+
+    //格式化单元格提示信息
+    function formatCellTooltip(value){
+        return "<span title='" + value + "'>" + value + "</span>";
+    }
 </script>
 
 </body>
