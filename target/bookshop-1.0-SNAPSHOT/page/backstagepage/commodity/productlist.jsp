@@ -59,71 +59,70 @@
                         </div>
                     </div>
                 </div>
-         </div>
-            <div class="am-g">
-                <div class="am-u-sm-12">
-                    <form class="am-form">
-                        <%--现在位置--%>
-                        <table id="bookTable" class="am-table am-table-striped am-table-hover table-main">
-                            <thead>
-                            <tr>
-                                <input type="text" style="display:none">
-                                <th>图书编号</th>
-                                <th>书名</th>
-                                <th>类别</th>
-                                <th>子类别</th>
-                                <th>用户评价</th>
-                                <th>价格</th>
-                                <th>成本</th>
-                                <th>销量</th>
-                                <th>库存</th>
-                                <th>状态</th>
-                                <th>操作</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <c:forEach items="${allBooks}" var="allBooks">
-                                <tr id="${allBooks.bookId}">
-                                    <td>${allBooks.bookNumber}</td>
-                                    <td>${allBooks.bookName}</td>
-                                    <td>${allBooks.bookClazz}</td>
-                                    <td>${allBooks.bookSubclazz}</td>
-                                    <td>
-                                        <a class="btn btn-link"
-                                           href="${pageContext.request.contextPath}/Clazz/toClazzGroup?clazzName=${clazz.clazzName}">
-                                                ${allBooks.bookUserComments}
-                                        </a>
-                                    </td>
-                                    <td>${allBooks.bookPromotionPrice}</td>
-                                    <td>${allBooks.bookCost}</td>
-                                    <td>${allBooks.bookTotalSales}</td>
-                                    <td>${allBooks.bookInventory}</td>
-                                    <td>
-                                        <c:if test="${allBooks.bookStatus==1}">
-                                            <a class="btn btn-link btn-onbooks">上架</a>
-                                        </c:if>
-                                        <c:if test="${allBooks.bookStatus==2}">
-                                            <a class="btn btn-link btn-offbooks">下架</a>
-                                        </c:if>
-                                    </td>
-                                    <td>
-                                        <div class="am-btn-toolbar">
-                                            <div class="am-btn-group am-btn-group-xs">
-                                                <a class="am-btn am-btn-default am-btn-xs am-text-secondary btn-updatebook"
-                                                   href="/book/beforeUpdatebook?bookId=${allBooks.bookId}"><span
-                                                        class="am-icon-pencil-square-o"></span> 编辑
-                                                </a>
-                                                <a class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only btn-deleteBook">
-                                                    <span class="am-icon-trash-o"></span> 删除
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </td>
+                <div class="am-g">
+                    <div class="am-u-sm-12">
+                        <form class="am-form">
+                            <table id="bookTable" class="am-table am-table-striped am-table-hover table-main">
+                                <thead>
+                                <tr>
+                                    <input type="text" style="display:none">
+                                    <th>图书编号</th>
+                                    <th>书名</th>
+                                    <th>类别</th>
+                                    <th>子类别</th>
+                                    <th>用户评价</th>
+                                    <th>价格</th>
+                                    <th>成本</th>
+                                    <th>销量</th>
+                                    <th>库存</th>
+                                    <th>状态</th>
+                                    <th>操作</th>
                                 </tr>
-                            </c:forEach>
-                            </tbody>
-                        </table>
-                    </form>
+                                </thead>
+                                <tbody>
+                                <c:forEach items="${allBooks}" var="allBooks">
+                                    <tr id="${allBooks.bookId}">
+                                        <td>${allBooks.bookNumber}</td>
+                                        <td>${allBooks.bookName}</td>
+                                        <td>${allBooks.bookClazz}</td>
+                                        <td>${allBooks.bookSubclazz}</td>
+                                        <td>
+                                            <a class="btn btn-link"
+                                               href="${pageContext.request.contextPath}/Clazz/toClazzGroup?clazzName=${clazz.clazzName}">
+                                                    ${allBooks.bookUserComments}
+                                            </a>
+                                        </td>
+                                        <td>${allBooks.bookPromotionPrice}</td>
+                                        <td>${allBooks.bookCost}</td>
+                                        <td>${allBooks.bookTotalSales}</td>
+                                        <td>${allBooks.bookInventory}</td>
+                                        <td>
+                                            <c:if test="${allBooks.bookStatus==1}">
+                                                <a class="btn btn-link btn-onbooks">上架</a>
+                                            </c:if>
+                                            <c:if test="${allBooks.bookStatus==2}">
+                                                <a class="btn btn-link btn-offbooks">下架</a>
+                                            </c:if>
+                                        </td>
+                                        <td>
+                                            <div class="am-btn-toolbar">
+                                                <div class="am-btn-group am-btn-group-xs">
+                                                    <a class="am-btn am-btn-default am-btn-xs am-text-secondary btn-updatebook" href="/book/beforeUpdatebook?bookId=${allBooks.bookId}" ><span
+                                                            class="am-icon-pencil-square-o"></span> 编辑
+                                                    </a>
+                                                    <a class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only btn-deleteBook">
+                                                        <span class="am-icon-trash-o"></span> 删除
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </c:forEach>
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+
                 </div>
             </div>
         </div>

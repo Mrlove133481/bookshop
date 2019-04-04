@@ -62,7 +62,7 @@
                 <div class="am-g">
                     <div class="am-u-sm-12">
                         <form class="am-form">
-                            <table id="clazzTable" class="am-table am-table-striped am-table-hover table-main">
+                            <table id="bookTable" class="am-table am-table-striped am-table-hover table-main">
                                 <thead>
                                 <tr>
                                     <input type="text" style="display:none">

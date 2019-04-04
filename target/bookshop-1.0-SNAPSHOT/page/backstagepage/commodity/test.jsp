@@ -778,6 +778,9 @@
     <script type="text/javascript" src="${pageContext.request.contextPath}/jquery-easyui-1.7.0/jquery.min.js"></script>
     <script type="text/javascript"
             src="${pageContext.request.contextPath}/jquery-easyui-1.7.0/jquery.easyui.min.js"></script>
+
+
+
 </head>
 <body>
 <h2>Frozen Columns in DataGrid</h2>
