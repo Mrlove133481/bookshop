@@ -22,7 +22,6 @@
 <div class="tpl-page-container tpl-page-header-fixed">
     <jsp:include page="${pageContext.request.contextPath}/page/backstagecommon/menu.jsp"/>
     <div class="tpl-content-wrapper">
-
         <ol class="am-breadcrumb">
             <li><a href="${pageContext.request.contextPath}/page/backstagepage/hello.jsp" class="am-icon-home">首页</a>
             </li>
@@ -30,22 +29,21 @@
         </ol>
         <!--在这里添加你的内容-->
         <div class="tpl-portlet-components">
-            <div class="portlet-title">
-                <div class="caption font-green bold">
-                    <span class="am-icon-book">图书列表</span>
-                </div>
-                <div class="tpl-portlet-input tpl-fz-ml">
-                    <div class="portlet-input input-small input-inline">
-                        <div class="input-icon right">
-                            <i class="am-icon-search"></i>
-                            <input type="text" class="form-control form-control-solid" placeholder="搜索..."></div>
+              <div class="portlet-title">
+                    <div class="caption font-green bold">
+                        <span class="am-icon-book">图书列表</span>
                     </div>
+                  <%--搜索--%>
+                    <%--<div class="tpl-portlet-input tpl-fz-ml">
+                        <div class="portlet-input input-small input-inline">
+                            <div class="input-icon right" id="bookTable_filter">
+                                <i class="am-icon-search"></i>
+                                <input type="search" class="form-control form-control-solid" placeholder="搜索..." id="search" aria-controls="bookTable"></div>
+                        </div>
+                    </div>--%>
                 </div>
-
-
-            </div>
             <div class="tpl-block">
-                <div class="am-g">
+            <div class="am-g">
                     <div class="am-u-sm-12 am-u-md-6">
                         <div class="am-btn-toolbar">
                             <div class="am-btn-group am-btn-group-xs">
@@ -53,7 +51,6 @@
                                    href="/book/selectAll"><span
                                         class="am-icon-search"></span> 查询
                                 </a>
-
                                 <button type="button" class="am-btn am-btn-default am-btn-success"
                                         onclick="window.location='${pageContext.request.contextPath}/page/backstagepage/commodity/bookadd.jsp'"><span
                                         class="am-icon-plus"></span> 新增
@@ -61,9 +58,8 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
-                <div class="am-g" id="div2">
+                <div class="am-g">
                     <div class="am-u-sm-12">
                         <form class="am-form">
                             <table id="clazzTable" class="am-table am-table-striped am-table-hover table-main">
@@ -129,7 +125,6 @@
 
                 </div>
             </div>
-            <div class="tpl-alert"></div>
         </div>
     </div>
 </div>
@@ -194,7 +189,26 @@
 </script>--%>
 
 <script>
-    //上架按钮点击事件
+
+    var table =  $('#bookTable').DataTable({
+            'paging': true,
+            'lengthChange':false,
+            'searching': true,
+            'ordering': true,
+            'info': true,
+            'autoWidth': false,
+            'language': {
+                "paginate": {
+                    "next": "下一页",
+                    "previous": "上一页"
+                },
+                "sZeroRecords": "没有找到",
+                "search": '搜索:',
+                "emptyTable": "无可用数据",
+                "lengthMenu": "_MENU_项/页",
+                "info": "显示第 _START_ 至 _END_ 项结果，共 _TOTAL_ 项"
+            }
+        });
     $(".am-g").delegate(".btn-onbooks", "click", function () {
         var $tr = $(this).parents("tr");
         var idValue = $tr.attr("id");
@@ -257,7 +271,7 @@
                             layer.close(index);
                             window.location.reload();
                         });
-                    }else {
+                    } else {
                         layer.msg("操作失败！", {time: 700}, function () {
                             layer.close(index);
                             window.location.reload();

@@ -9,8 +9,16 @@
     <bookmark url="file://$PROJECT_DIR$/web/page/backstagecommon/menu.jsp" line="12" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b21ba883-95a2-4ac3-b481-3e50fcefb2ea" name="Default Changelist" comment="保存成功刷新页面">
+    <list default="true" id="b21ba883-95a2-4ac3-b481-3e50fcefb2ea" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT/WEB-INF/lib/bookshop-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT/WEB-INF/lib/bookshop-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT/page/backstagepage/commodity/bookadd.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT/page/backstagepage/commodity/bookadd.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT/page/backstagepage/commodity/bookupdate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT/page/backstagepage/commodity/bookupdate.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT/page/backstagepage/commodity/commodity.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT/page/backstagepage/commodity/commodity.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT/page/backstagepage/commodity/productlist.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT/page/backstagepage/commodity/productlist.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/page/backstagepage/commodity/commodity.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/page/backstagepage/commodity/commodity.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/page/backstagepage/commodity/productlist.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/page/backstagepage/commodity/productlist.jsp" afterDir="false" />
     </list>
     <list id="edf456dc-11e0-4c75-a8f0-1fd05457ed47" name="Revert &quot;first commit&quot;" comment="Revert &quot;first commit&quot;&#10;&#10;This reverts commit 68cc1a0" />
     <list id="03d2abcb-d991-4268-a323-54c6ea542c88" name="Revert &quot;提交吼吼&quot;" comment="Revert &quot;提交吼吼&quot;&#10;&#10;This reverts commit a79d805" />
@@ -77,15 +85,16 @@
         <counts>
           <entry key="class" value="21" />
           <entry key="classpath" value="1" />
-          <entry key="css" value="20" />
+          <entry key="css" value="22" />
           <entry key="html" value="53" />
           <entry key="iml" value="5" />
           <entry key="java" value="226" />
           <entry key="jpg" value="12" />
-          <entry key="js" value="16" />
-          <entry key="json" value="5" />
-          <entry key="jsp" value="178" />
-          <entry key="less" value="1" />
+          <entry key="js" value="43" />
+          <entry key="json" value="6" />
+          <entry key="jsp" value="188" />
+          <entry key="less" value="3" />
+          <entry key="md" value="4" />
           <entry key="png" value="9" />
           <entry key="project" value="1" />
           <entry key="properties" value="8" />
@@ -95,16 +104,17 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="21" />
-          <entry key="CSS" value="20" />
+          <entry key="CSS" value="22" />
           <entry key="Eclipse" value="2" />
           <entry key="HTML" value="53" />
           <entry key="IDEA_MODULE" value="5" />
           <entry key="Image" value="21" />
           <entry key="JAVA" value="226" />
-          <entry key="JSON" value="5" />
-          <entry key="JSP" value="178" />
-          <entry key="JavaScript" value="16" />
-          <entry key="Less" value="1" />
+          <entry key="JSON" value="6" />
+          <entry key="JSP" value="188" />
+          <entry key="JavaScript" value="43" />
+          <entry key="Less" value="3" />
+          <entry key="Markdown" value="4" />
           <entry key="Properties" value="8" />
           <entry key="XML" value="96" />
         </counts>
@@ -115,9 +125,9 @@
           <entry key="html" value="287" />
           <entry key="iml" value="8" />
           <entry key="java" value="3043" />
-          <entry key="jsp" value="5503" />
+          <entry key="jsp" value="5718" />
           <entry key="properties" value="14" />
-          <entry key="txt" value="41" />
+          <entry key="txt" value="61" />
           <entry key="xml" value="636" />
         </counts>
       </usages-collector>
@@ -127,8 +137,8 @@
           <entry key="HTML" value="285" />
           <entry key="IDEA_MODULE" value="8" />
           <entry key="JAVA" value="3043" />
-          <entry key="JSP" value="5503" />
-          <entry key="PLAIN_TEXT" value="41" />
+          <entry key="JSP" value="5718" />
+          <entry key="PLAIN_TEXT" value="61" />
           <entry key="Properties" value="14" />
           <entry key="SQL" value="4" />
           <entry key="XML" value="632" />
@@ -142,56 +152,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../git_test/web/index.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../second/web/page/clazz/clazzGroup.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="896">
-              <caret line="110" column="3" lean-forward="true" selection-start-line="110" selection-start-column="3" selection-end-line="131" selection-end-column="6" />
-              <folding>
-                <element signature="n#td#1;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#td#8;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="e#4841#5435#0#HTML" />
-                <element signature="e#5521#5850#0#HTML" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/page/backstagepage/commodity/bookupdate.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6868">
-              <caret line="404" column="9" selection-start-line="404" selection-start-column="9" selection-end-line="404" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/page/backstagepage/commodity/commodity.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2414">
-              <caret line="142" column="20" selection-start-line="142" selection-start-column="20" selection-end-line="142" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/page/backstagepage/commodity/bookadd.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5797">
-              <caret line="361" column="11" selection-start-line="361" selection-start-column="11" selection-end-line="361" selection-end-column="11" />
-              <folding>
-                <element signature="e#6757#7293#0#JSP" />
-                <element signature="e#11527#11874#0#JSP" />
-              </folding>
+            <state relative-caret-position="324">
+              <caret line="94" column="43" selection-start-line="94" selection-start-column="43" selection-end-line="94" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -199,15 +163,43 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/page/backstagepage/commodity/productlist.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3621">
-              <caret line="213" column="49" selection-start-line="213" selection-start-column="24" selection-end-line="213" selection-end-column="49" />
+            <state relative-caret-position="178">
+              <caret line="196" column="29" lean-forward="true" selection-start-line="196" selection-start-column="29" selection-end-line="196" selection-end-column="29" />
+              <folding>
+                <element signature="n#ol#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="e#1452#1938#0#JSP" />
+                <element signature="n#a#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#button#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#style#0;n#input#0;n#tr#0;n#thead#0;n#table#0;n#form#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/page/backstagepage/commodity/test.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="208">
+              <caret line="932" column="6" selection-start-line="932" selection-start-column="6" selection-end-line="932" selection-end-column="70" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../git_test/pom.xml">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/../second/web/page/teach/index.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="366">
+              <caret line="214" lean-forward="true" selection-start-line="214" selection-end-line="214" />
+              <folding>
+                <element signature="n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#ol#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#0;n#div#0;n#section#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#table#0;n#form#0;n#div#0;n#div#1;n#div#0;n#section#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#tr#0;n#thead#0;n#table#0;n#form#0;n#div#0;n#div#1;n#div#0;n#section#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -243,6 +235,10 @@
       <find>document</find>
       <find>tpl-portlet-components</find>
       <find>imgsName</find>
+      <find>lengthMenu</find>
+      <find>LengthMenu</find>
+      <find>search</find>
+      <find>bookTable_filter</find>
     </findStrings>
     <replaceStrings>
       <replace>${pageContext.request.contextPath}</replace>
@@ -256,7 +252,7 @@
       </list>
     </option>
     <option name="ROOT_SYNC" value="DONT_SYNC" />
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../git_test" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$/../git_test" value="68cc1a053aa47adaa62fb245a636170af8b43043" />
@@ -273,8 +269,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/controller/LoginService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/common/utils/excel/ImportExcel.java" />
         <option value="$PROJECT_DIR$/src/main/resources/spring-mybatis.xml" />
         <option value="$PROJECT_DIR$/bookshop.iml" />
         <option value="$PROJECT_DIR$/web/page/backstage-page/Login.jsp" />
@@ -297,7 +291,6 @@
         <option value="$PROJECT_DIR$/web/page/backstagepage/commodity/test.jsp" />
         <option value="$PROJECT_DIR$/web/page/backstagepage/commodity/test.html" />
         <option value="$PROJECT_DIR$/src/main/java/generatorConfig.xml" />
-        <option value="$PROJECT_DIR$/web/page/backstagepage/commodity/commodity.jsp" />
         <option value="$PROJECT_DIR$/../second/web/page/document/layer_addDocument.jsp" />
         <option value="$PROJECT_DIR$/web/page/backstagepage/commodity/productadd.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/controller/LoginControl.java" />
@@ -315,7 +308,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/common/domain/ImgResult.java" />
         <option value="$PROJECT_DIR$/web/page/backstagepage/commodity/bookadd.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/common/utils/IdGenerator.java" />
-        <option value="$PROJECT_DIR$/web/page/backstagepage/commodity/productlist.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/service/BookService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/service/BookServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/dao/BooksMapper.java" />
@@ -324,6 +316,10 @@
         <option value="$PROJECT_DIR$/web/page/backstagepage/commodity/bookupdate.jsp" />
         <option value="$PROJECT_DIR$/../git_test/pom.xml" />
         <option value="$PROJECT_DIR$/../git_test/web/index.jsp" />
+        <option value="$PROJECT_DIR$/web/page/backstagepage/commodity/commodity.jsp" />
+        <option value="$PROJECT_DIR$/../second/web/page/student/studentManager.jsp" />
+        <option value="$PROJECT_DIR$/../second/web/page/teach/index.jsp" />
+        <option value="$PROJECT_DIR$/web/page/backstagepage/commodity/productlist.jsp" />
       </list>
     </option>
   </component>
@@ -430,6 +426,32 @@
             </path>
             <path>
               <item name="bookshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bookshop" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bookshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bookshop" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bookshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bookshop" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+              <item name="backstagepage" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bookshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bookshop" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+              <item name="backstagepage" type="462c0819:PsiDirectoryNode" />
+              <item name="commodity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bookshop" type="b2602c69:ProjectViewProjectNode" />
               <item name="second" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -448,7 +470,7 @@
               <item name="second" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="page" type="462c0819:PsiDirectoryNode" />
-              <item name="clazz" type="462c0819:PsiDirectoryNode" />
+              <item name="teach" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -462,7 +484,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554285342802" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554369881109" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../layui-springmvc-imgupload/pom.xml" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -574,10 +596,8 @@
       </method>
     </configuration>
     <configuration name="Tomcat8.5.34" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.34" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
-      <option name="HOT_SWAP_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
       <option name="SHOW_DIALOG_ON_UPDATE" value="false" />
-      <option name="UPDATING_POLICY" value="redeploy-artifacts" />
+      <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="bookshop:war">
           <settings>
@@ -698,7 +718,7 @@
       <workItem from="1554254852218" duration="237000" />
       <workItem from="1554255301007" duration="3158000" />
       <workItem from="1554271757258" duration="2651000" />
-      <workItem from="1554338952987" duration="1344000" />
+      <workItem from="1554338952987" duration="19735000" />
     </task>
     <task id="LOCAL-00001" summary="第三次提交">
       <created>1554270081082</created>
@@ -749,11 +769,18 @@
       <option name="project" value="LOCAL" />
       <updated>1554284763536</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary=".idea的xml">
+      <created>1554342180190</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1554342180190</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="278465000" />
+    <option name="totallyTimeSpent" value="296856000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -778,7 +805,7 @@
       <window_info id="Favorites" order="7" sideWeight="0.5042254" side_tool="true" weight="0.25718608" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3290735" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.28" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.184" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3881789" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -889,7 +916,8 @@
     <MESSAGE value="提交吼吼" />
     <MESSAGE value="你好你好" />
     <MESSAGE value="你好你好你好" />
-    <option name="LAST_COMMIT_MESSAGE" value="你好你好你好" />
+    <MESSAGE value=".idea的xml" />
+    <option name="LAST_COMMIT_MESSAGE" value=".idea的xml" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -918,6 +946,18 @@
           <properties />
           <option name="timeStamp" value="47" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../second/web/page/teach/index.jsp</url>
+          <line>41</line>
+          <properties />
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../second/web/page/teach/index.jsp</url>
+          <line>28</line>
+          <properties />
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
@@ -945,179 +985,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../second/src/main/java/com/tosit/second/dao/DocumentMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="15" column="27" lean-forward="true" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../second/src/main/java/com/tosit/second/dao/EngineerMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1307" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../second/src/main/java/com/tosit/second/dao/ClazzMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3163" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../second/src/main/java/com/tosit/second/dao/DocumentMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-238">
-          <caret line="91" column="18" lean-forward="true" selection-start-line="91" selection-start-column="18" selection-end-line="91" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar!/javax/servlet/http/HttpServlet.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="263" selection-start-line="263" selection-end-line="263" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/service/LoginService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../second/web/page/clazz/layer_addClazz.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1173" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../second/web/page/clazz/layer_randomGroup.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-510" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../second/web/page/document/layer_downloadDocument.jsp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../second/web/page/document/layer_addScore.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-102" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/common/domain/ImgResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="38" column="29" lean-forward="true" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../second/web/page/document/layer_addDocument.jsp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../second/web/page/clazz/layer_updateClazz.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1292">
-          <caret line="76" column="48" selection-start-line="76" selection-start-column="48" selection-end-line="76" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../second/src/main/java/com/tosit/second/controller/ClazzController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="61" column="19" selection-start-line="61" selection-start-column="19" selection-end-line="61" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../second/web/page/clazz/clazzManager.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1562">
-          <caret line="163" column="31" selection-start-line="163" selection-start-column="31" selection-end-line="163" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../second/web/page/document/document.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1205">
-          <caret line="137" column="9" selection-start-line="137" selection-start-column="9" selection-end-line="152" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../second/src/main/java/com/tosit/second/controller/LoginControl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../second/web/page/project/layer_addProject.jsp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../second/web/page/project/project.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2110" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/page/backstagepage/commodity/test.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../second/src/main/java/com/tosit/second/controller/DocumentControl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="49" column="6" selection-start-line="49" selection-start-column="6" selection-end-line="49" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/common/utils/IdGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="53" column="59" selection-start-line="53" selection-start-column="45" selection-end-line="53" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.10.RELEASE/spring-web-4.3.10.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="123" selection-start-line="123" selection-end-line="123" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/fileuploadpath/error.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../second/src/main/java/com/tosit/second/dao/GroupMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-102" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../second/src/main/java/com/tosit/second/service/ProjectServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="32" column="34" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../second/src/main/java/com/tosit/second/service/ProjectService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../second/web/page/project/layer_updateProject.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="12" column="83" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/layui/layui.all.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-306" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/layui/layui.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/page/backstagepage/Login.jsp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/generatorConfig.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1222,31 +1089,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/page/backstagepage/commodity/commodity.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2414">
-          <caret line="142" column="20" selection-start-line="142" selection-start-column="20" selection-end-line="142" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/page/backstagepage/commodity/bookadd.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5797">
-          <caret line="361" column="11" selection-start-line="361" selection-start-column="11" selection-end-line="361" selection-end-column="11" />
-          <folding>
-            <element signature="e#6757#7293#0#JSP" />
-            <element signature="e#11527#11874#0#JSP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/page/backstagepage/commodity/productlist.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3621">
-          <caret line="213" column="49" selection-start-line="213" selection-start-column="24" selection-end-line="213" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../git_test/pom.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1260,6 +1102,254 @@
             <element signature="e#4841#5435#0#HTML" />
             <element signature="e#5521#5850#0#HTML" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/page/backstagecommon/css_1.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="101" selection-start-line="14" selection-start-column="101" selection-end-line="14" selection-end-column="101" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/page/backstagecommon/js_1.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="89" selection-start-line="6" selection-start-column="79" selection-end-line="6" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/page/backstagepage/commodity/bookadd.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3864">
+          <caret line="361" column="11" selection-start-line="361" selection-start-column="11" selection-end-line="361" selection-end-column="11" />
+          <folding>
+            <element signature="e#6757#7293#0#JSP" />
+            <element signature="e#11527#11874#0#JSP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../second/web/page/student/studentManager.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="134" column="32" lean-forward="true" selection-start-line="134" selection-start-column="32" selection-end-line="134" selection-end-column="32" />
+          <folding>
+            <element signature="n#table#0;n#form#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#c:forEach#0;n#jsp:root#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/datatables-master/docs/demo.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="17">
+            <caret line="12" column="6" lean-forward="true" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/datatables-master/package.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/datatables-master/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="-422" />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/datatables-master/less/amazeui.datatables.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-31" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/datatables-master/lib/amazeui.datatables.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-31">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/datatables-master/plugins/dataTables.responsive.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="5" column="26" lean-forward="true" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#29#36#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/datatables-master/tasks/browserify.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/datatables-master/tasks/clean.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/datatables-master/tasks/config.example.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/datatables-master/tasks/index.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/datatables-master/tasks/less.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-220" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/datatables-master/tasks/markdown.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/datatables-master/tasks/release.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-353" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/datatables-master/tasks/server.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/datatables-master/tasks/uglify.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="15" column="37" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/datatables-master/dist/amazeui.datatables.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/datatables-master/dist/amazeui.datatables.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="11793" column="18" lean-forward="true" selection-start-line="11793" selection-start-column="18" selection-end-line="11793" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/datatables-master/dist/amazeui.datatables.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="43" selection-start-line="2" selection-start-column="43" selection-end-line="2" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/datatables-master/dist/dataTables.responsive.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="27" lean-forward="true" selection-start-column="27" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/datatables-master/gulpfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/assets/js/amazeui.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/assets/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-31" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/assets/js/echarts.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-31" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/assets/js/iscroll.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="12" column="27" lean-forward="true" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/assets/js/jquery.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" selection-end-line="6" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/assets/js/jquery-1.11.1.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/page/backstagepage/commodity/commodity.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="94" column="43" selection-start-line="94" selection-start-column="43" selection-end-line="94" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../second/web/page/teach/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="214" lean-forward="true" selection-start-line="214" selection-end-line="214" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#ol#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#section#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#table#0;n#form#0;n#div#0;n#div#1;n#div#0;n#section#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#tr#0;n#thead#0;n#table#0;n#form#0;n#div#0;n#div#1;n#div#0;n#section#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/page/backstagepage/commodity/productlist.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="196" column="29" lean-forward="true" selection-start-line="196" selection-start-column="29" selection-end-line="196" selection-end-column="29" />
+          <folding>
+            <element signature="n#ol#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="e#1452#1938#0#JSP" />
+            <element signature="n#a#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#button#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#input#0;n#tr#0;n#thead#0;n#table#0;n#form#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/page/backstagepage/commodity/test.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="932" column="6" selection-start-line="932" selection-start-column="6" selection-end-line="932" selection-end-column="70" />
         </state>
       </provider>
     </entry>

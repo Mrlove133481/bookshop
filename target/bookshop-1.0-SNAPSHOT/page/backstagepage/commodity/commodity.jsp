@@ -93,21 +93,13 @@
                                         <td>${document.documentPath}</td>
                                         <td>${document.documentGroupnum}</td>
                                         <td >${document.documentScore}
-
                                             <c:if test="${document.documentScore==null}">
                                                 <a class="btn btn-link btn_showStudentMsg btn-documentScore">添加</a>
                                             </c:if>
                                         </td>
                                         <td>${document.documentType}</td>
                                         <td>${document.documentUploadtime}</td>
-                                        <td>${document.documentSize}
-                                                <%--<c:if test="${document.clazzGroupnum==0}&&${document.clazzStucount!=0}">
-                                                    <a class="btn btn-link btn_importStudent">随机分组</a>
-                                                </c:if>
-                                                <c:if test="${document.clazzGroupnum!=0}">
-                                                    <a class="btn btn-link btn_showStudentMsg " href="${pageContext.request.contextPath}/Student/toStudentGroup?clazzName=${document.clazzName}&clazzGroupnum=${document.clazzGroupnum}">详情</a>
-                                                </c:if>--%>
-                                        </td>
+                                        <td>${document.documentSize}</td>
                                         <td>
                                             <div class="am-btn-toolbar">
                                                 <div class="am-btn-group am-btn-group-xs">
