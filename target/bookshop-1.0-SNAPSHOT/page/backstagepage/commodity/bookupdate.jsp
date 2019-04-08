@@ -57,19 +57,23 @@
                             <div class="am-form-group">
                                 <label for="bookname" class="am-u-sm-2 am-form-label">图书名称</label>
                                 <div class="am-u-sm-10">
-                                    <input type="text" class="tpl-form-input" id="bookname" placeholder="请输入书名" value="${book.bookName}">
+                                    <input type="text" class="tpl-form-input" id="bookname" placeholder="请输入书名"
+                                           value="${book.bookName}">
                                 </div>
                             </div>
                             <%--预览图--%>
                             <div class="am-form-group">
                                 <label class="am-u-sm-2 am-form-label">预览图</label>      
                                 <div class="layui-upload-list am-u-sm-10 " id="demo2">
-                                        <img src="${pageContext.request.contextPath}/fileuploadpath/${image1}" id="img1"
-                                             alt="2" height="150px" width="150px" class="layui-upload-img uploadImgPreView">
+                                    <img src="${pageContext.request.contextPath}/fileuploadpath/${image1}" id="img1"
+                                         alt="2" height="150px" width="150px" class="layui-upload-img uploadImgPreView"
+                                         title="单击图片进行修改">
                                     <img src="${pageContext.request.contextPath}/fileuploadpath/${image2}" id="img2"
-                                         alt="2" height="150px" width="150px" class="layui-upload-img uploadImgPreView">
+                                         alt="2" height="150px" width="150px" class="layui-upload-img uploadImgPreView"
+                                         title="单击图片进行修改">
                                     <img src="${pageContext.request.contextPath}/fileuploadpath/${image3}" id="img3"
-                                         alt="2" height="150px" width="150px" class="layui-upload-img uploadImgPreView">
+                                         alt="2" height="150px" width="150px" class="layui-upload-img uploadImgPreView"
+                                         title="单击图片进行修改">
                                 </div>
                                       
                             </div>
@@ -80,13 +84,15 @@
                                 <label for="originalprice" class="am-u-sm-2 am-form-label">原价</label>
                                 <div class="am-u-sm-2">
                                     <input type="number" class="tpl-form-input" id="originalprice" placeholder="元"
-                                           onkeyup="clearNoNum(this)" min="0" max="9999999" value="${book.bookOriginalPrice}">
+                                           onkeyup="clearNoNum(this)" min="0" max="9999999"
+                                           value="${book.bookOriginalPrice}">
                                 </div>
 
                                 <label for="promotionprice" class="am-u-sm-2 am-form-label">促销价</label>
                                 <div class="am-u-sm-2">
                                     <input type="number" class="tpl-form-input" id="promotionprice" placeholder="元"
-                                           onkeyup="clearNoNum(this)" min="0" max="9999999" value="${book.bookPromotionPrice}">
+                                           onkeyup="clearNoNum(this)" min="0" max="9999999"
+                                           value="${book.bookPromotionPrice}">
                                 </div>
 
                                 <label for="cost" class="am-u-sm-2 am-form-label">成本</label>
@@ -101,12 +107,14 @@
 
                                 <label for="clazz" class="am-u-sm-2 am-form-label">类别</label>
                                 <div class="am-u-sm-2">
-                                    <input type="text" class="tpl-form-input" id="clazz" placeholder="请输入类别" value="${book.bookClazz}">
+                                    <input type="text" class="tpl-form-input" id="clazz" placeholder="请输入类别"
+                                           value="${book.bookClazz}">
                                 </div>
 
                                 <label for="subclazz" class="am-u-sm-2 am-form-label">子类别</label>
                                 <div class="am-u-sm-2 am-u-sm-pull-4">
-                                    <input type="text" class="tpl-form-input" id="subclazz" placeholder="请输入子类别" value="${book.bookSubclazz}">
+                                    <input type="text" class="tpl-form-input" id="subclazz" placeholder="请输入子类别"
+                                           value="${book.bookSubclazz}">
                                 </div>
 
                             </div>
@@ -114,7 +122,8 @@
                             <div class="am-form-group">
                                 <label for="auther" class="am-u-sm-2 am-form-label">作者</label>
                                 <div class="am-u-sm-10">
-                                    <input type="text" class="tpl-form-input" id="auther" placeholder="请输入作者名" value="${book.bookAuthor}">
+                                    <input type="text" class="tpl-form-input" id="auther" placeholder="请输入作者名"
+                                           value="${book.bookAuthor}">
                                 </div>
                             </div>
                             <%--出版年份--%>
@@ -130,42 +139,49 @@
                             <div class="am-form-group">
                                 <label class="am-u-sm-2 am-form-label" for="testdate">出版年份</label>
                                 <div class="am-u-sm-2 am-u-sm-pull-8">
-                                    <input type="date" name="testdate" id="testdate" class="tpl-form-input" value="${book.bookPublicationYear}"  placeholder="${book.bookPublicationYear}">
+                                    <input type="date" name="testdate" id="testdate" class="tpl-form-input"
+                                           value="${book.bookPublicationYear}"
+                                           placeholder="${book.bookPublicationYear}">
                                 </div>
                             </div>
                             <%--出版社--%>
                             <div class="am-form-group">
                                 <label for="press" class="am-u-sm-2 am-form-label">出版社</label>
                                 <div class="am-u-sm-10">
-                                    <input type="text" class="tpl-form-input" id="press" placeholder="请输入出版社" value="${book.bookPress}">
+                                    <input type="text" class="tpl-form-input" id="press" placeholder="请输入出版社"
+                                           value="${book.bookPress}">
                                 </div>
                             </div>
                             <%--内容简介--%>
                             <div class="am-form-group">
                                 <label for="plotsummary" class="am-u-sm-2 am-form-label">内容简介</label>
                                 <div class="am-u-sm-10">
-                                    <textarea class="" rows="6" id="plotsummary" placeholder="请输入内容简介">${book.bookPlotSummary}</textarea>
+                                    <textarea class="" rows="6" id="plotsummary"
+                                              placeholder="请输入内容简介">${book.bookPlotSummary}</textarea>
                                 </div>
                             </div>
                             <%--作者简介--%>
                             <div class="am-form-group">
                                 <label for="biography" class="am-u-sm-2 am-form-label">作者简介</label>
                                 <div class="am-u-sm-10">
-                                    <textarea class="" rows="6" id="biography" placeholder="请输入作者简介">${book.bookBiography}</textarea>
+                                    <textarea class="" rows="6" id="biography"
+                                              placeholder="请输入作者简介">${book.bookBiography}</textarea>
                                 </div>
                             </div>
                             <%--目录--%>
                             <div class="am-form-group">
                                 <label for="catalog" class="am-u-sm-2 am-form-label">目录</label>
                                 <div class="am-u-sm-10">
-                                    <textarea class="" rows="6" id="catalog" placeholder="请输入目录简介">${book.bookCatalog}</textarea>
+                                    <textarea class="" rows="6" id="catalog"
+                                              placeholder="请输入目录简介">${book.bookCatalog}</textarea>
                                 </div>
                             </div>
                             <%--媒体评论--%>
                             <div class="am-form-group">
                                 <label for="mediacomments" class="am-u-sm-2 am-form-label">媒体评论</label>
                                 <div class="am-u-sm-10">
-                                    <textarea class="" rows="6" id="mediacomments" placeholder="请输入媒体评论">${book.bookMediaComments}</textarea>
+                                    <textarea class="" rows="6" id="mediacomments"
+                                              placeholder="请输入媒体评论">${book.bookMediaComments}</textarea>
                                 </div>
                             </div>
                             <%--添加数量--%>
@@ -236,10 +252,10 @@
     // 在页面任意位置点击而触发此事件
     $(document).click(function (e) {
         imgid = $(e.target).attr("id");       // e.target表示被点击的目标
-               });
+    });
 
     $(function () {
-                  layui.use(['upload', 'layer'], function () {
+        layui.use(['upload', 'layer'], function () {
 
             var upload = layui.upload;
             var layer = layui.layer;
@@ -256,7 +272,7 @@
                 number: 3,
                 //MultipartFile file 对应，layui默认就是file,要改动则相应改动
                 field: 'file',
-                data: {imgId:imgid},
+                data: {imgId: imgid},
                 before: function (obj) {
                     //预读本地文件示例，不支持ie8
                     obj.preview(function (index, file, result) {
@@ -271,7 +287,7 @@
                     } else {
                         success++;
                         if (imgurls.indexOf(res.imgId) == -1) {
-                            imgurls = imgurls + imgid+"_"+ res.data.src + ",";
+                            imgurls = imgurls + imgid + "_" + res.data.src + ",";
                             $('#imgUrls').val(imgurls);
                         } else {
                             var test1 = imgurls.split(",");
@@ -341,9 +357,9 @@
             var addcount1 = $("#addcount").val();
             var ius = $("#imgUrls").val();
             var bookId1 = $("#bookId").val();
-            var image1 =  $("#image1").val();
-            var image2 =  $("#image2").val();
-            var image3 =  $("#image3").val();
+            var image1 = $("#image1").val();
+            var image2 = $("#image2").val();
+            var image3 = $("#image3").val();
 
             $.ajax({
                 type: "POST",
@@ -364,10 +380,10 @@
                     mediacomments: mediacomments1,
                     addcount: addcount1,
                     imgUrls: ius,
-                    bookId:bookId1,
-                    image1:image1,
-                    image2:image2,
-                    image3:image3
+                    bookId: bookId1,
+                    image1: image1,
+                    image2: image2,
+                    image3: image3
                 },
                 success: function (msg) {
                     if (msg == "1") {

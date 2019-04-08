@@ -11,12 +11,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b21ba883-95a2-4ac3-b481-3e50fcefb2ea" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/controller/BookControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/controller/BookControl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT/WEB-INF/classes/com/mrlove/bookshop/controller/BookControl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT/WEB-INF/classes/com/mrlove/bookshop/controller/BookControl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT/WEB-INF/lib/bookshop-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT/WEB-INF/lib/bookshop-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT/page/backstagepage/commodity/bookupdate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT/page/backstagepage/commodity/bookupdate.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mrlove/bookshop/controller/BookControl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mrlove/bookshop/controller/BookControl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/page/backstagepage/commodity/bookupdate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/page/backstagepage/commodity/bookupdate.jsp" afterDir="false" />
     </list>
     <list id="edf456dc-11e0-4c75-a8f0-1fd05457ed47" name="Revert &quot;first commit&quot;" comment="Revert &quot;first commit&quot;&#10;&#10;This reverts commit 68cc1a0" />
@@ -125,9 +121,9 @@
           <entry key="html" value="287" />
           <entry key="iml" value="8" />
           <entry key="java" value="3541" />
-          <entry key="jsp" value="6349" />
+          <entry key="jsp" value="6368" />
           <entry key="properties" value="14" />
-          <entry key="txt" value="156" />
+          <entry key="txt" value="166" />
           <entry key="xml" value="666" />
         </counts>
       </usages-collector>
@@ -137,8 +133,8 @@
           <entry key="HTML" value="285" />
           <entry key="IDEA_MODULE" value="8" />
           <entry key="JAVA" value="3541" />
-          <entry key="JSP" value="6349" />
-          <entry key="PLAIN_TEXT" value="163" />
+          <entry key="JSP" value="6368" />
+          <entry key="PLAIN_TEXT" value="173" />
           <entry key="Properties" value="14" />
           <entry key="SQL" value="5" />
           <entry key="XML" value="661" />
@@ -151,11 +147,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/page/backstagepage/commodity/bookupdate.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="767">
-              <caret line="367" column="30" selection-start-line="367" selection-start-column="30" selection-end-line="367" selection-end-column="30" />
+            <state relative-caret-position="298">
+              <caret line="85" column="30" selection-start-line="85" selection-start-column="30" selection-end-line="85" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -163,8 +159,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/page/backstagepage/commodity/productlist.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1432">
-              <caret line="82" column="78" selection-start-line="82" selection-start-column="31" selection-end-line="82" selection-end-column="78" />
+            <state relative-caret-position="302">
+              <caret line="70" column="47" lean-forward="true" selection-start-line="70" selection-start-column="47" selection-end-line="70" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -200,7 +196,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/controller/BookControl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="128">
@@ -374,8 +370,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/dao/BooksMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/dao/BooksMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/common/utils/IdGenerator.java" />
-        <option value="$PROJECT_DIR$/web/page/backstagepage/commodity/bookupdate.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/controller/BookControl.java" />
+        <option value="$PROJECT_DIR$/web/page/backstagepage/commodity/bookupdate.jsp" />
       </list>
     </option>
   </component>
@@ -573,7 +569,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554713178592" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554715699524" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../layui-springmvc-imgupload/pom.xml" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -811,7 +807,7 @@
       <workItem from="1554271757258" duration="2651000" />
       <workItem from="1554338952987" duration="28133000" />
       <workItem from="1554626532768" duration="3979000" />
-      <workItem from="1554684145649" duration="22859000" />
+      <workItem from="1554684145649" duration="23812000" />
     </task>
     <task id="LOCAL-00001" summary="第三次提交">
       <created>1554270081082</created>
@@ -925,11 +921,18 @@
       <option name="project" value="LOCAL" />
       <updated>1554712183165</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="可以指定更新图片，成功">
+      <created>1554713306917</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1554713306917</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="332092000" />
+    <option name="totallyTimeSpent" value="333045000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -942,9 +945,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49577466" visible="true" weight="0.25189108" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49577466" visible="true" weight="0.25189108" />
       <window_info id="Structure" order="1" sideWeight="0.5042254" side_tool="true" weight="0.25718608" />
       <window_info id="Web" order="2" sideWeight="0.5042254" side_tool="true" weight="0.25718608" />
       <window_info id="Image Layers" order="3" />
@@ -954,7 +956,7 @@
       <window_info id="Favorites" order="7" sideWeight="0.5042254" side_tool="true" weight="0.25718608" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3488" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3344" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3088" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3872" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1074,7 +1076,8 @@
     <MESSAGE value="详情页完成" />
     <MESSAGE value=".idea,target" />
     <MESSAGE value="可以指定更新图片，但是没更新的会丢失" />
-    <option name="LAST_COMMIT_MESSAGE" value="可以指定更新图片，但是没更新的会丢失" />
+    <MESSAGE value="可以指定更新图片，成功" />
+    <option name="LAST_COMMIT_MESSAGE" value="可以指定更新图片，成功" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1452,20 +1455,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/page/backstagepage/commodity/productlist.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1432">
-          <caret line="82" column="78" selection-start-line="82" selection-start-column="31" selection-end-line="82" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/page/backstagepage/commodity/bookupdate.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="767">
-          <caret line="367" column="30" selection-start-line="367" selection-start-column="30" selection-end-line="367" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/controller/BookControl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="128">
@@ -1474,6 +1463,20 @@
             <element signature="imports" expanded="true" />
             <element signature="method#onbook#0;class#BookControl#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/page/backstagepage/commodity/productlist.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="70" column="47" lean-forward="true" selection-start-line="70" selection-start-column="47" selection-end-line="70" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/page/backstagepage/commodity/bookupdate.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="85" column="30" selection-start-line="85" selection-start-column="30" selection-end-line="85" selection-end-column="30" />
         </state>
       </provider>
     </entry>
