@@ -50,6 +50,9 @@
                         <form id="bookform" name="bookname" method="post" class="am-form tpl-form-line-form"
                               enctype="multipart/form-data">
                             <input type="hidden" name="bookId" value="${book.bookId}" id="bookId">
+                            <input type="hidden" name="image1" value="${book.bookImage1}" id="image1">
+                            <input type="hidden" name="image2" value="${book.bookImage2}" id="image2">
+                            <input type="hidden" name="image3" value="${book.bookImage3}" id="image3">
                             <%--书名--%>
                             <div class="am-form-group">
                                 <label for="bookname" class="am-u-sm-2 am-form-label">图书名称</label>
@@ -57,22 +60,6 @@
                                     <input type="text" class="tpl-form-input" id="bookname" placeholder="请输入书名" value="${book.bookName}">
                                 </div>
                             </div>
-                            <%--图片--%>
-                           <%-- <div class="am-form-group">
-                                <label class="am-u-sm-2 am-form-label">图片上传</label>       
-                                <div class="am-u-sm-6">
-                                    <button type="button" class="layui-btn " id="test1"><i
-                                            class="layui-icon">&#xe67c;</i>选择图片（选择3张，单张图片最大为10M）
-                                    </button>
-                                </div>
-                                <div class="am-u-sm-2">
-                                    <button type="button" class="layui-btn " id="test9">开始上传</button>
-                                </div>
-                                <div class="am-u-sm-1 am-u-sm-pull-1">
-                                    <button type="button" class="layui-btn " id="cleanImgs">清空预览</button>
-                                </div>
-                                                    
-                            </div>--%>
                             <%--预览图--%>
                             <div class="am-form-group">
                                 <label class="am-u-sm-2 am-form-label">预览图</label>      
@@ -354,6 +341,9 @@
             var addcount1 = $("#addcount").val();
             var ius = $("#imgUrls").val();
             var bookId1 = $("#bookId").val();
+            var image1 =  $("#image1").val();
+            var image2 =  $("#image2").val();
+            var image3 =  $("#image3").val();
 
             $.ajax({
                 type: "POST",
@@ -375,9 +365,9 @@
                     addcount: addcount1,
                     imgUrls: ius,
                     bookId:bookId1,
-                   /* image1:${book.bookImage1},
-                    image2:${book.bookImage2},
-                    image3:${book.bookImage3}*/
+                    image1:image1,
+                    image2:image2,
+                    image3:image3
                 },
                 success: function (msg) {
                     if (msg == "1") {

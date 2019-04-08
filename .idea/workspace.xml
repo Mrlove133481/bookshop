@@ -9,35 +9,15 @@
     <bookmark url="file://$PROJECT_DIR$/web/page/backstagecommon/menu.jsp" line="12" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b21ba883-95a2-4ac3-b481-3e50fcefb2ea" name="Default Changelist" comment=".idea,target">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/controller/ForegroundControl.java" afterDir="false" />
+    <list default="true" id="b21ba883-95a2-4ac3-b481-3e50fcefb2ea" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/common/utils/IdGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/common/utils/IdGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/controller/BookControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/controller/BookControl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/dao/BooksMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/dao/BooksMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/dao/BooksMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/dao/BooksMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/service/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/service/BookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/service/BookServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT/WEB-INF/classes/com/mrlove/bookshop/common/utils/IdGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT/WEB-INF/classes/com/mrlove/bookshop/common/utils/IdGenerator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT/WEB-INF/classes/com/mrlove/bookshop/controller/BookControl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT/WEB-INF/classes/com/mrlove/bookshop/controller/BookControl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT/WEB-INF/classes/com/mrlove/bookshop/dao/BooksMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT/WEB-INF/classes/com/mrlove/bookshop/dao/BooksMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT/WEB-INF/classes/com/mrlove/bookshop/dao/BooksMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT/WEB-INF/classes/com/mrlove/bookshop/dao/BooksMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT/WEB-INF/classes/com/mrlove/bookshop/service/BookService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT/WEB-INF/classes/com/mrlove/bookshop/service/BookService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT/WEB-INF/classes/com/mrlove/bookshop/service/BookServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT/WEB-INF/classes/com/mrlove/bookshop/service/BookServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT/WEB-INF/lib/bookshop-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT/WEB-INF/lib/bookshop-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT/page/backstagepage/commodity/bookupdate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT/page/backstagepage/commodity/bookupdate.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT/page/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT/page/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mrlove/bookshop/common/utils/IdGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mrlove/bookshop/common/utils/IdGenerator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/mrlove/bookshop/controller/BookControl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mrlove/bookshop/controller/BookControl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mrlove/bookshop/dao/BooksMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mrlove/bookshop/dao/BooksMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mrlove/bookshop/dao/BooksMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mrlove/bookshop/dao/BooksMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mrlove/bookshop/service/BookService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mrlove/bookshop/service/BookService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mrlove/bookshop/service/BookServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mrlove/bookshop/service/BookServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/page/backstagepage/commodity/bookupdate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/page/backstagepage/commodity/bookupdate.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/page/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/page/index.jsp" afterDir="false" />
     </list>
     <list id="edf456dc-11e0-4c75-a8f0-1fd05457ed47" name="Revert &quot;first commit&quot;" comment="Revert &quot;first commit&quot;&#10;&#10;This reverts commit 68cc1a0" />
     <list id="03d2abcb-d991-4268-a323-54c6ea542c88" name="Revert &quot;提交吼吼&quot;" comment="Revert &quot;提交吼吼&quot;&#10;&#10;This reverts commit a79d805" />
@@ -144,10 +124,10 @@
           <entry key="dummy" value="7" />
           <entry key="html" value="287" />
           <entry key="iml" value="8" />
-          <entry key="java" value="3540" />
-          <entry key="jsp" value="6272" />
+          <entry key="java" value="3541" />
+          <entry key="jsp" value="6349" />
           <entry key="properties" value="14" />
-          <entry key="txt" value="134" />
+          <entry key="txt" value="156" />
           <entry key="xml" value="666" />
         </counts>
       </usages-collector>
@@ -156,9 +136,9 @@
           <entry key="CSS" value="28" />
           <entry key="HTML" value="285" />
           <entry key="IDEA_MODULE" value="8" />
-          <entry key="JAVA" value="3540" />
-          <entry key="JSP" value="6272" />
-          <entry key="PLAIN_TEXT" value="141" />
+          <entry key="JAVA" value="3541" />
+          <entry key="JSP" value="6349" />
+          <entry key="PLAIN_TEXT" value="163" />
           <entry key="Properties" value="14" />
           <entry key="SQL" value="5" />
           <entry key="XML" value="661" />
@@ -174,8 +154,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/page/backstagepage/commodity/bookupdate.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
-              <caret line="378" column="46" lean-forward="true" selection-start-line="378" selection-start-column="46" selection-end-line="378" selection-end-column="46" />
+            <state relative-caret-position="767">
+              <caret line="367" column="30" selection-start-line="367" selection-start-column="30" selection-end-line="367" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -223,8 +203,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/controller/BookControl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="221" column="15" selection-start-line="221" selection-start-column="15" selection-end-line="221" selection-end-column="15" />
+            <state relative-caret-position="128">
+              <caret line="218" column="26" lean-forward="true" selection-start-line="218" selection-start-column="26" selection-end-line="218" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#onbook#0;class#BookControl#0" />
@@ -593,7 +573,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554712087269" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554713178592" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../layui-springmvc-imgupload/pom.xml" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -831,7 +811,7 @@
       <workItem from="1554271757258" duration="2651000" />
       <workItem from="1554338952987" duration="28133000" />
       <workItem from="1554626532768" duration="3979000" />
-      <workItem from="1554684145649" duration="21560000" />
+      <workItem from="1554684145649" duration="22859000" />
     </task>
     <task id="LOCAL-00001" summary="第三次提交">
       <created>1554270081082</created>
@@ -938,11 +918,18 @@
       <option name="project" value="LOCAL" />
       <updated>1554694702288</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="可以指定更新图片，但是没更新的会丢失">
+      <created>1554712183165</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1554712183165</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="330793000" />
+    <option name="totallyTimeSpent" value="332092000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -957,7 +944,7 @@
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49577466" visible="true" weight="0.25189108" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49577466" visible="true" weight="0.25189108" />
       <window_info id="Structure" order="1" sideWeight="0.5042254" side_tool="true" weight="0.25718608" />
       <window_info id="Web" order="2" sideWeight="0.5042254" side_tool="true" weight="0.25718608" />
       <window_info id="Image Layers" order="3" />
@@ -967,7 +954,7 @@
       <window_info id="Favorites" order="7" sideWeight="0.5042254" side_tool="true" weight="0.25718608" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3488" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.464" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3344" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3872" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1086,7 +1073,8 @@
     <MESSAGE value="添加war" />
     <MESSAGE value="详情页完成" />
     <MESSAGE value=".idea,target" />
-    <option name="LAST_COMMIT_MESSAGE" value=".idea,target" />
+    <MESSAGE value="可以指定更新图片，但是没更新的会丢失" />
+    <option name="LAST_COMMIT_MESSAGE" value="可以指定更新图片，但是没更新的会丢失" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1473,15 +1461,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/page/backstagepage/commodity/bookupdate.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="378" column="46" lean-forward="true" selection-start-line="378" selection-start-column="46" selection-end-line="378" selection-end-column="46" />
+        <state relative-caret-position="767">
+          <caret line="367" column="30" selection-start-line="367" selection-start-column="30" selection-end-line="367" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/controller/BookControl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="221" column="15" selection-start-line="221" selection-start-column="15" selection-end-line="221" selection-end-column="15" />
+        <state relative-caret-position="128">
+          <caret line="218" column="26" lean-forward="true" selection-start-line="218" selection-start-column="26" selection-end-line="218" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#onbook#0;class#BookControl#0" />
