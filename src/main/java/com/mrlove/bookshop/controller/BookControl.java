@@ -86,6 +86,25 @@ public class BookControl {
         Books book = bookService.getBookById(bookId);
         book.setBookId(bookId);
         model.addAttribute("book", book);
+        if("".equals(book.getBookImage1())==false){
+            model.addAttribute("image1", book.getBookImage1().substring(book.getBookImage1().indexOf("fileuploadpath") + 16, book.getBookImage1().length()));
+        }
+        else {
+            model.addAttribute("image1","error.jpg");
+        }
+        String test1 = book.getBookImage2();
+        if("".equals(book.getBookImage2())==false){
+            model.addAttribute("image2", book.getBookImage2().substring(book.getBookImage2().indexOf("fileuploadpath") + 16, book.getBookImage2().length()));
+        }
+        else {
+            model.addAttribute("image2","error.jpg");
+        }
+        if("".equals(book.getBookImage3())==false){
+            model.addAttribute("image3", book.getBookImage3().substring(book.getBookImage3().indexOf("fileuploadpath") + 16, book.getBookImage3().length()));
+        }
+        else {
+            model.addAttribute("image3","error.jpg");
+        }
         return "/backstagepage/commodity/bookparticulars";
     }
 
@@ -96,7 +115,6 @@ public class BookControl {
         Books book = bookService.getBookById(bookId);
         book.setBookId(bookId);
         model.addAttribute("book", book);
-        String test = book.getBookImage1();
        if("".equals(book.getBookImage1())==false){
            model.addAttribute("image1", book.getBookImage1().substring(book.getBookImage1().indexOf("fileuploadpath") + 16, book.getBookImage1().length()));
        }

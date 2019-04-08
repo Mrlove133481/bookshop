@@ -35,6 +35,14 @@
                 <div class="caption font-green bold">
                     <span class="am-icon-book">图书详情</span>
                 </div>
+                <%--搜索--%>
+                <div class="tpl-portlet-input tpl-fz-ml">
+                    <div class="portlet-input input-small input-inline">
+                        <div class="input-icon right">
+                            <i class="am-icon-search"></i>
+                            <input type="text" class="form-control form-control-solid" placeholder="搜索..."></div>
+                    </div>
+                </div>
             </div>
             <div class="tpl-block">
                 <div class="am-g">
@@ -44,29 +52,29 @@
                             <input type="hidden" name="bookId" value="${book.bookId}" id="bookId">
                             <%--编辑--%>
                             <div class="am-form-group">
-                                <div class="am-u-sm-10 am-u-sm-push-2">
-                                    <button type="button" class="am-btn am-btn-primary tpl-btn-bg-color-success "
-                                            id="btnSubmit">编辑
-                                    </button>
+                                <div class="am-u-sm-2 am-u-sm-push-10">
+                                    <a type="button" class="am-btn am-btn-primary tpl-btn-bg-color-success "
+                                            href="/book/beforeUpdatebook?bookId=${book.bookId}">编辑
+                                    </a>
                                 </div>
                             </div>
                             <%--书编号--%>
                             <div class="am-form-group">
-                                <label for="booknumber" class="am-u-sm-2 am-form-label">图书名称</label>
+                                <label class="am-u-sm-2 am-form-label">图书编号：</label>
                                 <div class="am-u-sm-10">
-                                    <input type="text" class="tpl-form-input" id="booknumber" placeholder="请输入书名" value="${book.Number}">
+                                    <label class=" am-form-label">${book.bookNumber}</label>
                                 </div>
                             </div>
                             <%--书名--%>
                             <div class="am-form-group">
-                                <label for="bookname" class="am-u-sm-2 am-form-label">图书名称</label>
+                                <label class="am-u-sm-2 am-form-label">图书名称：</label>
                                 <div class="am-u-sm-10">
-                                    <input type="text" class="tpl-form-input" id="bookname" placeholder="请输入书名" value="${book.bookName}">
+                                    <label class=" am-form-label">${book.bookName}</label>
                                 </div>
                             </div>
                             <%--预览图--%>
                             <div class="am-form-group">
-                                <label class="am-u-sm-2 am-form-label">预览图</label>      
+                                <label class="am-u-sm-2 am-form-label">预览图：</label>      
                                 <div class="layui-upload-list am-u-sm-10 " id="demo2">
                                     <img src="${pageContext.request.contextPath}/fileuploadpath/${image1}" id="img1"
                                          alt="2" height="150px" width="150px" class="layui-upload-img uploadImgPreView">
@@ -74,111 +82,98 @@
                                          alt="2" height="150px" width="150px" class="layui-upload-img uploadImgPreView">
                                     <img src="${pageContext.request.contextPath}/fileuploadpath/${image3}" id="img3"
                                          alt="2" height="150px" width="150px" class="layui-upload-img uploadImgPreView">
-                                </div>
-                                      
+                                </div>      
                             </div>
                             <input type="text" id="imgUrls" name="imgUrls" style="display: none;" class="layui-input">
                             <%--价格--%>
                             <div class="am-form-group">
 
-                                <label for="originalprice" class="am-u-sm-2 am-form-label">原价</label>
+                                <label class="am-u-sm-2 am-form-label">原价：</label>
                                 <div class="am-u-sm-2">
-                                    <input type="number" class="tpl-form-input" id="originalprice" placeholder="元"
-                                           onkeyup="clearNoNum(this)" min="0" max="9999999" value="${book.bookOriginalPrice}">
+                                    <label class="am-form-label">${book.bookOriginalPrice}</label>
                                 </div>
 
-                                <label for="promotionprice" class="am-u-sm-2 am-form-label">促销价</label>
+                                <label class="am-u-sm-2 am-form-label">促销价：</label>
                                 <div class="am-u-sm-2">
-                                    <input type="number" class="tpl-form-input" id="promotionprice" placeholder="元"
-                                           onkeyup="clearNoNum(this)" min="0" max="9999999" value="${book.bookPromotionPrice}">
+                                    <label class="am-form-label">${book.bookPromotionPrice}</label>
                                 </div>
 
-                                <label for="cost" class="am-u-sm-2 am-form-label">成本</label>
+                                <label class="am-u-sm-2 am-form-label">成本：</label>
                                 <div class="am-u-sm-2">
-                                    <input type="number" class="tpl-form-input" id="cost" placeholder="元"
-                                           onkeyup="clearNoNum(this)" min="0" max="9999999" value="${book.bookCost}">
+                                    <label class="am-form-label">${book.bookCost}</label>
                                 </div>
-
                             </div>
                             <%--类别--%>
                             <div class="am-form-group">
-
-                                <label for="clazz" class="am-u-sm-2 am-form-label">类别</label>
+                                <label class="am-u-sm-2 am-form-label">类别：</label>
                                 <div class="am-u-sm-2">
-                                    <input type="text" class="tpl-form-input" id="clazz" placeholder="请输入类别" value="${book.bookClazz}">
+                                    <label class="am-form-label">${book.bookClazz}</label>
                                 </div>
 
-                                <label for="subclazz" class="am-u-sm-2 am-form-label">子类别</label>
+                                <label class="am-u-sm-2 am-form-label">子类别：</label>
                                 <div class="am-u-sm-2 am-u-sm-pull-4">
-                                    <input type="text" class="tpl-form-input" id="subclazz" placeholder="请输入子类别" value="${book.bookSubclazz}">
+                                    <label class="am-form-label">${book.bookSubclazz}</label>
                                 </div>
 
                             </div>
                             <%--作者--%>
                             <div class="am-form-group">
-                                <label for="auther" class="am-u-sm-2 am-form-label">作者</label>
+                                <label class="am-u-sm-2 am-form-label">作者：</label>
                                 <div class="am-u-sm-10">
-                                    <input type="text" class="tpl-form-input" id="auther" placeholder="请输入作者名" value="${book.bookAuthor}">
+                                    <label class="am-form-label">${book.bookAuthor}</label>
                                 </div>
                             </div>
-                            <%--出版年份--%>
-                            <%--<div class="am-form-group">
-                                <label class="am-u-sm-2 am-form-label" for="testdate">出版年份</label>
-                                <div class="am-u-sm-10">
-                                    <input type="text" name="testdate" id="testdate" lay-verify="date"
-                                           placeholder="yyyy-MM-dd" autocomplete="off"
-                                           class="am-form-field tpl-form-no-bg">
-                                </div>
-                            </div>--%>
                             <%--出版年份方法二--%>
                             <div class="am-form-group">
-                                <label class="am-u-sm-2 am-form-label" for="testdate">出版年份</label>
+                                <label class="am-u-sm-2 am-form-label" >出版年份：</label>
                                 <div class="am-u-sm-2 am-u-sm-pull-8">
-                                    <input type="date" name="testdate" id="testdate" class="tpl-form-input" value="${book.bookPublicationYear}"  placeholder="${book.bookPublicationYear}">
+                                    <label class="am-form-label">${book.bookPublicationYear}</label>
                                 </div>
                             </div>
                             <%--出版社--%>
                             <div class="am-form-group">
-                                <label for="press" class="am-u-sm-2 am-form-label">出版社</label>
+                                <label  class="am-u-sm-2 am-form-label">出版社：</label>
                                 <div class="am-u-sm-10">
-                                    <input type="text" class="tpl-form-input" id="press" placeholder="请输入出版社" value="${book.bookPress}">
+                                    <label class="am-form-label">${book.bookPress}</label>
                                 </div>
                             </div>
                             <%--内容简介--%>
                             <div class="am-form-group">
-                                <label for="plotsummary" class="am-u-sm-2 am-form-label">内容简介</label>
+                                <label class="am-u-sm-2 am-form-label">内容简介：</label>
                                 <div class="am-u-sm-10">
-                                    <textarea class="" rows="6" id="plotsummary" placeholder="请输入内容简介">${book.bookPlotSummary}</textarea>
+                                    <textarea rows="6" id="plotsummary" style="background-color:white;" readonly="readonly"
+                                              placeholder="请输入内容简介">${book.bookPlotSummary}</textarea>
                                 </div>
                             </div>
                             <%--作者简介--%>
                             <div class="am-form-group">
-                                <label for="biography" class="am-u-sm-2 am-form-label">作者简介</label>
+                                <label for="biography" class="am-u-sm-2 am-form-label">作者简介：</label>
                                 <div class="am-u-sm-10">
-                                    <textarea class="" rows="6" id="biography" placeholder="请输入作者简介">${book.bookBiography}</textarea>
+                                    <textarea  style="background-color:white;" rows="6" id="biography" readonly="readonly"
+                                              placeholder="请输入作者简介">${book.bookBiography}</textarea>
                                 </div>
                             </div>
                             <%--目录--%>
                             <div class="am-form-group">
-                                <label for="catalog" class="am-u-sm-2 am-form-label">目录</label>
+                                <label for="catalog" class="am-u-sm-2 am-form-label">目录：</label>
                                 <div class="am-u-sm-10">
-                                    <textarea class="" rows="6" id="catalog" placeholder="请输入目录简介">${book.bookCatalog}</textarea>
+                                    <textarea class="" rows="6" id="catalog" style="background-color:white;" readonly="readonly"
+                                              placeholder="请输入目录简介">${book.bookCatalog}</textarea>
                                 </div>
                             </div>
                             <%--媒体评论--%>
                             <div class="am-form-group">
-                                <label for="mediacomments" class="am-u-sm-2 am-form-label">媒体评论</label>
+                                <label for="mediacomments" class="am-u-sm-2 am-form-label">媒体评论：</label>
                                 <div class="am-u-sm-10">
-                                    <textarea class="" rows="6" id="mediacomments" placeholder="请输入媒体评论">${book.bookMediaComments}</textarea>
+                                    <textarea class="" rows="6" id="mediacomments" style="background-color:white;" readonly="readonly"
+                                              placeholder="请输入媒体评论">${book.bookMediaComments}</textarea>
                                 </div>
                             </div>
-                            <%--添加数量--%>
+                            <%--数量--%>
                             <div class="am-form-group">
-                                <label for="addcount" class="am-u-sm-2 am-form-label">添加数量</label>
+                                <label  class="am-u-sm-2 am-form-label">数量：</label>
                                 <div class="am-u-sm-2 am-u-sm-pull-8">
-                                    <input type="number" class="tpl-form-input" id="addcount" placeholder="本"
-                                           onKeyUp="this.value=this.value.replace(/[^\.\d]/g,'');this.value=this.value.replace('.','');"
-                                           min="1" max="999999" value="${book.bookInventory}">
+                                    <label  class="am-form-label">${book.bookInventory}</label>
                                 </div>
                             </div>
                         </form>
@@ -193,6 +188,9 @@
 <script src="${pageContext.request.contextPath}/layui/layui.js" charset="utf-8"></script>
 <script src="${pageContext.request.contextPath}/assets/js/jquery-1.11.1.min.js" type="text/javascript"
         charset="utf-8"></script>
+
+<script>
+</script>
 </body>
 </html>
 </html>

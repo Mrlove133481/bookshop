@@ -83,7 +83,7 @@
                                 <c:forEach items="${allBooks}" var="allBooks">
                                     <tr id="${allBooks.bookId}">
                                         <td title="点击查看详情">
-                                            <a class="am-btn am-btn-default am-btn-xs am-text-secondary btn-bookparticulars" href="/book/beforeUpdatebook?bookId=${allBooks.bookId}" ><span
+                                            <a class="btn btn-link btn-bookparticulars" href="/book/beforebookparticulars?bookId=${allBooks.bookId}" ><span
                                                     class="am-icon-pencil-square-o"></span> ${allBooks.bookNumber}
                                             </a>
                                         </td>
