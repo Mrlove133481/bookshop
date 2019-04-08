@@ -295,4 +295,11 @@ book_name = #{bookName}
 where book_id = #{bookId}
     </update>
 
+<!--前台限制查询图书-->
+<select id="findbooks" resultMap="BaseResultMap">
+    select book_image1
+    from books
+    limit 8
+</select>
+
 </mapper>

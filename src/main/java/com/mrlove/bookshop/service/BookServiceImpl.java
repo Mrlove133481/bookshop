@@ -42,14 +42,19 @@ public class BookServiceImpl implements BookService{
     public void deleteBook(String bookId) {
         booksMapper.deleteBookById(bookId);
     }
-
+    //通过id查询图书
     @Override
     public Books getBookById(String bookId) {
         return booksMapper.getBookById(bookId);
     }
-
+    //通过id更新图书
     @Override
     public void updateBookById(Books books) {
         booksMapper.updateBookById(books);
+    }
+    //前台限制查询图书默认8本
+    @Override
+    public List<Books> findBooks() {
+        return booksMapper.findbooks();
     }
 }

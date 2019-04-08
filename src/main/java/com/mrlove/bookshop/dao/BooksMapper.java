@@ -22,4 +22,6 @@ public interface BooksMapper {
     Books getBookById(@Param("bookId") String bookId);
     //通过id修改图书
     void updateBookById(Books books);
+    //前台限制查询图书默认8本
+    List<Books> findbooks();
 }

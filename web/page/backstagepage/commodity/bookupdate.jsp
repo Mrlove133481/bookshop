@@ -250,10 +250,7 @@
     $(document).click(function (e) {
         imgid = $(e.target).attr("id");       // e.target表示被点击的目标
                });
-   /* $(".uploadImgPreView").live("click",function(){
-         imgid = $(this).attr("src");
-        alert(imgid);
-    });*/
+
     $(function () {
                   layui.use(['upload', 'layer'], function () {
 
@@ -287,7 +284,7 @@
                     } else {
                         success++;
                         if (imgurls.indexOf(res.imgId) == -1) {
-                            imgurls = imgurls + "" + res.data.src + ",";
+                            imgurls = imgurls + imgid+"_"+ res.data.src + ",";
                             $('#imgUrls').val(imgurls);
                         } else {
                             var test1 = imgurls.split(",");
@@ -377,7 +374,10 @@
                     mediacomments: mediacomments1,
                     addcount: addcount1,
                     imgUrls: ius,
-                    bookId:bookId1
+                    bookId:bookId1,
+                   /* image1:${book.bookImage1},
+                    image2:${book.bookImage2},
+                    image3:${book.bookImage3}*/
                 },
                 success: function (msg) {
                     if (msg == "1") {

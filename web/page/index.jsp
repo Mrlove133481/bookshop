@@ -5,6 +5,7 @@
   Time: 16:29
   To change this template use File | Settings | File Templates.
 --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]> <html class="ie6"> <![endif]-->
@@ -409,8 +410,6 @@
                         <p>森林里有很多棵树，穿梭在森林里的人，你有注意到你面前的这颗树的独特吗</p>
                         <img src="${pageContext.request.contextPath}/images/section-seprator.png" alt="section-seprator" />
                     </div><!-- Section Header /- -->
-
-
                  <%--   <ul id="filters" class="products-categories no-left-padding">
                         <li><a data-filter="*" class="active" href="#">All Products</a></li>
                         <li><a data-filter=".design" href="#">jewellery</a></li>
@@ -421,7 +420,7 @@
                         <li><a data-filter=".photography" href="#">mobiles</a></li>
                         <li><a data-filter=".video" href="#">more<i class="fa fa-angle-down"></i></a></li>
                     </ul>--%>
-
+                    <%--第一部分选择栏--%>
                     <ul class="layui-nav layui-bg-gray ">
                         <li class="layui-nav-item ">
                             <a href="javascript:;">产品</a>
@@ -440,12 +439,8 @@
                                 <dd><a href="">电商平台</a></dd>
                             </dl>
                         </li>
-
-
-
-
                     </ul>
-
+                    <%--搜索栏--%>
                     <div class="input-group">
                         <input class="form-control" placeholder="搜你所搜，找你所想" type="text">
                         <span class="input-group-btn">
@@ -456,6 +451,8 @@
                     <!-- Products -->
                     <ul class="products">
                         <!-- Product -->
+
+                        <c:forEach items="${allBooks}" var="allBooks">
                         <li class="product design">
                             <a href="#">
                                 <img src="${pageContext.request.contextPath}/images/product-1.jpg" alt="Product" />
@@ -469,8 +466,11 @@
                             </div>
                             <a href="#" class="addto-cart" title="Add To Cart">Add To Cart</a>
                         </li><!-- Product /- -->
+                        </c:forEach>
 
-                        <!-- Product -->
+
+
+                       <%-- <!-- Product -->
                         <li class="product video">
                             <a href="#">
                                 <img src="${pageContext.request.contextPath}/images/product-2.jpg" alt="Product" />
@@ -573,15 +573,18 @@
                                 <a href="#"><i class="fa fa-search"></i></a>
                             </div>
                             <a href="#" class="addto-cart" title="Add To Cart">Add To Cart</a>
-                        </li><!-- Product /- -->
+                        </li><!-- Product /- -->--%>
+
+
                     </ul><!-- Products /- -->
                 </div><!-- Row /- -->
+                <%--分页地方--%>
                 <nav class="ow-pagination">
                     <ul class="pager">
-                        <li class="number"><a href="#">4</a></li>
+                       <%-- <li class="number"><a href="#">4</a></li>--%>
                         <li class="load-more"><a href="#">Load More</a></li>
-                        <li class="previous"><a href="#"><i class="fa fa-angle-right"></i></a></li>
-                        <li class="next"><a href="#"><i class="fa fa-angle-left"></i></a></li>
+                       <%-- <li class="previous"><a href="#"><i class="fa fa-angle-right"></i></a></li>
+                        <li class="next"><a href="#"><i class="fa fa-angle-left"></i></a></li>--%>
                     </ul>
                 </nav>
             </div><!-- Container /- -->

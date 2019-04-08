@@ -208,17 +208,30 @@ public class BookControl {
         return "1";
     }
 
-    //图书添加页面表单提交添加按钮响应事件
+    //图书编辑页面表单提交添加按钮响应事件
     @RequestMapping(value = "updateGoods", method = RequestMethod.POST)
     @ResponseBody
-    private String updateImgInfo(String bookId,String bookname, String originalprice, String promotionprice, String cost, String clazz, String subclazz, String auther, String press, String testdate, String plotsummary, String biography, String catalog, String mediacomments, String addcount, String imgUrls) {
+    private String updateImgInfo(String bookId,String bookname, String originalprice, String promotionprice, String cost, String clazz, String subclazz, String auther, String press, String testdate, String plotsummary, String biography, String catalog, String mediacomments, String addcount, String imgUrls,String image1,String image2,String image3) {
         String[] urls = imgUrls.split(",");
         String[] urls1 = new String[3];
-        urls1[0] = "";
+       /* urls1[0] = image1;
+        urls1[1] = image2;
+        urls1[2] = image3;*/
+       urls1[0] = "";
         urls1[1] = "";
         urls1[2] = "";
         for (int i = 0; i < urls.length; i++) {
-            urls1[i] = urls[i];
+           if("".equals(urls[i])==false){
+               if("img1".equals(urls[i].substring(0,urls[i].indexOf("_D")))){
+                   urls1[0] = urls[i].substring(urls[i].indexOf("img1")+5,urls[i].length());
+               }
+               if("img2".equals(urls[i].substring(0,urls[i].indexOf("_D")))){
+                   urls1[1] = urls[i].substring(urls[i].indexOf("img2")+5,urls[i].length());
+               }
+               if("img3".equals(urls[i].substring(0,urls[i].indexOf("_D")))){
+                   urls1[2] = urls[i].substring(urls[i].indexOf("img3")+5,urls[i].length());
+               }
+           }
         }
         System.out.println("测试:" + urls1[0] + "测试:" + urls1[1] + "测试:" + urls1[2]);
         try {

@@ -52,6 +52,9 @@ public class IdGenerator {
 
        String test3 = "D:\\apache-tomcat-8.5.34\\webapps\\ROOT\\fileuploadpath\\\\(23)_1048e204eb.jpg";
        test = test3.substring(test3.indexOf("fileuploadpath")+16,test3.length());
-        System.out.println(test);
+       test3="img2_D:\\apache-tomcat-8.5.34\\webapps\\ROOT\\fileuploadpath\\\\(13)_2663b029fe.jpg";
+        test = test3.substring(test3.indexOf("img2")+5,test3.length());
+
+       System.out.println(test);
     }
 }

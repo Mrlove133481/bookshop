@@ -18,6 +18,8 @@ public interface BookService {
     void deleteBook(String bookId);
     //通过id查询图书
     Books getBookById(String bookId);
-
+    //通过id更新图书
     void updateBookById(Books books);
+    //前台限制查询图书8本
+    List<Books> findBooks();
 }
