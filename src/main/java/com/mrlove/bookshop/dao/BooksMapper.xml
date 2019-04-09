@@ -272,34 +272,34 @@
         from books
         where book_id = #{bookId,jdbcType=VARCHAR}
     </select>
+    <!--通过id更新图书-->
     <update id="updateBookById" parameterType="com.mrlove.bookshop.common.domain.Books">
-update books
-set
-book_name = #{bookName}
-,book_original_price = #{bookOriginalPrice}
-,book_promotion_price = #{bookPromotionPrice}
-,book_cost = #{bookCost}
-,book_clazz = #{bookClazz}
-,book_subclazz = #{bookSubclazz}
-,book_author = #{bookAuthor}
-,book_press = #{bookPress}
-,book_publication_year = #{bookPublicationYear}
-,book_plot_summary = #{bookPlotSummary}
-,book_biography = #{bookBiography}
-,book_catalog = #{bookCatalog}
-,book_media_comments = #{bookMediaComments}
-,book_inventory = #{bookInventory}
-,book_image1 = #{bookImage1}
-,book_image2 = #{bookImage2}
-,book_image3 = #{bookImage3}
-where book_id = #{bookId}
+    update books
+    set
+    book_name = #{bookName}
+    ,book_original_price = #{bookOriginalPrice}
+    ,book_promotion_price = #{bookPromotionPrice}
+    ,book_cost = #{bookCost}
+    ,book_clazz = #{bookClazz}
+    ,book_subclazz = #{bookSubclazz}
+    ,book_author = #{bookAuthor}
+    ,book_press = #{bookPress}
+    ,book_publication_year = #{bookPublicationYear}
+    ,book_plot_summary = #{bookPlotSummary}
+    ,book_biography = #{bookBiography}
+    ,book_catalog = #{bookCatalog}
+    ,book_media_comments = #{bookMediaComments}
+    ,book_inventory = #{bookInventory}
+    ,book_image1 = #{bookImage1}
+    ,book_image2 = #{bookImage2}
+    ,book_image3 = #{bookImage3}
+    where book_id = #{bookId}
     </update>
-
-<!--前台限制查询图书-->
-<select id="findbooks" resultMap="BaseResultMap">
+    <!--前台限制查询图书-->
+    <select id="findbooks" resultMap="BaseResultMap">
     select book_image1
     from books
     limit 8
-</select>
+    </select>
 
 </mapper>

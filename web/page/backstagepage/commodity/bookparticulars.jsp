@@ -11,7 +11,7 @@
 <html>
 <head>
     <title>图书详情</title>
-    <jsp:include page="${pageContext.request.contextPath}/page/backstagecommon/css_1.jsp"/>
+        <jsp:include page="${pageContext.request.contextPath}/page/backstagecommon/css_1.jsp"/>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/layui/css/layui.css" media="all">
 </head>
 <body data-type="index">

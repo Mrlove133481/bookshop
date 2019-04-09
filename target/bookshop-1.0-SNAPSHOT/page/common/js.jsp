@@ -23,5 +23,18 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/revolution/js/extensions/revolution.extension.actions.min.js"></script>
 
+
+
+<script src="${pageContext.request.contextPath}/assets/js/echarts.min.js"></script>
+<%--<script src="${pageContext.request.contextPath}/assets/js/jquery.min.js"></script>--%>
+<script src="${pageContext.request.contextPath}/assets/js/amazeui.min.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/iscroll.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/app.js"></script>
+<script src="${pageContext.request.contextPath}/layer/layer.js"></script>
+<script src="${pageContext.request.contextPath}/datatables-master/dist/amazeui.datatables.min.js"></script>
+
+
 <!-- Library - Theme JS -->
 <script src="${pageContext.request.contextPath}/js/functions.js"></script>
+
+

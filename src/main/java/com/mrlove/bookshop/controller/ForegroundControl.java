@@ -18,9 +18,14 @@ public class ForegroundControl {
     private BookService bookService;
 
     //查询图书事件
-    @RequestMapping("selectlimit")
+        @RequestMapping("selectlimit")
     public String selectAll(Model model) {
         List<Books> limitBooks = bookService.findBooks();
+        for (Books books:limitBooks
+             ) {
+            books.setBookImage1(books.getBookImage1().substring(books.getBookImage1().indexOf("fileuploadpath")+16,books.getBookImage1().length()));
+        }
+
         model.addAttribute("limitBooks", limitBooks);
         return "/index";
     }

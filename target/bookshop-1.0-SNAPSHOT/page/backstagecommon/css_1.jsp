@@ -13,7 +13,6 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/admin.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/app.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/datatables-master/dist/amazeui.datatables.css">
-
 <script src="${pageContext.request.contextPath}/assets/js/echarts.min.js"></script>
 
 

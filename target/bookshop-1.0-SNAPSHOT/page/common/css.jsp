@@ -24,6 +24,15 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/shortcode.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/style.css">
 
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/amazeui.min.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/admin.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/app.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/datatables-master/dist/amazeui.datatables.css">
+
+
+
+
 <!--[if lt IE 9]>
 <script src="${pageContext.request.contextPath}/js/html5/respond.min.js"></script>
 <![endif]-->
+

@@ -54,85 +54,37 @@
                         <a href="index.html" class="navbar-brand">Mrlove <span>书城</span></a>
                     </div>
                     <!-- Menu Icon -->
-                    <div class="menu-icon">
-                        <div class="search">
-                            <a href="#" id="search" title="搜索"><i class="icon icon-Search"></i></a>
+                       <div class="menu-icon">
+                           <div class="search" style="margin-top: 15px;">
+                               <a href="#" id="search" title="搜索"><i class="icon icon-Search"></i></a>
+                            </div>
+                           <ul id="before-ul"  style="display: none" class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list tpl-header-list" >
+                               <li class="am-dropdown" data-am-dropdown="" data-am-dropdown-toggle="">
+                                       <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
+                                           <span class="tpl-header-list-user-nick">顾客一</span><span class="tpl-header-list-user-ico"> <img src="${pageContext.request.contextPath}/assets/img/user01.png"></span>
+                                       </a>
+                                       <ul class="am-dropdown-content">
+                                           <li><a href="#"><span class="am-icon-bell-o"></span>个人中心</a></li>
+                                           <li><a href="${pageContext.request.contextPath}/page/backstagepage/Login.jsp"><span class="am-icon-power-off"></span> 退出</a></li>
+                                       </ul>
+                               </li>
+                           </ul>
+
+                           <ul   id="after-ul"   class="am-topbar-nav am-topbar-right" >
+                               <li class="am-dropdown" data-am-dropdown="" data-am-dropdown-toggle="">
+                                   <text style="font-size:15px">请</text>
+                                   <a href="${pageContext.request.contextPath}/page/login.jsp" style="padding-right:0px">
+                                     <%--  <span class="tpl-header-list-user-nick">请登录，或者注册</span>--%>
+                                        登录
+                                   </a>
+                                   <text style="font-size:15px">,或者</text>
+                                   <a href="${pageContext.request.contextPath}/page/register.jsp" style="padding-right:0px">
+                                       注册
+                                   </a>
+                               </li>
+                           </ul>
                         </div>
-                        <ul class="cart">
-                            <li>
-                                <a aria-expanded="true" aria-haspopup="true" data-toggle="dropdown" id="cart" class="btn dropdown-toggle" title="加入购物车" href="#"><i class="icon icon-ShoppingCart"></i></a>
-                                <ul class="dropdown-menu no-padding">
-                                    <li class="mini_cart_item">
-                                        <a title="删除这件商品" class="remove" href="#">&#215;</a>
-                                        <a href="#" class="shop-thumbnail">
-                                            <img alt="poster_2_up" class="attachment-shop_thumbnail" src="${pageContext.request.contextPath}/images/product-wishlist-1.jpg">物品一
-                                        </a>
-                                        <span class="quantity">2 &#215; <span class="amount">Rs.12.00</span></span>
-                                    </li>
-                                    <li class="mini_cart_item">
-                                        <a title="删除这件商品" class="remove" href="#">&#215;</a>
-                                        <a href="#" class="shop-thumbnail">
-                                            <img alt="poster_2_up" class="attachment-shop_thumbnail" src="${pageContext.request.contextPath}/images/product-wishlist-2.jpg">物品2
-                                        </a>
-                                        <span class="quantity">2 &#215; <span class="amount">Rs.12.00</span></span>
-                                    </li>
-                                    <li class="button" style="float:right">
-                                        <a href="#" title="查看购物车">查看购物车</a>
-                                    </li>
-                                </ul>
-                            </li>
-
-                        </ul>
-
-                        <ul class="cart">
-                            <li><a aria-expanded="true" aria-haspopup="true" data-toggle="dropdown" id="like" class="btn dropdown-toggle" href="#" title="收藏"><i class="icon icon-Heart"></i></a>
-                                <ul class="dropdown-menu no-padding">
-                                    <li class="mini_cart_item">
-                                        <a title="删除这件商品" class="remove" href="#">&#215;</a>
-                                        <a href="#" class="shop-thumbnail">
-                                            <img alt="poster_2_up" class="attachment-shop_thumbnail" src="${pageContext.request.contextPath}/images/product-wishlist-1.jpg">物品3
-                                        </a>
-                                        <span class="quantity">2 &#215; <span class="amount">Rs.12.00</span></span>
-                                    </li>
-                                    <li class="mini_cart_item">
-                                        <a title="删除这件商品" class="remove" href="#">&#215;</a>
-                                        <a href="#" class="shop-thumbnail">
-                                            <img alt="poster_2_up" class="attachment-shop_thumbnail" src="${pageContext.request.contextPath}/images/product-wishlist-2.jpg">物品4
-                                        </a>
-                                        <span class="quantity">2 &#215; <span class="amount">Rs.12.00</span></span>
-                                    </li>
-                                    <li class="button" style="float:right">
-                                        <a href="#" title="查看购物车">查看购物车</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-
-                        <ul class="cart">
-
-                            <li><a href="#" title="用户"><i class="icon icon-User"></i></a>
-                                <ul class="dropdown-menu no-padding">
-                                    <li class="mini_cart_item">
-                                        <a title="删除这件商品" class="remove" href="#">&#215;</a>
-                                        <a href="#" class="shop-thumbnail">
-                                            <img alt="poster_2_up" class="attachment-shop_thumbnail" src="${pageContext.request.contextPath}/images/product-wishlist-1.jpg">物品5
-                                        </a>
-                                        <span class="quantity">2 &#215; <span class="amount">Rs.12.00</span></span>
-                                    </li>
-                                    <li class="mini_cart_item">
-                                        <a title="删除这件商品" class="remove" href="#">&#215;</a>
-                                        <a href="#" class="shop-thumbnail">
-                                            <img alt="poster_2_up" class="attachment-shop_thumbnail" src="${pageContext.request.contextPath}/images/product-wishlist-2.jpg">物品6
-                                        </a>
-                                        <span class="quantity">2 &#215; <span class="amount">Rs.12.00</span></span>
-                                    </li>
-                                    <li class="button" style="float:right">
-                                        <a href="#" title="查看购物车">查看购物车</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div><!-- Menu Icon /- -->
+                    <!-- Menu Icon /- -->
                     <div class="navbar-collapse collapse navbar-right" id="navbar">
                         <ul class="nav navbar-nav">
                             <li><a href="${pageContext.request.contextPath}/page/index.jsp">主页</a></li>
@@ -142,15 +94,20 @@
                             <li><a href="contact-us.html">联系我</a></li>
                         </ul>
                     </div><!--/.nav-collapse -->
-                </nav><!-- nav /- -->
+                </nav>
+                <!-- nav /- -->
                 <!-- Search Box -->
                 <div class="search-box">
                     <span><i class="icon_close"></i></span>
                     <form><input type="text" class="form-control" placeholder="输入关键字并按Enter" /></form>
-                </div><!-- Search Box /- -->
+                </div>
+                <!-- Search Box /- -->
             </div><!-- Container /- -->
-        </div><!-- Menu Block /- -->
-    </header><!-- Header /- -->
+        </div>
+        <!-- Menu Block /- -->
+    </header>
+    <%--<jsp:include page="${pageContext.request.contextPath}/page/backstagecommon/header.jsp"/>--%>
+    <!-- Header /- -->
     <main>
         <!-- Slider Section 1 -->
         <div id="home-revslider" class="slider-section container-fluid no-padding">
@@ -452,10 +409,10 @@
                     <ul class="products">
                         <!-- Product -->
 
-                        <c:forEach items="${allBooks}" var="allBooks">
+                        <c:forEach items="${limitBooks}" var="book">
                         <li class="product design">
                             <a href="#">
-                                <img src="${pageContext.request.contextPath}/images/product-1.jpg" alt="Product" />
+                                <img src="${pageContext.request.contextPath}/fileuploadpath/${book.bookImage1}" alt="Product" />
                                 <h5>Stylish Chair</h5>
                                 <span class="price"><del>$200</del>$139</span>
                             </a>
