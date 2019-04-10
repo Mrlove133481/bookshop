@@ -35,7 +35,7 @@
 <body>
 
 <div class="login-boxtitle">
-    <a href="home/demo.html"><img alt="" src="" /></a>
+    <a href="${pageContext.request.contextPath}/page/index.jsp"><img alt="" src="${pageContext.request.contextPath}/images/logo.png" /></a>
 </div>
 <div class="res-banner" style="background: url('${pageContext.request.contextPath}/images/big1.jpg')">
     <div class="res-main">
@@ -119,22 +119,19 @@
     <div class="footer ">
         <div class="footer-hd ">
             <p>
-                <a href="# ">恒望科技</a>
+                <a href="${pageContext.request.contextPath}/page/index.jsp">商城首页</a>
                 <b>|</b>
-                <a href="# ">商城首页</a>
-                <b>|</b>
-                <a href="# ">支付宝</a>
+                <a href="${pageContext.request.contextPath}/page/register.jsp">注册</a>
                 <b>|</b>
                 <a href="# ">物流</a>
             </p>
         </div>
         <div class="footer-bd ">
             <p>
-                <a href="# ">关于恒望</a>
+                <a href="${pageContext.request.contextPath}/page/about.jsp">关于我</a>
                 <a href="# ">合作伙伴</a>
-                <a href="# ">联系我们</a>
-                <a href="# ">网站地图</a>
-                <em>© 2015-2025 Hengwang.com 版权所有</em>
+                <a href="#">联系我们</a>
+                <em>Copyright &copy; 2019.Mrlove store name All rights reserved.</em>
             </p>
         </div>
     </div>

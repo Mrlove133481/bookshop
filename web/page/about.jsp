@@ -496,7 +496,7 @@
             </aside><!-- Widget Gallery -->
             <div class="copyright-section">
                 <div class="coyright-content">
-                    <p>Copyright &copy; 2019.Mrlove shop name All rights reserved.</p>
+                    <p>Copyright &copy; 2019.Mrlove store name All rights reserved.</p>
                 </div>
                 <ul>
                     <li><a href="#" title="Delivery Information">配送信息</a></li>

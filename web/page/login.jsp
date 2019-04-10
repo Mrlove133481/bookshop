@@ -19,7 +19,7 @@
     <meta http-equiv="Cache-Control" content="no-siteapp" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/amazeui.css" />
     <link href="${pageContext.request.contextPath}/page/common/dlstyle.css" rel="stylesheet" type="text/css">
-
+    <link href="${pageContext.request.contextPath}/layui/css/dlstyle.css" rel="stylesheet" type="text/css">
     <style>
        #submit:hover
         {
@@ -33,7 +33,7 @@
 <body>
 
 <div class="login-boxtitle">
-    <a href="home.html"><img alt="logo"  height="253px" width="46px" src="${pageContext.request.contextPath}/images/logo.png" /></a>
+    <a href="${pageContext.request.contextPath}/page/index.jsp"><img alt="logo"  src="${pageContext.request.contextPath}/images/logo.png" /></a>
 </div>
 
 <div class="login-banner" style="background: url('${pageContext.request.contextPath}/images/big1.jpg')">
@@ -46,14 +46,14 @@
             <div class="clear"></div>
 
             <div class="login-form">
-                <form>
+                <form id="loginform" method="post" action="/login/user">
                     <div class="user-name">
                         <label for="user"><i class="am-icon-user"></i></label>
-                        <input type="text" name="" id="user" placeholder="邮箱/手机/用户名" style="outline-color:#b6795f">
+                        <input type="text" name="user" id="user" placeholder="邮箱/手机/用户名" style="outline-color:#b6795f">
                     </div>
                     <div class="user-pass">
                         <label for="password"><i class="am-icon-lock"></i></label>
-                        <input type="password" name="" id="password" placeholder="请输入密码" style="outline-color:#b6795f">
+                        <input type="password" name="password" id="password" placeholder="请输入密码" style="outline-color:#b6795f">
                     </div>
                 </form>
             </div>
@@ -65,7 +65,7 @@
                 <br />
             </div>
             <div class="am-cf">
-                <input type="submit"   id="submit" name="" value="登 录" class="am-btn am-btn-primary am-btn-sm" style="background-color:#b6795f;
+                <input type="submit"   id="submit" name="submit" onclick="tijiao();" value="登 录" class="am-btn am-btn-primary am-btn-sm" style="background-color:#b6795f;
     border-color:#b6795f;outline-color:#b6795f;">
             </div>
             <div class="partner">
@@ -85,24 +85,52 @@
 <div class="footer ">
     <div class="footer-hd ">
         <p>
-            <a href="# ">恒望科技</a>
+            <a href="${pageContext.request.contextPath}/page/index.jsp">商城首页</a>
             <b>|</b>
-            <a href="# ">商城首页</a>
-            <b>|</b>
-            <a href="# ">支付宝</a>
+            <a href="${pageContext.request.contextPath}/page/register.jsp">注册</a>
             <b>|</b>
             <a href="# ">物流</a>
         </p>
     </div>
     <div class="footer-bd ">
         <p>
-            <a href="# ">关于恒望</a>
+            <a href="${pageContext.request.contextPath}/page/about.jsp">关于我</a>
             <a href="# ">合作伙伴</a>
-            <a href="# ">联系我们</a>
-            <a href="# ">网站地图</a>
-            <em>© 2015-2025 Hengwang.com 版权所有</em>
+            <a href="#">联系我们</a>
+            <em>Copyright &copy; 2019.Mrlove store name All rights reserved.</em>
         </p>
     </div>
 </div>
 </body>
+<script src="${pageContext.request.contextPath}/assets/js/jquery.min.js"></script>
+<script src="${pageContext.request.contextPath}/layer/layer.js"></script>
+
+<script>
+    function tijiao() {
+        document.getElementById("loginform").submit();//表单提交
+    }
+</script>
+<script>
+    var nums = ${nums};
+    if(nums ==1){
+        layer.msg("请输入用户名！",{time:700},{offset: 'rt'},function () {
+            layer.close(index);
+        })
+    }
+    if(nums ==2){
+        layer.msg("请输入密码！",{time:700},function () {
+            layer.close(index);
+        })
+    }
+    if(nums ==3){
+        layer.msg("密码错误！",{time:700},function () {
+            layer.close(index);
+        })
+    }
+    if(nums ==4){
+        layer.msg("用户不存在！",{time:700},function () {
+            layer.close(index);
+        })
+    }
+</script>
 </html>

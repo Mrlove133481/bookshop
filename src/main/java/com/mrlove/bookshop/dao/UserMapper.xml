@@ -159,4 +159,17 @@
       </if>
     </trim>
   </insert>
+  <!--查询用户名是否存在-->
+  <select id="queryUser" resultMap="BaseResultMap">
+    select user_name,user_email,user_telnum
+    from user
+    where user_name=#{user} or user_email=#{user} or user_telnum=#{user}and user_status != '0'
+  </select>
+  <!--查询密码是否正确-->
+  <select id="queryPwd" resultMap="BaseResultMap">
+    select user_name,user_email,user_telnum
+    from user
+    where(user_name=#{user} or user_email=#{user} or user_telnum=#{user})and user_pwd =#{password} and user_status != '0'
+  </select>
+
 </mapper>

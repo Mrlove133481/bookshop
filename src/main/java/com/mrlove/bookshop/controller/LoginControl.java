@@ -12,15 +12,15 @@ public class LoginControl {
     //控制层注入 服务层
     @Autowired
     private LoginService loginService;
-    @RequestMapping("/user")
-    public String loginUser(String username, String pwd, Model model) {
+    @RequestMapping("/manager")
+    public String loginManager(String username, String pwd, Model model) {
         model.addAttribute("nums",0);
         if (username == "") {
             model.addAttribute("nums",1);
         } else if (username !="" && pwd =="") {
             model.addAttribute("nums",2);
-        } else if (loginService.queryuser(username)) {
-            if (loginService.querypwd(username,pwd)) {
+        } else if (loginService.querymanageruser(username)) {
+            if (loginService.querymanagerpwd(username,pwd)) {
                 return "/backstagepage/hello";
             } else {
                 model.addAttribute("nums",3);
@@ -31,9 +31,25 @@ public class LoginControl {
         return "/backstagepage/Login";
     }
 
-
-    @RequestMapping("/hello")
-    public String hai(){
-        return "/about";
+    @RequestMapping("/user")
+    public String loginUser(String user,String password,Model model){
+        model.addAttribute("nums",0);
+        if (user == "") {
+            model.addAttribute("nums",1);
+        } else if (user !="" && password =="") {
+            model.addAttribute("nums",2);
+        } else if (loginService.queryuser(user)) {
+            if (loginService.querypwd(user,password)) {
+                model.addAttribute("status",true);
+                return "index";
+            } else {
+                model.addAttribute("nums",3);
+            }
+        } else {
+            model.addAttribute("nums",4);
+        }
+        return "login";
     }
+
+
 }
