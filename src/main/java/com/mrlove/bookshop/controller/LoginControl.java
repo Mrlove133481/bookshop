@@ -40,7 +40,7 @@ public class LoginControl {
             model.addAttribute("nums",2);
         } else if (loginService.queryuser(user)) {
             if (loginService.querypwd(user,password)) {
-                model.addAttribute("status",true);
+                model.addAttribute("status",1);
                 return "index";
             } else {
                 model.addAttribute("nums",3);

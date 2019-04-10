@@ -58,29 +58,25 @@
                            <div class="search" style="margin-top: 15px;">
                                <a href="#" id="search" title="搜索"><i class="icon icon-Search"></i></a>
                             </div>
-                           <ul id="before-ul"  style="display: none" class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list tpl-header-list" >
+                           <%--登录后显示--%>
+                           <ul id="after-ul" style="display: none"  class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list tpl-header-list" >
                                <li class="am-dropdown" data-am-dropdown="" data-am-dropdown-toggle="">
                                        <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
                                            <span class="tpl-header-list-user-nick">顾客一</span><span class="tpl-header-list-user-ico"> <img src="${pageContext.request.contextPath}/assets/img/user01.png"></span>
                                        </a>
                                        <ul class="am-dropdown-content">
                                            <li><a href="#"><span class="am-icon-bell-o"></span>个人中心</a></li>
-                                           <li><a href="${pageContext.request.contextPath}/page/backstagepage/Login.jsp"><span class="am-icon-power-off"></span> 退出</a></li>
+                                           <li><a href="${pageContext.request.contextPath}/foreground/quits"><span class="am-icon-power-off"></span> 退出</a></li>
                                        </ul>
                                </li>
                            </ul>
-
-                           <ul   id="after-ul"   class="am-topbar-nav am-topbar-right" >
+                            <%--登录前显示--%>
+                           <ul   id="before-ul" class="am-topbar-nav am-topbar-right" >
                                <li class="am-dropdown" data-am-dropdown="" data-am-dropdown-toggle="">
                                    <text style="font-size:15px">请</text>
-                                   <a href="${pageContext.request.contextPath}/page/login.jsp" style="padding-right:0px">
-                                     <%--  <span class="tpl-header-list-user-nick">请登录，或者注册</span>--%>
-                                        登录
-                                   </a>
+                                   <a href="${pageContext.request.contextPath}/page/login.jsp" style="padding-right:0px">登录</a>
                                    <text style="font-size:15px">,或者</text>
-                                   <a href="${pageContext.request.contextPath}/page/register.jsp" style="padding-right:0px">
-                                       注册
-                                   </a>
+                                   <a href="${pageContext.request.contextPath}/page/register.jsp" style="padding-right:0px">注册</a>
                                </li>
                            </ul>
                         </div>
@@ -1020,7 +1016,6 @@
 <script>
     layui.use('element', function(){
         var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
-
         //监听导航点击
         element.on('nav(demo)', function(elem){
             //console.log(elem)
@@ -1029,7 +1024,18 @@
     });
 </script>
 
+<script>
+    var status =0;
+    status = ${status};
+    if(status==1){
+        document.getElementById("after-ul").style.display = "";
+        document.getElementById("before-ul").style.display = "none";
+    }else {
+        document.getElementById("after-ul").style.display = "none";
+        document.getElementById("before-ul").style.display = "";
+    }
 
+</script>
 
 </body>
 </html>
