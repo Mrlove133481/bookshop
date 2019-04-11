@@ -22,7 +22,7 @@
     <link href="${pageContext.request.contextPath}/page/common/dlstyle.css" rel="stylesheet" type="text/css">
     <script src="${pageContext.request.contextPath}/assets/js/jquery.min.js"></script>
     <script src="${pageContext.request.contextPath}/assets/js/amazeui.min.js"></script>
-
+    <script src="${pageContext.request.contextPath}/layer/layer.js"></script>
     <style>
         input{
             outline-color:#b6795f;
@@ -49,18 +49,22 @@
                 <div class="am-tabs-bd">
                     <%--邮箱注册--%>
                     <div class="am-tab-panel am-active">
-                        <form method="post">
+                        <form method="post" id="emailform" action="/login/register">
                             <div class="user-email">
                                 <label for="email"><i class="am-icon-envelope-o"></i></label>
-                                <input type="email" name="" id="email" placeholder="请输入邮箱账号">
+                                <input type="email" name="email" maxlength="50" id="email" placeholder="请输入邮箱账号">
+                            </div>
+                            <div class="user-name">
+                                <label for="name"><i class="am-icon-user"></i></label>
+                                <input type="txt" name="name" maxlength="15" id="name" placeholder="设置用户名">
                             </div>
                             <div class="user-pass">
                                 <label for="password"><i class="am-icon-lock"></i></label>
-                                <input type="password" name="" id="password" placeholder="设置密码">
+                                <input type="password" name="password" maxlength="20" id="password" placeholder="设置密码">
                             </div>
                             <div class="user-pass">
                                 <label for="passwordRepeat"><i class="am-icon-lock"></i></label>
-                                <input type="password" name="" id="passwordRepeat" placeholder="确认密码">
+                                <input type="password" name="passwordRepeat" maxlength="20" id="passwordRepeat" placeholder="确认密码">
                             </div>
                         </form>
                         <div class="login-links">
@@ -69,30 +73,34 @@
                             </label>
                         </div>
                         <div class="am-cf">
-                            <input type="submit" name="" value="注册" class="am-btn am-btn-primary am-btn-sm am-fl" style="background-color:#b6795f;
+                            <input type="submit" name="" onclick="emailzhuce();" value="注册" class="am-btn am-btn-primary am-btn-sm am-fl" style="background-color:#b6795f;
     border-color:#b6795f;outline-color:#b6795f;">
                         </div>
                     </div>
                     <%--手机号注册--%>
                     <div class="am-tab-panel">
-                        <form method="post">
+                        <form method="post" id="telform" action="/login/register">
                             <div class="user-phone">
                                 <label for="phone"><i class="am-icon-mobile-phone am-icon-md"></i></label>
-                                <input type="tel" name="" id="phone" placeholder="请输入手机号">
+                                <input type="tel" name="phone" maxlength="16" id="phone" placeholder="请输入手机号">
+                            </div>
+                            <div class="user-name">
+                                <label for="name1"><i class="am-icon-user"></i></label>
+                                <input type="txt" name="name1" maxlength="15" id="name1" placeholder="设置用户名">
                             </div>
                             <div class="verification">
                                 <label for="code"><i class="am-icon-code-fork"></i></label>
-                                <input type="tel" name="" id="code" placeholder="请输入验证码">
+                                <input type="tel" name="code" id="code" placeholder="请输入验证码">
                                 <a class="btn" href="javascript:void(0);" onclick="sendMobileCode();" id="sendMobileCode">
                                     <span id="dyMobileButton">获取</span></a>
                             </div>
                             <div class="user-pass">
                                 <label for="password1"><i class="am-icon-lock"></i></label>
-                                <input type="password" name="" id="password1" placeholder="设置密码">
+                                <input type="password" name="password1" maxlength="20" id="password1" placeholder="设置密码">
                             </div>
                             <div class="user-pass">
                                 <label for="passwordRepeat1"><i class="am-icon-lock"></i></label>
-                                <input type="password" name="" id="passwordRepeat1" placeholder="确认密码">
+                                <input type="password" name="passwordRepeat1" maxlength="20" id="passwordRepeat1" placeholder="确认密码">
                             </div>
                         </form>
                         <div class="login-links">
@@ -101,7 +109,7 @@
                             </label>
                         </div>
                         <div class="am-cf">
-                            <input type="submit" name="" value="注册" class="am-btn am-btn-primary am-btn-sm am-fl" style="background-color:#b6795f;
+                            <input type="submit" name="" onclick="telzhuce();" value="注册" class="am-btn am-btn-primary am-btn-sm am-fl" style="background-color:#b6795f;
     border-color:#b6795f;outline-color:#b6795f;">
                         </div>
                         <hr>
@@ -138,4 +146,90 @@
 </div>
 </body>
 
+<script>
+    function emailzhuce() {
+        var check = $("#reader-me").prop("checked");
+        var email = $("#email").val();
+        var name = $("#name").val();
+        var password = $("#password").val();
+        var passwordRepeat = $("#passwordRepeat").val();
+        var reg = new RegExp("^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$"); //邮箱验证正则表达式
+        if(email == ""){
+            layer.msg("注册邮箱不能为空！",{time:700},{offset: 'rt'},function () {
+                layer.close(index);
+            })
+        }else if(!reg.test(email)){
+            layer.msg("注册邮箱格式不对！",{time:700},{offset: 'rt'},function () {
+                layer.close(index);
+            })
+        } else if(name ==""){
+            layer.msg("用户名不能为空！",{time:700},{offset: 'rt'},function () {
+                layer.close(index);
+            })
+        }else if(password == ""){
+            layer.msg("密码不能为空！",{time:700},{offset: 'rt'},function () {
+                layer.close(index);
+            })
+        }else if(check == false){
+            layer.msg("抱歉未同意协议，暂不能提供注册！",{time:1000},{offset: 'rt'},function () {
+                layer.close(index);
+            })
+        }else if(password==passwordRepeat){
+            document.getElementById("emailform").submit();
+        } else {
+            layer.msg("密码不一致！",{time:700},{offset: 'rt'},function () {
+                layer.close(index);
+            })
+        }
+
+    };
+    function telzhuce() {
+        var check = $("#reader-me1").prop("checked");
+        var phone = $("#phone").val();
+        var name1 = $("#name1").val();
+        var password1 = $("#password1").val();
+        var passwordRepeat1 = $("#passwordRepeat1").val();
+        if(phone == ""){
+            layer.msg("注册手机不能为空！",{time:700},{offset: 'rt'},function () {
+                layer.close(index);
+            })
+        }else if(name1 ==""){
+            layer.msg("用户名不能为空！",{time:700},{offset: 'rt'},function () {
+                layer.close(index);
+            })
+        }else if(password1 == ""){
+            layer.msg("密码不能为空！",{time:700},{offset: 'rt'},function () {
+                layer.close(index);
+            })
+        }else if(check == false){
+            layer.msg("抱歉未同意协议，暂不能提供注册！",{time:1000},{offset: 'rt'},function () {
+                layer.close(index);
+            })
+        }else if(password1==passwordRepeat1){
+            document.getElementById("telform").submit();
+        } else {
+            layer.msg("密码不一致！",{time:700},{offset: 'rt'},function () {
+                layer.close(index);
+            })
+        }
+    }
+</script>
+<script>
+    var num = ${num}
+    if(num == 1){
+        layer.msg("用户名已存在，请重新输入！",{time:1000},{offset: 'rt'},function () {
+            layer.close(index);
+        })
+    }
+    if(num == 2){
+        layer.msg("电子邮箱已注册，请重新输入！",{time:1000},{offset: 'rt'},function () {
+            layer.close(index);
+        })
+    }
+    if(num == 3){
+        layer.msg("电话号码已注册，请重新输入！",{time:1000},{offset: 'rt'},function () {
+            layer.close(index);
+        })
+    }
+</script>
 </html>

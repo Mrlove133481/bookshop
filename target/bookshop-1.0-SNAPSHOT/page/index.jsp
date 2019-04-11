@@ -51,7 +51,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a href="index.html" class="navbar-brand">Mrlove <span>书城</span></a>
+                        <a href="${pageContext.request.contextPath}/page/index.jsp" class="navbar-brand">Mrlove <span>书城</span></a>
                     </div>
                     <!-- Menu Icon -->
                        <div class="menu-icon">
@@ -62,7 +62,7 @@
                            <ul id="after-ul" style="display: none"  class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list tpl-header-list" >
                                <li class="am-dropdown" data-am-dropdown="" data-am-dropdown-toggle="">
                                        <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
-                                           <span class="tpl-header-list-user-nick">顾客一</span><span class="tpl-header-list-user-ico"> <img src="${pageContext.request.contextPath}/assets/img/user01.png"></span>
+                                           <span class="tpl-header-list-user-nick">${user.userName}</span><span class="tpl-header-list-user-ico"> <img src="${pageContext.request.contextPath}/fileuploadpath/useravatar/${userimg}"></span>
                                        </a>
                                        <ul class="am-dropdown-content">
                                            <li><a href="#"><span class="am-icon-bell-o"></span>个人中心</a></li>
@@ -71,7 +71,7 @@
                                </li>
                            </ul>
                             <%--登录前显示--%>
-                           <ul   id="before-ul"  style="display: none" class="am-topbar-nav am-topbar-right" >
+                           <ul   id="before-ul" class="am-topbar-nav am-topbar-right" >
                                <li class="am-dropdown" data-am-dropdown="" data-am-dropdown-toggle="">
                                    <text style="font-size:15px">请</text>
                                    <a href="${pageContext.request.contextPath}/page/login.jsp" style="padding-right:0px">登录</a>
@@ -1028,13 +1028,11 @@
     var status =0;
     status = ${status};
     if(status==1){
-        alert("进来了");
-        document.getElementById("after-ul").style.display = "display";
+        document.getElementById("after-ul").style.display = "";
         document.getElementById("before-ul").style.display = "none";
     }else {
-        alert("退出了");
         document.getElementById("after-ul").style.display = "none";
-        document.getElementById("before-ul").style.display = "display";
+        document.getElementById("before-ul").style.display = "";
     }
 
 </script>

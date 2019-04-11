@@ -19,7 +19,6 @@
     <meta http-equiv="Cache-Control" content="no-siteapp" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/amazeui.css" />
     <link href="${pageContext.request.contextPath}/page/common/dlstyle.css" rel="stylesheet" type="text/css">
-    <link href="${pageContext.request.contextPath}/layui/css/dlstyle.css" rel="stylesheet" type="text/css">
     <style>
        #submit:hover
         {

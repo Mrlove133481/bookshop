@@ -39,6 +39,31 @@ public class User {
 
     private String userRemark4;
 
+    public User() {
+    }
+
+    public User(String userId, String userName, String userPwd, String userNickName, String userImage, Integer userSex, String userBirthday, String userTelnum, String userEmail, String userOrder, String userAddress, String userCollect, String userShopCart, String userCreationTime, Integer userStatus, String userRemark1, String userRemark2, String userRemark3, String userRemark4) {
+        this.userId = userId;
+        this.userName = userName;
+        this.userPwd = userPwd;
+        this.userNickName = userNickName;
+        this.userImage = userImage;
+        this.userSex = userSex;
+        this.userBirthday = userBirthday;
+        this.userTelnum = userTelnum;
+        this.userEmail = userEmail;
+        this.userOrder = userOrder;
+        this.userAddress = userAddress;
+        this.userCollect = userCollect;
+        this.userShopCart = userShopCart;
+        this.userCreationTime = userCreationTime;
+        this.userStatus = userStatus;
+        this.userRemark1 = userRemark1;
+        this.userRemark2 = userRemark2;
+        this.userRemark3 = userRemark3;
+        this.userRemark4 = userRemark4;
+    }
+
     public String getUserId() {
         return userId;
     }

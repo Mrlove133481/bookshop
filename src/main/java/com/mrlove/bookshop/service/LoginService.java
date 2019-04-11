@@ -1,5 +1,7 @@
 package com.mrlove.bookshop.service;
 
+import com.mrlove.bookshop.common.domain.User;
+
 public interface LoginService {
 
      boolean querymanageruser(String username);
@@ -7,5 +9,7 @@ public interface LoginService {
 
      boolean queryuser(String user);
 
-     boolean querypwd(String user, String password);
+     Object querypwd(String user, String password);
+
+     void registeruser(User user);
 }

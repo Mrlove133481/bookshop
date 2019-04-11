@@ -1,7 +1,11 @@
 package com.mrlove.bookshop.common.utils;
 
+import com.mrlove.bookshop.common.domain.User;
+
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 public class IdGenerator {
@@ -29,6 +33,14 @@ public class IdGenerator {
         return rs1;
     }
 
+    public static Object hh(){
+        User user = new User();
+        user.setUserId("1");
+        List<User> m = new ArrayList<>();
+        m.add(user);
+        return m;
+    }
+
     public static void main(String[] args) {
        /* System.out.println(getNumber());
         System.out.println(getID());*/
@@ -48,13 +60,25 @@ public class IdGenerator {
            test2 = test2+test1[i]+",";
        }
        test2 = test2.substring(0,test2.length()-1);
-
-
        String test3 = "D:\\apache-tomcat-8.5.34\\webapps\\ROOT\\fileuploadpath\\\\(23)_1048e204eb.jpg";
        test = test3.substring(test3.indexOf("fileuploadpath")+16,test3.length());
        test3="img2_D:\\apache-tomcat-8.5.34\\webapps\\ROOT\\fileuploadpath\\\\(13)_2663b029fe.jpg";
         test = test3.substring(test3.indexOf("img2")+5,test3.length());
 
-       System.out.println(test);
+
+
+        if(hh() instanceof List){
+            List<User>  t = ((List) hh());
+            for (User j:t
+                 ) {
+                System.out.println(j.getUserId());
+            }
+
+        }else {
+            System.out.println("失败");
+        }
+
+
+
     }
 }

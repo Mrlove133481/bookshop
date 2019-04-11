@@ -7,8 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
-
 
 @Service
 @Transactional
@@ -39,6 +37,8 @@ public class LoginServiceImpl implements LoginService {
     @Override
     public boolean queryuser(String user) {
         if(userMapper.queryUser(user).size()!=0){
+       User user1 = userMapper.queryUser(user).get(0);
+            System.out.println(user1);
             return true;
         }else {
             return false;
@@ -46,13 +46,19 @@ public class LoginServiceImpl implements LoginService {
     }
     //查询用户密码是否正确
     @Override
-    public boolean querypwd(String user, String password) {
+    public Object querypwd(String user, String password) {
         if(userMapper.queryPwd(user,password).size()!=0){
-            return true;
+            return userMapper.queryPwd(user,password);
         }else {
             return false;
         }
 
 
     }
+    //用户注册
+    @Override
+    public void registeruser(User user) {
+        userMapper.insertSelective(user);
+    }
+
 }
