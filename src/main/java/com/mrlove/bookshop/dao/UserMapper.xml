@@ -171,5 +171,22 @@
     from user
     where(user_name=#{user} or user_email=#{user} or user_telnum=#{user})and user_pwd =#{password} and user_status != '0'
   </select>
-
+  <!--查询用户名是否存在-->
+  <select id="queryusername" resultMap="BaseResultMap">
+    select user_name
+    from user
+    where user_name=#{username} and user_status != '0'
+  </select>
+  <!--查询邮箱是否存在-->
+  <select id="queryuseremail" resultMap="BaseResultMap">
+    select user_email
+    from user
+    where user_email=#{email} and user_status != '0'
+  </select>
+  <!--查询电话是否存在-->
+  <select id="queryusertel" resultMap="BaseResultMap">
+    select user_telnum
+    from user
+    where user_telnum=#{usertel} and user_status != '0'
+  </select>
 </mapper>

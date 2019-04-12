@@ -66,33 +66,37 @@ public class LoginControl {
     //注册事件
     @RequestMapping("register")
     public String register(String email,String password,String phone,String code,String password1,String name,String name1,Model model){
-        String pwd = "",username = "",useremail = "" ,usertel ="";
+        String pwd = "",username = "",useremail =null ,usertel =null;
+        System.out.println(usertel);
        //默认头像
         String dfimg = "D:\\apache-tomcat-8.5.34\\webapps\\ROOT\\fileuploadpath\\useravatar\\\\dfimg.jpg";
         if(password == null){
             pwd = password1;
-            System.out.println(pwd+"-----"+password1);
             username = name1;
             usertel = phone;
-            System.out.println(usertel+"-----"+phone);
+            if(loginService.queryusername(username)){
+                model.addAttribute("num",1);
+            }else if(loginService.queryusertel(usertel)){
+                model.addAttribute("num",3);
+            }else {
+                User user = new User(IdGenerator.getID(),username,pwd,null,dfimg,0,null,usertel,useremail,null,null,null,null, DateUtil.parseDateToStr(new Date(), DateUtil.DATE_TIME_FORMAT_YYYY_MM_DD_HH_MI_SS),1,null,null,null,null);
+                loginService.registeruser(user);
+                return loginUser(username,pwd,model);
+            }
         }else {
             pwd = password;
             username = name;
             useremail = email;
+            if(loginService.queryusername(username)){
+                model.addAttribute("num",1);
+            }else if(loginService.queryuseremail(useremail)){
+                model.addAttribute("num",2);
+            }else {
+                User user = new User(IdGenerator.getID(),username,pwd,null,dfimg,0,null,usertel,useremail,null,null,null,null, DateUtil.parseDateToStr(new Date(), DateUtil.DATE_TIME_FORMAT_YYYY_MM_DD_HH_MI_SS),1,null,null,null,null);
+                loginService.registeruser(user);
+                return loginUser(username,pwd,model);
+            }
         }
-
-        if(loginService.queryuser(username)){
-            model.addAttribute("num",1);
-        }else if(loginService.queryuser(email)){
-            model.addAttribute("num",2);
-        }else if(loginService.queryuser(usertel)){
-            model.addAttribute("num",3);
-        }else {
-            User user = new User(IdGenerator.getID(),username,pwd,null,dfimg,0,null,usertel,useremail,null,null,null,null, DateUtil.parseDateToStr(new Date(), DateUtil.DATE_TIME_FORMAT_YYYY_MM_DD_HH_MI_SS),1,null,null,null,null);
-            loginService.registeruser(user);
-            return loginUser(username,pwd,model);
-        }
-
         return "register";
     }
 }

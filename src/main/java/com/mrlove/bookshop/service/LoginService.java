@@ -12,4 +12,10 @@ public interface LoginService {
      Object querypwd(String user, String password);
 
      void registeruser(User user);
+
+     boolean queryusername(String username);
+
+     boolean queryuseremail(String email);
+
+     boolean queryusertel(String usertel);
 }

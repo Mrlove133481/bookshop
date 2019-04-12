@@ -37,8 +37,6 @@ public class LoginServiceImpl implements LoginService {
     @Override
     public boolean queryuser(String user) {
         if(userMapper.queryUser(user).size()!=0){
-       User user1 = userMapper.queryUser(user).get(0);
-            System.out.println(user1);
             return true;
         }else {
             return false;
@@ -52,13 +50,39 @@ public class LoginServiceImpl implements LoginService {
         }else {
             return false;
         }
-
-
     }
     //用户注册
     @Override
     public void registeruser(User user) {
         userMapper.insertSelective(user);
+    }
+    //查询用户名是否存在
+    @Override
+    public boolean queryusername(String username) {
+
+      if( userMapper.queryusername(username).size()!=0){
+         return true;
+      }else {
+          return  false;
+      }
+    }
+    //查询邮箱是否存在
+    @Override
+    public boolean queryuseremail(String email) {
+        if(userMapper.queryuseremail(email).size()!=0){
+            return true;
+        }else {
+            return  false;
+        }
+    }
+    //查询电话是否存在
+    @Override
+    public boolean queryusertel(String usertel) {
+        if( userMapper.queryusertel(usertel).size()!=0){
+             return true;
+        }else {
+            return  false;
+        }
     }
 
 }

@@ -215,4 +215,29 @@ public class User {
     public void setUserRemark4(String userRemark4) {
         this.userRemark4 = userRemark4 == null ? null : userRemark4.trim();
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userId='" + userId + '\'' +
+                ", userName='" + userName + '\'' +
+                ", userPwd='" + userPwd + '\'' +
+                ", userNickName='" + userNickName + '\'' +
+                ", userImage='" + userImage + '\'' +
+                ", userSex=" + userSex +
+                ", userBirthday='" + userBirthday + '\'' +
+                ", userTelnum='" + userTelnum + '\'' +
+                ", userEmail='" + userEmail + '\'' +
+                ", userOrder='" + userOrder + '\'' +
+                ", userAddress='" + userAddress + '\'' +
+                ", userCollect='" + userCollect + '\'' +
+                ", userShopCart='" + userShopCart + '\'' +
+                ", userCreationTime='" + userCreationTime + '\'' +
+                ", userStatus=" + userStatus +
+                ", userRemark1='" + userRemark1 + '\'' +
+                ", userRemark2='" + userRemark2 + '\'' +
+                ", userRemark3='" + userRemark3 + '\'' +
+                ", userRemark4='" + userRemark4 + '\'' +
+                '}';
+    }
 }
