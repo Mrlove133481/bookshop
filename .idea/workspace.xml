@@ -7,15 +7,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b21ba883-95a2-4ac3-b481-3e50fcefb2ea" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/web/page/beforeindex.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/page/common/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/page/shopcart.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/common/utils/IdGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/common/utils/IdGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/controller/LoginControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/controller/LoginControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/controller/ForegroundControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/controller/ForegroundControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/dao/BooksMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/dao/BooksMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT/WEB-INF/classes/com/mrlove/bookshop/common/utils/IdGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT/WEB-INF/classes/com/mrlove/bookshop/common/utils/IdGenerator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT/WEB-INF/classes/com/mrlove/bookshop/controller/LoginControl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT/WEB-INF/classes/com/mrlove/bookshop/controller/LoginControl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT/WEB-INF/classes/com/mrlove/bookshop/dao/BooksMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT/WEB-INF/classes/com/mrlove/bookshop/dao/BooksMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT/WEB-INF/lib/bookshop-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT/WEB-INF/lib/bookshop-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mrlove/bookshop/common/utils/IdGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mrlove/bookshop/common/utils/IdGenerator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mrlove/bookshop/controller/LoginControl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mrlove/bookshop/controller/LoginControl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT/page/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bookshop-1.0-SNAPSHOT/page/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mrlove/bookshop/dao/BooksMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mrlove/bookshop/dao/BooksMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/page/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/page/index.jsp" afterDir="false" />
     </list>
     <list id="edf456dc-11e0-4c75-a8f0-1fd05457ed47" name="Revert &quot;first commit&quot;" comment="Revert &quot;first commit&quot;&#10;&#10;This reverts commit 68cc1a0" />
     <list id="03d2abcb-d991-4268-a323-54c6ea542c88" name="Revert &quot;提交吼吼&quot;" comment="Revert &quot;提交吼吼&quot;&#10;&#10;This reverts commit a79d805" />
@@ -82,40 +88,40 @@
         <counts>
           <entry key="class" value="35" />
           <entry key="classpath" value="1" />
-          <entry key="css" value="38" />
+          <entry key="css" value="40" />
           <entry key="groovy" value="1" />
           <entry key="html" value="55" />
           <entry key="iml" value="5" />
-          <entry key="java" value="287" />
+          <entry key="java" value="289" />
           <entry key="jpg" value="45" />
           <entry key="js" value="43" />
           <entry key="json" value="6" />
-          <entry key="jsp" value="275" />
+          <entry key="jsp" value="286" />
           <entry key="less" value="3" />
           <entry key="md" value="4" />
           <entry key="png" value="14" />
           <entry key="project" value="1" />
           <entry key="properties" value="8" />
-          <entry key="xml" value="107" />
+          <entry key="xml" value="108" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="35" />
-          <entry key="CSS" value="38" />
+          <entry key="CSS" value="40" />
           <entry key="Eclipse" value="2" />
           <entry key="HTML" value="55" />
           <entry key="IDEA_MODULE" value="5" />
           <entry key="Image" value="59" />
-          <entry key="JAVA" value="287" />
+          <entry key="JAVA" value="289" />
           <entry key="JSON" value="6" />
-          <entry key="JSP" value="275" />
+          <entry key="JSP" value="286" />
           <entry key="JavaScript" value="43" />
           <entry key="Less" value="3" />
           <entry key="Markdown" value="4" />
           <entry key="Properties" value="8" />
           <entry key="Scratch" value="1" />
-          <entry key="XML" value="107" />
+          <entry key="XML" value="108" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -124,11 +130,11 @@
           <entry key="dummy" value="7" />
           <entry key="html" value="287" />
           <entry key="iml" value="8" />
-          <entry key="java" value="5450" />
-          <entry key="jsp" value="7943" />
+          <entry key="java" value="5467" />
+          <entry key="jsp" value="8119" />
           <entry key="properties" value="14" />
-          <entry key="txt" value="309" />
-          <entry key="xml" value="775" />
+          <entry key="txt" value="321" />
+          <entry key="xml" value="776" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -136,12 +142,12 @@
           <entry key="CSS" value="52" />
           <entry key="HTML" value="285" />
           <entry key="IDEA_MODULE" value="8" />
-          <entry key="JAVA" value="5450" />
-          <entry key="JSP" value="7943" />
-          <entry key="PLAIN_TEXT" value="316" />
+          <entry key="JAVA" value="5467" />
+          <entry key="JSP" value="8119" />
+          <entry key="PLAIN_TEXT" value="328" />
           <entry key="Properties" value="14" />
           <entry key="SQL" value="8" />
-          <entry key="XML" value="767" />
+          <entry key="XML" value="768" />
         </counts>
       </usages-collector>
     </session>
@@ -151,77 +157,95 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/page/login.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" column="64" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="64" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/page/register.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="84" column="59" selection-start-line="84" selection-start-column="59" selection-end-line="84" selection-end-column="59" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/page/index.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="154">
+              <caret line="417" column="87" selection-start-line="417" selection-start-column="87" selection-end-line="417" selection-end-column="87" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/page/about.jsp">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/controller/LoginControl.java">
+        <entry file="file://$PROJECT_DIR$/web/page/shopcart.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="496">
-              <caret line="66" column="135" selection-start-line="66" selection-start-column="135" selection-end-line="66" selection-end-column="135" />
+            <state relative-caret-position="-3629">
+              <caret line="15" column="74" selection-start-line="15" selection-start-column="74" selection-end-line="15" selection-end-column="74" />
               <folding>
-                <element signature="method#loginManager#0;class#LoginControl#0" />
-                <element signature="method#register#0;class#LoginControl#0" />
+                <element signature="e#2932#2938#0#HTML" expanded="true" />
+                <element signature="e#2938#2944#0#HTML" expanded="true" />
+                <element signature="e#8966#10538#0#HTML" />
+                <element signature="e#10879#10885#0#HTML" expanded="true" />
+                <element signature="e#10885#10891#0#HTML" expanded="true" />
+                <element signature="e#11627#11636#0#HTML" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/common/utils/MyDateConverter.java">
+        <entry file="file://$PROJECT_DIR$/web/page/beforeindex.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+            <state relative-caret-position="136">
+              <caret line="8" column="45" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/common/utils/IdGenerator.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/controller/ForegroundControl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1428">
-              <caret line="92" column="2" selection-start-line="92" selection-end-line="96" selection-end-column="46" />
+            <state relative-caret-position="238">
+              <caret line="29" column="17" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/service/LoginService.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/dao/BooksMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+            <state relative-caret-position="294">
+              <caret line="301" column="11" selection-start-line="299" selection-start-column="4" selection-end-line="301" selection-end-column="11" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/service/LoginServiceImpl.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/controller/BookControl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="75" column="9" selection-start-line="75" selection-start-column="9" selection-end-line="75" selection-end-column="9" />
+            <state relative-caret-position="776">
+              <caret line="189" column="292" selection-start-line="189" selection-start-column="292" selection-end-line="189" selection-end-column="292" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1644#1645#0" expanded="true" />
-                <element signature="e#1692#1693#0" expanded="true" />
+                <element signature="method#deleteBook#0;class#BookControl#0" />
+                <element signature="method#bookParticulars#0;class#BookControl#0" />
+                <element signature="method#updateBook#0;class#BookControl#0" />
+                <element signature="method#uplpad#0;class#BookControl#0" />
+                <element signature="method#saveImgInfo#0;class#BookControl#0" />
+                <element signature="method#updateImgInfo#0;class#BookControl#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/dao/UserMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="21" column="43" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="43" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/dao/UserMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="187" column="22" selection-start-line="187" selection-start-column="22" selection-end-line="187" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -300,8 +324,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/web/page/backstagepage/commodity/test.html" />
-        <option value="$PROJECT_DIR$/src/main/java/generatorConfig.xml" />
         <option value="$PROJECT_DIR$/../second/web/page/document/layer_addDocument.jsp" />
         <option value="$PROJECT_DIR$/web/page/backstagepage/commodity/productadd.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/dao/ManagerMapper.java" />
@@ -326,11 +348,9 @@
         <option value="$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/service/BookServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/controller/BookControl.java" />
         <option value="$PROJECT_DIR$/web/page/backstagepage/commodity/bookupdate.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/dao/BooksMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/dao/BooksMapper.java" />
         <option value="$PROJECT_DIR$/web/page/backstagecommon/css_1.jsp" />
         <option value="$PROJECT_DIR$/web/page/backstagepage/commodity/bookparticulars.jsp" />
-        <option value="$PROJECT_DIR$/web/index.jsp" />
         <option value="$PROJECT_DIR$/web/page/common/css.jsp" />
         <option value="$PROJECT_DIR$/web/page/common/js.jsp" />
         <option value="$PROJECT_DIR$/web/assets/css/app.css" />
@@ -339,10 +359,8 @@
         <option value="$PROJECT_DIR$/web/page/about.jsp" />
         <option value="$PROJECT_DIR$/web/page/backstagepage/Login.jsp" />
         <option value="$PROJECT_DIR$/web/page/common/dlstyle.css" />
-        <option value="$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/controller/ForegroundControl.java" />
         <option value="$PROJECT_DIR$/web/images/useravatar.jsp" />
         <option value="$PROJECT_DIR$/web/page/login.jsp" />
-        <option value="$PROJECT_DIR$/web/page/index.jsp" />
         <option value="$PROJECT_DIR$/web/page/register.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/common/domain/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/service/LoginService.java" />
@@ -351,6 +369,12 @@
         <option value="$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/dao/UserMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/common/utils/IdGenerator.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/controller/LoginControl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/controller/ForegroundControl.java" />
+        <option value="$PROJECT_DIR$/web/index.jsp" />
+        <option value="$PROJECT_DIR$/web/page/beforeindex.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/dao/BooksMapper.xml" />
+        <option value="$PROJECT_DIR$/web/page/index.jsp" />
+        <option value="$PROJECT_DIR$/web/page/shopcart.jsp" />
       </list>
     </option>
   </component>
@@ -457,94 +481,20 @@
             <path>
               <item name="bookshop" type="b2602c69:ProjectViewProjectNode" />
               <item name="bookshop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="bookshop" type="b2602c69:ProjectViewProjectNode" />
               <item name="bookshop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="bookshop" type="b2602c69:ProjectViewProjectNode" />
               <item name="bookshop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bookshop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bookshop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="bookshop" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bookshop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bookshop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="bookshop" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
               <item name="common" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bookshop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bookshop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="bookshop" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bookshop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bookshop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="bookshop" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bookshop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-            <path>
-              <item name="bookshop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
-            </path>
-            <path>
-              <item name="bookshop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bookshop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bookshop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="lang" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bookshop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="lang" type="462c0819:PsiDirectoryNode" />
-              <item name="String" type="1a9f42e2:ClassTreeNode" />
             </path>
           </expand>
           <select />
@@ -569,7 +519,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555052351364" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555063281421" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../layui-springmvc-imgupload/pom.xml" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -580,24 +530,24 @@
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\IJ_codes\bookshop\web\page\backstage-common" />
-      <recent name="E:\IJ_codes\bookshop\web\page\backstage-page" />
-      <recent name="E:\IJ_codes\bookshop\web\page" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.mrlove.bookshop.service" />
+      <recent name="com.mrlove.bookshop.controller" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\IJ_codes\bookshop\web\page\common" />
       <recent name="E:\IJ_codes\bookshop\web\fileuploadpath\useravatar" />
       <recent name="E:\IJ_codes\bookshop\web\images" />
-      <recent name="E:\IJ_codes\bookshop\web\page\common" />
       <recent name="E:\IJ_codes\bookshop\web\fileuploadpath" />
       <recent name="E:\IJ_codes\bookshop\web\assets\js" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.mrlove.bookshop.common.domain" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.mrlove.bookshop.service" />
-      <recent name="com.mrlove.bookshop.controller" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\IJ_codes\bookshop\web\page\backstage-common" />
+      <recent name="E:\IJ_codes\bookshop\web\page\backstage-page" />
+      <recent name="E:\IJ_codes\bookshop\web\page" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -967,11 +917,18 @@
       <option name="project" value="LOCAL" />
       <updated>1555051437492</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="密码实现MD5加密">
+      <created>1555052904521</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1555052904521</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="428978000" />
+    <option name="totallyTimeSpent" value="437870000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -986,7 +943,7 @@
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49422634" visible="true" weight="0.27912253" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49422634" visible="true" weight="0.27912253" />
       <window_info id="Structure" order="1" sideWeight="0.50577366" side_tool="true" weight="0.25945538" />
       <window_info id="Web" order="2" sideWeight="0.50577366" side_tool="true" weight="0.25945538" />
       <window_info id="Image Layers" order="3" />
@@ -996,13 +953,13 @@
       <window_info id="Favorites" order="7" sideWeight="0.50577366" side_tool="true" weight="0.25945538" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3488" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2432" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.176" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3290735" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49848714" weight="0.2256" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49848714" weight="0.384" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49924356" weight="0.328" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5015129" side_tool="true" weight="0.5024" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.328" />
@@ -1122,7 +1079,8 @@
     <MESSAGE value="登录，注册完成" />
     <MESSAGE value="前台登录，退出，效果实现" />
     <MESSAGE value="前台注册实现，密码还没加密" />
-    <option name="LAST_COMMIT_MESSAGE" value="前台注册实现，密码还没加密" />
+    <MESSAGE value="密码实现MD5加密" />
+    <option name="LAST_COMMIT_MESSAGE" value="密码实现MD5加密" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1199,41 +1157,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/page/backstagepage/commodity/bookadd.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="203" selection-start-line="203" selection-end-line="205" selection-end-column="33" />
-          <folding>
-            <element signature="e#6757#7293#0#JSP" />
-            <element signature="e#11527#11874#0#JSP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/page/about.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="498" column="83" selection-start-line="498" selection-start-column="23" selection-end-line="498" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/controller/ForegroundControl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="32" column="36" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/images/useravatar.jsp" />
-    <entry file="file://$PROJECT_DIR$/web/images/big1.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/images/blog-1.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/images/blog-3.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/images/aboutme.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -1277,13 +1200,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/page/backstagepage/commodity/productlist.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="30" column="44" selection-start-line="19" selection-end-line="19" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/page/backstagepage/commodity/bookupdate.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
@@ -1296,13 +1212,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/fileuploadpath/aboutme.jpg">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/controller/BookControl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="199" column="364" lean-forward="true" selection-start-line="199" selection-start-column="282" selection-end-line="199" selection-end-column="364" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/dao/BooksMapper.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1346,13 +1255,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/page/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1117">
-          <caret line="64" column="215" selection-start-line="64" selection-start-column="215" selection-end-line="64" selection-end-column="215" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/page/backstagepage/Login.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -1364,20 +1266,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
           <caret line="57" column="23" selection-start-line="57" selection-start-column="23" selection-end-line="57" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/page/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="98" column="81" selection-start-line="95" selection-start-column="11" selection-end-line="98" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -1397,13 +1285,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
           <caret line="219" column="18" selection-start-line="219" selection-start-column="18" selection-end-line="219" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/page/register.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="84" column="59" selection-start-line="84" selection-start-column="59" selection-end-line="84" selection-end-column="59" />
         </state>
       </provider>
     </entry>
@@ -1478,6 +1359,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/controller/LoginControl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="66" column="135" selection-start-line="66" selection-start-column="135" selection-end-line="66" selection-end-column="135" />
+          <folding>
+            <element signature="method#loginManager#0;class#LoginControl#0" />
+            <element signature="method#register#0;class#LoginControl#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/common/utils/IdGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1428">
@@ -1485,13 +1377,100 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/controller/LoginControl.java">
+    <entry file="file://$PROJECT_DIR$/web/page/backstagepage/commodity/productlist.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="66" column="135" selection-start-line="66" selection-start-column="135" selection-end-line="66" selection-end-column="135" />
+        <state relative-caret-position="83">
+          <caret line="259" column="11" selection-start-line="241" selection-start-column="7" selection-end-line="259" selection-end-column="11" />
           <folding>
-            <element signature="method#loginManager#0;class#LoginControl#0" />
-            <element signature="method#register#0;class#LoginControl#0" />
+            <element signature="e#10990#11646#0#HTML" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/style.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/page/register.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="84" column="59" selection-start-line="84" selection-start-column="59" selection-end-line="84" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/controller/BookControl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="776">
+          <caret line="189" column="292" selection-start-line="189" selection-start-column="292" selection-end-line="189" selection-end-column="292" />
+          <folding>
+            <element signature="method#deleteBook#0;class#BookControl#0" />
+            <element signature="method#bookParticulars#0;class#BookControl#0" />
+            <element signature="method#updateBook#0;class#BookControl#0" />
+            <element signature="method#uplpad#0;class#BookControl#0" />
+            <element signature="method#saveImgInfo#0;class#BookControl#0" />
+            <element signature="method#updateImgInfo#0;class#BookControl#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/dao/BooksMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="301" column="11" selection-start-line="299" selection-start-column="4" selection-end-line="301" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mrlove/bookshop/controller/ForegroundControl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="29" column="17" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/page/beforeindex.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="45" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/page/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="417" column="87" selection-start-line="417" selection-start-column="87" selection-end-line="417" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/page/about.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/page/common/main.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/page/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="64" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/page/shopcart.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3629">
+          <caret line="15" column="74" selection-start-line="15" selection-start-column="74" selection-end-line="15" selection-end-column="74" />
+          <folding>
+            <element signature="e#2932#2938#0#HTML" expanded="true" />
+            <element signature="e#2938#2944#0#HTML" expanded="true" />
+            <element signature="e#8966#10538#0#HTML" />
+            <element signature="e#10879#10885#0#HTML" expanded="true" />
+            <element signature="e#10885#10891#0#HTML" expanded="true" />
+            <element signature="e#11627#11636#0#HTML" />
           </folding>
         </state>
       </provider>

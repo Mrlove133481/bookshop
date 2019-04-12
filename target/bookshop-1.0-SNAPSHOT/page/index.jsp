@@ -24,9 +24,21 @@
     <jsp:include page="${pageContext.request.contextPath}/page/common/css.jsp"/>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/layui/css/layui.css"  media="all">
 
+    <style type="text/css">
+        div#gray{
+        //背景颜色
+        background : black;
+        //设置透明度
+        opacity : 0.55;
+            filter : alpha(opacity=55);
+            position : absolute;
+            top : 0px;
+            left : 0px;
+        }
+    </style>
 </head>
 
-<body data-offset="200" data-spy="scroll" data-target=".ow-navigation">
+<body data-offset="200" data-spy="scroll" data-target=".ow-navigation" onload="initData();">
 <div class="main-container">
     <!-- Loader -->
     <div id="site-loader" class="load-complete">
@@ -363,16 +375,6 @@
                         <p>森林里有很多棵树，穿梭在森林里的人，你有注意到你面前的这颗树的独特吗</p>
                         <img src="${pageContext.request.contextPath}/images/section-seprator.png" alt="section-seprator" />
                     </div><!-- Section Header /- -->
-                 <%--   <ul id="filters" class="products-categories no-left-padding">
-                        <li><a data-filter="*" class="active" href="#">All Products</a></li>
-                        <li><a data-filter=".design" href="#">jewellery</a></li>
-                        <li><a data-filter=".video" href="#">books</a></li>
-                        <li><a data-filter=".photography" href="#">watches</a></li>
-                        <li><a data-filter=".web" href="#">shoes</a></li>
-                        <li><a data-filter=".design" href="#">electronics</a></li>
-                        <li><a data-filter=".photography" href="#">mobiles</a></li>
-                        <li><a data-filter=".video" href="#">more<i class="fa fa-angle-down"></i></a></li>
-                    </ul>--%>
                     <%--第一部分选择栏--%>
                     <ul class="layui-nav layui-bg-gray ">
                         <li class="layui-nav-item ">
@@ -404,131 +406,24 @@
                     <!-- Products -->
                     <ul class="products">
                         <!-- Product -->
-
                         <c:forEach items="${limitBooks}" var="book">
                         <li class="product design">
                             <a href="#">
-                                <img src="${pageContext.request.contextPath}/fileuploadpath/${book.bookImage1}" alt="Product" />
-                                <h5>Stylish Chair</h5>
-                                <span class="price"><del>$200</del>$139</span>
+                                <img src="${pageContext.request.contextPath}/fileuploadpath/${book.bookImage1}" alt="Product" id="${book.bookId}"/>
+                                <h5>${book.bookName}</h5>
+                                <span class="price"><del>${book.bookOriginalPrice}</del>${book.bookPromotionPrice}</span>
                             </a>
                             <div class="wishlist-box">
-                                <a href="#"><i class="fa fa-arrows-alt"></i></a>
+                                <%--放大--%>
+                                <a onclick="show(document.getElementById('${book.bookId}'))"><i class="fa fa-arrows-alt"></i></a>
+                                <%--收藏--%>
                                 <a href="#"><i class="fa fa-heart-o"></i></a>
+                                <%--搜索--%>
                                 <a href="#"><i class="fa fa-search"></i></a>
                             </div>
-                            <a href="#" class="addto-cart" title="Add To Cart">Add To Cart</a>
+                            <a href="#" class="addto-cart" title="添加到购物车">添加到购物车</a>
                         </li><!-- Product /- -->
                         </c:forEach>
-
-
-
-                       <%-- <!-- Product -->
-                        <li class="product video">
-                            <a href="#">
-                                <img src="${pageContext.request.contextPath}/images/product-2.jpg" alt="Product" />
-                                <h5>men's casual shoes</h5>
-                                <span class="price"><del>$150</del>$85</span>
-                            </a>
-                            <div class="wishlist-box">
-                                <a href="#"><i class="fa fa-arrows-alt"></i></a>
-                                <a href="#"><i class="fa fa-heart-o"></i></a>
-                                <a href="#"><i class="fa fa-search"></i></a>
-                            </div>
-                            <a href="#" class="addto-cart" title="Add To Cart">Add To Cart</a>
-                        </li><!-- Product /- -->
-
-                        <!-- Product -->
-                        <li class="product photography">
-                            <a href="#">
-                                <img src="${pageContext.request.contextPath}/images/product-3.jpg" alt="Product" />
-                                <h5>Sun glass</h5>
-                                <span class="price"><del>$100</del>$35</span>
-                            </a>
-                            <div class="wishlist-box">
-                                <a href="#"><i class="fa fa-arrows-alt"></i></a>
-                                <a href="#"><i class="fa fa-heart-o"></i></a>
-                                <a href="#"><i class="fa fa-search"></i></a>
-                            </div>
-                            <a href="#" class="addto-cart" title="Add To Cart">Add To Cart</a>
-                        </li><!-- Product /- -->
-
-                        <!-- Product -->
-                        <li class="product web">
-                            <a href="#">
-                                <img src="${pageContext.request.contextPath}/images/product-4.jpg" alt="Product" />
-                                <h5>tourist bags</h5>
-                                <span class="price"><del>$350</del>$279</span>
-                            </a>
-                            <div class="wishlist-box">
-                                <a href="#"><i class="fa fa-arrows-alt"></i></a>
-                                <a href="#"><i class="fa fa-heart-o"></i></a>
-                                <a href="#"><i class="fa fa-search"></i></a>
-                            </div>
-                            <a href="#" class="addto-cart" title="Add To Cart">Add To Cart</a>
-                        </li><!-- Product /- -->
-
-                        <!-- Product -->
-                        <li class="product design">
-                            <a href="#">
-                                <img src="${pageContext.request.contextPath}/images/product-5.jpg" alt="Product" />
-                                <h5>mobile phone</h5>
-                                <span class="price"><del>$450</del>$359</span>
-                            </a>
-                            <div class="wishlist-box">
-                                <a href="#"><i class="fa fa-arrows-alt"></i></a>
-                                <a href="#"><i class="fa fa-heart-o"></i></a>
-                                <a href="#"><i class="fa fa-search"></i></a>
-                            </div>
-                            <a href="#" class="addto-cart" title="Add To Cart">Add To Cart</a>
-                        </li><!-- Product /- -->
-
-                        <!-- Product -->
-                        <li class="product video">
-                            <a href="#">
-                                <img src="${pageContext.request.contextPath}/images/product-6.jpg" alt="Product" />
-                                <h5>men's winter coat</h5>
-                                <span class="price"><del>$220</del>$129</span>
-                            </a>
-                            <div class="wishlist-box">
-                                <a href="#"><i class="fa fa-arrows-alt"></i></a>
-                                <a href="#"><i class="fa fa-heart-o"></i></a>
-                                <a href="#"><i class="fa fa-search"></i></a>
-                            </div>
-                            <a href="#" class="addto-cart" title="Add To Cart">Add To Cart</a>
-                        </li><!-- Product /- -->
-
-                        <!-- Product -->
-                        <li class="product photography">
-                            <a href="#">
-                                <img src="${pageContext.request.contextPath}/images/product-7.jpg" alt="Product" />
-                                <h5>Model x12 computer</h5>
-                                <span class="price"><del>$850</del>$550</span>
-                            </a>
-                            <div class="wishlist-box">
-                                <a href="#"><i class="fa fa-arrows-alt"></i></a>
-                                <a href="#"><i class="fa fa-heart-o"></i></a>
-                                <a href="#"><i class="fa fa-search"></i></a>
-                            </div>
-                            <a href="#" class="addto-cart" title="Add To Cart">Add To Cart</a>
-                        </li><!-- Product /- -->
-
-                        <!-- Product -->
-                        <li class="product web">
-                            <a href="#">
-                                <img src="${pageContext.request.contextPath}/images/product-8.jpg" alt="Product" />
-                                <h5>Stylish headset</h5>
-                                <span class="price"><del>$50</del>$29</span>
-                            </a>
-                            <div class="wishlist-box">
-                                <a href="#"><i class="fa fa-arrows-alt"></i></a>
-                                <a href="#"><i class="fa fa-heart-o"></i></a>
-                                <a href="#"><i class="fa fa-search"></i></a>
-                            </div>
-                            <a href="#" class="addto-cart" title="Add To Cart">Add To Cart</a>
-                        </li><!-- Product /- -->--%>
-
-
                     </ul><!-- Products /- -->
                 </div><!-- Row /- -->
                 <%--分页地方--%>
@@ -1034,7 +929,48 @@
         document.getElementById("after-ul").style.display = "none";
         document.getElementById("before-ul").style.display = "";
     }
+</script>
 
+    <script type="text/javascript">//javaScript标签，这里面的是javaScript语言编写的的动态的效果，
+
+        function show(pic){
+            //获取图片的宽和高
+            iw = pic.width;
+            ih = pic.height;
+            //获取屏幕的宽和高
+            sw = document.documentElement.clientWidth;
+            sh = document.documentElement.clientHeight;
+            //动态的创建一个灰色的背景div，就是那个我们带点击后，大图后面的那个灰色的那个背景，当然灰色是可以自由设置的
+            gdiv = document.createElement('div');
+            gdiv.id = 'gray';
+            gdiv.style.height = sh+'px';
+            gdiv.style.width = sw+'px';
+            document.body.appendChild(gdiv);
+            //删除动态的图片和对象，就是我们点击放大后，再次点击的时候，放大的图片会被删除，并且后面的那个背景也会随之删除，这个方法就是为了完成这个效果
+            gdiv.onclick = function(){
+                document.body.removeChild(this);
+                document.body.removeChild(oimg);
+            }
+            //创建动态的图片对象，将该对象的src赋值为原图的src,这就是来创建我们放大后看大的那个图片
+            oimg = document.createElement('img');
+            oimg.src = pic.src;
+            oimg.width=400;
+            oimg.height=400;
+            oimg.style.position = 'absolute';
+            oimg.style.top = (sh-ih)/2+'px';
+            oimg.style.left= (sw-ih)/2+'px';
+            document.body.appendChild(oimg);
+        }
+    //设置图片的位置来适应窗口的大小
+    window.onresize=function(){
+        sh = document.documentElement.clientHeight;
+        sw = document.documentElement.clientWidth;
+        gdiv.style.width = sw + 'px';
+        gdiv.style.height = sh + 'px';
+        //更改图片的位置
+        oimg.style.top = (sh-ih)/2 + 'px';
+        oimg.style.left = (sw-iw)/2 + 'px';
+    }
 </script>
 
 </body>

@@ -297,7 +297,7 @@
     </update>
     <!--前台限制查询图书-->
     <select id="findbooks" resultMap="BaseResultMap">
-    select book_image1
+    select *
     from books
     limit 8
     </select>
