@@ -18,6 +18,7 @@ public class LoginControl {
     //控制层注入 服务层
     @Autowired
     private LoginService loginService;
+    //管理员登录
     @RequestMapping("/manager")
     public String loginManager(String username, String pwd, Model model) {
         model.addAttribute("nums",0);
@@ -36,7 +37,7 @@ public class LoginControl {
         }
         return "/backstagepage/Login";
     }
-
+    //用户登录
     @RequestMapping("/user")
     public String loginUser(String user,String password,Model model){
         model.addAttribute("nums",0);
@@ -45,12 +46,11 @@ public class LoginControl {
         } else if (user !="" && password =="") {
             model.addAttribute("nums",2);
         } else if (loginService.queryuser(user)) {
-            if (loginService.querypwd(user,password) instanceof Boolean) {
+            if (loginService.querypwd(user,IdGenerator.getMD5String(password)) instanceof Boolean) {
                 //登录失败密码错误，返回值
                 model.addAttribute("nums",3);
-
             } else {
-                List<User> listuser = ((List)loginService.querypwd(user,password));
+                List<User> listuser = ((List)loginService.querypwd(user,IdGenerator.getMD5String(password)));
                 User getuser = listuser.get(0);
                 model.addAttribute("userimg",getuser.getUserImage().substring(getuser.getUserImage().indexOf("useravatar")+12,getuser.getUserImage().length()));
                 model.addAttribute("user",getuser);
@@ -62,7 +62,6 @@ public class LoginControl {
         }
         return "login";
     }
-
     //注册事件
     @RequestMapping("register")
     public String register(String email,String password,String phone,String code,String password1,String name,String name1,Model model){
@@ -79,7 +78,7 @@ public class LoginControl {
             }else if(loginService.queryusertel(usertel)){
                 model.addAttribute("num",3);
             }else {
-                User user = new User(IdGenerator.getID(),username,pwd,null,dfimg,0,null,usertel,useremail,null,null,null,null, DateUtil.parseDateToStr(new Date(), DateUtil.DATE_TIME_FORMAT_YYYY_MM_DD_HH_MI_SS),1,null,null,null,null);
+                User user = new User(IdGenerator.getID(),username,IdGenerator.getMD5String(pwd),null,dfimg,0,null,usertel,useremail,null,null,null,null, DateUtil.parseDateToStr(new Date(), DateUtil.DATE_TIME_FORMAT_YYYY_MM_DD_HH_MI_SS),1,null,null,null,null);
                 loginService.registeruser(user);
                 return loginUser(username,pwd,model);
             }
@@ -92,7 +91,7 @@ public class LoginControl {
             }else if(loginService.queryuseremail(useremail)){
                 model.addAttribute("num",2);
             }else {
-                User user = new User(IdGenerator.getID(),username,pwd,null,dfimg,0,null,usertel,useremail,null,null,null,null, DateUtil.parseDateToStr(new Date(), DateUtil.DATE_TIME_FORMAT_YYYY_MM_DD_HH_MI_SS),1,null,null,null,null);
+                User user = new User(IdGenerator.getID(),username,IdGenerator.getMD5String(pwd),null,dfimg,0,null,usertel,useremail,null,null,null,null, DateUtil.parseDateToStr(new Date(), DateUtil.DATE_TIME_FORMAT_YYYY_MM_DD_HH_MI_SS),1,null,null,null,null);
                 loginService.registeruser(user);
                 return loginUser(username,pwd,model);
             }
