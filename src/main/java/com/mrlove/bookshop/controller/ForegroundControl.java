@@ -20,14 +20,16 @@ public class ForegroundControl {
 
     //查询图书事件
     @RequestMapping("selectlimit")
-    public String selectAll(Model model) {
+    @ResponseBody
+    public List<Books> selectAll() {
         List<Books> limitBooks = bookService.findBooks();
         for (Books books:limitBooks
              ) {
             books.setBookImage1(books.getBookImage1().substring(books.getBookImage1().indexOf("fileuploadpath")+16,books.getBookImage1().length()));
         }
-        model.addAttribute("limitBooks", limitBooks);
-        return "/index";
+       // model.addAttribute("limitBooks", limitBooks);
+        //return "/index";
+        return limitBooks;
     }
     //页面退出事件
     @RequestMapping("quits")

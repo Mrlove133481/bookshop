@@ -84,7 +84,7 @@
 <div class="footer ">
     <div class="footer-hd ">
         <p>
-            <a href="${pageContext.request.contextPath}/page/index.jsp">商城首页</a>
+            <a href="${pageContext.request.contextPath}/page/index.jsp">书城首页</a>
             <b>|</b>
             <a href="${pageContext.request.contextPath}/page/register.jsp">注册</a>
             <b>|</b>

@@ -22,6 +22,7 @@
 
     <title>Mrlove书城主页</title>
     <jsp:include page="${pageContext.request.contextPath}/page/common/css.jsp"/>
+    <script src="${pageContext.request.contextPath}/page/common/angular.min.js"></script>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/layui/css/layui.css"  media="all">
 
     <style type="text/css">
@@ -36,9 +37,24 @@
             left : 0px;
         }
     </style>
+
+    <script>
+        var app=angular.module('myApp',[]); //定义了一个叫myApp的模块
+        //定义控制器
+        app.controller('myController',function($scope,$http){
+            $scope.findAll=function(){
+                $http.get('/foreground/selectlimit').success(
+                    function(response){
+                        $scope.list=response;
+                    }
+                );
+            }
+        });
+    </script>
+
 </head>
 
-<body data-offset="200" data-spy="scroll" data-target=".ow-navigation" onload="initData();">
+<body data-offset="200" data-spy="scroll" data-target=".ow-navigation" ng-app="myApp" ng-controller="myController" >
 <div class="main-container">
     <!-- Loader -->
     <div id="site-loader" class="load-complete">
@@ -404,9 +420,9 @@
                     </div>
 
                     <!-- Products -->
-                    <ul class="products">
+                    <ul class="products"  ng-init="findAll()">
                         <!-- Product -->
-                        <c:forEach items="${limitBooks}" var="book">
+                <%--        <c:forEach items="${limitBooks}" var="book">
                         <li class="product design">
                             <a href="#">
                                 <img src="${pageContext.request.contextPath}/fileuploadpath/${book.bookImage1}" alt="Product" id="${book.bookId}"/>
@@ -414,16 +430,40 @@
                                 <span class="price"><del>${book.bookOriginalPrice}</del>${book.bookPromotionPrice}</span>
                             </a>
                             <div class="wishlist-box">
-                                <%--放大--%>
+                                &lt;%&ndash;放大&ndash;%&gt;
                                 <a onclick="show(document.getElementById('${book.bookId}'))"><i class="fa fa-arrows-alt"></i></a>
-                                <%--收藏--%>
+                                &lt;%&ndash;收藏&ndash;%&gt;
                                 <a href="#"><i class="fa fa-heart-o"></i></a>
-                                <%--搜索--%>
+                                &lt;%&ndash;搜索&ndash;%&gt;
                                 <a href="#"><i class="fa fa-search"></i></a>
                             </div>
                             <a href="#" class="addto-cart" title="添加到购物车">添加到购物车</a>
                         </li><!-- Product /- -->
-                        </c:forEach>
+                        </c:forEach>--%>
+
+
+
+                            <li class="product design" ng-repeat="book in list">
+                                <a href="#">
+                                    <img src="${pageContext.request.contextPath}/fileuploadpath/{{book.bookImage1}}" alt="Product" id="{{book.bookId}}"/>
+                                    <h5>{{book.bookName}}</h5>
+                                    <span class="price"><del>{{book.bookOriginalPrice}}</del>{{book.bookPromotionPrice}}</span>
+                                </a>
+                                <div class="wishlist-box">
+                                        <%--放大--%>
+                                    <a onclick="show(document.getElementById('{{book.bookId}}'))"><i class="fa fa-arrows-alt"></i></a>
+                                        <%--收藏--%>
+                                    <a href="#"><i class="fa fa-heart-o"></i></a>
+                                        <%--搜索--%>
+                                    <a href="#"><i class="fa fa-search"></i></a>
+                                </div>
+                                <a href="" class="addto-cart" title="添加到购物车" ng-click="">添加到购物车</a>
+                            </li><!-- Product /- -->
+
+
+
+
+
                     </ul><!-- Products /- -->
                 </div><!-- Row /- -->
                 <%--分页地方--%>

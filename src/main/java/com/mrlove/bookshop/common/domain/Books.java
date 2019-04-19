@@ -1,5 +1,7 @@
 package com.mrlove.bookshop.common.domain;
 
+import java.util.List;
+
 public class Books {
     private String bookId;
 
@@ -291,5 +293,37 @@ public class Books {
 
     public void setBookRemark2(String bookRemark2) {
         this.bookRemark2 = bookRemark2 == null ? null : bookRemark2.trim();
+    }
+
+    @Override
+    public String toString() {
+        return "Books{" +
+                "bookId='" + bookId + '\'' +
+                ", bookNumber='" + bookNumber + '\'' +
+                ", bookName='" + bookName + '\'' +
+                ", bookImage1='" + bookImage1 + '\'' +
+                ", bookImage2='" + bookImage2 + '\'' +
+                ", bookImage3='" + bookImage3 + '\'' +
+                ", bookOriginalPrice='" + bookOriginalPrice + '\'' +
+                ", bookPromotionPrice='" + bookPromotionPrice + '\'' +
+                ", bookCost='" + bookCost + '\'' +
+                ", bookClazz='" + bookClazz + '\'' +
+                ", bookSubclazz='" + bookSubclazz + '\'' +
+                ", bookMonthlySales='" + bookMonthlySales + '\'' +
+                ", bookTotalSales='" + bookTotalSales + '\'' +
+                ", bookAuthor='" + bookAuthor + '\'' +
+                ", bookPress='" + bookPress + '\'' +
+                ", bookPublicationYear='" + bookPublicationYear + '\'' +
+                ", bookPlotSummary='" + bookPlotSummary + '\'' +
+                ", bookBiography='" + bookBiography + '\'' +
+                ", bookCatalog='" + bookCatalog + '\'' +
+                ", bookMediaComments='" + bookMediaComments + '\'' +
+                ", bookUserComments='" + bookUserComments + '\'' +
+                ", bookInventory='" + bookInventory + '\'' +
+                ", bookStatus='" + bookStatus + '\'' +
+                ", bookCreationTime='" + bookCreationTime + '\'' +
+                ", bookRemark1='" + bookRemark1 + '\'' +
+                ", bookRemark2='" + bookRemark2 + '\'' +
+                '}';
     }
 }

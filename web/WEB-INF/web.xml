@@ -54,4 +54,5 @@
         <url-pattern>/assets/i/*</url-pattern>
         <url-pattern>/layer/*</url-pattern>
     </servlet-mapping>
+
 </web-app>

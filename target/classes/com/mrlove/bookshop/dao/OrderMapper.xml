@@ -5,6 +5,9 @@
     <result column="order_id" jdbcType="VARCHAR" property="orderId" />
     <result column="order_user" jdbcType="VARCHAR" property="orderUser" />
     <result column="order_number" jdbcType="VARCHAR" property="orderNumber" />
+    <result column="order_book_number" jdbcType="VARCHAR" property="orderBookNumber" />
+    <result column="order_book_name" jdbcType="VARCHAR" property="orderBookName" />
+    <result column="oder_book_image1" jdbcType="VARCHAR" property="oderBookImage1" />
     <result column="order_price" jdbcType="VARCHAR" property="orderPrice" />
     <result column="order_amount" jdbcType="VARCHAR" property="orderAmount" />
     <result column="order_refund" jdbcType="VARCHAR" property="orderRefund" />
@@ -29,6 +32,7 @@
   </resultMap>
   <insert id="insert" parameterType="com.mrlove.bookshop.common.domain.Order">
     insert into order (order_id, order_user, order_number, 
+      order_book_number, order_book_name, oder_book_image1, 
       order_price, order_amount, order_refund, 
       order_refund_status, order_refund_start_time, 
       order_refund_dispose_time, order_refund_end_time, 
@@ -40,6 +44,7 @@
       order_creation_batch, order_status, order_remark1, 
       order_remark2)
     values (#{orderId,jdbcType=VARCHAR}, #{orderUser,jdbcType=VARCHAR}, #{orderNumber,jdbcType=VARCHAR}, 
+      #{orderBookNumber,jdbcType=VARCHAR}, #{orderBookName,jdbcType=VARCHAR}, #{oderBookImage1,jdbcType=VARCHAR}, 
       #{orderPrice,jdbcType=VARCHAR}, #{orderAmount,jdbcType=VARCHAR}, #{orderRefund,jdbcType=VARCHAR}, 
       #{orderRefundStatus,jdbcType=VARCHAR}, #{orderRefundStartTime,jdbcType=VARCHAR}, 
       #{orderRefundDisposeTime,jdbcType=VARCHAR}, #{orderRefundEndTime,jdbcType=VARCHAR}, 
@@ -62,6 +67,15 @@
       </if>
       <if test="orderNumber != null">
         order_number,
+      </if>
+      <if test="orderBookNumber != null">
+        order_book_number,
+      </if>
+      <if test="orderBookName != null">
+        order_book_name,
+      </if>
+      <if test="oderBookImage1 != null">
+        oder_book_image1,
       </if>
       <if test="orderPrice != null">
         order_price,
@@ -136,6 +150,15 @@
       </if>
       <if test="orderNumber != null">
         #{orderNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="orderBookNumber != null">
+        #{orderBookNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="orderBookName != null">
+        #{orderBookName,jdbcType=VARCHAR},
+      </if>
+      <if test="oderBookImage1 != null">
+        #{oderBookImage1,jdbcType=VARCHAR},
       </if>
       <if test="orderPrice != null">
         #{orderPrice,jdbcType=VARCHAR},

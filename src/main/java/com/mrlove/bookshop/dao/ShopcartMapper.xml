@@ -5,18 +5,47 @@
     <result column="shopcart_id" jdbcType="VARCHAR" property="shopcartId" />
     <result column="shopcart_user" jdbcType="VARCHAR" property="shopcartUser" />
     <result column="shopcart_book_number" jdbcType="VARCHAR" property="shopcartBookNumber" />
+    <result column="shopcart_count" jdbcType="VARCHAR" property="shopcartCount" />
     <result column="shopcart_status" jdbcType="VARCHAR" property="shopcartStatus" />
     <result column="shopcart_creation_time" jdbcType="VARCHAR" property="shopcartCreationTime" />
     <result column="shopcart_remark1" jdbcType="VARCHAR" property="shopcartRemark1" />
     <result column="shopcart_remark2" jdbcType="VARCHAR" property="shopcartRemark2" />
   </resultMap>
+
+  <resultMap id="BaseResultMapwithuserandcart" type="com.mrlove.bookshop.common.domain.Shopcart">
+    <result column="shopcart_id" jdbcType="VARCHAR" property="shopcartId" />
+    <result column="shopcart_count" jdbcType="VARCHAR" property="shopcartCount" />
+
+    <association property="user" javaType="com.mrlove.bookshop.common.domain.User" >
+          <id column="user_id" jdbcType="VARCHAR" property="userId" />
+    </association>
+
+    <collection property="books" ofType="com.mrlove.bookshop.common.domain.Books">
+      <id column="book_number" jdbcType="VARCHAR" property="bookNumber"/>
+      <result column="book_name" jdbcType="VARCHAR" property="bookName"/>
+      <result column="book_image1" jdbcType="VARCHAR" property="bookImage1"/>
+      <result column="book_promotion_price" jdbcType="VARCHAR" property="bookPromotionPrice"/>
+      <result column="book_original_price" jdbcType="VARCHAR" property="bookOriginalPrice"/>
+    </collection>
+  </resultMap>
+
+  <select id="findcart" resultMap="BaseResultMapwithuserandcart" >
+  select u.user_id,s.shopcart_id,s.shopcart_count,b.book_number,b.book_name,b.book_promotion_price,b.book_original_price,b.book_image1
+  from shopcart s
+  left join user u on s.shopcart_user=u.user_id
+  left join books b on s.shopcart_book_number= b.book_number
+  where s.shopcart_id =#{id} and s.shopcart_status !='0';
+  </select>
+
+
+
   <insert id="insert" parameterType="com.mrlove.bookshop.common.domain.Shopcart">
     insert into shopcart (shopcart_id, shopcart_user, shopcart_book_number, 
-      shopcart_status, shopcart_creation_time, shopcart_remark1, 
-      shopcart_remark2)
+      shopcart_count, shopcart_status, shopcart_creation_time, 
+      shopcart_remark1, shopcart_remark2)
     values (#{shopcartId,jdbcType=VARCHAR}, #{shopcartUser,jdbcType=VARCHAR}, #{shopcartBookNumber,jdbcType=VARCHAR}, 
-      #{shopcartStatus,jdbcType=VARCHAR}, #{shopcartCreationTime,jdbcType=VARCHAR}, #{shopcartRemark1,jdbcType=VARCHAR}, 
-      #{shopcartRemark2,jdbcType=VARCHAR})
+      #{shopcartCount,jdbcType=VARCHAR}, #{shopcartStatus,jdbcType=VARCHAR}, #{shopcartCreationTime,jdbcType=VARCHAR}, 
+      #{shopcartRemark1,jdbcType=VARCHAR}, #{shopcartRemark2,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.mrlove.bookshop.common.domain.Shopcart">
     insert into shopcart
@@ -29,6 +58,9 @@
       </if>
       <if test="shopcartBookNumber != null">
         shopcart_book_number,
+      </if>
+      <if test="shopcartCount != null">
+        shopcart_count,
       </if>
       <if test="shopcartStatus != null">
         shopcart_status,
@@ -53,6 +85,9 @@
       <if test="shopcartBookNumber != null">
         #{shopcartBookNumber,jdbcType=VARCHAR},
       </if>
+      <if test="shopcartCount != null">
+        #{shopcartCount,jdbcType=VARCHAR},
+      </if>
       <if test="shopcartStatus != null">
         #{shopcartStatus,jdbcType=VARCHAR},
       </if>
@@ -67,4 +102,18 @@
       </if>
     </trim>
   </insert>
+ <!-- 删除购物车商品-->
+  <update id="removecart" parameterType="com.mrlove.bookshop.common.domain.Shopcart">
+    update shopcart
+    set shopcart_status = '0'
+    where shopcart_book_number = #{booknumber} and shopcart_id = #{shopcartid}
+  </update>
+<!--更新购物车数量-->
+  <update id="updatecart" parameterType="com.mrlove.bookshop.common.domain.Shopcart">
+    update shopcart
+    set shopcart_count = #{count}
+    where shopcart_book_number = #{booknumber} and shopcart_id = #{shopcartid}
+  </update>
+
+
 </mapper>

@@ -1,0 +1,1 @@
+var app=angular.module('myApp',[]); //定义了一个叫myApp的模块

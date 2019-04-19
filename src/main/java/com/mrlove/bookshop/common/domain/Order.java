@@ -7,6 +7,12 @@ public class Order {
 
     private String orderNumber;
 
+    private String orderBookNumber;
+
+    private String orderBookName;
+
+    private String oderBookImage1;
+
     private String orderPrice;
 
     private String orderAmount;
@@ -71,6 +77,30 @@ public class Order {
 
     public void setOrderNumber(String orderNumber) {
         this.orderNumber = orderNumber == null ? null : orderNumber.trim();
+    }
+
+    public String getOrderBookNumber() {
+        return orderBookNumber;
+    }
+
+    public void setOrderBookNumber(String orderBookNumber) {
+        this.orderBookNumber = orderBookNumber == null ? null : orderBookNumber.trim();
+    }
+
+    public String getOrderBookName() {
+        return orderBookName;
+    }
+
+    public void setOrderBookName(String orderBookName) {
+        this.orderBookName = orderBookName == null ? null : orderBookName.trim();
+    }
+
+    public String getOderBookImage1() {
+        return oderBookImage1;
+    }
+
+    public void setOderBookImage1(String oderBookImage1) {
+        this.oderBookImage1 = oderBookImage1 == null ? null : oderBookImage1.trim();
     }
 
     public String getOrderPrice() {
