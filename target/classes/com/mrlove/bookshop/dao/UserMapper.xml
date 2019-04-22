@@ -189,4 +189,10 @@
     from user
     where user_telnum=#{usertel} and user_status != '0'
   </select>
+  <!--通过用户名查询密码-->
+  <select id="findUserPwd" resultMap="BaseResultMap">
+    select user_name,user_email,user_pwd,user_telnum,user_status
+    from user
+    where user_name=#{username} or user_email=#{username} or user_telnum=#{username}
+  </select>
 </mapper>

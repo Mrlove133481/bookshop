@@ -20,4 +20,6 @@ public interface UserMapper {
     List<User> queryuseremail(@Param("email") String email);
     //查询手机是否存在
     List<User> queryusertel(@Param("usertel") String usertel);
+    //通过用户名查询密码
+    User findUserPwd(@Param("username") String username);
 }

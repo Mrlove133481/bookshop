@@ -41,12 +41,13 @@
 
     <!-- 认证管理器 -->
     <authentication-manager>
-        <authentication-provider>
-            <user-service>
-                <user name="1" password="1" authorities="ROLE_ADMIN"/>
-            </user-service>
+        <authentication-provider user-service-ref="userDetailService">
+
         </authentication-provider>
     </authentication-manager>
+    <beans:bean id="userDetailService" class="com.mrlove.bookshop.service.UserDetailsServiceImpl">
+      <!--  <beans:property name="loginService" value="com.mrlove.bookshop.service.LoginService"></beans:property>-->
+    </beans:bean>
 
 
 </beans:beans>

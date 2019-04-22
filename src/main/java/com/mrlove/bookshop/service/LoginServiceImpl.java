@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.jws.Oneway;
+
 
 @Service
 @Transactional
@@ -84,5 +86,12 @@ public class LoginServiceImpl implements LoginService {
             return  false;
         }
     }
+
+    //通过用户名返回密码
+    @Override
+    public User findUserPwd(String username){
+        return userMapper.findUserPwd(username);
+    }
+
 
 }
