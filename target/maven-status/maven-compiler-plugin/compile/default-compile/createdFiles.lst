@@ -26,6 +26,7 @@ com\mrlove\bookshop\common\utils\excel\annotation\ExcelField.class
 com\mrlove\bookshop\controller\ShopcartControl.class
 com\mrlove\bookshop\service\BookService.class
 com\mrlove\bookshop\dao\CollectMapper.class
+com\mrlove\bookshop\service\UserDetailServiceImpl.class
 com\mrlove\bookshop\service\ShopcartServiceImpl.class
 com\mrlove\bookshop\dao\UserMapper.class
 com\mrlove\bookshop\controller\ForegroundControl.class

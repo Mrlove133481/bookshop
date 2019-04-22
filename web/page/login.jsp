@@ -45,10 +45,10 @@
             <div class="clear"></div>
 
             <div class="login-form">
-                <form id="loginform" method="post" action="/login/user">
+                <form id="loginform" method="post" action="/login">
                     <div class="user-name">
                         <label for="user"><i class="am-icon-user"></i></label>
-                        <input type="text" name="user" id="user" placeholder="邮箱/手机/用户名" style="outline-color:#b6795f">
+                        <input type="text" name="username" id="user" placeholder="邮箱/手机/用户名" style="outline-color:#b6795f">
                     </div>
                     <div class="user-pass">
                         <label for="password"><i class="am-icon-lock"></i></label>

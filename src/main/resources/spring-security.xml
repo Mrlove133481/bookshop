@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+
+    <!-- 以下页面不被拦截 -->
+    <http pattern="/index.jsp" security="none"></http>
+    <http pattern="/style.css" security="none"></http>
+    <http pattern="/assets/**" security="none"></http>
+    <http pattern="/base_files/**" security="none"></http>
+    <http pattern="/bower_components/**" security="none"></http>
+    <http pattern="/css/**" security="none"></http>
+    <http pattern="/datatables-master/**" security="none"></http>
+    <http pattern="/dist/**" security="none"></http>
+    <http pattern="/fileuploadpath/**" security="none"></http>
+    <http pattern="/images/**" security="none"></http>
+    <http pattern="/jquery-easyui-1.7.0/**" security="none"></http>
+    <http pattern="/js/**" security="none"></http>
+    <http pattern="/layer/**" security="none"></http>
+    <http pattern="/layui/**" security="none"></http>
+    <http pattern="/libraries/**" security="none"></http>
+    <http pattern="/revolution/**" security="none"></http>
+    <http pattern="/page/common/**" security="none"></http>
+    <http pattern="/page/backstagecommon/**" security="none"></http>
+    <http pattern="/foreground/selectlimit/**" security="none"></http>
+    <http pattern="/login/user/**" security="none"></http>
+    <http pattern="/page/login.jsp" security="none"></http>
+
+    <!-- 页面拦截规则 -->
+    <http use-expressions="false">
+        <intercept-url pattern="/**" access="ROLE_ADMIN" />
+        <form-login login-page="/page/login.jsp"  default-target-url="/page/index.jsp" authentication-failure-url="/page/login.jsp" always-use-default-target="true" />
+        <csrf disabled="true"/>
+        <!--<headers>
+            <frame-options policy="SAMEORIGIN"/>
+        </headers>-->
+        <logout/>
+    </http>
+
+
+    <!-- 认证管理器 -->
+    <authentication-manager>
+        <authentication-provider>
+            <user-service>
+                <user name="1" password="1" authorities="ROLE_ADMIN"/>
+            </user-service>
+        </authentication-provider>
+    </authentication-manager>
+
+
+</beans:beans>
+
+
+
+<!--
+    <http pattern="/index.jsp" security="none"></http>
+    <http pattern="/page/login.jsp" security="none"></http>
+
+        &lt;!&ndash; 页面拦截规则 &ndash;&gt;
+<http use-expressions="false">
+<intercept-url pattern="/**" access="ROLE_USER" />
+<form-login login-page="/page/login.jsp"  default-target-url="/page/index.jsp" authentication-failure-url="/page/login.jsp" always-use-default-target="true"/>
+    <csrf disabled="true"/>
+    <logout/>
+</http>
+
+        &lt;!&ndash; 认证管理器 &ndash;&gt;
+<authentication-manager>
+<authentication-provider>
+    <user-service>
+        <user name="admin" password="123456" authorities="ROLE_USER"/>
+    </user-service>
+</authentication-provider>
+</authentication-manager>
+        </beans:beans>
+-->

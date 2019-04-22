@@ -39,18 +39,18 @@ public class LoginControl {
     }
     //用户登录
     @RequestMapping("/user")
-    public String loginUser(String user,String password,Model model){
+    public String loginUser(String username,String password,Model model){
         model.addAttribute("nums",0);
-        if (user == "") {
+        if (username == "") {
             model.addAttribute("nums",1);
-        } else if (user !="" && password =="") {
+        } else if (username !="" && password =="") {
             model.addAttribute("nums",2);
-        } else if (loginService.queryuser(user)) {
-            if (loginService.querypwd(user,IdGenerator.getMD5String(password)) instanceof Boolean) {
+        } else if (loginService.queryuser(username)) {
+            if (loginService.querypwd(username,IdGenerator.getMD5String(password)) instanceof Boolean) {
                 //登录失败密码错误，返回值
                 model.addAttribute("nums",3);
             } else {
-                List<User> listuser = ((List)loginService.querypwd(user,IdGenerator.getMD5String(password)));
+                List<User> listuser = ((List)loginService.querypwd(username,IdGenerator.getMD5String(password)));
                 User getuser = listuser.get(0);
                 model.addAttribute("userimg",getuser.getUserImage().substring(getuser.getUserImage().indexOf("useravatar")+12,getuser.getUserImage().length()));
                 model.addAttribute("user",getuser);

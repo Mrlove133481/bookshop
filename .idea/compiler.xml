@@ -7,17 +7,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="bookshop" />
-        <module name="git_test" />
-        <module name="layui-springmvc-imgupload" />
-        <module name="second" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="bookshop" target="1.8" />
-      <module name="git_test" target="1.5" />
-      <module name="layui-springmvc-imgupload" target="1.8" />
-      <module name="second" target="1.8" />
-      <module name="shop" target="1.8" />
+      <module name="securitys" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

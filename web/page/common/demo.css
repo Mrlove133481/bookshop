@@ -113,7 +113,7 @@ color: #F5F5F2;font-size: 14px;cursor:pointer;border-radius:0px 0px ;}
 .header{ display:none; max-width:1000px; margin:0px auto; font-size:12px;}  
 
 .footer-bd{ display:none}
-.footer{ text-align: center;border-top: 2px solid #F8F8F8; margin-top:20px; padding-top: 5px;margin-bottom:60px ;}
+.footer{ text-align: center;border-top: 2px solid #F8F8F8 margin-top:20px; padding-top: 5px;margin-bottom:60px ;}
 .footer-hd{ display: block;}
 .tip{ display:none}
 
@@ -193,7 +193,7 @@ time, mark, audio, video {
 .mui-mbar-tabs{ display:block;}  
 .nav.white{padding-left:0px; max-width:1000px; margin:0px auto;}
 .nav.white .logo{display:none;}
-.nav.white .logoBig { display:block; float:left;height:90px; width:200px; margin-left:-15px; margin-top: 23px;}
+.nav.white .logoBig { display:block; float:left;height:90px; width:200px; margin-left:0px;}
 .nav.white .logoBig li{float:left;}
 .search-bar{height:90px; padding: 20px 70px 0 230px; margin:auto;}
 	   
