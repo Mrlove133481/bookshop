@@ -330,11 +330,11 @@
 	box-shadow: none;
 	border-radius: 0;
 	border: none;
-	color: #333;
+	color: #b6795f;
 	font-family: 'montserratlight';
-	font-size: 13px;
+	font-size: 16px;
 	letter-spacing: 0.52px;
-	padding: 6px 25px 6px 0;
+	padding: 20px 200px 20px 0;
 	text-transform: capitalize;
 }
 .product-section .form-control::-webkit-input-placeholder {

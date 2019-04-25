@@ -1,8 +1,10 @@
 package com.mrlove.bookshop.service;
 
 import com.mrlove.bookshop.common.domain.Books;
+import com.mrlove.bookshop.common.domain.PageResult;
 
 import java.util.List;
+import java.util.Map;
 
 public interface BookService {
     //添加图书
@@ -22,4 +24,8 @@ public interface BookService {
     void updateBookById(Books books);
     //前台限制查询图书8本
     List<Books> findBooks();
+    //分页查询
+    public PageResult pagingQuery(int pageNum, int pageSize);
+    //通过id查询图书
+    List<Books> findBookById(String bookId);
 }

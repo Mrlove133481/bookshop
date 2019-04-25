@@ -5,6 +5,7 @@ import com.mrlove.bookshop.common.utils.DateUtil;
 import com.mrlove.bookshop.common.utils.IdGenerator;
 import com.mrlove.bookshop.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,7 +14,7 @@ import java.util.Date;
 import java.util.List;
 
 @Controller
-@RequestMapping("/login")
+@RequestMapping("/logins")
 public class LoginControl {
     //控制层注入 服务层
     @Autowired
@@ -91,7 +92,9 @@ public class LoginControl {
             }else if(loginService.queryuseremail(useremail)){
                 model.addAttribute("num",2);
             }else {
-                User user = new User(IdGenerator.getID(),username,IdGenerator.getMD5String(pwd),null,dfimg,0,null,usertel,useremail,null,null,null,null, DateUtil.parseDateToStr(new Date(), DateUtil.DATE_TIME_FORMAT_YYYY_MM_DD_HH_MI_SS),1,null,null,null,null);
+                BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+                 String BCpwd = bCryptPasswordEncoder.encode(pwd);
+                User user = new User(IdGenerator.getID(),username,BCpwd,null,dfimg,0,null,usertel,useremail,null,null,null,null, DateUtil.parseDateToStr(new Date(), DateUtil.DATE_TIME_FORMAT_YYYY_MM_DD_HH_MI_SS),1,null,null,null,null);
                 loginService.registeruser(user);
                 return loginUser(username,pwd,model);
             }

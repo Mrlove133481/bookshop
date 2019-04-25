@@ -24,4 +24,6 @@ public interface BooksMapper {
     void updateBookById(Books books);
     //前台限制查询图书默认8本
     List<Books> findbooks();
+    //分页查询
+    List<Books> pagingQuery();
 }

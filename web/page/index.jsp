@@ -41,14 +41,24 @@
     <script>
         var app=angular.module('myApp',[]); //定义了一个叫myApp的模块
         //定义控制器
-        app.controller('myController',function($scope,$http){
-            $scope.findAll=function(){
+        app.controller('myController',function($scope,$http) {
+            $scope.findAll = function () {
                 $http.get('/foreground/selectlimit').success(
+                    function (response) {
+                        $scope.list = response;
+                    }
+                );
+            }
+
+          /*  $scope.findById = function (bookId) {
+                $http.get('/foreground/selectlimit?bookId'+bookId).success(
                     function(response){
                         $scope.list=response;
                     }
                 );
-            }
+            }*/
+
+
         });
     </script>
 
@@ -140,7 +150,7 @@
                 <div id="home-slider1" class="rev_slider" data-version="5.0">
                     <ul>
                         <li data-transition="zoomout" data-slotamount="default"  data-easein="easeInOut" data-easeout="easeInOut" data-masterspeed="2000" data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7">
-                            <img src="${pageContext.request.contextPath}/images/slider-1.jpg" alt="slider" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                            <img src="${pageContext.request.contextPath}/images/mrlove_index_fengmian1.jpg" alt="slider" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
                             <div class="tp-caption NotGeneric-Title tp-resizeme rs-parallaxlevel-0" id="slide-layer-1"
                                  data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
                                  data-y="['middle','middle','middle','middle']" data-voffset="['-200','-130','-110','-80']"
@@ -223,7 +233,7 @@
                             </div>
                         </li>
                         <li data-transition="zoomout" data-slotamount="default"  data-easein="easeInOut" data-easeout="easeInOut" data-masterspeed="2000" data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7">
-                            <img src="${pageContext.request.contextPath}/images/slider-1.jpg" alt="slider" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                            <img src="${pageContext.request.contextPath}/images/mrlove_index_fengmian2.jpg" alt="slider" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
                             <div class="tp-caption NotGeneric-Title tp-resizeme rs-parallaxlevel-0" id="slide-layer-5"
                                  data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
                                  data-y="['middle','middle','middle','middle']" data-voffset="['-200','-130','-110','-80']"
@@ -339,40 +349,40 @@
             <div class="category-carousel">
                 <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
                     <div class="category-box layout-3">
-                        <img src="${pageContext.request.contextPath}/images/category-1.jpg" alt="category" />
+                        <img src="${pageContext.request.contextPath}/images/mrlove_index_quanbu.jpg" alt="category" />
                         <div class="category-content">
                             <p>第一部分</p>
-                            <h5>文学</h5>
+                            <h5>全部</h5>
                             <a href="#product-section" title="前往">前往</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
                     <div class="category-box layout-3">
-                        <img src="${pageContext.request.contextPath}/images/category-2.jpg" alt="category" />
+                        <img src="${pageContext.request.contextPath}/images/mrlove_index_aiqin.jpg" alt="category" />
                         <div class="category-content">
                             <p>第二部分</p>
-                            <h5>历史</h5>
+                            <h5>爱情</h5>
                             <a href="#dealing" title="前往">前往</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
                     <div class="category-box layout-3">
-                        <img src="${pageContext.request.contextPath}/images/category-3.jpg" alt="category" />
+                        <img src="${pageContext.request.contextPath}/images/mrlove_index_lishi.jpg" alt="category" />
                         <div class="category-content">
                             <p>第三部分</p>
-                            <h5>爱情</h5>
+                            <h5>历史</h5>
                             <a href="#three-part" title="前往">前往</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
-                    <div class="category-box layout-3 layout-4">
-                        <img src="${pageContext.request.contextPath}/images/category-4.jpg" alt="category" />
+                    <div class="category-box layout-3">
+                        <img src="${pageContext.request.contextPath}/images/mrlove_index_jiaoyu.jpg" alt="category" />
                         <div class="category-content">
                             <p>第四部分</p>
-                            <h5>网络</h5>
+                            <h5>教育</h5>
                             <a href="#four-part" title="前往">前往</a>
                         </div>
                     </div>
@@ -387,36 +397,50 @@
                 <div class="row">
                     <!-- Section Header -->
                     <div class="section-header" id="first-part">
-                        <h3>这里的书籍</h3>
+                        <h3 >这里的书籍</h3>
                         <p>森林里有很多棵树，穿梭在森林里的人，你有注意到你面前的这颗树的独特吗</p>
                         <img src="${pageContext.request.contextPath}/images/section-seprator.png" alt="section-seprator" />
                     </div><!-- Section Header /- -->
                     <%--第一部分选择栏--%>
-                    <ul class="layui-nav layui-bg-gray ">
-                        <li class="layui-nav-item ">
-                            <a href="javascript:;">产品</a>
-                            <dl class="layui-nav-child">
-                                <dd><a href="">选项1</a></dd>
-                                <dd><a href="">选项2</a></dd>
-                                <dd><a href="">选项3</a></dd>
-                            </dl>
-                        </li>
-                        <li class="layui-nav-item">
-                            <a href="javascript:;">解决方案</a>
-                            <dl class="layui-nav-child">
-                                <dd><a href="">选中项</a></dd>
-                                <dd><a href="">移动模块</a></dd>
-                                <dd><a href="">后台模版</a></dd>
-                                <dd><a href="">电商平台</a></dd>
-                            </dl>
-                        </li>
-                    </ul>
+
+                      <ul class="layui-nav layui-bg-gray " style="margin-bottom:30px">
+                          <li class="layui-nav-item ">
+                              <a ng-click="findAll()">全部商品</a>
+                          </li>
+                          <li class="layui-nav-item ">
+                              <a href="javascript:;">文学</a>
+                              <dl class="layui-nav-child">
+                                  <dd><a href="">爱情</a></dd>
+                                  <dd><a href="">文集</a></dd>
+                                  <dd><a href="">校园</a></dd>
+                              </dl>
+                          </li>
+                          <li class="layui-nav-item">
+                              <a href="javascript:;">历史</a>
+                              <dl class="layui-nav-child">
+                                  <dd><a href="">中国史</a></dd>
+                                  <dd><a href="">世界史</a></dd>
+                                  <dd><a href="">历史地理</a></dd>
+                              </dl>
+                          </li>
+                          <li class="layui-nav-item">
+                              <a href="javascript:;">教育</a>
+                              <dl class="layui-nav-child">
+                                  <dd><a href="">计算机</a></dd>
+                                  <dd><a href="">工业技术</a></dd>
+                                  <dd><a href="">化学工业</a></dd>
+                              </dl>
+                          </li>
+                      </ul>
                     <%--搜索栏--%>
-                    <div class="input-group">
-                        <input class="form-control" placeholder="搜你所搜，找你所想" type="text">
-                        <span class="input-group-btn">
+                    <div class="input-group" style="margin-top: -80px;">
+                        <div style="margin-right: 10px">
+                            <input class="form-control" placeholder="搜你所搜，找你所想" type="text">
+                            <span class="input-group-btn" style="margin-top: 7px;">
 								<button class="btn btn-search" title="Search" type="button"><i class="icon icon-Search"></i></button>
 							</span>
+                        </div>
+
                     </div>
 
                     <!-- Products -->
@@ -440,11 +464,8 @@
                             <a href="#" class="addto-cart" title="添加到购物车">添加到购物车</a>
                         </li><!-- Product /- -->
                         </c:forEach>--%>
-
-
-
                             <li class="product design" ng-repeat="book in list">
-                                <a href="#">
+                                <a href="/foreground/findbyid?bookId={{book.bookId}}">
                                     <img src="${pageContext.request.contextPath}/fileuploadpath/{{book.bookImage1}}" alt="Product" id="{{book.bookId}}"/>
                                     <h5>{{book.bookName}}</h5>
                                     <span class="price"><del>{{book.bookOriginalPrice}}</del>{{book.bookPromotionPrice}}</span>
@@ -459,18 +480,13 @@
                                 </div>
                                 <a href="" class="addto-cart" title="添加到购物车" ng-click="">添加到购物车</a>
                             </li><!-- Product /- -->
-
-
-
-
-
                     </ul><!-- Products /- -->
                 </div><!-- Row /- -->
                 <%--分页地方--%>
                 <nav class="ow-pagination">
                     <ul class="pager">
                        <%-- <li class="number"><a href="#">4</a></li>--%>
-                        <li class="load-more"><a href="#">Load More</a></li>
+                        <li class="load-more"><a href="${pageContext.request.contextPath}/page/morebooks.jsp">Load More</a></li>
                        <%-- <li class="previous"><a href="#"><i class="fa fa-angle-right"></i></a></li>
                         <li class="next"><a href="#"><i class="fa fa-angle-left"></i></a></li>--%>
                     </ul>
@@ -971,7 +987,7 @@
     }
 </script>
 
-    <script type="text/javascript">//javaScript标签，这里面的是javaScript语言编写的的动态的效果，
+<script type="text/javascript">//javaScript标签，这里面的是javaScript语言编写的的动态的效果，
 
         function show(pic){
             //获取图片的宽和高

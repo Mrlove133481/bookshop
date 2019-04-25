@@ -56,9 +56,9 @@
                                     <input type="text" class="tpl-form-input" id="bookname" placeholder="请输入书名">
                                 </div>
                             </div>
-                            <%--图片--%>
+                            <%--封面图片上传--%>
                             <div class="am-form-group">
-                                <label class="am-u-sm-2 am-form-label">图片上传</label>       
+                                <label class="am-u-sm-2 am-form-label">封面图上传</label>       
                                 <div class="am-u-sm-6">
                                     <button type="button" class="layui-btn " id="test1"><i
                                             class="layui-icon">&#xe67c;</i>选择图片（选择3张，单张图片最大为10M）
@@ -72,14 +72,12 @@
                                 </div>
                                                     
                             </div>
-                            <%--预览图--%>
+                            <%--封面图片预览图--%>
                             <div class="am-form-group">
                                 <label class="am-u-sm-2 am-form-label">预览图</label>      
                                 <div class="layui-upload-list am-u-sm-10 " id="demo2">
-                                </div>
-                                      
+                                </div>    
                             </div>
-
                             <input type="text" id="imgUrls" name="imgUrls" style="display: none;" class="layui-input">
                             <%--价格--%>
                             <div class="am-form-group">
@@ -147,6 +145,32 @@
                                     <input type="text" class="tpl-form-input" id="press" placeholder="请输入出版社">
                                 </div>
                             </div>
+
+
+                                <%--细节图片上传--%>
+                                <div class="am-form-group">
+                                    <label class="am-u-sm-2 am-form-label">细节图上传</label>       
+                                    <div class="am-u-sm-2">
+                                        <button type="button" class="layui-btn " id="xijie"><i
+                                                class="layui-icon">&#xe67c;</i>选择图片
+                                        </button>
+                                    </div>
+                                    <div class="am-u-sm-2">
+                                        <button type="button" class="layui-btn " id="startup">开始上传</button>
+                                    </div>
+                                    <div class="am-u-sm-1 am-u-sm-pull-5">
+                                        <button type="button" class="layui-btn " id="cleanImg">清空预览</button>
+                                    </div>
+                                                        
+                                </div>
+                                <%--细节图片预览图--%>
+                                <div class="am-form-group">
+                                    <label class="am-u-sm-2 am-form-label">预览图</label>      
+                                    <div class="layui-upload-list am-u-sm-10 " id="yulandiv">
+                                    </div>    
+                                </div>
+                                <input type="text" id="imgUrl" name="imgUrls" style="display: none;" class="layui-input">
+
                             <%--内容简介--%>
                             <div class="am-form-group">
                                 <label for="plotsummary" class="am-u-sm-2 am-form-label">内容简介</label>
@@ -239,9 +263,14 @@
     var success = 0;
     var fail = 0;
     var imgurls = "";
+    var success1 = 0;
+    var fail1 = 0;
+    var imgurl = "";
+
 
     $(function () {
         var imgsName = "";
+        var imgsName1 = "";
         layui.use(['upload', 'layer'], function () {
             var upload = layui.upload;
             var layer = layui.layer;
@@ -287,12 +316,56 @@
                 }
             });
 
+            upload.render({
+                elem: '#xijie',
+                url: '/book/upload',
+                multiple: true,
+                accept: 'images',
+                acceptMime: 'image/*',
+                auto: false,
+//			上传的单个图片大小
+                size: 10240,
+//			最多上传的数量
+                number: 1,
+//			MultipartFile file 对应，layui默认就是file,要改动则相应改动
+                field: 'file',
+                bindAction: '#startup',
+                before: function (obj) {
+                    //预读本地文件示例，不支持ie8
+                    obj.preview(function (index, file, result) {
+                        $('#yulandiv').append('<img src="' + result
+                            + '" alt="' + file.name
+                            + '"height="150px" width="150px" id="haha" class="layui-upload-img uploadImgPreView">')
+                    });
+                },
+                done: function (res, index, upload) {
+                    //每个图片上传结束的回调，成功的话，就把新图片的名字保存起来，作为数据提交
+                    console.log(res.code);
+                    if (res.code == "1") {
+                        fail1++;
+                    } else {
+                        success1++;
+                        imgurl = imgurl + "" + res.data.src;
+                        $('#imgUrl').val(imgurl);
+                    }
+                },
+                allDone: function (obj) {
+                    layer.msg("总共要上传图片总数为：" + (fail1 + success1) + "\n"
+                        + "其中上传成功图片数为：" + success1 + "\n"
+                        + "其中上传失败图片数为：" + fail1
+                    )
+                }
+            });
+
         });
 
         //清空预览图片
         cleanImgsPreview();
         //保存商品
         goodsSave();
+
+        cleanImgsPreview1();
+
     });
 
     /**
@@ -306,6 +379,16 @@
             fail = 0;
             $('#demo2').html("");
             $('#imgUrls').val("");
+        });
+    }
+
+
+    function cleanImgsPreview1() {
+        $("#cleanImg").click(function () {
+            success1 = 0;
+            fail1 = 0;
+            $('#yulandiv').html("");
+            $('#imgUrl').val("");
         });
     }
 
@@ -329,7 +412,7 @@
             var mediacomments1 = $("#mediacomments").val();
             var addcount1 = $("#addcount").val();
             var ius = $("#imgUrls").val();
-
+            var ius1 = $("#imgUrl").val();
             $.ajax({
                 type: "POST",
                 url: "/book/saveGoods",
@@ -349,6 +432,7 @@
                     mediacomments: mediacomments1,
                     addcount: addcount1,
                     imgUrls: ius,
+                    imgUrl:ius1
                 },
                 success: function (msg) {
                     if (msg == "1") {

@@ -26,11 +26,11 @@ class UserDetailsServiceImpl implements UserDetailsService {
         List<GrantedAuthority> grantedAuths = new ArrayList<GrantedAuthority>();
         grantedAuths.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
         System.out.println("user："+username);
-
+        System.out.println(userMapper.queryUser(username).size());
+        System.out.println(userMapper.queryUser(username).get(0).getUserName());
         if (username == "") {
             return null;
-        } else if(userMapper.queryusername(username).size()!=0){
-            System.out.println(userMapper.findUserPwd(username).getUserStatus().equals(1));
+        } else if(userMapper.queryUser(username).size()!=0){
             if(userMapper.findUserPwd(username).getUserStatus().equals(1)){
                 System.out.println(username+"----"+userMapper.findUserPwd(username).getUserPwd());
                 return new User(username,userMapper.findUserPwd(username).getUserPwd(),grantedAuths);
@@ -42,6 +42,4 @@ class UserDetailsServiceImpl implements UserDetailsService {
         }
 
     }
-
-
 }

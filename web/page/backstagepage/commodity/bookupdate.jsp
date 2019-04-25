@@ -49,10 +49,12 @@
                     <div class="tpl-form-body tpl-form-line">
                         <form id="bookform" name="bookname" method="post" class="am-form tpl-form-line-form"
                               enctype="multipart/form-data">
+                            <%--保存没有改变之前的图片地址--%>
                             <input type="hidden" name="bookId" value="${book.bookId}" id="bookId">
                             <input type="hidden" name="image1" value="${book.bookImage1}" id="image1">
                             <input type="hidden" name="image2" value="${book.bookImage2}" id="image2">
                             <input type="hidden" name="image3" value="${book.bookImage3}" id="image3">
+                            <input type="hidden" name="image3" value="${book.bookRemark1}" id="remark1">
                             <%--书名--%>
                             <div class="am-form-group">
                                 <label for="bookname" class="am-u-sm-2 am-form-label">图书名称</label>
@@ -63,16 +65,16 @@
                             </div>
                             <%--预览图--%>
                             <div class="am-form-group">
-                                <label class="am-u-sm-2 am-form-label">预览图</label>      
+                                <label class="am-u-sm-2 am-form-label">封面预览图</label>      
                                 <div class="layui-upload-list am-u-sm-10 " id="demo2">
                                     <img src="${pageContext.request.contextPath}/fileuploadpath/${image1}" id="img1"
-                                         alt="2" height="150px" width="150px" class="layui-upload-img uploadImgPreView"
+                                         alt="2" height="150px" width="150px" class="layui-upload-img uploadImgPreView uploadImg"
                                          title="单击图片进行修改">
                                     <img src="${pageContext.request.contextPath}/fileuploadpath/${image2}" id="img2"
-                                         alt="2" height="150px" width="150px" class="layui-upload-img uploadImgPreView"
+                                         alt="2" height="150px" width="150px" class="layui-upload-img uploadImgPreView uploadImg"
                                          title="单击图片进行修改">
                                     <img src="${pageContext.request.contextPath}/fileuploadpath/${image3}" id="img3"
-                                         alt="2" height="150px" width="150px" class="layui-upload-img uploadImgPreView"
+                                         alt="2" height="150px" width="150px" class="layui-upload-img uploadImgPreView uploadImg"
                                          title="单击图片进行修改">
                                 </div>
                                       
@@ -152,6 +154,17 @@
                                            value="${book.bookPress}">
                                 </div>
                             </div>
+                            <%--细节图片预览图--%>
+                            <div class="am-form-group">
+                                <label class="am-u-sm-2 am-form-label">细节预览图</label>      
+                                <div class="layui-upload-list am-u-sm-10 " id="yulandiv">
+                                    <img src="${pageContext.request.contextPath}/fileuploadpath/${remark1}" id="remark"
+                                         alt="2" height="150px" width="150px" class="layui-upload-img uploadImgPreView"
+                                         title="单击图片进行修改">
+                                </div>    
+                            </div>
+                            <input type="text" id="imgUrl" name="imgUrl" style="display: none;" class="layui-input">
+
                             <%--内容简介--%>
                             <div class="am-form-group">
                                 <label for="plotsummary" class="am-u-sm-2 am-form-label">内容简介</label>
@@ -249,9 +262,15 @@
     var fail = 0;
     var imgurls = "";
     var imgid = "";
+
+    var success1 = 0;
+    var fail1 = 0;
+    var imgurl = "";
+    var remarkid = "";
     // 在页面任意位置点击而触发此事件
     $(document).click(function (e) {
         imgid = $(e.target).attr("id");       // e.target表示被点击的目标
+        remarkid = $(e.target).attr("id");       // e.target表示被点击的目标
     });
 
     $(function () {
@@ -260,7 +279,7 @@
             var upload = layui.upload;
             var layer = layui.layer;
             upload.render({
-                elem: '.uploadImgPreView',
+                elem: '.uploadImg',
                 url: '/book/upload',
                 multiple: true,
                 accept: 'images',
@@ -281,29 +300,14 @@
                 },
                 done: function (res, index, upload) {
                     //每个图片上传结束的回调，成功的话，就把新图片的名字保存起来，作为数据提交
-                    console.log(res.code);
+                    console.log("haha:"+res.code);
                     if (res.code == "1") {
                         fail++;
                     } else {
                         success++;
-                        if (imgurls.indexOf(res.imgId) == -1) {
+                        //保存图片位置和地址
                             imgurls = imgurls + imgid + "_" + res.data.src + ",";
                             $('#imgUrls').val(imgurls);
-                        } else {
-                            var test1 = imgurls.split(",");
-                            var test2 = "";
-                            for (var i = 0; i < test1.length; i++) {
-                                if (test1[i].indexOf(res.imgId) != -1) {
-                                    test1[i] = res.data.src;
-                                }
-                            }
-                            for (var i = 0; i < test1.length; i++) {
-                                test2 = test2 + test1[i] + ",";
-                            }
-                            imgurls = test2.substring(0, test2.length() - 1);
-                            $('#imgUrls').val(imgurls);
-                        }
-
                     }
                 },
                 allDone: function (obj) {
@@ -314,12 +318,52 @@
                 }
             });
 
+            upload.render({
+                elem: '#remark',
+                url: '/book/upload',
+                multiple: true,
+                accept: 'images',
+                acceptMime: 'image/*',
+                auto: true,
+//			上传的单个图片大小
+                size: 10240,
+//			最多上传的数量
+                number: 1,
+//			MultipartFile file 对应，layui默认就是file,要改动则相应改动
+                field: 'file',
+                bindAction: '#startup',
+                before: function (obj) {
+                    //预读本地文件示例，不支持ie8
+                    obj.preview(function (index, file, result) {
+                        document.getElementById(remarkid).src = result;
+                    });
+                },
+                done: function (res, index, upload) {
+                    //每个图片上传结束的回调，成功的话，就把新图片的名字保存起来，作为数据提交
+                    console.log(res.code);
+                    if (res.code == "1") {
+                        fail1++;
+                    } else {
+                        success1++;
+                        imgurl = res.data.src;
+                        console.log(imgurl);
+                        $('#imgUrl').val(imgurl);
+                    }
+                },
+                allDone: function (obj) {
+                    layer.msg("总共要上传图片总数为：" + (fail1 + success1) + "\n"
+                        + "其中上传成功图片数为：" + success1 + "\n"
+                        + "其中上传失败图片数为：" + fail1
+                    )
+                }
+            });
 
         });
         //清空预览图片
         cleanImgsPreview();
         //保存商品
         goodsSave();
+        cleanImgsPreview1();
     });
 
     /**
@@ -335,6 +379,16 @@
             $('#imgUrls').val("");
         });
     }
+
+    function cleanImgsPreview1() {
+        $("#cleanImg").click(function () {
+            success1 = 0;
+            fail1 = 0;
+            $('#yulandiv').html("");
+            $('#imgUrl').val("");
+        });
+    }
+
 
     /**
      * 保存商品
@@ -360,7 +414,12 @@
             var image1 = $("#image1").val();
             var image2 = $("#image2").val();
             var image3 = $("#image3").val();
-
+            var remark1 = $("#remark1").val();
+            var ius1 = $("#imgUrl").val();
+            console.log("ius:"+ius);
+            console.log("image1:"+image1);
+            console.log("image2:"+image2);
+            console.log("image3:"+image3);
             $.ajax({
                 type: "POST",
                 url: "/book/updateGoods",
@@ -383,7 +442,9 @@
                     bookId: bookId1,
                     image1: image1,
                     image2: image2,
-                    image3: image3
+                    image3: image3,
+                    imgUrl:ius1,
+                    remark1:remark1
                 },
                 success: function (msg) {
                     if (msg == "1") {

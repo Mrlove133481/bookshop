@@ -4,4 +4,12 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
    <!-- 设置缓存，添加 mybatis 插件 -->
+
+   <plugins>
+      <!-- com.github.pagehelper 为 PageHelper 类所在包名 -->
+      <plugin interceptor="com.github.pagehelper.PageInterceptor">
+         <!-- 设置数据库类型 Oracle,Mysql,MariaDB,SQLite,Hsqldb,PostgreSQL 六种数据库-->
+         <property name="reasonable" value="true"/>
+      </plugin>
+   </plugins>
 </configuration>

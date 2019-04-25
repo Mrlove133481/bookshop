@@ -6,53 +6,30 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
-<%--<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-    <title>商品页面</title>
-
-    <link href="../AmazeUI-2.4.2/assets/css/admin.css" rel="stylesheet" type="text/css" />
-    <link href="../AmazeUI-2.4.2/assets/css/amazeui.css" rel="stylesheet" type="text/css" />
-    <link href="../basic/css/demo.css" rel="stylesheet" type="text/css" />
-    <link type="text/css" href="../css/optstyle.css" rel="stylesheet" />
-    <link type="text/css" href="../css/style.css" rel="stylesheet" />
-
-    <script type="text/javascript" src="../basic/js/jquery-1.7.min.js"></script>
-    <script type="text/javascript" src="../basic/js/quick_links.js"></script>
-
-    <script type="text/javascript" src="../AmazeUI-2.4.2/assets/js/amazeui.js"></script>
-    <script type="text/javascript" src="../js/jquery.imagezoom.min.js"></script>
-    <script type="text/javascript" src="../js/jquery.flexslider.js"></script>
-    <script type="text/javascript" src="../js/list.js"></script>
-
-</head>--%>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
     <title>商品页面</title>
 
-    <link href="${pageContext.request.contextPath}/assets/css/admin.css" rel="stylesheet" type="text/css"/>
-    <link href="${pageContext.request.contextPath}/assets/css/amazeui.css" rel="stylesheet" type="text/css"/>
+    <link href="${pageContext.request.contextPath}/page/common/admin.css" rel="stylesheet" type="text/css"/>
+    <link href="${pageContext.request.contextPath}/page/common/amazeui.css" rel="stylesheet" type="text/css"/>
+
     <link href="${pageContext.request.contextPath}/page/common/demo.css" rel="stylesheet" type="text/css"/>
     <link type="text/css" href="${pageContext.request.contextPath}/page/common/optstyle.css" rel="stylesheet"/>
     <link type="text/css" href="${pageContext.request.contextPath}/page/common/style.css" rel="stylesheet"/>
 
     <script type="text/javascript" src="${pageContext.request.contextPath}/page/common/jquery-1.7.min.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/page/common/quick_links.js"></script>
-
-    <script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/amazeui.js"></script>
-    <script type="text/javascript"
-            src="${pageContext.request.contextPath}/page/common/jquery.imagezoom.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/page/common/amazeui.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/page/common/jquery.imagezoom.min.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/page/common/jquery.flexslider.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/page/common/list.js"></script>
 
 </head>
+
 <body>
 
 
@@ -78,7 +55,6 @@
         </div>
         <div class="topMessage favorite">
             <div class="menu-hd"><a href="#" target="_top"><i class="am-icon-heart am-icon-fw"></i><span>收藏夹</span></a></div>
-        </div>
     </ul>
 </div>
 
@@ -113,10 +89,6 @@
                 <li class="qc"><a href="#">团购</a></li>
                 <li class="qc last"><a href="#">大包装</a></li>
             </ul>
-            <div class="nav-extra">
-                <i class="am-icon-user-secret am-icon-md nav-user"></i><b></b>我的福利
-                <i class="am-icon-angle-right" style="padding-left: 10px;"></i>
-            </div>
         </div>
     </div>
     <ol class="am-breadcrumb am-breadcrumb-slash">
@@ -200,7 +172,9 @@
             <!--规格属性-->
             <!--名称-->
             <div class="tb-detail-hd">
-                <h1> 良品铺子 手剥松子218g 坚果炒货 巴西松子</h1>
+                <h1>
+                    良品铺子 手剥松子218g 坚果炒货 巴西松子
+                </h1>
             </div>
             <div class="tb-detail-list">
                 <!--价格-->
@@ -216,30 +190,6 @@
                     <div class="clear"></div>
                 </div>
 
-                <!--地址-->
-                <dl class="iteminfo_parameter freight">
-                    <dt>配送至</dt>
-                    <div class="iteminfo_freprice">
-                        <div class="am-form-content address">
-                            <select data-am-selected>
-                                <option value="a">浙江省</option>
-                                <option value="b">湖北省</option>
-                            </select>
-                            <select data-am-selected>
-                                <option value="a">温州市</option>
-                                <option value="b">武汉市</option>
-                            </select>
-                            <select data-am-selected>
-                                <option value="a">瑞安区</option>
-                                <option value="b">洪山区</option>
-                            </select>
-                        </div>
-                        <div class="pay-logis">
-                            快递<b class="sys_item_freprice">10</b>元
-                        </div>
-                    </div>
-                </dl>
-                <div class="clear"></div>
 
                 <!--销量-->
                 <ul class="tm-ind-panel">
@@ -260,7 +210,9 @@
                     <dt class="theme-login"><div class="cart-title">可选规格<span class="am-icon-angle-right"></span></div></dt>
                     <dd>
                         <!--操作页面-->
+
                         <div class="theme-popover-mask"></div>
+
                         <div class="theme-popover">
                             <div class="theme-span"></div>
                             <div class="theme-poptit">
@@ -296,6 +248,7 @@
                         <input id="add" class="am-btn am-btn-default" name="" type="button" value="+" />
                         <span id="Stock" class="tb-hidden">库存<span class="stock">1000</span>件</span>
                     </dd>
+
             </div>
             <div class="clear"></div>
 
@@ -310,7 +263,7 @@
             </div>
             <div class="text-info">
                 <span class="J_Price price-now">¥39.00</span>
-                <span id="Stock" class="tb-hidden">库存<span class="stock">1000</span>件</span>
+                <span id="Stock1" class="tb-hidden">库存<span class="stock">1000</span>件</span>
             </div>
         </div>
 
@@ -326,20 +279,10 @@
     <div class="hot">
         <dt class="tb-metatit">店铺优惠</dt>
         <div class="gold-list">
-            <p>购物满2件打8折，满3件7折<span>点击领券<i class="am-icon-sort-down"></i></span></p>
+            <p>购物满2件打8折，满3件7折</p>
         </div>
     </div>
     <div class="clear"></div>
-    <div class="coupon">
-        <dt class="tb-metatit">优惠券</dt>
-        <div class="gold-list">
-            <ul>
-                <li>125减5</li>
-                <li>198减10</li>
-                <li>298减20</li>
-            </ul>
-        </div>
-    </div>
 </div>
 </div>
 
@@ -366,35 +309,6 @@
 <div class="clear"></div>
 
 </div>
-
-<!--优惠套装-->
-<div class="match">
-    <div class="match-title">优惠套装</div>
-    <div class="match-comment">
-        <ul class="like_list">
-            <li>
-                <div class="s_picBox">
-                    <a class="s_pic" href="#"><img src="../images/cp.jpg"></a>
-                </div> <a class="txt" target="_blank" href="#">萨拉米 1+1小鸡腿</a>
-                <div class="info-box"> <span class="info-box-price">¥ 29.90</span> <span class="info-original-price">￥ 199.00</span> </div>
-            </li>
-            <li class="plus_icon"><i>+</i></li>
-            <li>
-                <div class="s_picBox">
-                    <a class="s_pic" href="#"><img src="../images/cp2.jpg"></a>
-                </div> <a class="txt" target="_blank" href="#">ZEK 原味海苔</a>
-                <div class="info-box"> <span class="info-box-price">¥ 8.90</span> <span class="info-original-price">￥ 299.00</span> </div>
-            </li>
-            <li class="plus_icon"><i>=</i></li>
-            <li class="total_price">
-                <p class="combo_price"><span class="c-title">套餐价:</span><span>￥35.00</span> </p>
-                <p class="save_all">共省:<span>￥463.00</span></p> <a href="#" class="buy_now">立即购买</a> </li>
-            <li class="plus_icon"><i class="am-icon-angle-right"></i></li>
-        </ul>
-    </div>
-</div>
-<div class="clear"></div>
-
 
 <!-- introduce-->
 
@@ -465,22 +379,12 @@
             <ul class="am-avg-sm-3 am-tabs-nav am-nav am-nav-tabs">
                 <li class="am-active">
                     <a href="#">
-
-                        <span class="index-needs-dt-txt">宝贝详情</span></a>
-
+                    <span class="index-needs-dt-txt">宝贝详情</span></a>
                 </li>
 
                 <li>
                     <a href="#">
-
-                        <span class="index-needs-dt-txt">全部评价</span></a>
-
-                </li>
-
-                <li>
-                    <a href="#">
-
-                        <span class="index-needs-dt-txt">猜你喜欢</span></a>
+                    <span class="index-needs-dt-txt">全部评价</span></a>
                 </li>
             </ul>
 
@@ -512,13 +416,13 @@
                             <h4>商品细节</h4>
                         </div>
                         <div class="twlistNews">
-                            <img src="../images/tw1.jpg" />
-                            <img src="../images/tw2.jpg" />
+                            <img src="../images/infotest.jpg" />
+                          <%--  <img src="../images/tw2.jpg" />
                             <img src="../images/tw3.jpg" />
                             <img src="../images/tw4.jpg" />
                             <img src="../images/tw5.jpg" />
                             <img src="../images/tw6.jpg" />
-                            <img src="../images/tw7.jpg" />
+                            <img src="../images/tw7.jpg" />--%>
                         </div>
                     </div>
                     <div class="clear"></div>
@@ -1010,159 +914,6 @@
 
                 </div>
 
-                <div class="am-tab-panel am-fade">
-                    <div class="like">
-                        <ul class="am-avg-sm-2 am-avg-md-3 am-avg-lg-4 boxes">
-                            <li>
-                                <div class="i-pic limit">
-                                    <img src="../images/imgsearch1.jpg" />
-                                    <p>【良品铺子_开口松子】零食坚果特产炒货
-                                        <span>东北红松子奶油味</span></p>
-                                    <p class="price fl">
-                                        <b>¥</b>
-                                        <strong>298.00</strong>
-                                    </p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="i-pic limit">
-                                    <img src="../images/imgsearch1.jpg" />
-                                    <p>【良品铺子_开口松子】零食坚果特产炒货
-                                        <span>东北红松子奶油味</span></p>
-                                    <p class="price fl">
-                                        <b>¥</b>
-                                        <strong>298.00</strong>
-                                    </p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="i-pic limit">
-                                    <img src="../images/imgsearch1.jpg" />
-                                    <p>【良品铺子_开口松子】零食坚果特产炒货
-                                        <span>东北红松子奶油味</span></p>
-                                    <p class="price fl">
-                                        <b>¥</b>
-                                        <strong>298.00</strong>
-                                    </p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="i-pic limit">
-                                    <img src="../images/imgsearch1.jpg" />
-                                    <p>【良品铺子_开口松子】零食坚果特产炒货
-                                        <span>东北红松子奶油味</span></p>
-                                    <p class="price fl">
-                                        <b>¥</b>
-                                        <strong>298.00</strong>
-                                    </p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="i-pic limit">
-                                    <img src="../images/imgsearch1.jpg" />
-                                    <p>【良品铺子_开口松子】零食坚果特产炒货
-                                        <span>东北红松子奶油味</span></p>
-                                    <p class="price fl">
-                                        <b>¥</b>
-                                        <strong>298.00</strong>
-                                    </p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="i-pic limit">
-                                    <img src="../images/imgsearch1.jpg" />
-                                    <p>【良品铺子_开口松子】零食坚果特产炒货
-                                        <span>东北红松子奶油味</span></p>
-                                    <p class="price fl">
-                                        <b>¥</b>
-                                        <strong>298.00</strong>
-                                    </p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="i-pic limit">
-                                    <img src="../images/imgsearch1.jpg" />
-                                    <p>【良品铺子_开口松子】零食坚果特产炒货
-                                        <span>东北红松子奶油味</span></p>
-                                    <p class="price fl">
-                                        <b>¥</b>
-                                        <strong>298.00</strong>
-                                    </p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="i-pic limit">
-                                    <img src="../images/imgsearch1.jpg" />
-                                    <p>【良品铺子_开口松子】零食坚果特产炒货
-                                        <span>东北红松子奶油味</span></p>
-                                    <p class="price fl">
-                                        <b>¥</b>
-                                        <strong>298.00</strong>
-                                    </p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="i-pic limit">
-                                    <img src="../images/imgsearch1.jpg" />
-                                    <p>【良品铺子_开口松子】零食坚果特产炒货
-                                        <span>东北红松子奶油味</span></p>
-                                    <p class="price fl">
-                                        <b>¥</b>
-                                        <strong>298.00</strong>
-                                    </p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="i-pic limit">
-                                    <img src="../images/imgsearch1.jpg" />
-                                    <p>【良品铺子_开口松子】零食坚果特产炒货
-                                        <span>东北红松子奶油味</span></p>
-                                    <p class="price fl">
-                                        <b>¥</b>
-                                        <strong>298.00</strong>
-                                    </p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="i-pic limit">
-                                    <img src="../images/imgsearch1.jpg" />
-                                    <p>【良品铺子_开口松子】零食坚果特产炒货
-                                        <span>东北红松子奶油味</span></p>
-                                    <p class="price fl">
-                                        <b>¥</b>
-                                        <strong>298.00</strong>
-                                    </p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="i-pic limit">
-                                    <img src="../images/imgsearch1.jpg" />
-                                    <p>【良品铺子_开口松子】零食坚果特产炒货
-                                        <span>东北红松子奶油味</span></p>
-                                    <p class="price fl">
-                                        <b>¥</b>
-                                        <strong>298.00</strong>
-                                    </p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="clear"></div>
-
-                    <!--分页 -->
-                    <ul class="am-pagination am-pagination-right">
-                        <li class="am-disabled"><a href="#">&laquo;</a></li>
-                        <li class="am-active"><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li><a href="#">&raquo;</a></li>
-                    </ul>
-                    <div class="clear"></div>
-
-                </div>
-
             </div>
 
         </div>
@@ -1194,164 +945,6 @@
     </div>
 
 </div>
-</div>
-<!--菜单 -->
-<div class=tip>
-    <div id="sidebar">
-        <div id="wrap">
-            <div id="prof" class="item">
-                <a href="#">
-                    <span class="setting"></span>
-                </a>
-                <div class="ibar_login_box status_login">
-                    <div class="avatar_box">
-                        <p class="avatar_imgbox"><img src="../images/no-img_mid_.jpg" /></p>
-                        <ul class="user_info">
-                            <li>用户名：sl1903</li>
-                            <li>级&nbsp;别：普通会员</li>
-                        </ul>
-                    </div>
-                    <div class="login_btnbox">
-                        <a href="#" class="login_order">我的订单</a>
-                        <a href="#" class="login_favorite">我的收藏</a>
-                    </div>
-                    <i class="icon_arrow_white"></i>
-                </div>
-
-            </div>
-            <div id="shopCart" class="item">
-                <a href="#">
-                    <span class="message"></span>
-                </a>
-                <p>
-                    购物车
-                </p>
-                <p class="cart_num">0</p>
-            </div>
-            <div id="asset" class="item">
-                <a href="#">
-                    <span class="view"></span>
-                </a>
-                <div class="mp_tooltip">
-                    我的资产
-                    <i class="icon_arrow_right_black"></i>
-                </div>
-            </div>
-
-            <div id="foot" class="item">
-                <a href="#">
-                    <span class="zuji"></span>
-                </a>
-                <div class="mp_tooltip">
-                    我的足迹
-                    <i class="icon_arrow_right_black"></i>
-                </div>
-            </div>
-
-            <div id="brand" class="item">
-                <a href="#">
-                    <span class="wdsc"><img src="../images/wdsc.png" /></span>
-                </a>
-                <div class="mp_tooltip">
-                    我的收藏
-                    <i class="icon_arrow_right_black"></i>
-                </div>
-            </div>
-
-            <div id="broadcast" class="item">
-                <a href="#">
-                    <span class="chongzhi"><img src="../images/chongzhi.png" /></span>
-                </a>
-                <div class="mp_tooltip">
-                    我要充值
-                    <i class="icon_arrow_right_black"></i>
-                </div>
-            </div>
-
-            <div class="quick_toggle">
-                <li class="qtitem">
-                    <a href="#"><span class="kfzx"></span></a>
-                    <div class="mp_tooltip">客服中心<i class="icon_arrow_right_black"></i></div>
-                </li>
-                <!--二维码 -->
-                <li class="qtitem">
-                    <a href="#none"><span class="mpbtn_qrcode"></span></a>
-                    <div class="mp_qrcode" style="display:none;"><img src="../images/weixin_code_145.png" /><i class="icon_arrow_white"></i></div>
-                </li>
-                <li class="qtitem">
-                    <a href="#top" class="return_top"><span class="top"></span></a>
-                </li>
-            </div>
-
-            <!--回到顶部 -->
-            <div id="quick_links_pop" class="quick_links_pop hide"></div>
-
-        </div>
-    </div>
-    <div id="prof-content" class="nav-content">
-        <div class="nav-con-close">
-            <i class="am-icon-angle-right am-icon-fw"></i>
-        </div>
-        <div>
-            我
-        </div>
-    </div>
-    <div id="shopCart-content" class="nav-content">
-        <div class="nav-con-close">
-            <i class="am-icon-angle-right am-icon-fw"></i>
-        </div>
-        <div>
-            购物车
-        </div>
-    </div>
-    <div id="asset-content" class="nav-content">
-        <div class="nav-con-close">
-            <i class="am-icon-angle-right am-icon-fw"></i>
-        </div>
-        <div>
-            资产
-        </div>
-
-        <div class="ia-head-list">
-            <a href="#" target="_blank" class="pl">
-                <div class="num">0</div>
-                <div class="text">优惠券</div>
-            </a>
-            <a href="#" target="_blank" class="pl">
-                <div class="num">0</div>
-                <div class="text">红包</div>
-            </a>
-            <a href="#" target="_blank" class="pl money">
-                <div class="num">￥0</div>
-                <div class="text">余额</div>
-            </a>
-        </div>
-
-    </div>
-    <div id="foot-content" class="nav-content">
-        <div class="nav-con-close">
-            <i class="am-icon-angle-right am-icon-fw"></i>
-        </div>
-        <div>
-            足迹
-        </div>
-    </div>
-    <div id="brand-content" class="nav-content">
-        <div class="nav-con-close">
-            <i class="am-icon-angle-right am-icon-fw"></i>
-        </div>
-        <div>
-            收藏
-        </div>
-    </div>
-    <div id="broadcast-content" class="nav-content">
-        <div class="nav-con-close">
-            <i class="am-icon-angle-right am-icon-fw"></i>
-        </div>
-        <div>
-            充值
-        </div>
-    </div>
 </div>
 
 </body>

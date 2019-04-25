@@ -26,15 +26,13 @@
     <http pattern="/foreground/selectlimit/**" security="none"></http>
     <http pattern="/login/user/**" security="none"></http>
     <http pattern="/page/login.jsp" security="none"></http>
-
+    <http pattern="/page/register.jsp" security="none"></http>
+    <http pattern="/page/backstagepage/Login.jsp" security="none"></http>
     <!-- 页面拦截规则 -->
     <http use-expressions="false">
         <intercept-url pattern="/**" access="ROLE_ADMIN" />
         <form-login login-page="/page/login.jsp"  default-target-url="/page/index.jsp" authentication-failure-url="/page/login.jsp" always-use-default-target="true" />
         <csrf disabled="true"/>
-        <!--<headers>
-            <frame-options policy="SAMEORIGIN"/>
-        </headers>-->
         <logout/>
     </http>
 
@@ -42,37 +40,12 @@
     <!-- 认证管理器 -->
     <authentication-manager>
         <authentication-provider user-service-ref="userDetailService">
-
+            <password-encoder ref="bcryptEncoder"></password-encoder>
         </authentication-provider>
     </authentication-manager>
     <beans:bean id="userDetailService" class="com.mrlove.bookshop.service.UserDetailsServiceImpl">
-      <!--  <beans:property name="loginService" value="com.mrlove.bookshop.service.LoginService"></beans:property>-->
+    </beans:bean>
+    <beans:bean id="bcryptEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
     </beans:bean>
 
-
 </beans:beans>
-
-
-
-<!--
-    <http pattern="/index.jsp" security="none"></http>
-    <http pattern="/page/login.jsp" security="none"></http>
-
-        &lt;!&ndash; 页面拦截规则 &ndash;&gt;
-<http use-expressions="false">
-<intercept-url pattern="/**" access="ROLE_USER" />
-<form-login login-page="/page/login.jsp"  default-target-url="/page/index.jsp" authentication-failure-url="/page/login.jsp" always-use-default-target="true"/>
-    <csrf disabled="true"/>
-    <logout/>
-</http>
-
-        &lt;!&ndash; 认证管理器 &ndash;&gt;
-<authentication-manager>
-<authentication-provider>
-    <user-service>
-        <user name="admin" password="123456" authorities="ROLE_USER"/>
-    </user-service>
-</authentication-provider>
-</authentication-manager>
-        </beans:beans>
--->

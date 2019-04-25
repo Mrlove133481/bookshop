@@ -269,6 +269,7 @@
         ,book_image1
         ,book_image2
         ,book_image3
+        ,book_remark1
         from books
         where book_id = #{bookId,jdbcType=VARCHAR}
     </select>
@@ -293,13 +294,20 @@
     ,book_image1 = #{bookImage1}
     ,book_image2 = #{bookImage2}
     ,book_image3 = #{bookImage3}
+     ,book_remark1 = #{bookRemark1}
     where book_id = #{bookId}
     </update>
     <!--前台限制查询图书-->
     <select id="findbooks" resultMap="BaseResultMap">
     select *
     from books
+    where book_status != '0'
     limit 8
     </select>
-
+    <!--分页查询-->
+    <select id="pagingQuery" resultMap="BaseResultMap">
+    select *
+    from books
+    where book_status != '0'
+    </select>
 </mapper>

@@ -49,7 +49,7 @@
                 <div class="am-tabs-bd">
                     <%--邮箱注册--%>
                     <div class="am-tab-panel am-active">
-                        <form method="post" id="emailform" action="/login/register">
+                        <form method="post" id="emailform" action="/logins/register">
                             <div class="user-email">
                                 <label for="email"><i class="am-icon-envelope-o"></i></label>
                                 <input type="email" name="email" maxlength="50" id="email" placeholder="请输入邮箱账号">
@@ -79,7 +79,7 @@
                     </div>
                     <%--手机号注册--%>
                     <div class="am-tab-panel">
-                        <form method="post" id="telform" action="/login/register">
+                        <form method="post" id="telform" action="/logins/register">
                             <div class="user-phone">
                                 <label for="phone"><i class="am-icon-mobile-phone am-icon-md"></i></label>
                                 <input type="tel" name="phone" maxlength="16" id="phone" placeholder="请输入手机号">

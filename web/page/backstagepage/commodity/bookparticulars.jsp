@@ -137,7 +137,17 @@
                                     <label class="am-form-label">${book.bookPress}</label>
                                 </div>
                             </div>
-                            <%--内容简介--%>
+                            <%--细节图片预览图--%>
+                            <div class="am-form-group">
+                                <label class="am-u-sm-2 am-form-label">细节预览图</label>      
+                                <div class="layui-upload-list am-u-sm-10 " id="yulandiv">
+                                    <img src="${pageContext.request.contextPath}/fileuploadpath/${remark1}" id="remark1"
+                                         alt="2" height="150px" width="150px" class="layui-upload-img uploadImgPreView"
+                                         title="单击图片进行修改">
+                                </div>    
+                            </div>
+                            <input type="text" id="imgUrl" name="imgUrl" style="display: none;" class="layui-input">
+                        <%--内容简介--%>
                             <div class="am-form-group">
                                 <label class="am-u-sm-2 am-form-label">内容简介：</label>
                                 <div class="am-u-sm-10">

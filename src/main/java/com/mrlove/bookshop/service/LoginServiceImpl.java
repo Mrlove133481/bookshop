@@ -35,7 +35,7 @@ public class LoginServiceImpl implements LoginService {
             return false;
         }
     }
-    //查询用户名是否存在
+    //查询用户是否存在
     @Override
     public boolean queryuser(String user) {
         if(userMapper.queryUser(user).size()!=0){

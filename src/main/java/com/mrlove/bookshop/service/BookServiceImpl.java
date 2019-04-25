@@ -1,12 +1,20 @@
 package com.mrlove.bookshop.service;
 
+
+
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.mrlove.bookshop.common.domain.Books;
+import com.mrlove.bookshop.common.domain.PageResult;
 import com.mrlove.bookshop.dao.BooksMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 @Transactional
@@ -56,5 +64,17 @@ public class BookServiceImpl implements BookService{
     @Override
     public List<Books> findBooks() {
         return booksMapper.findbooks();
+    }
+    //分页查询
+    @Override
+    public PageResult pagingQuery(int pageNum, int pageSize) {
+        PageHelper.startPage(pageNum, pageSize);
+        PageInfo pageInfo = new PageInfo(booksMapper.pagingQuery());
+        return new PageResult(pageInfo.getTotal(),pageInfo.getList());
+    }
+    //通过id
+    @Override
+    public List<Books> findBookById(String bookId) {
+        return null;
     }
 }

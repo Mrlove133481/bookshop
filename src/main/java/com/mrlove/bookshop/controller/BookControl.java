@@ -86,25 +86,50 @@ public class BookControl {
         Books book = bookService.getBookById(bookId);
         book.setBookId(bookId);
         model.addAttribute("book", book);
-        if("".equals(book.getBookImage1())==false){
-            model.addAttribute("image1", book.getBookImage1().substring(book.getBookImage1().indexOf("fileuploadpath") + 16, book.getBookImage1().length()));
+        if(book.getBookImage1()!=null){
+            if(!"".equals(book.getBookImage1())){
+                model.addAttribute("image1", book.getBookImage1().substring(book.getBookImage1().indexOf("fileuploadpath") + 16, book.getBookImage1().length()));
+            }else {
+                model.addAttribute("image1","error.jpg");
+            }
         }
         else {
             model.addAttribute("image1","error.jpg");
         }
-        String test1 = book.getBookImage2();
-        if("".equals(book.getBookImage2())==false){
-            model.addAttribute("image2", book.getBookImage2().substring(book.getBookImage2().indexOf("fileuploadpath") + 16, book.getBookImage2().length()));
-        }
-        else {
+        if (book.getBookImage2()!=null){
+            if(!"".equals(book.getBookImage2())){
+                model.addAttribute("image2", book.getBookImage2().substring(book.getBookImage2().indexOf("fileuploadpath") + 16, book.getBookImage2().length()));
+            }
+            else {
+                model.addAttribute("image2","error.jpg");
+            }
+        }else {
             model.addAttribute("image2","error.jpg");
         }
-        if("".equals(book.getBookImage3())==false){
-            model.addAttribute("image3", book.getBookImage3().substring(book.getBookImage3().indexOf("fileuploadpath") + 16, book.getBookImage3().length()));
-        }
-        else {
+
+        if(book.getBookImage3()!=null){
+            if(!"".equals(book.getBookImage3())){
+                model.addAttribute("image3", book.getBookImage3().substring(book.getBookImage3().indexOf("fileuploadpath") + 16, book.getBookImage3().length()));
+            }
+            else {
+                model.addAttribute("image3","error.jpg");
+            }
+        }else {
             model.addAttribute("image3","error.jpg");
         }
+
+        if(book.getBookRemark1()!=null){
+            if(!"".equals(book.getBookRemark1())){
+               // System.out.println(book.getBookRemark1().substring(book.getBookRemark1().indexOf("fileuploadpath") + 16, book.getBookRemark1().length()));
+                model.addAttribute("remark1", book.getBookRemark1().substring(book.getBookRemark1().indexOf("fileuploadpath") + 16, book.getBookRemark1().length()));
+            }
+            else {
+                model.addAttribute("remark1","error.jpg");
+            }
+        }else {
+            model.addAttribute("remark1","error.jpg");
+        }
+
         return "/backstagepage/commodity/bookparticulars";
     }
 
@@ -115,25 +140,50 @@ public class BookControl {
         Books book = bookService.getBookById(bookId);
         book.setBookId(bookId);
         model.addAttribute("book", book);
-       if("".equals(book.getBookImage1())==false){
-           model.addAttribute("image1", book.getBookImage1().substring(book.getBookImage1().indexOf("fileuploadpath") + 16, book.getBookImage1().length()));
-       }
+       if(book.getBookImage1()!=null){
+           if(!"".equals(book.getBookImage1())){
+               model.addAttribute("image1", book.getBookImage1().substring(book.getBookImage1().indexOf("fileuploadpath") + 16, book.getBookImage1().length()));
+           }else {
+               model.addAttribute("image1","error.jpg");
+           }
+         }
        else {
            model.addAttribute("image1","error.jpg");
        }
-       String test1 = book.getBookImage2();
-        if("".equals(book.getBookImage2())==false){
-            model.addAttribute("image2", book.getBookImage2().substring(book.getBookImage2().indexOf("fileuploadpath") + 16, book.getBookImage2().length()));
+       if (book.getBookImage2()!=null){
+            if(!"".equals(book.getBookImage2())){
+                model.addAttribute("image2", book.getBookImage2().substring(book.getBookImage2().indexOf("fileuploadpath") + 16, book.getBookImage2().length()));
+            }
+            else {
+                model.addAttribute("image2","error.jpg");
+            }
+       }else {
+           model.addAttribute("image2","error.jpg");
+       }
+
+       if(book.getBookImage3()!=null){
+           if(!"".equals(book.getBookImage3())){
+               model.addAttribute("image3", book.getBookImage3().substring(book.getBookImage3().indexOf("fileuploadpath") + 16, book.getBookImage3().length()));
+           }
+           else {
+               model.addAttribute("image3","error.jpg");
+           }
+       }else {
+           model.addAttribute("image3","error.jpg");
+       }
+
+        if(book.getBookRemark1()!=null){
+            if(!"".equals(book.getBookRemark1())){
+              //  System.out.println(book.getBookRemark1().substring(book.getBookRemark1().indexOf("fileuploadpath") + 16, book.getBookRemark1().length()));
+                model.addAttribute("remark1", book.getBookRemark1().substring(book.getBookRemark1().indexOf("fileuploadpath") + 16, book.getBookRemark1().length()));
+            }
+            else {
+                model.addAttribute("remark1","error.jpg");
+            }
+        }else {
+            model.addAttribute("remark1","error.jpg");
         }
-        else {
-            model.addAttribute("image2","error.jpg");
-        }
-        if("".equals(book.getBookImage3())==false){
-            model.addAttribute("image3", book.getBookImage3().substring(book.getBookImage3().indexOf("fileuploadpath") + 16, book.getBookImage3().length()));
-        }
-        else {
-            model.addAttribute("image3","error.jpg");
-        }
+
         return "/backstagepage/commodity/bookupdate";
     }
 
@@ -163,10 +213,10 @@ public class BookControl {
             desFilePath = realPath + "\\" + newName;
             File desFile = new File(desFilePath);
             file.transferTo(desFile);
-            System.out.println(desFilePath);
+          //  System.out.println(desFilePath);
             // 6.返回保存结果信息
             result.setImgids(imgId);
-            System.out.println("Id:" + imgId);
+          //  System.out.println("Id:" + imgId);
             result.setCode(0);
             dataMap = new HashMap<>();
             dataMap.put("src", desFilePath);
@@ -187,7 +237,7 @@ public class BookControl {
     //图书添加页面表单提交添加按钮响应事件
     @RequestMapping(value = "saveGoods", method = RequestMethod.POST)
     @ResponseBody
-    private String saveImgInfo(String bookname, String originalprice, String promotionprice, String cost, String clazz, String subclazz, String auther, String press, String testdate, String plotsummary, String biography, String catalog, String mediacomments, String addcount, String imgUrls) {
+    private String saveImgInfo(String bookname, String originalprice, String promotionprice, String cost, String clazz, String subclazz, String auther, String press, String testdate, String plotsummary, String biography, String catalog, String mediacomments, String addcount, String imgUrls,String imgUrl) {
         String[] urls = imgUrls.split(",");
         String[] urls1 = new String[3];
         urls1[0] = "";
@@ -197,7 +247,7 @@ public class BookControl {
             urls1[i] = urls[i];
         }
         try {
-            Books books = new Books(IdGenerator.getID(), IdGenerator.getNumber(), bookname, urls1[0], urls1[1], urls1[2], originalprice, promotionprice, cost, clazz, subclazz, null, null, auther, press, testdate, plotsummary, biography, catalog, mediacomments, null, addcount, "1", DateUtil.parseDateToStr(new Date(), DateUtil.DATE_TIME_FORMAT_YYYY_MM_DD_HH_MI_SS), null, null);
+            Books books = new Books(IdGenerator.getID(), IdGenerator.getNumber(), bookname, urls1[0], urls1[1], urls1[2], originalprice, promotionprice, cost, clazz, subclazz, null, null, auther, press, testdate, plotsummary, biography, catalog, mediacomments, null, addcount, "1", DateUtil.parseDateToStr(new Date(), DateUtil.DATE_TIME_FORMAT_YYYY_MM_DD_HH_MI_SS), imgUrl, null);
             bookService.insertSelective(books);
         } catch (Exception e) {
             //保存失败
@@ -211,15 +261,14 @@ public class BookControl {
     //图书编辑页面表单提交添加按钮响应事件
     @RequestMapping(value = "updateGoods", method = RequestMethod.POST)
     @ResponseBody
-    private String updateImgInfo(String bookId,String bookname, String originalprice, String promotionprice, String cost, String clazz, String subclazz, String auther, String press, String testdate, String plotsummary, String biography, String catalog, String mediacomments, String addcount, String imgUrls,String image1,String image2,String image3) {
+    private String updateImgInfo(String bookId,String bookname, String originalprice, String promotionprice, String cost, String clazz, String subclazz, String auther, String press, String testdate, String plotsummary, String biography, String catalog, String mediacomments, String addcount, String imgUrls,String image1,String image2,String image3,String imgUrl,String remark1) {
         String[] urls = imgUrls.split(",");
         String[] urls1 = new String[3];
         urls1[0] = image1;
         urls1[1] = image2;
         urls1[2] = image3;
-       /* urls1[0] = "";
-        urls1[1] = "";
-        urls1[2] = "";*/
+        //遍历整个urls地址，寻找每个地址与之匹配的位置和ursl1一一对应，urls集合的地址是按照先存放的在前面的原则，所有当遍历
+        //完成的时候最新的地址会覆盖旧的地址
         for (int i = 0; i < urls.length; i++) {
            if("".equals(urls[i])==false){
                if("img1".equals(urls[i].substring(0,urls[i].indexOf("_D")))){
@@ -233,9 +282,16 @@ public class BookControl {
                }
            }
         }
-        System.out.println("测试:" + urls1[0] + "测试:" + urls1[1] + "测试:" + urls1[2]);
+        System.out.println("imgurl:"+imgUrl);
+        System.out.println("remark1:"+remark1);
+        if(!"".equals(imgUrl)){
+            remark1 = imgUrl;
+            System.out.println("remarkhah:"+remark1);
+        }
+        System.out.println("remark1:"+remark1);
+        //System.out.println("测试:" + urls1[0] + "测试:" + urls1[1] + "测试:" + urls1[2]);
         try {
-            Books books = new Books(bookId,null, bookname, urls1[0], urls1[1], urls1[2], originalprice, promotionprice, cost, clazz, subclazz, null, null, auther, press, testdate, plotsummary, biography, catalog, mediacomments, null, addcount, null,null, null, null);
+            Books books = new Books(bookId,null, bookname, urls1[0], urls1[1], urls1[2], originalprice, promotionprice, cost, clazz, subclazz, null, null, auther, press, testdate, plotsummary, biography, catalog, mediacomments, null, addcount, null,null, remark1, null);
             bookService.updateBookById(books);
         } catch (Exception e) {
             //保存失败

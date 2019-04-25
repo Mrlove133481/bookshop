@@ -8,6 +8,7 @@ E:\IJ_codes\bookshop\src\main\java\com\mrlove\bookshop\common\domain\Address.jav
 E:\IJ_codes\bookshop\src\main\java\com\mrlove\bookshop\service\UserDetailServiceImpl.java
 E:\IJ_codes\bookshop\src\main\java\com\mrlove\bookshop\common\domain\Books.java
 E:\IJ_codes\bookshop\src\main\java\com\mrlove\bookshop\common\utils\DateUtil.java
+E:\IJ_codes\bookshop\src\main\java\com\mrlove\bookshop\common\domain\PageResult.java
 E:\IJ_codes\bookshop\src\main\java\com\mrlove\bookshop\common\domain\Result.java
 E:\IJ_codes\bookshop\src\main\java\com\mrlove\bookshop\controller\ShopcartControl.java
 E:\IJ_codes\bookshop\src\main\java\com\mrlove\bookshop\dao\OrderMapper.java

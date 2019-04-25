@@ -18,7 +18,7 @@
         <div class="login-font" style="height:100px;">
         </div>
         <div class="am-u-sm-10 login-am-center">
-            <form class="am-form" id="loginform1" action="/login/manager" method="post">
+            <form class="am-form" id="loginform1" action="/logins/manager" method="post">
                 <fieldset>
                     <div class="am-form-group">
                         <input type="text" class="" id="username" maxlength="10"  placeholder="输入用户名" name="username">
