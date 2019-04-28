@@ -28,18 +28,10 @@
 
 </head>
 
-<body>
+<body ng-app="myApp" ng-controller="cartController">
 
 <!--顶部导航条 -->
 <div class="am-container header">
-    <%--<ul class="message-l">
-        <div class="topMessage">
-            <div class="menu-hd">
-                <a href="#" target="_top" class="h">亲，请登录</a>
-                <a href="#" target="_top">免费注册</a>
-            </div>
-        </div>
-    </ul>--%>
     <ul class="message-r">
         <div class="topMessage home">
             <div class="menu-hd"><a href="${pageContext.request.contextPath}/page/index.jsp" target="_top" class="h" style="color:#b6795f">书城首页</a></div>
@@ -61,7 +53,7 @@
 <div class="nav white">
     <div class="logo"><img src="../images/logo.png" /></div>
     <div class="logoBig">
-        <li><img src="${pageContext.request.contextPath}/images/logo.png" /></li>
+        <li style="margin-top: 20px;"><img src="${pageContext.request.contextPath}/images/logo.png" /></li>
     </div>
 
     <div class="search-bar pr">
@@ -76,7 +68,7 @@
 <div class="clear"></div>
 
 <!--购物车 -->
-<div class="concent"  ng-app="myApp" ng-controller="cartController" ng-init="findCartList()">
+<div class="concent"   ng-init="findCartList('${sessionScope.users.userShopCart}')">
     <div id="cartTable">
 
         <div class="cart-table-th">
@@ -119,19 +111,17 @@
                         <li class="td td-chk">
                             <div class="cart-checkbox ">
                                 <label for="{{book.bookss.bookNumber}}"></label>
-                                <input class="check" id="{{book.bookss.bookNumber}}" name="items[]" value="{{book.bookss.bookNumber}}" type="checkbox">
-
+                                <input class="check "  ng-click="selectedbook(book.shopcartRemark1,book.bookss.bookNumber,book.shopcartId)" id="{{book.bookss.bookNumber}}" name="checkbox" value="{{book.bookss.bookNumber}}" type="checkbox" checked>
                             </div>
                         </li>
                         <li class="td td-item">
                             <div class="item-pic">
-
-                                <a href="#" target="_blank" data-title="美康粉黛醉美东方唇膏口红正品 持久保湿滋润防水不掉色护唇彩妆" class="J_MakePoint" data-point="tbcart.8.12">
+                                <a href="/foreground/info?bookId={{book.bookss.bookId}}" target="_blank" class="J_MakePoint" data-point="tbcart.8.12">
                                     <img src=" ${pageContext.request.contextPath}/fileuploadpath/{{book.bookss.bookImage1}}" class="itempic J_ItemImg" width="80px" height="80px"></a>
                             </div>
                             <div class="item-info">
                                 <div class="item-basic-info">
-                                    <a href="#" target="_blank" title=" {{book.bookss.bookName}}" class="item-title J_MakePoint" data-point="tbcart.8.11">{{book.bookss.bookName}}</a>
+                                    <a href="/foreground/info?bookId={{book.bookss.bookId}}" target="_blank" title="{{book.bookss.bookName}}" class="item-title J_MakePoint" data-point="tbcart.8.11">{{book.bookss.bookName}}</a>
                                 </div>
                             </div>
                         </li>
@@ -155,9 +145,9 @@
                             <div class="amount-wrapper ">
                                 <div class="item-amount ">
                                     <div class="sl">
-                                        <input class="min am-btn" name="" type="button" value="-"  ng-click="down(book.bookss.bookNumber,book.shopcartId,book.shopcartCount)" />
+                                        <input class="min am-btn" name="" type="button" value="-"  ng-click="down(book.bookss.bookNumber,book.shopcartId,book.shopcartCount,'${sessionScope.users.userShopCart}')" />
                                         <input class="text_box" type="text" autocomplete="off" style="width:30px;" id="{{book.bookss.bookNumber}}1" ng-model="book.shopcartCount" />
-                                        <input class="add am-btn" name="" type="button" value="+"  ng-click="up(book.bookss.bookNumber,book.shopcartId,book.shopcartCount)"  />
+                                        <input class="add am-btn" name="" type="button" value="+"  ng-click="up(book.bookss.bookNumber,book.shopcartId,book.shopcartCount,'${sessionScope.users.userShopCart}')"  />
                                     </div>
                                 </div>
                             </div>
@@ -171,7 +161,7 @@
                             <div class="td-inner">
                                 <a title="移入收藏夹" class="btn-fav" href="#">
                                     移入收藏夹</a>
-                                <a class="delete" ng-click="deletecartbook(book.bookss.bookNumber,book.shopcartId,'0')">
+                                <a class="delete" ng-click="deletecartbook(book.bookss.bookNumber,book.shopcartId,'0','${sessionScope.users.userShopCart}')">
                                     删除</a>
                             </div>
                         </li>
@@ -208,7 +198,7 @@
                 <strong class="price">¥<em id="J_Total">{{totalValue.totalMoney}}</em></strong>
             </div>
             <div class="btn-area">
-                <a href="pay.html" id="J_Go" class="submit-btn submit-btn-disabled" aria-label="请注意如果没有选择宝贝，将无法结算">
+                <a href="/page/pay.jsp" id="J_Go" class="submit-btn submit-btn-disabled" aria-label="请注意如果没有选择宝贝，将无法结算">
                     <span>结&nbsp;算</span></a>
             </div>
         </div>
@@ -239,7 +229,7 @@
 
 <!--操作页面-->
 
-<div class="theme-popover-mask"></div>
+<%--<div class="theme-popover-mask"></div>
 
 <div class="theme-popover">
     <div class="theme-span"></div>
@@ -301,7 +291,7 @@
     <li><a href="sort.html"><i class="am-icon-list"></i>分类</a></li>
     <li class="active"><a href="shopcart.html"><i class="am-icon-shopping-basket"></i>购物车</a></li>
     <li><a href="../person/index.html"><i class="am-icon-user"></i>我的</a></li>
-</div>
+</div>--%>
 </body>
 
 </html>

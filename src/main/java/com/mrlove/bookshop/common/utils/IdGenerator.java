@@ -95,5 +95,6 @@ public class IdGenerator {
          System.out.println(md5);
          System.out.println(md6);
         System.out.println(md5.equals(md6));*/
+        System.out.println(getNumber());
     }
 }

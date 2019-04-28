@@ -250,28 +250,9 @@
     </update>
     <!--通过id查询图书-->
     <select id="getBookById" resultMap="BaseResultMap">
-        select
-        book_number
-        ,book_name
-        ,book_original_price
-        ,book_promotion_price
-        ,book_cost
-        ,book_clazz
-        ,book_subclazz
-        ,book_author
-        ,book_press
-        ,book_publication_year
-        ,book_plot_summary
-        ,book_biography
-        ,book_catalog
-        ,book_media_comments
-        ,book_inventory
-        ,book_image1
-        ,book_image2
-        ,book_image3
-        ,book_remark1
+        select *
         from books
-        where book_id = #{bookId,jdbcType=VARCHAR}
+        where book_id = #{bookId,jdbcType=VARCHAR} and book_status != '0'
     </select>
     <!--通过id更新图书-->
     <update id="updateBookById" parameterType="com.mrlove.bookshop.common.domain.Books">

@@ -26,6 +26,4 @@ public interface BookService {
     List<Books> findBooks();
     //分页查询
     public PageResult pagingQuery(int pageNum, int pageSize);
-    //通过id查询图书
-    List<Books> findBookById(String bookId);
 }

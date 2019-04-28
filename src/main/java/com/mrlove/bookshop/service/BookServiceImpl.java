@@ -72,9 +72,4 @@ public class BookServiceImpl implements BookService{
         PageInfo pageInfo = new PageInfo(booksMapper.pagingQuery());
         return new PageResult(pageInfo.getTotal(),pageInfo.getList());
     }
-    //通过id
-    @Override
-    public List<Books> findBookById(String bookId) {
-        return null;
-    }
 }

@@ -15,6 +15,7 @@
   <resultMap id="BaseResultMapwithuserandcart" type="com.mrlove.bookshop.common.domain.Shopcart">
     <result column="shopcart_id" jdbcType="VARCHAR" property="shopcartId" />
     <result column="shopcart_count" jdbcType="VARCHAR" property="shopcartCount" />
+    <result column="shopcart_remark1" jdbcType="VARCHAR" property="shopcartRemark1" />
 
     <association property="user" javaType="com.mrlove.bookshop.common.domain.User" >
           <id column="user_id" jdbcType="VARCHAR" property="userId" />
@@ -22,6 +23,7 @@
 
     <collection property="books" ofType="com.mrlove.bookshop.common.domain.Books">
       <id column="book_number" jdbcType="VARCHAR" property="bookNumber"/>
+      <result column="book_id" jdbcType="VARCHAR" property="bookId"/>
       <result column="book_name" jdbcType="VARCHAR" property="bookName"/>
       <result column="book_image1" jdbcType="VARCHAR" property="bookImage1"/>
       <result column="book_promotion_price" jdbcType="VARCHAR" property="bookPromotionPrice"/>
@@ -30,11 +32,11 @@
   </resultMap>
 
   <select id="findcart" resultMap="BaseResultMapwithuserandcart" >
-  select u.user_id,s.shopcart_id,s.shopcart_count,b.book_number,b.book_name,b.book_promotion_price,b.book_original_price,b.book_image1
+  select u.user_id,s.shopcart_id,s.shopcart_count,s.shopcart_remark1,b.book_number,b.book_id,b.book_name,b.book_promotion_price,b.book_original_price,b.book_image1
   from shopcart s
   left join user u on s.shopcart_user=u.user_id
   left join books b on s.shopcart_book_number= b.book_number
-  where s.shopcart_id =#{id} and s.shopcart_status !='0';
+  where s.shopcart_id =#{id} and s.shopcart_status !='0' order by b.book_promotion_price;
   </select>
 
 
@@ -112,8 +114,25 @@
   <update id="updatecart" parameterType="com.mrlove.bookshop.common.domain.Shopcart">
     update shopcart
     set shopcart_count = #{count}
-    where shopcart_book_number = #{booknumber} and shopcart_id = #{shopcartid}
+    where shopcart_book_number = #{booknumber} and shopcart_id = #{shopcartid} and shopcart_status != '0'
   </update>
-
+<!--查找购物车是否有此编号的书-->
+<select id="findcartHasBook" resultMap="BaseResultMap">
+     select shopcart_book_number
+    from shopcart
+    where shopcart_book_number = #{bookNumber} and shopcart_id = #{shopcartid} and shopcart_status != '0'
+</select>
+  <!--查找购物车图书数量-->
+  <select id="findcartBookCount" resultMap="BaseResultMap">
+     select shopcart_count
+    from shopcart
+    where shopcart_book_number = #{bookNumber} and shopcart_id = #{shopcartid} and shopcart_status != '0'
+</select>
+  <!--更新图书选中状态-->
+  <update id="updatebookremark1" parameterType="com.mrlove.bookshop.common.domain.Shopcart">
+    update shopcart
+    set shopcart_remark1 = #{shopcartremark1}
+    where shopcart_book_number = #{booknumber} and shopcart_id = #{shopcartid} and shopcart_status != '0'
+  </update>
 
 </mapper>

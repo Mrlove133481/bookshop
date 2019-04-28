@@ -134,6 +134,7 @@ public class BookControl {
     }
 
 
+
     //编辑图书事件
     @RequestMapping("beforeUpdatebook")
     public Object updateBook(String bookId, Model model) {
@@ -247,7 +248,7 @@ public class BookControl {
             urls1[i] = urls[i];
         }
         try {
-            Books books = new Books(IdGenerator.getID(), IdGenerator.getNumber(), bookname, urls1[0], urls1[1], urls1[2], originalprice, promotionprice, cost, clazz, subclazz, null, null, auther, press, testdate, plotsummary, biography, catalog, mediacomments, null, addcount, "1", DateUtil.parseDateToStr(new Date(), DateUtil.DATE_TIME_FORMAT_YYYY_MM_DD_HH_MI_SS), imgUrl, null);
+            Books books = new Books(IdGenerator.getID(), IdGenerator.getNumber(), bookname, urls1[0], urls1[1], urls1[2], originalprice, promotionprice, cost, clazz, subclazz, "0", "0", auther, press, testdate, plotsummary, biography, catalog, mediacomments, null, addcount, "1", DateUtil.parseDateToStr(new Date(), DateUtil.DATE_TIME_FORMAT_YYYY_MM_DD_HH_MI_SS), imgUrl, null);
             bookService.insertSelective(books);
         } catch (Exception e) {
             //保存失败
@@ -282,14 +283,9 @@ public class BookControl {
                }
            }
         }
-        System.out.println("imgurl:"+imgUrl);
-        System.out.println("remark1:"+remark1);
         if(!"".equals(imgUrl)){
             remark1 = imgUrl;
-            System.out.println("remarkhah:"+remark1);
         }
-        System.out.println("remark1:"+remark1);
-        //System.out.println("测试:" + urls1[0] + "测试:" + urls1[1] + "测试:" + urls1[2]);
         try {
             Books books = new Books(bookId,null, bookname, urls1[0], urls1[1], urls1[2], originalprice, promotionprice, cost, clazz, subclazz, null, null, auther, press, testdate, plotsummary, biography, catalog, mediacomments, null, addcount, null,null, remark1, null);
             bookService.updateBookById(books);

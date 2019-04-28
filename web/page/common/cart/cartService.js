@@ -1,8 +1,8 @@
 //购物车服务层
 app.service('cartService',function($http){
     //购物车列表
-    this.findCartList=function(){
-        return $http.get('/shopcart/findcart');
+    this.findCartList=function(shopcartId){
+        return $http.get('/shopcart/findcart?shopcartId='+shopcartId);
     }
 
     //添加商品到购物车
@@ -22,5 +22,20 @@ app.service('cartService',function($http){
         }
         return totalValue;
     }
+    //查找此用户地址
+    this.findaddress = function (userId) {
+        return $http.get('/address/findaddress?userId='+userId);
+    }
+
+
+
+
+   /* //添加订单
+    this.addorder=function (cartList,userId) {
+        return $http.get('/order/addorder?shopcart='+cartList+'$userId='+userId);
+    }*/
+   this.truechecked = function (shopcartremark1, bookNumber, shopcartid) {
+       return $http.get('shopcart/ischecked?shopcartremark1='+shopcartremark1+'&bookNumber'+bookNumber+'&shopcartid'+shopcartid)
+   }
 
 });

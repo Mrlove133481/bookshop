@@ -9,6 +9,12 @@ public class Address {
 
     private String addressTelnum;
 
+    private String addressProvince;
+
+    private String addressCity;
+
+    private String addressTown;
+
     private String addressLocation;
 
     private String addressDefault;
@@ -24,11 +30,14 @@ public class Address {
     public Address() {
     }
 
-    public Address(String addressId, String addressUser, String addressReceiver, String addressTelnum, String addressLocation, String addressDefault, String addressStatus, String addressCreationTime, String addressRemark1, String addressRemark2) {
+    public Address(String addressId, String addressUser, String addressReceiver, String addressTelnum, String addressProvince, String addressCity, String addressTown, String addressLocation, String addressDefault, String addressStatus, String addressCreationTime, String addressRemark1, String addressRemark2) {
         this.addressId = addressId;
         this.addressUser = addressUser;
         this.addressReceiver = addressReceiver;
         this.addressTelnum = addressTelnum;
+        this.addressProvince = addressProvince;
+        this.addressCity = addressCity;
+        this.addressTown = addressTown;
         this.addressLocation = addressLocation;
         this.addressDefault = addressDefault;
         this.addressStatus = addressStatus;
@@ -67,6 +76,30 @@ public class Address {
 
     public void setAddressTelnum(String addressTelnum) {
         this.addressTelnum = addressTelnum == null ? null : addressTelnum.trim();
+    }
+
+    public String getAddressProvince() {
+        return addressProvince;
+    }
+
+    public void setAddressProvince(String addressProvince) {
+        this.addressProvince = addressProvince == null ? null : addressProvince.trim();
+    }
+
+    public String getAddressCity() {
+        return addressCity;
+    }
+
+    public void setAddressCity(String addressCity) {
+        this.addressCity = addressCity == null ? null : addressCity.trim();
+    }
+
+    public String getAddressTown() {
+        return addressTown;
+    }
+
+    public void setAddressTown(String addressTown) {
+        this.addressTown = addressTown == null ? null : addressTown.trim();
     }
 
     public String getAddressLocation() {

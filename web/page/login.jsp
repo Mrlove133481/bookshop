@@ -47,8 +47,8 @@
             <div class="login-form">
                 <form id="loginform" method="post" action="/login">
                     <div class="user-name">
-                        <label for="user"><i class="am-icon-user"></i></label>
-                        <input type="text" name="username" id="user" placeholder="邮箱/手机/用户名" style="outline-color:#b6795f">
+                        <label for="username"><i class="am-icon-user"></i></label>
+                        <input type="text" name="username" id="username" placeholder="邮箱/手机/用户名" style="outline-color:#b6795f">
                     </div>
                     <div class="user-pass">
                         <label for="password"><i class="am-icon-lock"></i></label>
@@ -104,30 +104,54 @@
 <script src="${pageContext.request.contextPath}/assets/js/jquery.min.js"></script>
 <script src="${pageContext.request.contextPath}/layer/layer.js"></script>
 
-<script>
+<%--<script>
     function tijiao() {
         document.getElementById("loginform").submit();//表单提交
     }
+</script>--%>
+
+
+
+<script>
+    function tijiao() {
+        var name = $("#username").val();
+        var password = $("#password").val();
+        if(name ==""){
+            layer.msg("请输入用户名！",{time:700},{offset: 'rt'},function () {
+                layer.close(index);
+            })
+        }else if(password == ""){
+            layer.msg("请输入密码！",{time:700},{offset: 'rt'},function () {
+                layer.close(index);
+            })
+        }else {
+            document.getElementById("loginform").submit();//表单提交
+        }
+
+    };
 </script>
+
+
 <script>
     var nums = ${nums};
+
     if(nums ==1){
-        layer.msg("请输入用户名！",{time:700},{offset: 'rt'},function () {
+        layer.msg("用户或密码错误！",{time:700},function () {
             layer.close(index);
         })
     }
     if(nums ==2){
-        layer.msg("请输入密码！",{time:700},function () {
+        layer.msg("用户不存在！",{time:700},function () {
             layer.close(index);
         })
     }
     if(nums ==3){
-        layer.msg("密码错误！",{time:700},function () {
+        layer.msg("用户状态不可用！",{time:700},function () {
             layer.close(index);
         })
     }
-    if(nums ==4){
-        layer.msg("用户不存在！",{time:700},function () {
+    if(nums ==4) {
+        layer.msg("用户名或密码错误！", {time: 700}, function () {
             layer.close(index);
         })
     }

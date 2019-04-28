@@ -40,6 +40,8 @@
     <script src="${pageContext.request.contextPath}/layui/layui.js" charset="utf-8"></script>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/page/common/pagination.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/layui/css/layui.css"  media="all">
+    <jsp:include page="${pageContext.request.contextPath}/page/common/js.jsp"/>
+
     <script>
         layui.use('element', function(){
             var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
@@ -54,13 +56,6 @@
         var app=angular.module('myApp',['pagination']); //定义了一个叫myApp的模块
         //定义控制器
         app.controller('myController',function($scope,$http){
-           /* $scope.findAll=function(){
-                $http.get('/foreground/selectlimit').success(
-                    function(response){
-                        $scope.list=response;
-                    }
-                );
-            }*/
 
         //重新加载列表 数据
             $scope.reloadList=function(){
@@ -70,7 +65,7 @@
         //分页控件配置
             $scope.paginationConf = {
                 currentPage: 1,
-                totalItems: 10,
+                totalItems: 12,
                 itemsPerPage: 12,
                 perPageOptions: [4, 8, 12, 16, 20],
                 onChange: function(){
@@ -85,7 +80,24 @@
                         $scope.paginationConf.totalItems=response.total;//更新总记录数
                     }
                 );
-            }
+            };
+        //添加到购物车
+        $scope.addbook = function (bookNumber,userId,shopcartId,bookCount) {
+            console.log(bookNumber+" "+userId+" "+shopcartId+" "+bookCount);
+            $http.get('/shopcart/addbook?bookNumber='+bookNumber+'&userId='+userId+'&shopcartId='+shopcartId+'&bookCount='+bookCount).success(
+                function (response) {
+                    if(response.success){
+                        layer.msg("添加成功！",{time:700},{offset: 'rt'},function () {
+                            layer.close(index);
+                        })
+                    }else {
+                        layer.msg("添加失败！",{time:700},{offset: 'rt'},function () {
+                            layer.close(index);
+                        })
+                    }
+                }
+            );
+        };
         });
     </script>
 </head>
@@ -122,34 +134,6 @@
                 </div><!-- Search Block /- -->
                 <!-- Menu Icon -->
                 <div class="col-md-3 col-sm-6 col-xs-6 menu-icon">
-                    <%--<ul class="cart">
-                        <li>
-                            <a aria-expanded="true" aria-haspopup="true" data-toggle="dropdown" id="cart" class="btn dropdown-toggle" title="Add To Cart" href="#"><i class="icon icon-ShoppingCart"></i></a>
-                            <ul class="dropdown-menu no-padding">
-                                <li class="mini_cart_item">
-                                    <a title="Remove this item" class="remove" href="#">&#215;</a>
-                                    <a href="#" class="shop-thumbnail">
-                                        <img alt="poster_2_up" class="attachment-shop_thumbnail" src="../images/product-wishlist-1.jpg">Flying Ninja
-                                    </a>
-                                    <span class="quantity">2 &#215; <span class="amount">Rs.12.00</span></span>
-                                </li>
-                                <li class="mini_cart_item">
-                                    <a title="Remove this item" class="remove" href="#">&#215;</a>
-                                    <a href="#" class="shop-thumbnail">
-                                        <img alt="poster_2_up" class="attachment-shop_thumbnail" src="../images/product-wishlist-2.jpg">Flying Ninja
-                                    </a>
-                                    <span class="quantity">2 &#215; <span class="amount">Rs.12.00</span></span>
-                                </li>
-                                <li class="button">
-                                    <a href="#" title="View Cart">View Cart</a>
-                                    <a href="#" title="Check Out">Check out</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li><a href="#" title="Like"><i class="icon icon-Heart"></i></a></li>
-                        <li><a href="#" title="User"><i class="icon icon-User"></i></a></li>
-                    </ul>--%>
-
                     <ul class="cart">
                         <li>
                             <a aria-expanded="true" aria-haspopup="true" data-toggle="dropdown" id="cart" class="btn dropdown-toggle" title="加入购物车" href="#"><i class="icon icon-ShoppingCart"></i></a>
@@ -245,8 +229,8 @@
                     </div>
                     <div class="navbar-collapse collapse" id="navbar">
                         <ul class="nav navbar-nav">
-                            <li><a href="index.html">主页</a></li>
-                            <li><a href="cart.html">购物车</a></li>
+                            <li><a href="/page/index.jsp">主页</a></li>
+                            <li><a href="/page/shopcart.jsp">购物车</a></li>
                             <li><a href="checkout.html">结账</a></li>
                             <li><a href="${pageContext.request.contextPath}/page/about.jsp">关于我</a></li>
                             <li><a href="contact-us.html">联系我</a></li>
@@ -273,32 +257,30 @@
 
                     <ul class="layui-nav layui-bg-gray " style="margin-bottom:30px">
                         <li class="layui-nav-item ">
-                            <a href="javascript:;">全部商品</a>
+                            <a ng-click="paginationConf.onChange()">全部商品</a>
                         </li>
                         <li class="layui-nav-item ">
-                            <a href="javascript:;">爱情</a>
+                            <a href="javascript:;">文学</a>
                             <dl class="layui-nav-child">
-                                <dd><a href="">选项1</a></dd>
-                                <dd><a href="">选项2</a></dd>
-                                <dd><a href="">选项3</a></dd>
+                                <dd><a href="">爱情</a></dd>
+                                <dd><a href="">文集</a></dd>
+                                <dd><a href="">校园</a></dd>
                             </dl>
                         </li>
                         <li class="layui-nav-item">
                             <a href="javascript:;">历史</a>
                             <dl class="layui-nav-child">
-                                <dd><a href="">选中项</a></dd>
-                                <dd><a href="">移动模块</a></dd>
-                                <dd><a href="">后台模版</a></dd>
-                                <dd><a href="">电商平台</a></dd>
+                                <dd><a href="">中国史</a></dd>
+                                <dd><a href="">世界史</a></dd>
+                                <dd><a href="">历史地理</a></dd>
                             </dl>
                         </li>
                         <li class="layui-nav-item">
                             <a href="javascript:;">教育</a>
                             <dl class="layui-nav-child">
-                                <dd><a href="">选中项</a></dd>
-                                <dd><a href="">移动模块</a></dd>
-                                <dd><a href="">后台模版</a></dd>
-                                <dd><a href="">电商平台</a></dd>
+                                <dd><a href="">计算机</a></dd>
+                                <dd><a href="">工业技术</a></dd>
+                                <dd><a href="">化学工业</a></dd>
                             </dl>
                         </li>
                     </ul>
@@ -312,57 +294,34 @@
                         </div>
 
                     </div>
-
                     <!-- Products -->
-                        <ul class="products">
+                        <ul class="products" >
                             <!-- Product -->
-                            <%--        <c:forEach items="${limitBooks}" var="book">
-                                    <li class="product design">
-                                        <a href="#">
-                                            <img src="${pageContext.request.contextPath}/fileuploadpath/${book.bookImage1}" alt="Product" id="${book.bookId}"/>
-                                            <h5>${book.bookName}</h5>
-                                            <span class="price"><del>${book.bookOriginalPrice}</del>${book.bookPromotionPrice}</span>
-                                        </a>
-                                        <div class="wishlist-box">
-                                            &lt;%&ndash;放大&ndash;%&gt;
-                                            <a onclick="show(document.getElementById('${book.bookId}'))"><i class="fa fa-arrows-alt"></i></a>
-                                            &lt;%&ndash;收藏&ndash;%&gt;
-                                            <a href="#"><i class="fa fa-heart-o"></i></a>
-                                            &lt;%&ndash;搜索&ndash;%&gt;
-                                            <a href="#"><i class="fa fa-search"></i></a>
-                                        </div>
-                                        <a href="#" class="addto-cart" title="添加到购物车">添加到购物车</a>
-                                    </li><!-- Product /- -->
-                                    </c:forEach>--%>
                             <li class="product design" ng-repeat="book in list">
-                                <a href="#">
+                                <a href="/foreground/info?bookId={{book.bookId}}">
                                     <img src="${pageContext.request.contextPath}/fileuploadpath/{{book.bookImage1}}" alt="Product" id="{{book.bookId}}"/>
-                                    <h5>{{book.bookName}}</h5>
+                                    <h5>{{book.bookName.substring(0,20)}}</h5>
                                     <span class="price"><del>{{book.bookOriginalPrice}}</del>{{book.bookPromotionPrice}}</span>
                                 </a>
                                 <div class="wishlist-box">
                                     <%--放大--%>
-                                    <a onclick="show(document.getElementById('{{book.bookId}}'))"><i class="fa fa-arrows-alt"></i></a>
+                                    <%--onclick="show(document.getElementById('{{book.bookId}}'))"--%>
+                                    <a ><i class="fa fa-arrows-alt"></i></a>
                                     <%--收藏--%>
                                     <a href="#"><i class="fa fa-heart-o"></i></a>
                                     <%--搜索--%>
                                     <a href="#"><i class="fa fa-search"></i></a>
                                 </div>
-                                <a href="" class="addto-cart" title="添加到购物车" ng-click="">添加到购物车</a>
-                            </li><!-- Product /- -->
+                                <a href="" class="addto-cart" title="添加到购物车" ng-click="addbook(book.bookNumber,'${sessionScope.users.userId}','${sessionScope.users.userShopCart}','1')">添加到购物车</a>
+                            </li>
+                            <!-- Product /- -->
                         </ul>
-
-
                     <!-- Products /- -->
                 </div><!-- Row /- -->
                 <%--分页地方--%>
                 <nav class="ow-pagination">
                     <ul class="pager">
                         <tm-pagination conf="paginationConf"></tm-pagination>
-                        <%-- <li class="number"><a href="#">4</a></li>--%>
-                       <%-- <li class="load-more"><a href="#">Load More</a></li>--%>
-                        <%-- <li class="previous"><a href="#"><i class="fa fa-angle-right"></i></a></li>
-                         <li class="next"><a href="#"><i class="fa fa-angle-left"></i></a></li>--%>
                     </ul>
                 </nav>
             </div><!-- Container /- -->
@@ -540,6 +499,6 @@
 
 
 
-<jsp:include page="${pageContext.request.contextPath}/page/common/js.jsp"/>
+
 </body>
 </html>

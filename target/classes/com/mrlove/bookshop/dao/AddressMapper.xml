@@ -6,6 +6,9 @@
     <result column="address_user" jdbcType="VARCHAR" property="addressUser" />
     <result column="address_receiver" jdbcType="VARCHAR" property="addressReceiver" />
     <result column="address_telnum" jdbcType="VARCHAR" property="addressTelnum" />
+    <result column="address_province" jdbcType="VARCHAR" property="addressProvince" />
+    <result column="address_city" jdbcType="VARCHAR" property="addressCity" />
+    <result column="address_town" jdbcType="VARCHAR" property="addressTown" />
     <result column="address_location" jdbcType="VARCHAR" property="addressLocation" />
     <result column="address_default" jdbcType="VARCHAR" property="addressDefault" />
     <result column="address_status" jdbcType="VARCHAR" property="addressStatus" />
@@ -15,11 +18,13 @@
   </resultMap>
   <insert id="insert" parameterType="com.mrlove.bookshop.common.domain.Address">
     insert into address (address_id, address_user, address_receiver, 
-      address_telnum, address_location, address_default, 
+      address_telnum, address_province, address_city, 
+      address_town, address_location, address_default, 
       address_status, address_creation_time, address_remark1, 
       address_remark2)
     values (#{addressId,jdbcType=VARCHAR}, #{addressUser,jdbcType=VARCHAR}, #{addressReceiver,jdbcType=VARCHAR}, 
-      #{addressTelnum,jdbcType=VARCHAR}, #{addressLocation,jdbcType=VARCHAR}, #{addressDefault,jdbcType=VARCHAR}, 
+      #{addressTelnum,jdbcType=VARCHAR}, #{addressProvince,jdbcType=VARCHAR}, #{addressCity,jdbcType=VARCHAR}, 
+      #{addressTown,jdbcType=VARCHAR}, #{addressLocation,jdbcType=VARCHAR}, #{addressDefault,jdbcType=VARCHAR}, 
       #{addressStatus,jdbcType=VARCHAR}, #{addressCreationTime,jdbcType=VARCHAR}, #{addressRemark1,jdbcType=VARCHAR}, 
       #{addressRemark2,jdbcType=VARCHAR})
   </insert>
@@ -37,6 +42,15 @@
       </if>
       <if test="addressTelnum != null">
         address_telnum,
+      </if>
+      <if test="addressProvince != null">
+        address_province,
+      </if>
+      <if test="addressCity != null">
+        address_city,
+      </if>
+      <if test="addressTown != null">
+        address_town,
       </if>
       <if test="addressLocation != null">
         address_location,
@@ -70,6 +84,15 @@
       <if test="addressTelnum != null">
         #{addressTelnum,jdbcType=VARCHAR},
       </if>
+      <if test="addressProvince != null">
+        #{addressProvince,jdbcType=VARCHAR},
+      </if>
+      <if test="addressCity != null">
+        #{addressCity,jdbcType=VARCHAR},
+      </if>
+      <if test="addressTown != null">
+        #{addressTown,jdbcType=VARCHAR},
+      </if>
       <if test="addressLocation != null">
         #{addressLocation,jdbcType=VARCHAR},
       </if>
@@ -90,4 +113,10 @@
       </if>
     </trim>
   </insert>
+  <!--查找此用户所有地址-->
+  <select id="findaddress" resultMap="BaseResultMap">
+    select *
+    from address
+    where address_user = #{userId} and address_status != '0' order by address_default desc
+    </select>
 </mapper>

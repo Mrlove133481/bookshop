@@ -20,4 +20,6 @@ public interface LoginService {
      boolean queryusertel(String usertel);
 
      User  findUserPwd(String username);
+
+     User queryUser(String username);
 }

@@ -92,6 +92,11 @@ public class LoginServiceImpl implements LoginService {
     public User findUserPwd(String username){
         return userMapper.findUserPwd(username);
     }
+    //通过用户名返回用户信息
+    @Override
+    public User queryUser(String username) {
+        return userMapper.findUserPwd(username);
+    }
 
 
 }

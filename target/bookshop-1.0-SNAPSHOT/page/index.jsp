@@ -24,7 +24,7 @@
     <jsp:include page="${pageContext.request.contextPath}/page/common/css.jsp"/>
     <script src="${pageContext.request.contextPath}/page/common/angular.min.js"></script>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/layui/css/layui.css"  media="all">
-
+    <script src="${pageContext.request.contextPath}/layer/layer.js"></script>
     <style type="text/css">
         div#gray{
         //背景颜色
@@ -42,23 +42,31 @@
         var app=angular.module('myApp',[]); //定义了一个叫myApp的模块
         //定义控制器
         app.controller('myController',function($scope,$http) {
+            //查找图书
             $scope.findAll = function () {
                 $http.get('/foreground/selectlimit').success(
                     function (response) {
                         $scope.list = response;
                     }
                 );
-            }
-
-          /*  $scope.findById = function (bookId) {
-                $http.get('/foreground/selectlimit?bookId'+bookId).success(
-                    function(response){
-                        $scope.list=response;
+            };
+            //添加到购物车
+            $scope.addbook = function (bookNumber,userId,shopcartId,bookCount) {
+                console.log(bookNumber+" "+userId+" "+shopcartId+" "+bookCount);
+                $http.get('/shopcart/addbook?bookNumber='+bookNumber+'&userId='+userId+'&shopcartId='+shopcartId+'&bookCount='+bookCount).success(
+                    function (response) {
+                        if(response.success){
+                            layer.msg("添加成功！",{time:700},{offset: 'rt'},function () {
+                                layer.close(index);
+                            })
+                        }else {
+                            layer.msg("添加失败！",{time:700},{offset: 'rt'},function () {
+                                layer.close(index);
+                            })
+                        }
                     }
                 );
-            }*/
-
-
+            };
         });
     </script>
 
@@ -100,11 +108,11 @@
                            <ul id="after-ul" style="display: none"  class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list tpl-header-list" >
                                <li class="am-dropdown" data-am-dropdown="" data-am-dropdown-toggle="">
                                        <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
-                                           <span class="tpl-header-list-user-nick">${user.userName}</span><span class="tpl-header-list-user-ico"> <img src="${pageContext.request.contextPath}/fileuploadpath/useravatar/${userimg}"></span>
+                                           <span class="tpl-header-list-user-nick">${user.userName}</span><span class="tpl-header-list-user-ico"> <img src="${pageContext.request.contextPath}/fileuploadpath/useravatar/${sessionScope.userimgs}"></span>
                                        </a>
                                        <ul class="am-dropdown-content">
                                            <li><a href="#"><span class="am-icon-bell-o"></span>个人中心</a></li>
-                                           <li><a href="${pageContext.request.contextPath}/foreground/quits"><span class="am-icon-power-off"></span> 退出</a></li>
+                                           <li><a href="/logout"><span class="am-icon-power-off"></span> 退出</a></li>
                                        </ul>
                                </li>
                            </ul>
@@ -122,7 +130,7 @@
                     <div class="navbar-collapse collapse navbar-right" id="navbar">
                         <ul class="nav navbar-nav">
                             <li><a href="${pageContext.request.contextPath}/page/index.jsp">主页</a></li>
-                            <li><a href="cart.html">购物车</a></li>
+                            <li><a href="/page/shopcart.jsp">购物车</a></li>
                             <li><a href="checkout.html">结账</a></li>
                             <li><a href="${pageContext.request.contextPath}/page/about.jsp">关于我</a></li>
                             <li><a href="contact-us.html">联系我</a></li>
@@ -465,20 +473,21 @@
                         </li><!-- Product /- -->
                         </c:forEach>--%>
                             <li class="product design" ng-repeat="book in list">
-                                <a href="/foreground/findbyid?bookId={{book.bookId}}">
-                                    <img src="${pageContext.request.contextPath}/fileuploadpath/{{book.bookImage1}}" alt="Product" id="{{book.bookId}}"/>
-                                    <h5>{{book.bookName}}</h5>
+                                <a href="/foreground/info?bookId={{book.bookId}}">
+                                    <img src="${pageContext.request.contextPath}/fileuploadpath/{{book.bookImage1}}" alt="Product" id="{{book.bookNumber}}"/>
+                                    <h5>{{book.bookName.substring(0,20)}}</h5>
                                     <span class="price"><del>{{book.bookOriginalPrice}}</del>{{book.bookPromotionPrice}}</span>
                                 </a>
                                 <div class="wishlist-box">
                                         <%--放大--%>
-                                    <a onclick="show(document.getElementById('{{book.bookId}}'))"><i class="fa fa-arrows-alt"></i></a>
+                                    <a><i class="fa fa-arrows-alt"></i></a>
                                         <%--收藏--%>
                                     <a href="#"><i class="fa fa-heart-o"></i></a>
                                         <%--搜索--%>
-                                    <a href="#"><i class="fa fa-search"></i></a>
+                                    <a href="${sessionScope.userId}"><i class="fa fa-search"></i></a>
                                 </div>
-                                <a href="" class="addto-cart" title="添加到购物车" ng-click="">添加到购物车</a>
+                                <%--addBook({{book.bookNumber}},${sessionScope.users.userId},${sessionScope.users.userShopCart},'1')--%>
+                                <a class="addto-cart" title="添加到购物车" ng-click="addbook(book.bookNumber,'${sessionScope.users.userId}','${sessionScope.users.userShopCart}','1')">添加到购物车</a>
                             </li><!-- Product /- -->
                     </ul><!-- Products /- -->
                 </div><!-- Row /- -->
@@ -965,6 +974,7 @@
 
 <script src="${pageContext.request.contextPath}/layui/layui.js" charset="utf-8"></script>
 <script>
+    //alert(${sessionScope.userimgs});
     layui.use('element', function(){
         var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
         //监听导航点击
