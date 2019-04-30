@@ -22,4 +22,6 @@ public interface UserMapper {
     List<User> queryusertel(@Param("usertel") String usertel);
     //通过用户名查询密码
     User findUserPwd(@Param("username") String username);
+    //查找用户购物车
+    User findcart(@Param("userId")String userId);
 }

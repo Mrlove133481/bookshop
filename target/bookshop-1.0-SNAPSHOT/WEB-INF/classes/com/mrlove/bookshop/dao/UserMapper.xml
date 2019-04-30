@@ -195,4 +195,10 @@
     from user
     where user_name=#{username} or user_email=#{username} or user_telnum=#{username}
   </select>
+  <!--查找用户购物车-->
+  <select id="findcart" resultMap="BaseResultMap">
+    select user_shop_cart
+    from user
+    where user_id=#{userId} and user_status != '0'
+  </select>
 </mapper>

@@ -43,8 +43,8 @@
         //定义控制器
         app.controller('myController',function($scope,$http) {
             //查找图书
-            $scope.findAll = function () {
-                $http.get('/foreground/selectlimit').success(
+            $scope.findAll = function (start,end) {
+                $http.get('/foreground/selectlimit?start='+start+'&end='+end).success(
                     function (response) {
                         $scope.list = response;
                     }
@@ -72,7 +72,7 @@
 
 </head>
 
-<body data-offset="200" data-spy="scroll" data-target=".ow-navigation" ng-app="myApp" ng-controller="myController" >
+<body data-offset="200" data-spy="scroll" data-target=".ow-navigation" ng-app="myApp" ng-controller="myController" ng-init="findAll('0','8')">
 <div class="main-container">
     <!-- Loader -->
     <div id="site-loader" class="load-complete">
@@ -413,7 +413,7 @@
 
                       <ul class="layui-nav layui-bg-gray " style="margin-bottom:30px">
                           <li class="layui-nav-item ">
-                              <a ng-click="findAll()">全部商品</a>
+                              <a ng-click="findAll('0','8')">全部商品</a>
                           </li>
                           <li class="layui-nav-item ">
                               <a href="javascript:;">文学</a>
@@ -452,7 +452,7 @@
                     </div>
 
                     <!-- Products -->
-                    <ul class="products"  ng-init="findAll()">
+                    <ul class="products"  >
                         <!-- Product -->
                 <%--        <c:forEach items="${limitBooks}" var="book">
                         <li class="product design">

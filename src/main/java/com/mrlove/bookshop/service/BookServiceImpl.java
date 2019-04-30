@@ -62,8 +62,8 @@ public class BookServiceImpl implements BookService{
     }
     //前台限制查询图书默认8本
     @Override
-    public List<Books> findBooks() {
-        return booksMapper.findbooks();
+    public List<Books> findBooks(int start,int end) {
+        return booksMapper.findbooks(start,end);
     }
     //分页查询
     @Override

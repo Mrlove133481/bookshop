@@ -61,7 +61,7 @@ public class ShopcartControl {
     @RequestMapping("ischecked")
     @ResponseBody
     public Result ischecked(String shopcartremark1,String bookNumber,String shopcartid){
-        System.out.println("shopcartremark1:"+shopcartremark1+"bookNumber"+bookNumber+"shopcartid"+shopcartid);
+    //    System.out.println("shopcartremark1:"+shopcartremark1+"bookNumber"+bookNumber+"shopcartid"+shopcartid);
         try {
             shopcartService.updatebookremark1(shopcartremark1,bookNumber,shopcartid);
         }catch (Exception e){

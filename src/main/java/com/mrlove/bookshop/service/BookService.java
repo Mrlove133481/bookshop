@@ -23,7 +23,7 @@ public interface BookService {
     //通过id更新图书
     void updateBookById(Books books);
     //前台限制查询图书8本
-    List<Books> findBooks();
+    List<Books> findBooks(int start,int end);
     //分页查询
     public PageResult pagingQuery(int pageNum, int pageSize);
 }

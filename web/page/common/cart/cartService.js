@@ -26,16 +26,35 @@ app.service('cartService',function($http){
     this.findaddress = function (userId) {
         return $http.get('/address/findaddress?userId='+userId);
     }
+    //设置默认地址
+    this.setdefaultaddress = function (addressId,userId) {
+        return $http.get('/address/setdefaultaddress?addressId='+addressId+'&userId='+userId);
+    }
+    //删除地址
+    this.deleteaddress = function (addressId) {
+        return $http.get('/address/deleteaddress?addressId='+addressId);
+    }
 
+    //提交订单
+    this.submitOrder=function(order,totalmoney){
 
+        return $http(
+            {
+            method: "POST",
+            url: "/order/addorder",
+            data: {order:order,
+                    totalmoney:totalmoney
+            },
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            transformRequest: function(obj) {
+                var str = [];
+                for (var p in obj) {
+                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+                }
+                return str.join("&");
 
-
-   /* //添加订单
-    this.addorder=function (cartList,userId) {
-        return $http.get('/order/addorder?shopcart='+cartList+'$userId='+userId);
-    }*/
-   this.truechecked = function (shopcartremark1, bookNumber, shopcartid) {
-       return $http.get('shopcart/ischecked?shopcartremark1='+shopcartremark1+'&bookNumber'+bookNumber+'&shopcartid'+shopcartid)
-   }
+            }
+        }) ;
+    }
 
 });

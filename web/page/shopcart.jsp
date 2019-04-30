@@ -31,40 +31,9 @@
 <body ng-app="myApp" ng-controller="cartController">
 
 <!--顶部导航条 -->
-<div class="am-container header">
-    <ul class="message-r">
-        <div class="topMessage home">
-            <div class="menu-hd"><a href="${pageContext.request.contextPath}/page/index.jsp" target="_top" class="h" style="color:#b6795f">书城首页</a></div>
-        </div>
-        <div class="topMessage my-shangcheng">
-            <div class="menu-hd MyShangcheng"><a href="#" target="_top" style="color:#b6795f"><i class="am-icon-user am-icon-fw"></i>个人中心</a></div>
-        </div>
-        <div class="topMessage mini-cart">
-            <div class="menu-hd"><a id="mc-menu-hd" href="${pageContext.request.contextPath}/page/shopcart.jsp" target="_top" style="color:#b6795f"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span><strong id="J_MiniCartNum" class="h">0</strong></a></div>
-        </div>
-        <div class="topMessage favorite">
-            <div class="menu-hd"><a href="#" target="_top" style="color:#b6795f"><i class="am-icon-heart am-icon-fw"></i><span>收藏夹</span></a></div>
-        </div>
-    </ul>
-</div>
-
+<jsp:include page="${pageContext.request.contextPath}/page/common/header.jsp"/>
 <!--悬浮搜索框-->
-
-<div class="nav white">
-    <div class="logo"><img src="../images/logo.png" /></div>
-    <div class="logoBig">
-        <li style="margin-top: 20px;"><img src="${pageContext.request.contextPath}/images/logo.png" /></li>
-    </div>
-
-    <div class="search-bar pr">
-        <a name="index_none_header_sysc" href="#"></a>
-        <form>
-            <input id="searchInput" name="index_none_header_sysc" type="text" placeholder="搜索" autocomplete="off">
-            <input id="ai-topsearch" class="submit am-btn" value="搜索" index="1" type="submit">
-        </form>
-    </div>
-</div>
-
+<jsp:include page="${pageContext.request.contextPath}/page/common/search.jsp"/>
 <div class="clear"></div>
 
 <!--购物车 -->
@@ -101,7 +70,7 @@
             <div class="bundle  bundle-last" >
                 <div class="bundle-hd">
                     <div class="bd-promos">
-                        <div class="bd-has-promo">已享优惠:<span class="bd-has-promo-content">省￥{{totalValue.totalDiscounts}}</span>&nbsp;&nbsp;</div>
+                        <div class="bd-has-promo">已享优惠:<span class="bd-has-promo-content">省￥{{totalValue.totalDiscounts.toFixed(2)}}</span>&nbsp;&nbsp;</div>
                         <span class="list-change theme-login">编辑</span>
                     </div>
                 </div>
@@ -146,7 +115,7 @@
                                 <div class="item-amount ">
                                     <div class="sl">
                                         <input class="min am-btn" name="" type="button" value="-"  ng-click="down(book.bookss.bookNumber,book.shopcartId,book.shopcartCount,'${sessionScope.users.userShopCart}')" />
-                                        <input class="text_box" type="text" autocomplete="off" style="width:30px;" id="{{book.bookss.bookNumber}}1" ng-model="book.shopcartCount" />
+                                        <input class="text_box" type="text" autocomplete="off" style="width:30px;"  id="{{book.bookss.bookNumber}}1" ng-model="book.shopcartCount" />
                                         <input class="add am-btn" name="" type="button" value="+"  ng-click="up(book.bookss.bookNumber,book.shopcartId,book.shopcartCount,'${sessionScope.users.userShopCart}')"  />
                                     </div>
                                 </div>
@@ -195,7 +164,7 @@
             </div>
             <div class="price-sum">
                 <span class="txt">合计:</span>
-                <strong class="price">¥<em id="J_Total">{{totalValue.totalMoney}}</em></strong>
+                <strong class="price">¥<em id="J_Total">{{totalValue.totalMoney.toFixed(2)}}</em></strong>
             </div>
             <div class="btn-area">
                 <a href="/page/pay.jsp" id="J_Go" class="submit-btn submit-btn-disabled" aria-label="请注意如果没有选择宝贝，将无法结算">
@@ -204,27 +173,8 @@
         </div>
 
     </div>
-
-    <div class="footer ">
-        <div class="footer-hd ">
-            <p>
-                <a href="${pageContext.request.contextPath}/page/index.jsp">书城首页</a>
-                <b>|</b>
-                <a href="${pageContext.request.contextPath}/page/register.jsp">注册</a>
-                <b>|</b>
-                <a href="# ">物流</a>
-            </p>
-        </div>
-        <div class="footer-bd ">
-            <p>
-                <a href="${pageContext.request.contextPath}/page/about.jsp">关于我</a>
-                <a href="# ">合作伙伴</a>
-                <a href="#">联系我们</a>
-                <em>Copyright &copy; 2019.Mrlove store name All rights reserved.</em>
-            </p>
-        </div>
-    </div>
-
+  <%--footer--%>
+    <jsp:include page="${pageContext.request.contextPath}/page/common/footer.jsp"/>
 </div>
 
 <!--操作页面-->

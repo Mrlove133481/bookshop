@@ -36,14 +36,13 @@ public class ForegroundControl {
     //查询图书事件
     @RequestMapping("selectlimit")
     @ResponseBody
-    public List<Books> selectAll() {
-        List<Books> limitBooks = bookService.findBooks();
+    public List<Books> selectAll(String start,String end) {
+        System.out.println("start:"+start+"end:"+end);
+        List<Books> limitBooks = bookService.findBooks(Integer.parseInt(start),Integer.parseInt(end));
         for (Books books:limitBooks
              ) {
             books.setBookImage1(books.getBookImage1().substring(books.getBookImage1().indexOf("fileuploadpath")+16,books.getBookImage1().length()));
         }
-       // model.addAttribute("limitBooks", limitBooks);
-        //return "/index";
         return limitBooks;
     }
     //页面退出事件
@@ -105,5 +104,23 @@ public class ForegroundControl {
         return "information";
     }
 
+    //立刻购买
+    @RequestMapping("nowpay")
+    public String pay(String bookId,Model model){
+        Books book = bookService.getBookById(bookId);
+        book.setBookId(bookId);
+        if(book.getBookImage1()!=null){
+            if(!"".equals(book.getBookImage1())){
+                book.setBookImage1(book.getBookImage1().substring(book.getBookImage1().indexOf("fileuploadpath") + 16, book.getBookImage1().length()));
+            }else {
+                book.setBookImage1("error.jpg");
+            }
+        }
+        else {
+            book.setBookImage1("error.jpg");
+        }
+        model.addAttribute("book",book);
+        return "nowpay";
+    }
 
 }

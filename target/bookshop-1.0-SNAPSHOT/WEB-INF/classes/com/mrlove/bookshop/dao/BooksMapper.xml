@@ -282,8 +282,8 @@
     <select id="findbooks" resultMap="BaseResultMap">
     select *
     from books
-    where book_status != '0'
-    limit 8
+    where book_status != '0' order by book_creation_time desc
+    limit #{start},#{end}
     </select>
     <!--分页查询-->
     <select id="pagingQuery" resultMap="BaseResultMap">

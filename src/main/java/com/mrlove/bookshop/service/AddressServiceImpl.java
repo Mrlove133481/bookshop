@@ -24,6 +24,23 @@ public class AddressServiceImpl implements AddressService {
     public List<Address> findaddress(String userId) {
         return addressMapper.findaddress(userId);
     }
+    //设置默认地址
+    @Override
+    public void setdefaultaddress(String addressId ,String userId) {
+        Address address = addressMapper.finddefaultaddress(userId,"1");
+        if(address!=null){
+            addressMapper.setdefaultaddress(address.getAddressId(),"0");
+            addressMapper.setdefaultaddress(addressId,"1");
+        }else {
+            addressMapper.setdefaultaddress(addressId,"1");
+        }
+
+    }
+    //删除地址
+    @Override
+    public void deleteaddress(String addressId) {
+        addressMapper.deleteaddress(addressId);
+    }
 
 
 }

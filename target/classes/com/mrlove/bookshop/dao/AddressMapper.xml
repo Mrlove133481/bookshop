@@ -119,4 +119,26 @@
     from address
     where address_user = #{userId} and address_status != '0' order by address_default desc
     </select>
+  <!--查找默认地址-->
+  <select id="finddefaultaddress" resultMap="BaseResultMap">
+    select *
+    from address
+    where address_user = #{userId} and address_default = #{addressDefault} and address_status != '0'
+    </select>
+  <!--更新默认地址-->
+  <update id="setdefaultaddress" parameterType="com.mrlove.bookshop.common.domain.Address">
+    update address
+    set
+    address_default = #{addressDefault}
+    where
+    address_id = #{addressId} and address_status !='0'
+  </update>
+  <!--删除地址-->
+  <update id="deleteaddress" parameterType="com.mrlove.bookshop.common.domain.Address">
+    update address
+    set
+    address_status = '0'
+    where
+    address_id = #{addressId}
+  </update>
 </mapper>

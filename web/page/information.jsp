@@ -30,17 +30,35 @@
     <script type="text/javascript" src="${pageContext.request.contextPath}/page/common/jquery.flexslider.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/page/common/list.js"></script>
     <script src="${pageContext.request.contextPath}/page/common/angular.min.js"></script>
+    <script src="${pageContext.request.contextPath}/layer/layer.js"></script>
     <script>
         var app=angular.module('myApp',[]); //定义了一个叫myApp的模块
         //定义控制器
         app.controller('myController',function($scope,$http) {
-            $scope.findAll = function () {
-                $http.get('/foreground/selectlimit').success(
+            $scope.findAll = function (start,end) {
+                $http.get('/foreground/selectlimit?start='+start+'&end='+end).success(
                     function (response) {
                         $scope.list = response;
                     }
                 );
             }
+            //添加到购物车
+            $scope.addbook = function (bookNumber,userId,shopcartId,bookCount) {
+                console.log(bookNumber+" "+userId+" "+shopcartId+" "+bookCount);
+                $http.get('/shopcart/addbook?bookNumber='+bookNumber+'&userId='+userId+'&shopcartId='+shopcartId+'&bookCount='+bookCount).success(
+                    function (response) {
+                        if(response.success){
+                            layer.msg("添加成功！",{time:700},{offset: 'rt'},function () {
+                                layer.close(index);
+                            })
+                        }else {
+                            layer.msg("添加失败！",{time:700},{offset: 'rt'},function () {
+                                layer.close(index);
+                            })
+                        }
+                    }
+                );
+            };
         });
     </script>
 
@@ -50,88 +68,19 @@
 
 
 <!--顶部导航条 -->
-<div class="am-container header">
-    <ul class="message-l">
-        <div class="topMessage">
-            <div class="menu-hd" style="text-align: left" id="showDate" style="margin-left: -46px;">
-                <script type="text/javascript">
-                    $(function(){
-                        setInterval("getTime();",1000); //每隔一秒运行一次
-                    })
-                    //取得系统当前时间
-                    function getTime(){
-                        var myDate = new Date();
-
-                        var date = myDate.toLocaleDateString();
-                        var year=myDate.getFullYear();
-                        var month=change(myDate.getMonth()+1);
-                        var day=change(myDate.getDate());
-                        var hours = myDate.getHours();
-                        var minutes = myDate.getMinutes();
-                        var seconds = myDate.getSeconds();
-                        function change(t) {
-                            if (t < 10) {
-                                return "0" + t;
-                            } else {
-                                return t;
-                            }
-                        }
-                            $("#showDate").html("现在时间为："+year+"年"+month+"月"+day+"日 "+hours+":"+minutes+":"+seconds); //将值赋给div
-                    }
-                </script>
-            </div>
-        </div>
-    </ul>
-    <ul class="message-r">
-        <div class="topMessage home">
-            <div class="menu-hd"><a href="${pageContext.request.contextPath}/page/index.jsp" target="_top" class="h" style="color:#b6795f">书城首页</a></div>
-        </div>
-        <div class="topMessage my-shangcheng">
-            <div class="menu-hd MyShangcheng"><a href="#" target="_top" style="color:#b6795f"><i class="am-icon-user am-icon-fw"></i>个人中心</a></div>
-        </div>
-        <div class="topMessage mini-cart">
-            <div class="menu-hd"><a id="mc-menu-hd" href="${pageContext.request.contextPath}/page/shopcart.jsp" target="_top" style="color:#b6795f"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span><strong id="J_MiniCartNum" class="h">0</strong></a></div>
-        </div>
-        <div class="topMessage favorite">
-            <div class="menu-hd"><a href="#" target="_top" style="color:#b6795f"><i class="am-icon-heart am-icon-fw"></i><span>收藏夹</span></a></div>
-        </div>
-    </ul>
-</div>
+<jsp:include page="${pageContext.request.contextPath}/page/common/header.jsp"/>
 
 <!--悬浮搜索框-->
 
-<div class="nav white">
-    <div class="logo"><img src="../images/logo.png" /></div>
-    <div class="logoBig" >
-        <li style="margin-top:25px"><img src="${pageContext.request.contextPath}/images/logo.png" /></li>
-    </div>
-
-    <div class="search-bar pr">
-        <a name="index_none_header_sysc" href="#"></a>
-        <form>
-            <input id="searchInput" name="index_none_header_sysc" type="text" placeholder="搜索" autocomplete="off">
-            <input id="ai-topsearch" class="submit am-btn" value="搜索" index="1" type="submit">
-        </form>
-    </div>
-</div>
+<jsp:include page="${pageContext.request.contextPath}/page/common/search.jsp"/>
 
 <div class="clear"></div>
-<b class="line" style="border-bottom: 2px solid #b6795f;"></b>
+<%--<b class="line" style="border-bottom: 2px solid #b6795f;"></b>--%>
 <div class="listMain">
 
     <!--分类-->
-    <div class="nav-table">
-        <div class="long-title" style="background:#b6795f;"><span class="all-goods">全部分类</span></div>
-        <div class="nav-cont">
-            <ul>
-                <li class="index"><a href="#">首页</a></li>
-                <li class="qc"><a href="#">闪购</a></li>
-                <li class="qc"><a href="#">限时抢</a></li>
-                <li class="qc"><a href="#">团购</a></li>
-                <li class="qc last"><a href="#">大包装</a></li>
-            </ul>
-        </div>
-    </div>
+    <jsp:include page="${pageContext.request.contextPath}/page/common/navigation_bar.jsp"/>
+
     <ol class="am-breadcrumb am-breadcrumb-slash">
         <li><a href="#">首页</a></li>
         <li><a href="#">分类</a></li>
@@ -342,12 +291,12 @@
     </div>
     <li style="margin-left: 50px">
         <div class="clearfix tb-btn tb-btn-buy theme-login" style="margin-left: 0px;">
-            <a id="LikBuy" title="点此按钮到下一步确认购买信息" href="#">立即购买</a>
+            <a id="LikBuy" title="点此按钮到下一步确认购买信息" href="/foreground/nowpay?bookId=${book.bookId}">立即购买</a>
         </div>
     </li>
     <li style="margin-left: 50px">
         <div class="clearfix tb-btn tb-btn-basket theme-login"  style="margin-left: 0px;">
-            <a id="LikBasket" title="加入购物车" href="#"><i></i>加入购物车</a>
+            <a id="LikBasket" title="加入购物车" ng-click="addbook('${book.bookNumber}','${sessionScope.users.userId}','${sessionScope.users.userShopCart}','1')"><i></i>加入购物车</a>
         </div>
     </li>
 </div>
@@ -363,7 +312,7 @@
 <div class="introduce">
     <div class="browse">
         <div class="mc">
-            <ul ng-init="findAll()">
+            <ul ng-init="findAll('2','8')">
                 <div class="mt">
                     <h2>看了又看</h2>
                 </div>

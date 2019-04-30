@@ -23,7 +23,6 @@ app.controller('cartController',function($scope,cartService){
             }
         );
     }
-
     //数量减
     $scope.down=function(booknumber,shopcartid,shopcartcount,shopcartId){
         var inputid = booknumber+"1";
@@ -43,7 +42,6 @@ app.controller('cartController',function($scope,cartService){
         }
 
     }
-
     //删除
     $scope.deletecartbook=function(booknumber,shopcartid,shopcartcount,shopcartId){
         cartService.addGoodsToCartList(booknumber,shopcartid,shopcartcount).success(
@@ -56,8 +54,7 @@ app.controller('cartController',function($scope,cartService){
             }
         );
     }
-
-    //判断是否是当前选择图书
+    /*//判断是否是当前选择图书
     $scope.selectedbook=function (shopcartremark1,bookNumber,shopcartid) {
         if(shopcartremark1=="0"){
             alert(shopcartremark1);
@@ -85,14 +82,18 @@ app.controller('cartController',function($scope,cartService){
     }
     $scope.checkedbook = function (bookNumber) {
                 $("#bookNumber").prop("checked",false);
-    }
-
+    }*/
     //查询地址
     $scope.findaddress= function (userId) {
         cartService.findaddress(userId).success(
             function (response) {
                 $scope.addresses =response;
-                console.log(response);
+               for(var i =0;i<response.length;i++){
+                   if(response[i].addressDefault=='1'){
+                       $scope.address = response[i];
+                       break;
+                   }
+               }
             }
         )
     }
@@ -151,9 +152,141 @@ app.controller('cartController',function($scope,cartService){
             });
         }
     }
+    //选择地址
+    $scope.selectedaddress= function (address) {
+        $scope.address = address;
+    }
+    //判断地址对象是否是当前地址
+    $scope.isselectedaddress = function (address) {
+        if(address==$scope.address){
+            return true;
+        }else {
+            return false
+        }
+    }
+    //设置某个地址为默认地址
+    $scope.setdefaultaddress = function (addressId,userId) {
+        cartService.setdefaultaddress(addressId,userId).success(
+            function(response){
+                if(response.success){//如果成功
+                    //刷新地址列表
+                    $scope.findaddress(userId);
+                }else{
+                    alert(response.message);
+                }
+            }
+        )
+    }
+    //删除地址
+    $scope.deleteaddress = function (addressId,userId) {
+        cartService.deleteaddress(addressId,userId).success(
+            function(response){
+                if(response.success){//如果成功
+                    //刷新地址列表
+                    $scope.findaddress(userId);
+                }else{
+                    alert(response.message);
+                }
+            }
+        )
+    }
+    //保存订单
+    $scope.submitOrder=function(userId){
+        var orderReceiverlocation=$scope.address.addressProvince+$scope.address.addressCity+$scope.address.addressTown+$scope.address.addressLocation;//地址
+        var orderReceiverphone=$scope.address.addressTelnum;//手机
+        var orderReceiver=$scope.address.addressReceiver;//联系人
+        var orderUserid=userId;//用户id
+        var totalmoney=$scope.totalValue.totalMoney;//总金额
+        var liuyan = $("#liuyan").val();
+        $.ajax({
+            type: "POST",
+            url: "/order/addorder",
+            dataType:'json',
+            data:{
+                orderReceiverlocation:orderReceiverlocation,
+                orderReceiverphone:orderReceiverphone,
+                orderReceiver:orderReceiver,
+                orderUserid:orderUserid,
+                totalmoney:totalmoney,
+                liuyan:liuyan
+            },
+            success: function(msg){
+                if(msg.success){
+                    //页面跳转
+                    location.href="/page/success.jsp";
+                }else {
+                    alert(msg.message);	//也可以跳转到提示页面
+                }
+            }
+
+        });
 
 
 
+       /* cartService.submitOrder( $scope.order,totalmoney).success(
+            function(response){
+                if(response.success){
+                        //页面跳转
+                        location.href="/page/success.jsp";
+                }else{
+                    alert(response.message);	//也可以跳转到提示页面
+                }
+            }
+        );*/
+    }
+    //立即购买初始化总金额
+    $scope.findprice = function(totalmoney){
+        $scope.tatolmony=parseFloat(totalmoney) ;
+    }
+    //立即购买数量加
+    $scope.inputnumber=1;
+    $scope.nowpayup = function (totalmoney1) {
+        $scope.inputnumber += 1;
+        $scope.tatolmony =( $scope.inputnumber)*totalmoney1;
+    }
+    //立即购买数量减
+    $scope.nowpaydown =function (totalmoney1) {
+       if( $scope.inputnumber>1){
+           $scope.inputnumber -= 1;
+           $scope.tatolmony = ($scope.inputnumber)*totalmoney1;
+       }
+    }
+    //立即购买提交订单
+    $scope.nowpaysubmitOrder = function (userId,bookId) {
+        var orderReceiverlocation=$scope.address.addressProvince+$scope.address.addressCity+$scope.address.addressTown+$scope.address.addressLocation;//地址
+        var orderReceiverphone=$scope.address.addressTelnum;//手机
+        var orderReceiver=$scope.address.addressReceiver;//联系人
+        var orderUserid=userId;//用户id
+        var totalmoney=$scope.tatolmony;//总金额
+        var liuyan = $("#liuyan").val();//留言
+
+        var totalnumber = $scope.inputnumber;//总数量
+        var bookId = bookId;
+        $.ajax({
+            type: "POST",
+            url: "/order/addnowpayorder",
+            dataType:'json',
+            data:{
+                orderReceiverlocation:orderReceiverlocation,
+                orderReceiverphone:orderReceiverphone,
+                orderReceiver:orderReceiver,
+                orderUserid:orderUserid,
+                totalmoney:totalmoney,
+                liuyan:liuyan,
+                totalnumber:totalnumber,
+                bookId:bookId
+            },
+            success: function(msg){
+                if(msg.success){
+                    //页面跳转
+                    location.href="/page/success.jsp";
+                }else {
+                    alert(msg.message);	//也可以跳转到提示页面
+                }
+            }
+
+        });
+    }
    /* //加
     $scope.up=function(id,price){
         var inputid = id+"1";

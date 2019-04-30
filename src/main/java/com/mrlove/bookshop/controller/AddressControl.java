@@ -20,6 +20,7 @@ public class AddressControl {
     @Autowired
     private AddressService addressService;
 
+    //添加地址
     @RequestMapping("addaddress")
     @ResponseBody
     public Result addaddress(String addressReceiver,String addressTelnum,String addressProvince,String addressCity,String addressTown,String addressLocation,String userId){
@@ -31,10 +32,33 @@ public class AddressControl {
         }
         return new Result(true,"更新成功");
     }
+    //查找地址
     @RequestMapping("findaddress")
     @ResponseBody
     public List<Address> findaddress(String userId){
         List<Address> addresses = addressService.findaddress(userId);
         return addresses;
+    }
+    //设置默认地址
+    @RequestMapping("setdefaultaddress")
+    @ResponseBody
+    public Result setdefaultaddress(String addressId,String userId){
+        try {
+            addressService.setdefaultaddress(addressId,userId);
+        }catch (Exception e){
+            return new Result(false,"更新失败");
+        }
+        return new Result(true,"更新成功");
+    }
+    //删除地址
+    @RequestMapping("deleteaddress")
+    @ResponseBody
+    public Result deleteaddress(String addressId){
+        try {
+            addressService.deleteaddress(addressId);
+        }catch (Exception e){
+            return new Result(false,"更新失败");
+        }
+        return new Result(true,"更新成功");
     }
 }
