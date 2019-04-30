@@ -55,6 +55,12 @@ public class Userorder {
 
     private String orderCreationBatch;
 
+    private String orderMessage;
+
+    private String orderTotalnumber;
+
+    private String orderTotalprice;
+
     private String orderStatus;
 
     private String orderRemark1;
@@ -64,7 +70,7 @@ public class Userorder {
     public Userorder() {
     }
 
-    public Userorder(String orderId, String orderUserid, String orderReceiverlocation, String orderReceiverphone, String orderReceiver, String orderNumber, String orderBookNumber, String orderBookName, String oderBookImage1, String orderPrice, String orderAmount, String orderRefund, String orderRefundStatus, String orderRefundStartTime, String orderRefundDisposeTime, String orderRefundEndTime, String orderSalesReturn, String orderSalesReturnStatus, String orderSalesReturnStartTime, String orderSalesReturnEndTime, String orderPaymentStatus, String orderReceiveStatus, String orderEvaluationLevel, String orderEvalutionDescription, String orderEvaluationImage, String orderCreationTime, String orderCreationBatch, String orderStatus, String orderRemark1, String orderRemark2) {
+    public Userorder(String orderId, String orderUserid, String orderReceiverlocation, String orderReceiverphone, String orderReceiver, String orderNumber, String orderBookNumber, String orderBookName, String oderBookImage1, String orderPrice, String orderAmount, String orderRefund, String orderRefundStatus, String orderRefundStartTime, String orderRefundDisposeTime, String orderRefundEndTime, String orderSalesReturn, String orderSalesReturnStatus, String orderSalesReturnStartTime, String orderSalesReturnEndTime, String orderPaymentStatus, String orderReceiveStatus, String orderEvaluationLevel, String orderEvalutionDescription, String orderEvaluationImage, String orderCreationTime, String orderCreationBatch, String orderMessage, String orderTotalnumber, String orderTotalprice, String orderStatus, String orderRemark1, String orderRemark2) {
         this.orderId = orderId;
         this.orderUserid = orderUserid;
         this.orderReceiverlocation = orderReceiverlocation;
@@ -92,6 +98,9 @@ public class Userorder {
         this.orderEvaluationImage = orderEvaluationImage;
         this.orderCreationTime = orderCreationTime;
         this.orderCreationBatch = orderCreationBatch;
+        this.orderMessage = orderMessage;
+        this.orderTotalnumber = orderTotalnumber;
+        this.orderTotalprice = orderTotalprice;
         this.orderStatus = orderStatus;
         this.orderRemark1 = orderRemark1;
         this.orderRemark2 = orderRemark2;
@@ -127,6 +136,9 @@ public class Userorder {
                 ", orderEvaluationImage='" + orderEvaluationImage + '\'' +
                 ", orderCreationTime='" + orderCreationTime + '\'' +
                 ", orderCreationBatch='" + orderCreationBatch + '\'' +
+                ", orderMessage='" + orderMessage + '\'' +
+                ", orderTotalnumber='" + orderTotalnumber + '\'' +
+                ", orderTotalprice='" + orderTotalprice + '\'' +
                 ", orderStatus='" + orderStatus + '\'' +
                 ", orderRemark1='" + orderRemark1 + '\'' +
                 ", orderRemark2='" + orderRemark2 + '\'' +
@@ -347,6 +359,30 @@ public class Userorder {
 
     public void setOrderCreationBatch(String orderCreationBatch) {
         this.orderCreationBatch = orderCreationBatch == null ? null : orderCreationBatch.trim();
+    }
+
+    public String getOrderMessage() {
+        return orderMessage;
+    }
+
+    public void setOrderMessage(String orderMessage) {
+        this.orderMessage = orderMessage == null ? null : orderMessage.trim();
+    }
+
+    public String getOrderTotalnumber() {
+        return orderTotalnumber;
+    }
+
+    public void setOrderTotalnumber(String orderTotalnumber) {
+        this.orderTotalnumber = orderTotalnumber == null ? null : orderTotalnumber.trim();
+    }
+
+    public String getOrderTotalprice() {
+        return orderTotalprice;
+    }
+
+    public void setOrderTotalprice(String orderTotalprice) {
+        this.orderTotalprice = orderTotalprice == null ? null : orderTotalprice.trim();
     }
 
     public String getOrderStatus() {

@@ -32,7 +32,7 @@ public class OrderControl {
     //添加订单
     @RequestMapping("addorder")
     @ResponseBody
-    public Result addorder(String orderReceiverlocation, String orderReceiverphone,String orderReceiver,String orderUserid,String totalmoney,String liuyan, HttpSession httpSession){
+    public Result addorder(String orderReceiverlocation, String orderReceiverphone,String orderReceiver,String orderUserid,String totalmoney,String totalnumber,String liuyan, HttpSession httpSession){
         try {
             //通过userid查询返回包含购物车id的user实体类
             User users = userService.findcart(orderUserid);
@@ -63,7 +63,7 @@ public class OrderControl {
                         "0","0",null,
                         null,"1","0",null,
                         null,null, DateUtil.parseDateToStr(new Date(),
-                        DateUtil.DATE_TIME_FORMAT_YYYY_MM_DD_HH_MI_SS),order_creation_batch,"1",liuyan,totalmoney);
+                        DateUtil.DATE_TIME_FORMAT_YYYY_MM_DD_HH_MI_SS),order_creation_batch,liuyan,totalnumber,totalmoney,"1",null,null);
                     orderService.addorder(userorder);
                     }
             }catch (Exception e){
@@ -94,7 +94,7 @@ public class OrderControl {
                         "0","0",null,
                         null,"1","0",null,
                         null,null, DateUtil.parseDateToStr(new Date(),
-                        DateUtil.DATE_TIME_FORMAT_YYYY_MM_DD_HH_MI_SS),order_creation_batch,"1",liuyan,totalmoney);
+                        DateUtil.DATE_TIME_FORMAT_YYYY_MM_DD_HH_MI_SS),order_creation_batch,liuyan,totalnumber,totalmoney,"1",null,null);
                 orderService.addorder(userorder);
         }catch (Exception e){
             e.printStackTrace();

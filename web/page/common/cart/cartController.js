@@ -197,6 +197,7 @@ app.controller('cartController',function($scope,cartService){
         var orderReceiver=$scope.address.addressReceiver;//联系人
         var orderUserid=userId;//用户id
         var totalmoney=$scope.totalValue.totalMoney;//总金额
+        var totalnumber = $scope.totalValue.totalNum;//总数量
         var liuyan = $("#liuyan").val();
         $.ajax({
             type: "POST",
@@ -208,6 +209,7 @@ app.controller('cartController',function($scope,cartService){
                 orderReceiver:orderReceiver,
                 orderUserid:orderUserid,
                 totalmoney:totalmoney,
+                totalnumber:totalnumber,
                 liuyan:liuyan
             },
             success: function(msg){

@@ -29,6 +29,9 @@
     <result column="order_evaluation_image" jdbcType="VARCHAR" property="orderEvaluationImage" />
     <result column="order_creation_time" jdbcType="VARCHAR" property="orderCreationTime" />
     <result column="order_creation_batch" jdbcType="VARCHAR" property="orderCreationBatch" />
+    <result column="order_message" jdbcType="VARCHAR" property="orderMessage" />
+    <result column="order_totalnumber" jdbcType="VARCHAR" property="orderTotalnumber" />
+    <result column="order_totalprice" jdbcType="VARCHAR" property="orderTotalprice" />
     <result column="order_status" jdbcType="VARCHAR" property="orderStatus" />
     <result column="order_remark1" jdbcType="VARCHAR" property="orderRemark1" />
     <result column="order_remark2" jdbcType="VARCHAR" property="orderRemark2" />
@@ -45,7 +48,8 @@
       order_payment_status, order_receive_status, 
       order_evaluation_level, order_evalution_description, 
       order_evaluation_image, order_creation_time, 
-      order_creation_batch, order_status, order_remark1, 
+      order_creation_batch, order_message, order_totalnumber, 
+      order_totalprice, order_status, order_remark1, 
       order_remark2)
     values (#{orderId,jdbcType=VARCHAR}, #{orderUserid,jdbcType=VARCHAR}, #{orderReceiverlocation,jdbcType=VARCHAR}, 
       #{orderReceiverphone,jdbcType=VARCHAR}, #{orderReceiver,jdbcType=VARCHAR}, #{orderNumber,jdbcType=VARCHAR}, 
@@ -58,7 +62,8 @@
       #{orderPaymentStatus,jdbcType=VARCHAR}, #{orderReceiveStatus,jdbcType=VARCHAR}, 
       #{orderEvaluationLevel,jdbcType=VARCHAR}, #{orderEvalutionDescription,jdbcType=VARCHAR}, 
       #{orderEvaluationImage,jdbcType=VARCHAR}, #{orderCreationTime,jdbcType=VARCHAR}, 
-      #{orderCreationBatch,jdbcType=VARCHAR}, #{orderStatus,jdbcType=VARCHAR}, #{orderRemark1,jdbcType=VARCHAR}, 
+      #{orderCreationBatch,jdbcType=VARCHAR}, #{orderMessage,jdbcType=VARCHAR}, #{orderTotalnumber,jdbcType=VARCHAR}, 
+      #{orderTotalprice,jdbcType=VARCHAR}, #{orderStatus,jdbcType=VARCHAR}, #{orderRemark1,jdbcType=VARCHAR}, 
       #{orderRemark2,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.mrlove.bookshop.common.domain.Userorder">
@@ -144,6 +149,15 @@
       </if>
       <if test="orderCreationBatch != null">
         order_creation_batch,
+      </if>
+      <if test="orderMessage != null">
+        order_message,
+      </if>
+      <if test="orderTotalnumber != null">
+        order_totalnumber,
+      </if>
+      <if test="orderTotalprice != null">
+        order_totalprice,
       </if>
       <if test="orderStatus != null">
         order_status,
@@ -236,6 +250,15 @@
       </if>
       <if test="orderCreationBatch != null">
         #{orderCreationBatch,jdbcType=VARCHAR},
+      </if>
+      <if test="orderMessage != null">
+        #{orderMessage,jdbcType=VARCHAR},
+      </if>
+      <if test="orderTotalnumber != null">
+        #{orderTotalnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="orderTotalprice != null">
+        #{orderTotalprice,jdbcType=VARCHAR},
       </if>
       <if test="orderStatus != null">
         #{orderStatus,jdbcType=VARCHAR},
