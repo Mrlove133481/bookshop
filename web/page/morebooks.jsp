@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html lang="en" class="">
 <head>
     <meta charset="utf-8">
@@ -37,11 +37,14 @@
 
     <script src="${pageContext.request.contextPath}/page/common/angular.min.js"></script>
     <script src="${pageContext.request.contextPath}/page/common/pagination.js"></script>
-    <script src="${pageContext.request.contextPath}/layui/layui.js" charset="utf-8"></script>
+
     <link rel="stylesheet" href="${pageContext.request.contextPath}/page/common/pagination.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/layui/css/layui.css"  media="all">
+    <script type="text/javascript" src="${pageContext.request.contextPath}/page/common/jquery-1.7.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/page/common/amazeui.js"></script>
     <jsp:include page="${pageContext.request.contextPath}/page/common/js.jsp"/>
-
+     <script src="${pageContext.request.contextPath}/layui/layui.js" charset="utf-8"></script>
+   <%-- <script src="${pageContext.request.contextPath}/layer/layer.js"></script>--%>
     <script>
         layui.use('element', function(){
             var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
@@ -98,6 +101,27 @@
                 }
             );
         };
+        //添加到收藏夹
+        $scope.addcollect = function (bookNumber,userId) {
+            $http.get('/collect/addbook?bookNumber='+bookNumber+'&userId='+userId).success(
+                function (response) {
+                    if(response.success){
+                        layer.msg("添加成功！",{time:700},{offset: 'rt'},function () {
+                            layer.close(index);
+                        })
+                    }else {
+                        layer.msg("添加失败！",{time:700},{offset: 'rt'},function () {
+                            layer.close(index);
+                        })
+                    }
+                }
+            )
+        }
+
+
+
+
+
         });
     </script>
 </head>
@@ -308,7 +332,7 @@
                                     <%--onclick="show(document.getElementById('{{book.bookId}}'))"--%>
                                     <a ><i class="fa fa-arrows-alt"></i></a>
                                     <%--收藏--%>
-                                    <a href="#"><i class="fa fa-heart-o"></i></a>
+                                    <a ng-click="addcollect(book.bookNumber,'${sessionScope.users.userId}')"><i class="fa fa-heart-o"></i></a>
                                     <%--搜索--%>
                                     <a href="#"><i class="fa fa-search"></i></a>
                                 </div>

@@ -312,7 +312,7 @@ a.i-trigger { cursor: pointer;position: relative; z-index: 2;display: block;colo
 .m-userproperty .s-bar ,.wallet .s-bar {margin:15px 0px 25px;}
 .m-userproperty p{height:40px ;line-height: 40px;} 	
 .m-userproperty p em{top:9px}
-.wallet {position: absolute;left:450px;top: 5px;}  	
+.wallet {position: absolute;top: 5px;}
 .wallet p.m-big{margin-top: 20px;}  
 .wallet p.m-big i img {width:54px;height:54px}
 .wallet p.m-big .m-title{margin-top:10px ;}

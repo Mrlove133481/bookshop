@@ -30,7 +30,7 @@
       <result column="book_original_price" jdbcType="VARCHAR" property="bookOriginalPrice"/>
     </collection>
   </resultMap>
-
+  <!--查找购物车图书-->
   <select id="findcart" resultMap="BaseResultMapwithuserandcart" >
   select u.user_id,s.shopcart_id,s.shopcart_count,s.shopcart_remark1,b.book_number,b.book_id,b.book_name,b.book_promotion_price,b.book_original_price,b.book_image1
   from shopcart s
@@ -38,8 +38,6 @@
   left join books b on s.shopcart_book_number= b.book_number
   where s.shopcart_id =#{id} and s.shopcart_status !='0' order by b.book_promotion_price;
   </select>
-
-
 
   <insert id="insert" parameterType="com.mrlove.bookshop.common.domain.Shopcart">
     insert into shopcart (shopcart_id, shopcart_user, shopcart_book_number, 

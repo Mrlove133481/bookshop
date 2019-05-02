@@ -23,7 +23,7 @@ public class ForegroundControl {
     @RequestMapping("pagingquery")
     @ResponseBody
     public PageResult pagingQuery(int page, int rows){
-        System.out.println("page:"+page+" rows:"+rows);
+       // System.out.println("page:"+page+" rows:"+rows);
         PageResult pageResult = bookService.pagingQuery(page, rows);
         List<Books> limitBooks= pageResult.getRows();
         for (Books books:limitBooks

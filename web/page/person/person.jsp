@@ -45,11 +45,19 @@
                     }
                 );
             }
+            //查找图书
+            $scope.findcollect = function (userId) {
+                $http.get('/collect/findbook?userId='+userId).success(
+                    function (response) {
+                        $scope.collects = response;
+                    }
+                )
+            }
         });
     </script>
 </head>
 
-<body ng-app="myApp" ng-controller="myController" ng-init="findAll('0','2');limitorder('0','2','${sessionScope.userId}')">
+<body ng-app="myApp" ng-controller="myController" ng-init="findAll('0','2');limitorder('0','2','${sessionScope.userId}');findcollect('${sessionScope.users.userId}')">
 <!--头 -->
 <header>
     <article>
@@ -80,10 +88,10 @@
                             </a>
                             <div class="m-baseinfo">
                                 <a class="m-pic" href="information.html">
-                                    <img src="../images/getAvatar.do.jpg">
+                                    <img src="${pageContext.request.contextPath}/fileuploadpath/useravatar/${sessionScope.userimgs}">
                                 </a>
                                 <div class="m-info">
-                                    <em class="s-name">小叮当</em>
+                                    <em class="s-name">${sessionScope.users.userName}</em>
                                     <div class="vip1"><a href="#"><span></span><em>会员专享</em></a></div>
                                     <div class="safeText"><a href="safety.html">账户安全:<em style="margin-left:20px ;">60</em>分</a>
                                         <div class="progressBar"><span style="left: -95px;" class="progress"></span></div>
@@ -102,50 +110,27 @@
                         </div>
 
                         <!--个人资产-->
-                        <div class="m-userproperty">
-                            <div class="s-bar">
-                                <i class="s-icon"></i>个人资产
-                            </div>
-                            <p class="m-coupon">
-                                <a href="coupon.html">
-                                    <em class="m-num">2</em>
-                                    <span class="m-title">优惠券</span>
-                                </a>
-                            </p>
-                            <p class="m-wallet">
-                                <a href="wallet.html">
-                                    <em class="m-num">0.00</em>
-                                    <span class="m-title">账户余额</span>
-                                </a>
-                            </p>
-                            <p class="m-bill">
-                                <a href="pointnew.html">
-                                    <em class="m-num">10</em>
-                                    <span class="m-title">总积分</span>
-                                </a>
-                            </p>
-                        </div>
 
                         <!--我的钱包-->
-                        <div class="wallet">
+                        <div class="wallet" >
                             <div class="s-bar">
-                                <i class="s-icon"></i>商城钱包
+                                <i class="s-icon"></i>用户安全
                             </div>
                             <p class="m-big squareS">
                                 <a href="#">
-                                    <i><img src="../images/shopping.png"/></i>
+                                    <i><img src="/images/shopping.png"/></i>
                                     <span class="m-title">能购物</span>
                                 </a>
                             </p>
                             <p class="m-big squareA">
                                 <a href="#">
-                                    <i><img src="../images/safe.png"/></i>
+                                    <i><img src="/images/safe.png"/></i>
                                     <span class="m-title">够安全</span>
                                 </a>
                             </p>
                             <p class="m-big squareL">
                                 <a href="#">
-                                    <i><img src="../images/profit.png"/></i>
+                                    <i><img src="/images/profit.png"/></i>
                                     <span class="m-title">很灵活</span>
                                 </a>
                             </p>
@@ -175,26 +160,26 @@
                                         <span class="time">{{order.orderCreationTime}}</span>
                                     </div>
                                     <div class="orderID">
-                                        <span class="num">共${sessionScope.totalnumber}件商品</span>
+                                        <span class="num">共{{order.orderTotalnumber}}件商品</span>
                                     </div>
                                 </div>
                                 <div class="state" ng-if="order.orderEvalutionDescription==null">待评价</div>
                                 <div class="state" ng-if="order.orderEvalutionDescription!=null">已评价</div>
-                                <div class="price"><span class="sym">¥</span>${sessionScope.totalprice}</div>
+                                <div class="price"><span class="sym">¥</span>{{order.orderTotalprice}}</div>
 
                             </div>
                             <a  href="/foreground/nowpay?bookId={{order.orderBookNumber}}" class="btnPay">再次购买</a>
                         </div>
                     </div>
 
-                    <div class="user-suggestion">
+                  <%--  <div class="user-suggestion">
                         <div class="s-bar">
                             <i class="s-icon"></i>会员中心
                         </div>
                         <div class="s-bar">
                             <a href="suggest.html"><i class="s-icon"></i>意见反馈</a>
                         </div>
-                    </div>
+                    </div>--%>
 
                 </div>
             </div>
@@ -220,44 +205,24 @@
             <!--收藏和足迹-->
             <div data-am-widget="tabs" class="am-tabs collection">
                 <ul class="am-tabs-nav am-cf">
-                    <li class="am-active"><a href="[data-tab-panel-0]"><i class="am-icon-heart"></i>商品收藏</a></li>
+                    <li class="am-active"><a href="/page/person/collect.jsp"><i class="am-icon-heart"></i>商品收藏</a></li>
                 </ul>
                 <div class="am-tabs-bd">
                     <div data-tab-panel-0 class="am-tab-panel am-active">
                         <div class="am-slider am-slider-default am-slider-carousel" data-am-flexslider="{itemWidth:155,slideshow: false}">
                             <ul class="am-slides">
-                                <li>
-                                    <a><img class="am-thumbnail" src="../images/EZA27501.jpg" /></a>
-                                    <strong class="price">¥32.9</strong>
+                                <div ng-repeat="collect in collects" style="float: left">
+                                    <li >
+                                    <a href="/foreground/info?bookId={{collect.books.bookId}}"><img class="am-thumbnail" src="${pageContext.request.contextPath}/fileuploadpath/{{collect.books.bookImage1}}" /></a>
+                                    <strong class="price">¥{{collect.books.bookPromotionPrice}}</strong>
                                 </li>
-                                <li>
-                                    <a><img class="am-thumbnail" src="../images/BxJk6.jpg" /></a>
-                                    <strong class="price">¥32.9</strong>
-                                </li>
-                                <li>
-                                    <a><img class="am-thumbnail" src="../images/Hxcag60.jpg" /></a>
-                                    <strong class="price">¥32.9</strong>
-                                </li>
-                                <li>
+                                </div>
+
+
+                                <%--<li>
                                     <a><img class="am-thumbnail" src="../images/youzi.jpg" /></a>
                                     <strong class="price">¥32.9</strong>
-                                </li>
-                                <li>
-                                    <a><img class="am-thumbnail" src="../images/EZA27501.jpg" /></a>
-                                    <strong class="price">¥32.9</strong>
-                                </li>
-                                <li>
-                                    <a><img class="am-thumbnail" src="../images/BxJk6.jpg" /></a>
-                                    <strong class="price">¥32.9</strong>
-                                </li>
-                                <li>
-                                    <a><img class="am-thumbnail" src="../images/Hxcag60.jpg" /></a>
-                                    <strong class="price">¥32.9</strong>
-                                </li>
-                                <li>
-                                    <a><img class="am-thumbnail" src="../images/youzi.jpg" /></a>
-                                    <strong class="price">¥32.9</strong>
-                                </li>
+                                </li>--%>
 
                             </ul>
                         </div>
@@ -274,12 +239,6 @@
     <jsp:include page="${pageContext.request.contextPath}/page/common/person_menu.jsp"/>
 </div>
 <!--引导 -->
-<div class="navCir">
-    <li><a href="../home/home2.html"><i class="am-icon-home "></i>首页</a></li>
-    <li><a href="../home/sort.html"><i class="am-icon-list"></i>分类</a></li>
-    <li><a href="../home/shopcart.html"><i class="am-icon-shopping-basket"></i>购物车</a></li>
-    <li class="active"><a href="index.html"><i class="am-icon-user"></i>我的</a></li>
-</div>
 </body>
 
 </html>

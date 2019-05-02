@@ -17,7 +17,6 @@
                 <li> <a href="information.html">个人信息</a></li>
                 <li> <a href="safety.html">安全设置</a></li>
                 <li> <a href="address.html">地址管理</a></li>
-                <li> <a href="cardlist.html">快捷支付</a></li>
             </ul>
         </li>
         <li class="person">
@@ -28,7 +27,7 @@
                 <li> <a href="comment.html">评价商品</a></li>
             </ul>
         </li>
-        <li class="person">
+      <%--  <li class="person">
             <p><i class="am-icon-dollar"></i>我的资产</p>
             <ul>
                 <li> <a href="points.html">我的积分</a></li>
@@ -37,13 +36,12 @@
                 <li> <a href="walletlist.html">账户余额</a></li>
                 <li> <a href="bill.html">账单明细</a></li>
             </ul>
-        </li>
+        </li>--%>
 
         <li class="person">
             <p><i class="am-icon-tags"></i>我的收藏</p>
             <ul>
-                <li> <a href="collection.html">收藏</a></li>
-                <li> <a href="foot.html">足迹</a></li>
+                <li> <a href="/page/person/collect.jsp">收藏</a></li>
             </ul>
         </li>
 

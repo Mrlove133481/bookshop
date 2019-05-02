@@ -15,6 +15,8 @@ public class Collect {
 
     private String collectRemark2;
 
+    private Books books;
+
     public Collect() {
     }
 
@@ -26,6 +28,14 @@ public class Collect {
         this.collectCreationTime = collectCreationTime;
         this.collectRemark1 = collectRemark1;
         this.collectRemark2 = collectRemark2;
+    }
+
+    public Books getBooks() {
+        return books;
+    }
+
+    public void setBooks(Books books) {
+        this.books = books;
     }
 
     public String getCollectId() {

@@ -96,7 +96,7 @@ public class LoginControl {
             User getuser = loginService.findUserPwd(username);
             httpSession.setAttribute("userimgs",getuser.getUserImage().substring(getuser.getUserImage().indexOf("useravatar")+12,getuser.getUserImage().length()));
             model.addAttribute("userimg",getuser.getUserImage().substring(getuser.getUserImage().indexOf("useravatar")+12,getuser.getUserImage().length()));
-            System.out.println("userId"+getuser.getUserId());
+           // System.out.println("userId"+getuser.getUserId());
             httpSession.setAttribute("userId",getuser.getUserId());
             httpSession.setAttribute("shopcartId",getuser.getUserShopCart());
             httpSession.setAttribute("users",getuser);
@@ -133,7 +133,6 @@ public class LoginControl {
                 //生成购物车与用户唯一标识ID
                 String shopcartId = IdGenerator.getNumber();
                 String userId = IdGenerator.getID();
-
                 User user = new User(userId,username,BCpwd,null,dfimg,0,null,usertel,useremail,null,null,null,shopcartId,DateUtil.parseDateToStr(new Date(), DateUtil.DATE_TIME_FORMAT_YYYY_MM_DD_HH_MI_SS),1,null,null,null,null);
                 loginService.registeruser(user);
                 return "login";

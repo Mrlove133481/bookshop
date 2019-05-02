@@ -42,6 +42,11 @@
         var app=angular.module('myApp',[]); //定义了一个叫myApp的模块
         //定义控制器
         app.controller('myController',function($scope,$http) {
+            //初始化用户
+            $scope.loginuser = function(username){
+                console.log(username);
+                $scope.finduser = username;
+            }
             //查找图书
             $scope.findAll = function (start,end) {
                 $http.get('/foreground/selectlimit?start='+start+'&end='+end).success(
@@ -52,7 +57,6 @@
             };
             //添加到购物车
             $scope.addbook = function (bookNumber,userId,shopcartId,bookCount) {
-                console.log(bookNumber+" "+userId+" "+shopcartId+" "+bookCount);
                 $http.get('/shopcart/addbook?bookNumber='+bookNumber+'&userId='+userId+'&shopcartId='+shopcartId+'&bookCount='+bookCount).success(
                     function (response) {
                         if(response.success){
@@ -67,12 +71,28 @@
                     }
                 );
             };
+            //添加到收藏夹
+            $scope.addcollect = function (bookNumber,userId) {
+                $http.get('/collect/addbook?bookNumber='+bookNumber+'&userId='+userId).success(
+                    function (response) {
+                        if(response.success){
+                            layer.msg("添加成功！",{time:700},{offset: 'rt'},function () {
+                                layer.close(index);
+                            })
+                        }else {
+                            layer.msg("添加失败！",{time:700},{offset: 'rt'},function () {
+                                layer.close(index);
+                            })
+                        }
+                    }
+                )
+            }
         });
     </script>
 
 </head>
 
-<body data-offset="200" data-spy="scroll" data-target=".ow-navigation" ng-app="myApp" ng-controller="myController" ng-init="findAll('0','8')">
+<body data-offset="200" data-spy="scroll" data-target=".ow-navigation" ng-app="myApp" ng-controller="myController" ng-init="findAll('0','8');loginuser('${sessionScope.users}')">
 <div class="main-container">
     <!-- Loader -->
     <div id="site-loader" class="load-complete">
@@ -105,33 +125,38 @@
                                <a href="#" id="search" title="搜索"><i class="icon icon-Search"></i></a>
                             </div>
                            <%--登录后显示--%>
-                           <ul id="after-ul" style="display: none"  class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list tpl-header-list" >
-                               <li class="am-dropdown" data-am-dropdown="" data-am-dropdown-toggle="">
+
+                               <ul id="after-ul"   class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list tpl-header-list" ng-if="finduser!=''" >
+                                   <li class="am-dropdown" data-am-dropdown="" data-am-dropdown-toggle="">
                                        <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
                                            <span class="tpl-header-list-user-nick">${user.userName}</span><span class="tpl-header-list-user-ico"> <img src="${pageContext.request.contextPath}/fileuploadpath/useravatar/${sessionScope.userimgs}"></span>
                                        </a>
                                        <ul class="am-dropdown-content">
-                                           <li><a href="#"><span class="am-icon-bell-o"></span>个人中心</a></li>
+                                           <li><a href="/page/person/person.jsp"><span class="am-icon-bell-o"></span>个人中心</a></li>
                                            <li><a href="/logout"><span class="am-icon-power-off"></span> 退出</a></li>
                                        </ul>
-                               </li>
-                           </ul>
+                                   </li>
+                               </ul>
+
                             <%--登录前显示--%>
-                           <ul   id="before-ul" class="am-topbar-nav am-topbar-right" >
-                               <li class="am-dropdown" data-am-dropdown="" data-am-dropdown-toggle="">
-                                   <text style="font-size:15px">请</text>
-                                   <a href="${pageContext.request.contextPath}/page/login.jsp" style="padding-right:0px">登录</a>
-                                   <text style="font-size:15px">,或者</text>
-                                   <a href="${pageContext.request.contextPath}/page/register.jsp" style="padding-right:0px">注册</a>
-                               </li>
-                           </ul>
+
+                                <ul   id="before-ul" class="am-topbar-nav am-topbar-right" ng-if="finduser==''">
+                                    <li class="am-dropdown" data-am-dropdown="" data-am-dropdown-toggle="">
+                                        <text style="font-size:15px">请</text>
+                                        <a href="${pageContext.request.contextPath}/page/login.jsp" style="padding-right:0px">登录</a>
+                                        <text style="font-size:15px">,或者</text>
+                                        <a href="${pageContext.request.contextPath}/page/register.jsp" style="padding-right:0px">注册</a>
+                                    </li>
+                                </ul>
+
+
                         </div>
                     <!-- Menu Icon /- -->
                     <div class="navbar-collapse collapse navbar-right" id="navbar">
                         <ul class="nav navbar-nav">
                             <li><a href="${pageContext.request.contextPath}/page/index.jsp">主页</a></li>
                             <li><a href="/page/shopcart.jsp">购物车</a></li>
-                            <li><a href="checkout.html">结账</a></li>
+                            <li><a href="/page/person/collect.jsp">收藏夹</a></li>
                             <li><a href="${pageContext.request.contextPath}/page/about.jsp">关于我</a></li>
                             <li><a href="contact-us.html">联系我</a></li>
                         </ul>
@@ -482,7 +507,7 @@
                                         <%--放大--%>
                                     <a><i class="fa fa-arrows-alt"></i></a>
                                         <%--收藏--%>
-                                    <a href="#"><i class="fa fa-heart-o"></i></a>
+                                    <a  ng-click="addcollect(book.bookNumber,'${sessionScope.users.userId}')"><i class="fa fa-heart-o"></i></a>
                                         <%--搜索--%>
                                     <a href="${sessionScope.userId}"><i class="fa fa-search"></i></a>
                                 </div>
@@ -985,7 +1010,7 @@
     });
 </script>
 
-<script>
+<%--<script>
     var status =0;
     status = ${status};
     if(status==1){
@@ -995,7 +1020,7 @@
         document.getElementById("after-ul").style.display = "none";
         document.getElementById("before-ul").style.display = "";
     }
-</script>
+</script>--%>
 
 <script type="text/javascript">//javaScript标签，这里面的是javaScript语言编写的的动态的效果，
 

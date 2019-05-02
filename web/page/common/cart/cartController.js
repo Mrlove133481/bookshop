@@ -196,7 +196,7 @@ app.controller('cartController',function($scope,cartService){
         var orderReceiverphone=$scope.address.addressTelnum;//手机
         var orderReceiver=$scope.address.addressReceiver;//联系人
         var orderUserid=userId;//用户id
-        var totalmoney=$scope.totalValue.totalMoney;//总金额
+        var totalmoney=$scope.totalValue.totalMoney.toFixed(2);//总金额
         var totalnumber = $scope.totalValue.totalNum;//总数量
         var liuyan = $("#liuyan").val();
         $.ajax({

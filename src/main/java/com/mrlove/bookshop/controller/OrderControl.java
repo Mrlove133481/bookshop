@@ -116,19 +116,11 @@ public class OrderControl {
     @ResponseBody
     public List<Userorder> limitorder(String start, String end, String userId,HttpSession httpSession){
         List<Userorder> userorderList = orderService.limitorder(Integer.parseInt(start),Integer.parseInt(end),userId);
-        int totalnumber =0;
-        double totalprice = 0;
         for (Userorder order: userorderList
              ) {
-            totalnumber += Integer.parseInt(order.getOrderAmount());
-            totalprice += Double.parseDouble(order.getOrderPrice());
-            System.out.println(totalprice);
             String image1 = order.getOderBookImage1();
             order.setOderBookImage1(image1.substring(image1.indexOf("fileuploadpath")+16,image1.length()));
         }
-        httpSession.setAttribute("totalnumber",totalnumber);
-        httpSession.setAttribute("totalprice",totalprice);
-        System.out.println(totalnumber+" "+totalprice);
         return userorderList;
     }
     //查询所有订单

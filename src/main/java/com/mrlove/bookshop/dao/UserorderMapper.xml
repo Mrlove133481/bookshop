@@ -275,7 +275,7 @@
   <select id="limitorder" resultMap="BaseResultMap">
     select *
     from userorder
-    where order_userid=#{userId} and order_status != '0'
+    where order_userid=#{userId} and order_status != '0' group by order_creation_batch desc
     limit #{start},#{end}
   </select>
   <!--根据用户id查询所有order-->
