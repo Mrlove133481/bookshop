@@ -141,4 +141,17 @@
     where
     address_id = #{addressId}
   </update>
+  <!--更新地址-->
+  <update id="updateaddress" parameterType="com.mrlove.bookshop.common.domain.Address">
+    update address
+    set
+    address_receiver = #{addressReceiver},
+    address_telnum = #{addressTelnum},
+    address_province = #{addressProvince},
+    address_city = #{addressCity},
+    address_town = #{addressTown},
+    address_location = #{addressLocation}
+    where
+    address_id = #{addressId} and address_user= #{userId} and address_status !='0'
+  </update>
 </mapper>

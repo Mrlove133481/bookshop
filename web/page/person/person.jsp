@@ -87,7 +87,7 @@
                                 <div class="tipsBox"><i class="am-icon-envelope"></i></div>
                             </a>
                             <div class="m-baseinfo">
-                                <a class="m-pic" href="information.html">
+                                <a class="m-pic" href="/page/person/personalinfo.jsp">
                                     <img src="${pageContext.request.contextPath}/fileuploadpath/useravatar/${sessionScope.userimgs}">
                                 </a>
                                 <div class="m-info">
@@ -97,7 +97,7 @@
                                         <div class="progressBar"><span style="left: -95px;" class="progress"></span></div>
                                     </div>
                                     <div class="m-address">
-                                        <a href="address.html" class="i-trigger">收货地址<i class="am-icon-angle-right" style="padding-left:5px ;"></i></a>
+                                        <a href="/page/person/address.jsp" class="i-trigger">收货地址<i class="am-icon-angle-right" style="padding-left:5px ;"></i></a>
                                     </div>
                                 </div>
                             </div>

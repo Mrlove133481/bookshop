@@ -97,24 +97,46 @@ app.controller('cartController',function($scope,cartService){
             }
         )
     }
+    //编辑地址
+    $scope.updateaddress = function(address){
+        $("#addressReceiver").val(address.addressReceiver);//收件人
+        $("#addressTelnum").val(address.addressTelnum);//电话
+        $("#address").citySelect({
+            prov:address.addressProvince,//省
+            city:address.addressCity,//市
+            dist:address.addressTown,//区
+            nodata:"none"
+        });
+        $("#addressLocation").val(address.addressLocation);//详细地址
+        $("#addressId").val(address.addressId);//地址id
+        //打开弹出层
+        $(document.body).css("overflow","hidden");
+        $(this).addClass("selected");
+        $(this).parent().addClass("selected");
+        $('.theme-popover-mask').show();
+        $('.theme-popover-mask').height($(window).height());
+        $('.theme-popover').slideDown(200);
+    }
+
     //添加地址
     $scope.addaddress = function () {
-        var addressReceiver = $("#addressReceiver").val();
-        var addressTelnum = $("#addressTelnum").val();
-        var addressProvince = $("#addressProvince option:selected").val();
-        var addressCity = $("#addressCity option:selected").val();
-        var addressTown = $("#addressTown option:selected").val();
-        var addressLocation = $("#addressLocation").val();
-        var userId = $("#userId").val();
+        var addressReceiver = $("#addressReceiver").val();//收件人
+        var addressTelnum = $("#addressTelnum").val();//电话
+        var addressProvince = $("#addressProvince option:selected").val();//省
+        var addressCity = $("#addressCity option:selected").val();//市
+        var addressTown = $("#addressTown option:selected").val();//区
+        var addressLocation = $("#addressLocation").val();//详细地址
+        var userId = $("#userId").val();//所属用户
+        var addressId = $("#addressId").val();//地址Id
         if(addressTelnum ==""){
             layer.msg("请输入手机号码！",{time:700},function () {
                 layer.close(index);
             })
         }else if(!(/^1[3|4|5|8][0-9]\d{4,8}$/.test(addressTelnum))){
-            layer.msg("格式不正确！",{time:700},function () {
+            layer.msg("手机格式不正确！",{time:700},function () {
                 layer.close(index);
-                $("#addressTelnum").focus();
             })
+            $("#addressTelnum").focus();
         }else {
             $.ajax({
                 type: "POST",
@@ -126,7 +148,8 @@ app.controller('cartController',function($scope,cartService){
                     addressCity:addressCity,
                     addressTown:addressTown,
                     addressLocation:addressLocation,
-                    userId:userId
+                    userId:userId,
+                    addressId:addressId
                 },
                 success: function(msg){
                     if(msg.success){
@@ -135,6 +158,9 @@ app.controller('cartController',function($scope,cartService){
                         $('.item-props-can').removeClass("selected");
                         $('.theme-popover-mask').hide();
                         $('.theme-popover').slideUp(200);
+                        layer.msg("保存成功！",{time:700},function () {
+                            layer.close(index);
+                        })
                         //刷新地址列表
                         $scope.findaddress(userId);
                     }else {
@@ -169,6 +195,9 @@ app.controller('cartController',function($scope,cartService){
         cartService.setdefaultaddress(addressId,userId).success(
             function(response){
                 if(response.success){//如果成功
+                    layer.msg("设置成功！",{time:700},function () {
+                        layer.close(index);
+                    })
                     //刷新地址列表
                     $scope.findaddress(userId);
                 }else{

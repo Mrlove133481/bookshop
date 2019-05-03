@@ -32,7 +32,7 @@
         app.controller('myController',function($scope,$http) {
           //添加到购物车
           $scope.addbook = function (bookNumber,userId,shopcartId,bookCount) {
-          console.log(bookNumber+" "+userId+" "+shopcartId+" "+bookCount);
+         // console.log(bookNumber+" "+userId+" "+shopcartId+" "+bookCount);
           $http.get('/shopcart/addbook?bookNumber='+bookNumber+'&userId='+userId+'&shopcartId='+shopcartId+'&bookCount='+bookCount).success(
           function (response) {
           if(response.success){

@@ -18,4 +18,6 @@ public interface AddressMapper {
 
     //删除地址
     void deleteaddress(@Param("addressId") String addressId);
+    //更新地址
+    void updateaddress(@Param("addressId") String addressId,@Param("userId") String userId,@Param("addressReceiver") String addressReceiver,@Param("addressTelnum") String addressTelnum,@Param("addressProvince") String addressProvince,@Param("addressCity") String addressCity,@Param("addressTown") String addressTown,@Param("addressLocation") String addressLocation);
 }

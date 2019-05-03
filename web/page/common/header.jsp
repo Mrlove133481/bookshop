@@ -9,7 +9,7 @@
 <div class="am-container header">
     <ul class="message-l">
         <div class="topMessage">
-            <div class="menu-hd" style="text-align: left" id="showDate" style="margin-left: -46px;">
+            <div class="menu-hd" id="showDate" style="text-align: left;margin-left: -27px; font-weight:bold;color: #b6795f; ">
                 <script type="text/javascript">
                     $(function(){
                         setInterval("getTime();",1000); //每隔一秒运行一次
@@ -23,7 +23,7 @@
                         var month=change(myDate.getMonth()+1);
                         var day=change(myDate.getDate());
                         var hours = myDate.getHours();
-                        var minutes = myDate.getMinutes();
+                        var minutes =change(myDate.getMinutes());
                         var seconds = myDate.getSeconds();
                         function change(t) {
                             if (t < 10) {

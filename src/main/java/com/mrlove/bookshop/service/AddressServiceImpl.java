@@ -41,6 +41,11 @@ public class AddressServiceImpl implements AddressService {
     public void deleteaddress(String addressId) {
         addressMapper.deleteaddress(addressId);
     }
+    //更新地址
+    @Override
+    public void updateaddress(String addressId, String userId, String addressReceiver, String addressTelnum, String addressProvince, String addressCity, String addressTown, String addressLocation) {
+        addressMapper.updateaddress(addressId,userId,addressReceiver,addressTelnum,addressProvince,addressCity,addressTown,addressLocation);
+    }
 
 
 }

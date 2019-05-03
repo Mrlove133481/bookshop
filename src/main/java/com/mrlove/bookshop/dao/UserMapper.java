@@ -24,4 +24,8 @@ public interface UserMapper {
     User findUserPwd(@Param("username") String username);
     //查找用户购物车
     User findcart(@Param("userId")String userId);
+    //查找用户信息
+    User finduser(@Param("userId") String userId);
+    //更新用户信息
+    void updateuser(@Param("userId") String userId,@Param("userNickName") String userNickName,@Param("oldimage") String oldimage,@Param("userSex") int userSex,@Param("userBirthday") String userBirthday,@Param("userTelnum") String userTelnum,@Param("userEmail") String userEmail,@Param("userRemark1") String userRemark1);
 }

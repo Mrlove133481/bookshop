@@ -12,4 +12,6 @@ public interface AddressService {
     void setdefaultaddress(String addressId,String userId);
 
     void deleteaddress(String addressId);
+
+    void updateaddress(String addressId, String userId, String addressReceiver, String addressTelnum, String addressProvince, String addressCity, String addressTown, String addressLocation);
 }

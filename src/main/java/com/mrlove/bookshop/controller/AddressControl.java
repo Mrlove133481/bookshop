@@ -23,10 +23,15 @@ public class AddressControl {
     //添加地址
     @RequestMapping("addaddress")
     @ResponseBody
-    public Result addaddress(String addressReceiver,String addressTelnum,String addressProvince,String addressCity,String addressTown,String addressLocation,String userId){
+    public Result addaddress(String addressReceiver,String addressTelnum,String addressProvince,String addressCity,String addressTown,String addressLocation,String userId,String addressId){
         try {
-            Address address = new Address(IdGenerator.getID(),userId,addressReceiver,addressTelnum,addressProvince,addressCity,addressTown,addressLocation,"0","1", DateUtil.parseDateToStr(new Date(), DateUtil.DATE_TIME_FORMAT_YYYY_MM_DD_HH_MI_SS),null,null);
-            addressService.addAddress(address);
+            if("".equals(addressId)){
+                Address address = new Address(IdGenerator.getID(),userId,addressReceiver,addressTelnum,addressProvince,addressCity,addressTown,addressLocation,"0","1", DateUtil.parseDateToStr(new Date(), DateUtil.DATE_TIME_FORMAT_YYYY_MM_DD_HH_MI_SS),null,null);
+                addressService.addAddress(address);
+            }else {
+                addressService.updateaddress(addressId,userId,addressReceiver,addressTelnum,addressProvince,addressCity,addressTown,addressLocation);
+            }
+
         }catch (Exception e){
             return new Result(false,"更新失败");
         }

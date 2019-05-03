@@ -30,10 +30,17 @@
     <script src="${pageContext.request.contextPath}/page/common/cart/cartService.js"></script>
     <script src="${pageContext.request.contextPath}/layer/layer.js"></script>
 
-    <script src="${pageContext.request.contextPath}/page/common/cart/base.js"></script>
-    <script src="${pageContext.request.contextPath}/page/common/cart/cartController.js"></script>
-    <script src="${pageContext.request.contextPath}/page/common/cart/cartService.js"></script>
-
+    <script src="${pageContext.request.contextPath}/page/common/jquery.cityselect.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("#address").citySelect({
+                prov:"四川",
+                city:"宜宾",
+                dist:"翠屏区",
+                nodata:"none"
+            });
+        });
+    </script>
     <style type="text/css">
       a:hover, a:focus {
         color: #b6795f;
@@ -77,8 +84,8 @@
                         <div class="default-address DefaultAddr">
                             <span class="buy-line-title buy-line-title-type">收货地址：</span>
                             <span class="buy--address-detail">
-                                <span class="province">{{address.addressProvince}}</span>
-                                <span class="city">{{address.addressCity}}</span>
+                                <span class="province">{{address.addressProvince}}省</span>
+                                <span class="city">{{address.addressCity}}市</span>
                                 <span class="dist">{{address.addressTown}}</span>
                                 <span class="street">{{address.addressLocation}}</span>
                             </span>
@@ -95,7 +102,7 @@
                     <div class="new-addr-btn">
                         <a ng-click="setdefaultaddress(address.addressId,'${sessionScope.userId}')" ng-if="address.addressDefault=='0'">设为默认</a>
                         <span class="new-addr-bar hidden">|</span>
-                        <a href="#">编辑</a>
+                        <a ng-click="updateaddress(address)">编辑</a>
                         <span class="new-addr-bar">|</span>
                         <a ng-click="deleteaddress(address.addressId,'${sessionScope.userId}')">删除</a>
                     </div>
@@ -262,8 +269,8 @@
                         <p class="buy-footer-address">
                             <span class="buy-line-title buy-line-title-type">寄送至：</span>
                             <span class="buy--address-detail">
-                                <span class="province">{{address.addressProvince}}</span>
-                                <span class="city">{{address.addressCity}}</span>
+                                <span class="province">{{address.addressProvince}}省</span>
+                                <span class="city">{{address.addressCity}}市</span>
                                 <span class="dist">{{address.addressTown}}</span>
                                 <span class="street">{{address.addressLocation}}</span>
                             </span>
@@ -292,25 +299,8 @@
 </div>
 
 </div>
-<div class="footer ">
-    <div class="footer-hd ">
-        <p>
-            <a href="${pageContext.request.contextPath}/page/index.jsp">书城首页</a>
-            <b>|</b>
-            <a href="${pageContext.request.contextPath}/page/register.jsp">注册</a>
-            <b>|</b>
-            <a href="# ">物流</a>
-        </p>
-    </div>
-    <div class="footer-bd ">
-        <p>
-            <a href="${pageContext.request.contextPath}/page/about.jsp">关于我</a>
-            <a href="# ">合作伙伴</a>
-            <a href="#">联系我们</a>
-            <em>Copyright &copy; 2019.Mrlove store name All rights reserved.</em>
-        </p>
-    </div>
-</div>
+<!--底部-->
+<jsp:include page="${pageContext.request.contextPath}/page/common/footer.jsp"/>
 </div>
 <div class="theme-popover-mask"></div>
 <div class="theme-popover">
@@ -342,19 +332,10 @@
 
             <div class="am-form-group">
                 <label  class="am-form-label">所在地</label>
-                <div class="am-form-content address">
-                    <select data-am-selected id="addressProvince">
-                        <option value="浙江省">浙江省</option>
-                        <option value="湖北省">湖北省</option>
-                    </select>
-                    <select data-am-selected id="addressCity">
-                        <option value="温州市">温州市</option>
-                        <option value="武汉市">武汉市</option>
-                    </select>
-                    <select data-am-selected id="addressTown">
-                        <option value="瑞安区">瑞安区</option>
-                        <option value="洪山区">洪山区</option>
-                    </select>
+                <div class="am-form-content address" id="address">
+                    <select class="prov" id="addressProvince"></select>
+                    <select class="city" disabled="disabled" id="addressCity"></select>
+                    <select class="dist" disabled="disabled" id="addressTown"></select>
                 </div>
             </div>
 
@@ -365,6 +346,7 @@
                     <small>100字以内写出你的详细地址...</small>
                 </div>
             </div>
+            <input type="hidden" name="addressId" value="" id="addressId">
             <input type="hidden" name="userId" value="${sessionScope.userId}" id="userId">
             <div class="am-form-group theme-poptit">
                 <div class="am-u-sm-9 am-u-sm-push-3">
