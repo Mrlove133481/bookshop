@@ -28,4 +28,9 @@ public class OrderServiceImpl implements OrderService {
     public List<Userorder> allorder(String userId) {
         return userorderMapper.userorders(userId);
     }
+    //获取所有订单批次
+    @Override
+    public List<Userorder> allbatchs(String userId) {
+        return userorderMapper.allbatchs(userId);
+    }
 }

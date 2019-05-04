@@ -109,8 +109,6 @@ public class OrderControl {
         httpSession.setAttribute("totalmoney",totalmoney);
         return new Result(true,"更新成功");
     }
-
-
     //限制查询订单
     @RequestMapping("limitorder")
     @ResponseBody
@@ -126,7 +124,27 @@ public class OrderControl {
     //查询所有订单
     @RequestMapping("allorder")
     @ResponseBody
-    public List<Userorder> allorder(String userId){
-        return orderService.allorder(userId);
+    public List<OrderList> allorder(String userId){
+        List<Userorder> userorders = orderService.allorder(userId);//获取全部订单
+        List<Userorder> batchs = orderService.allbatchs(userId);//获取所有批次
+        List<OrderList> userorderslist = new ArrayList<>();//创建按照批次分好的订单集合
+
+        for (Userorder batch:batchs
+             ) {
+            OrderList orderList = new OrderList();//创建每个批次订单总集合
+            List<Userorder> batchuserorders = new ArrayList<>();//创建每个批次订单集合
+            orderList.setUserorder(batch);
+            for (Userorder userorder: userorders
+            ) {
+                if(batch.getOrderCreationBatch().equals(userorder.getOrderCreationBatch())){
+                    String image1 = userorder.getOderBookImage1();
+                    userorder.setOderBookImage1(image1.substring(image1.indexOf("fileuploadpath")+16,image1.length()));
+                    batchuserorders.add(userorder);
+                }
+            }
+            orderList.setUserorders(batchuserorders);
+            userorderslist.add(orderList);
+        }
+        return userorderslist;
     }
 }

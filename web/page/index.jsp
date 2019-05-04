@@ -43,9 +43,8 @@
         //定义控制器
         app.controller('myController',function($scope,$http) {
             //初始化用户
-            $scope.loginuser = function(username){
-                console.log(username);
-                $scope.finduser = username;
+            $scope.loginuser = function(hasuser){
+                $scope.hasusername = hasuser;
             }
             //查找图书
             $scope.findAll = function (start,end) {
@@ -92,7 +91,7 @@
 
 </head>
 
-<body data-offset="200" data-spy="scroll" data-target=".ow-navigation" ng-app="myApp" ng-controller="myController" ng-init="findAll('0','8');loginuser('${sessionScope.users}')">
+<body data-offset="200" data-spy="scroll" data-target=".ow-navigation" ng-app="myApp" ng-controller="myController" ng-init="findAll('0','8');loginuser('${sessionScope.userimgs}')">
 <div class="main-container">
     <!-- Loader -->
     <div id="site-loader" class="load-complete">
@@ -120,37 +119,37 @@
                         <a href="${pageContext.request.contextPath}/page/index.jsp" class="navbar-brand">Mrlove <span>书城</span></a>
                     </div>
                     <!-- Menu Icon -->
-                       <div class="menu-icon">
-                           <div class="search" style="margin-top: 15px;">
-                               <a href="#" id="search" title="搜索"><i class="icon icon-Search"></i></a>
-                            </div>
-                           <%--登录后显示--%>
-
-                               <ul id="after-ul"   class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list tpl-header-list" ng-if="finduser!=''" >
-                                   <li class="am-dropdown" data-am-dropdown="" data-am-dropdown-toggle="">
-                                       <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
-                                           <span class="tpl-header-list-user-nick">${user.userName}</span><span class="tpl-header-list-user-ico"> <img src="${pageContext.request.contextPath}/fileuploadpath/useravatar/${sessionScope.userimgs}"></span>
-                                       </a>
-                                       <ul class="am-dropdown-content">
-                                           <li><a href="/page/person/person.jsp"><span class="am-icon-bell-o"></span>个人中心</a></li>
-                                           <li><a href="/logout"><span class="am-icon-power-off"></span> 退出</a></li>
-                                       </ul>
-                                   </li>
-                               </ul>
-
-                            <%--登录前显示--%>
-
-                                <ul   id="before-ul" class="am-topbar-nav am-topbar-right" ng-if="finduser==''">
-                                    <li class="am-dropdown" data-am-dropdown="" data-am-dropdown-toggle="">
-                                        <text style="font-size:15px">请</text>
-                                        <a href="${pageContext.request.contextPath}/page/login.jsp" style="padding-right:0px">登录</a>
-                                        <text style="font-size:15px">,或者</text>
-                                        <a href="${pageContext.request.contextPath}/page/register.jsp" style="padding-right:0px">注册</a>
-                                    </li>
-                                </ul>
-
-
+                    <div class="menu-icon">
+                        <div class="search" style="margin-top: 15px;">
+                            <a href="#" id="search" title="搜索"><i class="icon icon-Search"></i></a>
                         </div>
+                        <%--登录后显示--%>
+
+                        <ul id="after-ul"   class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list tpl-header-list" ng-if="hasusername!=''" >
+                            <li class="am-dropdown" data-am-dropdown="" data-am-dropdown-toggle="">
+                                <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
+                                    <span class="tpl-header-list-user-nick">${sessionScope.users.userName}</span><span class="tpl-header-list-user-ico"> <img src="${pageContext.request.contextPath}/fileuploadpath/useravatar/${sessionScope.userimgs}"></span>
+                                </a>
+                                <ul class="am-dropdown-content">
+                                    <li><a href="/page/person/person.jsp"><span class="am-icon-bell-o"></span>个人中心</a></li>
+                                    <li><a href="/logout"><span class="am-icon-power-off"></span> 退出</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <%--登录前显示--%>
+
+                        <ul   id="before-ul" class="am-topbar-nav am-topbar-right" ng-if="hasusername==''">
+                            <li class="am-dropdown" data-am-dropdown="" data-am-dropdown-toggle="">
+                                <text style="font-size:15px">请</text>
+                                <a href="${pageContext.request.contextPath}/page/login.jsp" style="padding-right:0px">登录</a>
+                                <text style="font-size:15px">,或者</text>
+                                <a href="${pageContext.request.contextPath}/page/register.jsp" style="padding-right:0px">注册</a>
+                            </li>
+                        </ul>
+
+
+                    </div>
                     <!-- Menu Icon /- -->
                     <div class="navbar-collapse collapse navbar-right" id="navbar">
                         <ul class="nav navbar-nav">
@@ -436,35 +435,35 @@
                     </div><!-- Section Header /- -->
                     <%--第一部分选择栏--%>
 
-                      <ul class="layui-nav layui-bg-gray " style="margin-bottom:30px">
-                          <li class="layui-nav-item ">
-                              <a ng-click="findAll('0','8')">全部商品</a>
-                          </li>
-                          <li class="layui-nav-item ">
-                              <a href="javascript:;">文学</a>
-                              <dl class="layui-nav-child">
-                                  <dd><a href="">爱情</a></dd>
-                                  <dd><a href="">文集</a></dd>
-                                  <dd><a href="">校园</a></dd>
-                              </dl>
-                          </li>
-                          <li class="layui-nav-item">
-                              <a href="javascript:;">历史</a>
-                              <dl class="layui-nav-child">
-                                  <dd><a href="">中国史</a></dd>
-                                  <dd><a href="">世界史</a></dd>
-                                  <dd><a href="">历史地理</a></dd>
-                              </dl>
-                          </li>
-                          <li class="layui-nav-item">
-                              <a href="javascript:;">教育</a>
-                              <dl class="layui-nav-child">
-                                  <dd><a href="">计算机</a></dd>
-                                  <dd><a href="">工业技术</a></dd>
-                                  <dd><a href="">化学工业</a></dd>
-                              </dl>
-                          </li>
-                      </ul>
+                    <ul class="layui-nav layui-bg-gray " style="margin-bottom:30px">
+                        <li class="layui-nav-item ">
+                            <a ng-click="findAll('0','8')">全部商品</a>
+                        </li>
+                        <li class="layui-nav-item ">
+                            <a href="javascript:;">文学</a>
+                            <dl class="layui-nav-child">
+                                <dd><a href="">爱情</a></dd>
+                                <dd><a href="">文集</a></dd>
+                                <dd><a href="">校园</a></dd>
+                            </dl>
+                        </li>
+                        <li class="layui-nav-item">
+                            <a href="javascript:;">历史</a>
+                            <dl class="layui-nav-child">
+                                <dd><a href="">中国史</a></dd>
+                                <dd><a href="">世界史</a></dd>
+                                <dd><a href="">历史地理</a></dd>
+                            </dl>
+                        </li>
+                        <li class="layui-nav-item">
+                            <a href="javascript:;">教育</a>
+                            <dl class="layui-nav-child">
+                                <dd><a href="">计算机</a></dd>
+                                <dd><a href="">工业技术</a></dd>
+                                <dd><a href="">化学工业</a></dd>
+                            </dl>
+                        </li>
+                    </ul>
                     <%--搜索栏--%>
                     <div class="input-group" style="margin-top: -80px;">
                         <div style="margin-right: 10px">
@@ -479,50 +478,50 @@
                     <!-- Products -->
                     <ul class="products"  >
                         <!-- Product -->
-                <%--        <c:forEach items="${limitBooks}" var="book">
-                        <li class="product design">
-                            <a href="#">
-                                <img src="${pageContext.request.contextPath}/fileuploadpath/${book.bookImage1}" alt="Product" id="${book.bookId}"/>
-                                <h5>${book.bookName}</h5>
-                                <span class="price"><del>${book.bookOriginalPrice}</del>${book.bookPromotionPrice}</span>
+                        <%--        <c:forEach items="${limitBooks}" var="book">
+                                <li class="product design">
+                                    <a href="#">
+                                        <img src="${pageContext.request.contextPath}/fileuploadpath/${book.bookImage1}" alt="Product" id="${book.bookId}"/>
+                                        <h5>${book.bookName}</h5>
+                                        <span class="price"><del>${book.bookOriginalPrice}</del>${book.bookPromotionPrice}</span>
+                                    </a>
+                                    <div class="wishlist-box">
+                                        &lt;%&ndash;放大&ndash;%&gt;
+                                        <a onclick="show(document.getElementById('${book.bookId}'))"><i class="fa fa-arrows-alt"></i></a>
+                                        &lt;%&ndash;收藏&ndash;%&gt;
+                                        <a href="#"><i class="fa fa-heart-o"></i></a>
+                                        &lt;%&ndash;搜索&ndash;%&gt;
+                                        <a href="#"><i class="fa fa-search"></i></a>
+                                    </div>
+                                    <a href="#" class="addto-cart" title="添加到购物车">添加到购物车</a>
+                                </li><!-- Product /- -->
+                                </c:forEach>--%>
+                        <li class="product design" ng-repeat="book in list">
+                            <a href="/foreground/info?bookId={{book.bookId}}">
+                                <img src="${pageContext.request.contextPath}/fileuploadpath/{{book.bookImage1}}" alt="Product" id="{{book.bookNumber}}"/>
+                                <h5>{{book.bookName.substring(0,20)}}</h5>
+                                <span class="price"><del>{{book.bookOriginalPrice}}</del>{{book.bookPromotionPrice}}</span>
                             </a>
                             <div class="wishlist-box">
-                                &lt;%&ndash;放大&ndash;%&gt;
-                                <a onclick="show(document.getElementById('${book.bookId}'))"><i class="fa fa-arrows-alt"></i></a>
-                                &lt;%&ndash;收藏&ndash;%&gt;
-                                <a href="#"><i class="fa fa-heart-o"></i></a>
-                                &lt;%&ndash;搜索&ndash;%&gt;
-                                <a href="#"><i class="fa fa-search"></i></a>
+                                <%--放大--%>
+                                <a><i class="fa fa-arrows-alt"></i></a>
+                                <%--收藏--%>
+                                <a  ng-click="addcollect(book.bookNumber,'${sessionScope.users.userId}')"><i class="fa fa-heart-o"></i></a>
+                                <%--搜索--%>
+                                <a href="${sessionScope.userId}"><i class="fa fa-search"></i></a>
                             </div>
-                            <a href="#" class="addto-cart" title="添加到购物车">添加到购物车</a>
+                            <%--addBook({{book.bookNumber}},${sessionScope.users.userId},${sessionScope.users.userShopCart},'1')--%>
+                            <a class="addto-cart" title="添加到购物车" ng-click="addbook(book.bookNumber,'${sessionScope.users.userId}','${sessionScope.users.userShopCart}','1')">添加到购物车</a>
                         </li><!-- Product /- -->
-                        </c:forEach>--%>
-                            <li class="product design" ng-repeat="book in list">
-                                <a href="/foreground/info?bookId={{book.bookId}}">
-                                    <img src="${pageContext.request.contextPath}/fileuploadpath/{{book.bookImage1}}" alt="Product" id="{{book.bookNumber}}"/>
-                                    <h5>{{book.bookName.substring(0,20)}}</h5>
-                                    <span class="price"><del>{{book.bookOriginalPrice}}</del>{{book.bookPromotionPrice}}</span>
-                                </a>
-                                <div class="wishlist-box">
-                                        <%--放大--%>
-                                    <a><i class="fa fa-arrows-alt"></i></a>
-                                        <%--收藏--%>
-                                    <a  ng-click="addcollect(book.bookNumber,'${sessionScope.users.userId}')"><i class="fa fa-heart-o"></i></a>
-                                        <%--搜索--%>
-                                    <a href="${sessionScope.userId}"><i class="fa fa-search"></i></a>
-                                </div>
-                                <%--addBook({{book.bookNumber}},${sessionScope.users.userId},${sessionScope.users.userShopCart},'1')--%>
-                                <a class="addto-cart" title="添加到购物车" ng-click="addbook(book.bookNumber,'${sessionScope.users.userId}','${sessionScope.users.userShopCart}','1')">添加到购物车</a>
-                            </li><!-- Product /- -->
                     </ul><!-- Products /- -->
                 </div><!-- Row /- -->
                 <%--分页地方--%>
                 <nav class="ow-pagination">
                     <ul class="pager">
-                       <%-- <li class="number"><a href="#">4</a></li>--%>
+                        <%-- <li class="number"><a href="#">4</a></li>--%>
                         <li class="load-more"><a href="${pageContext.request.contextPath}/page/morebooks.jsp">Load More</a></li>
-                       <%-- <li class="previous"><a href="#"><i class="fa fa-angle-right"></i></a></li>
-                        <li class="next"><a href="#"><i class="fa fa-angle-left"></i></a></li>--%>
+                        <%-- <li class="previous"><a href="#"><i class="fa fa-angle-right"></i></a></li>
+                         <li class="next"><a href="#"><i class="fa fa-angle-left"></i></a></li>--%>
                     </ul>
                 </nav>
             </div><!-- Container /- -->
@@ -1024,46 +1023,45 @@
 
 <script type="text/javascript">//javaScript标签，这里面的是javaScript语言编写的的动态的效果，
 
-        function show(pic){
-            //获取图片的宽和高
-            iw = pic.width;
-            ih = pic.height;
-            //获取屏幕的宽和高
-            sw = document.documentElement.clientWidth;
-            sh = document.documentElement.clientHeight;
-            //动态的创建一个灰色的背景div，就是那个我们带点击后，大图后面的那个灰色的那个背景，当然灰色是可以自由设置的
-            gdiv = document.createElement('div');
-            gdiv.id = 'gray';
-            gdiv.style.height = sh+'px';
-            gdiv.style.width = sw+'px';
-            document.body.appendChild(gdiv);
-            //删除动态的图片和对象，就是我们点击放大后，再次点击的时候，放大的图片会被删除，并且后面的那个背景也会随之删除，这个方法就是为了完成这个效果
-            gdiv.onclick = function(){
-                document.body.removeChild(this);
-                document.body.removeChild(oimg);
-            }
-            //创建动态的图片对象，将该对象的src赋值为原图的src,这就是来创建我们放大后看大的那个图片
-            oimg = document.createElement('img');
-            oimg.src = pic.src;
-            oimg.width=400;
-            oimg.height=400;
-            oimg.style.position = 'absolute';
-            oimg.style.top = (sh-ih)/2+'px';
-            oimg.style.left= (sw-ih)/2+'px';
-            document.body.appendChild(oimg);
-        }
-    //设置图片的位置来适应窗口的大小
-    window.onresize=function(){
-        sh = document.documentElement.clientHeight;
-        sw = document.documentElement.clientWidth;
-        gdiv.style.width = sw + 'px';
-        gdiv.style.height = sh + 'px';
-        //更改图片的位置
-        oimg.style.top = (sh-ih)/2 + 'px';
-        oimg.style.left = (sw-iw)/2 + 'px';
+function show(pic){
+    //获取图片的宽和高
+    iw = pic.width;
+    ih = pic.height;
+    //获取屏幕的宽和高
+    sw = document.documentElement.clientWidth;
+    sh = document.documentElement.clientHeight;
+    //动态的创建一个灰色的背景div，就是那个我们带点击后，大图后面的那个灰色的那个背景，当然灰色是可以自由设置的
+    gdiv = document.createElement('div');
+    gdiv.id = 'gray';
+    gdiv.style.height = sh+'px';
+    gdiv.style.width = sw+'px';
+    document.body.appendChild(gdiv);
+    //删除动态的图片和对象，就是我们点击放大后，再次点击的时候，放大的图片会被删除，并且后面的那个背景也会随之删除，这个方法就是为了完成这个效果
+    gdiv.onclick = function(){
+        document.body.removeChild(this);
+        document.body.removeChild(oimg);
     }
+    //创建动态的图片对象，将该对象的src赋值为原图的src,这就是来创建我们放大后看大的那个图片
+    oimg = document.createElement('img');
+    oimg.src = pic.src;
+    oimg.width=400;
+    oimg.height=400;
+    oimg.style.position = 'absolute';
+    oimg.style.top = (sh-ih)/2+'px';
+    oimg.style.left= (sw-ih)/2+'px';
+    document.body.appendChild(oimg);
+}
+//设置图片的位置来适应窗口的大小
+window.onresize=function(){
+    sh = document.documentElement.clientHeight;
+    sw = document.documentElement.clientWidth;
+    gdiv.style.width = sw + 'px';
+    gdiv.style.height = sh + 'px';
+    //更改图片的位置
+    oimg.style.top = (sh-ih)/2 + 'px';
+    oimg.style.left = (sw-iw)/2 + 'px';
+}
 </script>
 
 </body>
 </html>
-

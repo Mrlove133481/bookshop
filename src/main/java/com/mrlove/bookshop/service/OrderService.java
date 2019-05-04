@@ -10,4 +10,6 @@ public interface OrderService {
     List<Userorder> limitorder(int start, int end, String userId);
 
     List<Userorder> allorder(String userId);
+
+    List<Userorder> allbatchs(String userId);
 }

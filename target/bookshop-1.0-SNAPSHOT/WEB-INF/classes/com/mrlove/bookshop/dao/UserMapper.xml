@@ -201,4 +201,23 @@
     from user
     where user_id=#{userId} and user_status != '0'
   </select>
+  <!--通过用户名查询密码-->
+  <select id="finduser" resultMap="BaseResultMap">
+    select *
+    from user
+    where user_id = #{userId} and user_status !='0'
+  </select>
+  <!--更新用户信息-->
+  <update id="updateuser" parameterType="com.mrlove.bookshop.common.domain.User">
+    update user
+    set
+    user_nick_name = #{userNickName},
+    user_image = #{oldimage},
+    user_sex =#{userSex},
+    user_birthday = #{userBirthday},
+    user_telnum = #{userTelnum},
+    user_email = #{userEmail},
+    user_remark1 = #{userRemark1}
+    where user_id = #{userId} and user_status !='0'
+  </update>
 </mapper>

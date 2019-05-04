@@ -143,7 +143,7 @@
                     <div class="m-order">
                         <div class="s-bar">
                             <i class="s-icon"></i>我的订单
-                            <a class="i-load-more-item-shadow" href="order.html">全部订单</a>
+                            <a class="i-load-more-item-shadow" href="/page/person/order.jsp">全部订单</a>
                         </div>
                         <div class="orderContentBox" ng-repeat="order in orders">
                             <div class="orderContent">

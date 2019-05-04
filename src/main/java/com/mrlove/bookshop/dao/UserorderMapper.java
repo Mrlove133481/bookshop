@@ -13,4 +13,6 @@ public interface UserorderMapper {
     List<Userorder> limitorder(@Param("start") int start,@Param("end") int end,@Param("userId") String userId);
     //根据用户名查询所有order
     List<Userorder> userorders(@Param("userId") String userId);
+    //获取所有订单批次
+    List<Userorder> allbatchs(@Param("userId") String userId);
 }

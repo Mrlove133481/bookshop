@@ -282,6 +282,12 @@
   <select id="userorders" resultMap="BaseResultMap">
     select *
     from userorder
-    where order_userid=#{userId} and order_status != '0' order by order_creation_batch desc
+    where order_userid=#{userId} and order_status != '0' order by order_creation_time desc
+  </select>
+  <!--根据用户id获取所有批次-->
+  <select id="allbatchs" resultMap="BaseResultMap">
+    select *
+    from userorder
+    where order_userid=#{userId} and order_status != '0' group by order_creation_time desc
   </select>
 </mapper>
